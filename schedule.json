@@ -1,0 +1,102 @@
+[
+  {
+    "date": "2026-11-04",
+    "id": "T01",
+    "images": [
+      "images/T01_slide1.jpg",
+      "images/T01_slide2.jpg",
+      "images/T01_slide3.jpg"
+    ],
+    "caption": "How does a UPI payment work in 2 seconds? NPCI, your bank and their bank explained simply. #upi #howitworks #techexplained #digitalindia"
+  },
+  {
+    "date": "2026-11-05",
+    "id": "T06",
+    "images": [
+      "images/T06_slide1.jpg",
+      "images/T06_slide2.jpg",
+      "images/T06_slide3.jpg"
+    ],
+    "caption": "How do noise cancelling earphones work? Anti-noise waves explained. #noisecancelling #earbuds #howitworks #techexplained"
+  },
+  {
+    "date": "2026-11-06",
+    "id": "T02",
+    "images": [
+      "images/T02_slide1.jpg",
+      "images/T02_slide2.jpg",
+      "images/T02_slide3.jpg"
+    ],
+    "caption": "Why does a torn QR code still scan? QR error correction explained. #qrcode #howitworks #techfacts #sciencefacts"
+  },
+  {
+    "date": "2026-11-07",
+    "id": "T07",
+    "images": [
+      "images/T07_slide1.jpg",
+      "images/T07_slide2.jpg",
+      "images/T07_slide3.jpg"
+    ],
+    "caption": "Can WhatsApp read your messages? End-to-end encryption explained simply. #whatsapp #privacy #howitworks #cybersecurity"
+  },
+  {
+    "date": "2026-11-08",
+    "id": "T03",
+    "images": [
+      "images/T03_slide1.jpg",
+      "images/T03_slide2.jpg",
+      "images/T03_slide3.jpg"
+    ],
+    "caption": "How does Shazam recognise a song in 3 seconds? Audio fingerprinting explained. #shazam #howitworks #musictech #techexplained"
+  },
+  {
+    "date": "2026-11-09",
+    "id": "T08",
+    "images": [
+      "images/T08_slide1.jpg",
+      "images/T08_slide2.jpg",
+      "images/T08_slide3.jpg"
+    ],
+    "caption": "Why doesn't a pen work on a touchscreen? Capacitive screens explained. #touchscreen #smartphone #howitworks #techfacts"
+  },
+  {
+    "date": "2026-11-10",
+    "id": "T04",
+    "images": [
+      "images/T04_slide1.jpg",
+      "images/T04_slide2.jpg",
+      "images/T04_slide3.jpg"
+    ],
+    "caption": "How does Google Maps know about traffic? It's your phone's speed data. #googlemaps #howitworks #techfacts #traffic"
+  },
+  {
+    "date": "2026-11-11",
+    "id": "T09",
+    "images": [
+      "images/T09_slide1.jpg",
+      "images/T09_slide2.jpg",
+      "images/T09_slide3.jpg"
+    ],
+    "caption": "Why does a microwave heat food but not the plate? Water molecules explained. #microwave #science #howitworks #kitchenscience"
+  },
+  {
+    "date": "2026-11-12",
+    "id": "T05",
+    "images": [
+      "images/T05_slide1.jpg",
+      "images/T05_slide2.jpg",
+      "images/T05_slide3.jpg"
+    ],
+    "caption": "Why does phone charging slow down after 80%? Battery protection explained. #smartphone #batterytips #howitworks #techexplained"
+  },
+  {
+    "date": "2026-11-13",
+    "id": "T10",
+    "images": [
+      "images/T10_slide1.jpg",
+      "images/T10_slide2.jpg",
+      "images/T10_slide3.jpg"
+    ],
+    "caption": "Why does an OTP expire in 30 seconds? Time-based OTP explained. #otp #cybersecurity #onlinesafety #howitworks"
+  }
+]

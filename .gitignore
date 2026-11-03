@@ -1,0 +1,13 @@
+# Secrets never belong in this public repo. The token lives in GitHub Actions secrets.
+META_TOKEN*
+*token*.txt
+*.token
+.env
+.env.*
+secrets*.json
+
+# Local junk
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
