@@ -1,102 +1,842 @@
 [
   {
     "date": "2026-11-04",
-    "id": "T01",
+    "slot": "morning",
+    "id": "S001",
     "images": [
-      "images/T01_slide1.jpg",
-      "images/T01_slide2.jpg",
-      "images/T01_slide3.jpg"
+      "images/S001_1.jpg",
+      "images/S001_2.jpg",
+      "images/S001_3.jpg",
+      "images/S001_4.jpg",
+      "images/S001_5.jpg",
+      "images/S001_6.jpg"
     ],
-    "caption": "How does a UPI payment work in 2 seconds? NPCI, your bank and their bank explained simply. #upi #howitworks #techexplained #digitalindia"
+    "caption": "Tatkal khulte hi seat 1 second mein gayab kyun hoti hai? Server slow nahi hota, locking galat hoti hai. 6 slides mein samjho: row lock trap, TTL hold aur atomic decrement.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #irctc #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-04",
+    "slot": "evening",
+    "id": "S002",
+    "images": [
+      "images/S002_1.jpg",
+      "images/S002_2.jpg",
+      "images/S002_3.jpg",
+      "images/S002_4.jpg",
+      "images/S002_5.jpg",
+      "images/S002_6.jpg"
+    ],
+    "caption": "UPI mein paisa kat gaya par payment pending kyun dikhta hai? 6 slides mein samjho: timeouts, idempotency key aur reconciliation.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #upi #backend #codinginterview #softwareengineer"
   },
   {
     "date": "2026-11-05",
-    "id": "T06",
+    "slot": "morning",
+    "id": "S003",
     "images": [
-      "images/T06_slide1.jpg",
-      "images/T06_slide2.jpg",
-      "images/T06_slide3.jpg"
+      "images/S003_1.jpg",
+      "images/S003_2.jpg",
+      "images/S003_3.jpg",
+      "images/S003_4.jpg",
+      "images/S003_5.jpg",
+      "images/S003_6.jpg"
     ],
-    "caption": "How do noise cancelling earphones work? Anti-noise waves explained. #noisecancelling #earbuds #howitworks #techexplained"
+    "caption": "Last over mein crore log ek saath live dekhte hain, phir bhi stream kaise chalti hai? 6 slides mein samjho: autoscaling ka trap, pre-warming aur CDN.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #cricket #backend #devops #softwareengineer"
+  },
+  {
+    "date": "2026-11-05",
+    "slot": "evening",
+    "id": "S004",
+    "images": [
+      "images/S004_1.jpg",
+      "images/S004_2.jpg",
+      "images/S004_3.jpg",
+      "images/S004_4.jpg",
+      "images/S004_5.jpg",
+      "images/S004_6.jpg"
+    ],
+    "caption": "Lakhon riders mein se sabse paas wala rider seconds mein kaise milta hai? 6 slides mein samjho: O(N) scan ka trap, geohash aur spatial index.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #geohash #backend #codinginterview #softwareengineer"
   },
   {
     "date": "2026-11-06",
-    "id": "T02",
+    "slot": "morning",
+    "id": "S005",
     "images": [
-      "images/T02_slide1.jpg",
-      "images/T02_slide2.jpg",
-      "images/T02_slide3.jpg"
+      "images/S005_1.jpg",
+      "images/S005_2.jpg",
+      "images/S005_3.jpg",
+      "images/S005_4.jpg",
+      "images/S005_5.jpg",
+      "images/S005_6.jpg"
     ],
-    "caption": "Why does a torn QR code still scan? QR error correction explained. #qrcode #howitworks #techfacts #sciencefacts"
+    "caption": "10 minute delivery ka raaz bike nahi, godown hai. 6 slides mein samjho: dark stores, oversell ka trap aur stock reservation.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #quickcommerce #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-06",
+    "slot": "evening",
+    "id": "S006",
+    "images": [
+      "images/S006_1.jpg",
+      "images/S006_2.jpg",
+      "images/S006_3.jpg",
+      "images/S006_4.jpg",
+      "images/S006_5.jpg",
+      "images/S006_6.jpg"
+    ],
+    "caption": "OTP hamesha tab aata hai jab expire ho chuka hota hai? 6 slides mein samjho: shared queue ka trap, priority queue aur backup SMS route.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #otp #backend #softwareengineer"
   },
   {
     "date": "2026-11-07",
-    "id": "T07",
+    "slot": "morning",
+    "id": "S007",
     "images": [
-      "images/T07_slide1.jpg",
-      "images/T07_slide2.jpg",
-      "images/T07_slide3.jpg"
+      "images/S007_1.jpg",
+      "images/S007_2.jpg",
+      "images/S007_3.jpg",
+      "images/S007_4.jpg",
+      "images/S007_5.jpg",
+      "images/S007_6.jpg"
     ],
-    "caption": "Can WhatsApp read your messages? End-to-end encryption explained simply. #whatsapp #privacy #howitworks #cybersecurity"
+    "caption": "Chat apps mein ek tick, do tick aur blue tick asal mein kaun bhejta hai? 6 slides mein samjho: per-hop acks, store-and-forward aur read receipts.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #whatsapp #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-07",
+    "slot": "evening",
+    "id": "S008",
+    "images": [
+      "images/S008_1.jpg",
+      "images/S008_2.jpg",
+      "images/S008_3.jpg",
+      "images/S008_4.jpg",
+      "images/S008_5.jpg",
+      "images/S008_6.jpg"
+    ],
+    "caption": "Phone switch off hai, phir bhi app 'online' dikhata hai? 6 slides mein samjho: logout ka trap, heartbeat aur TTL wala presence.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #redis #softwareengineer"
   },
   {
     "date": "2026-11-08",
-    "id": "T03",
+    "slot": "morning",
+    "id": "S009",
     "images": [
-      "images/T03_slide1.jpg",
-      "images/T03_slide2.jpg",
-      "images/T03_slide3.jpg"
+      "images/S009_1.jpg",
+      "images/S009_2.jpg",
+      "images/S009_3.jpg",
+      "images/S009_4.jpg",
+      "images/S009_5.jpg",
+      "images/S009_6.jpg"
     ],
-    "caption": "How does Shazam recognise a song in 3 seconds? Audio fingerprinting explained. #shazam #howitworks #musictech #techexplained"
+    "caption": "Viral post pe ek saath lakhon likes aate hain, counter phir bhi kaise chalta hai? 6 slides mein samjho: hot row ka trap, sharded counters aur eventual consistency.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-08",
+    "slot": "evening",
+    "id": "S010",
+    "images": [
+      "images/S010_1.jpg",
+      "images/S010_2.jpg",
+      "images/S010_3.jpg",
+      "images/S010_4.jpg",
+      "images/S010_5.jpg",
+      "images/S010_6.jpg"
+    ],
+    "caption": "Ek celebrity post aur poora server down? 6 slides mein samjho: hot partition ka trap, hot key replication aur local cache.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #caching #backend #softwareengineer"
   },
   {
     "date": "2026-11-09",
-    "id": "T08",
+    "slot": "morning",
+    "id": "S011",
     "images": [
-      "images/T08_slide1.jpg",
-      "images/T08_slide2.jpg",
-      "images/T08_slide3.jpg"
+      "images/S011_1.jpg",
+      "images/S011_2.jpg",
+      "images/S011_3.jpg",
+      "images/S011_4.jpg",
+      "images/S011_5.jpg",
+      "images/S011_6.jpg"
     ],
-    "caption": "Why doesn't a pen work on a touchscreen? Capacitive screens explained. #touchscreen #smartphone #howitworks #techfacts"
+    "caption": "App kholte hi feed turant aa jaata hai, par bana kab? 6 slides mein samjho: fan-out on write, fan-out on read aur celebrity ke liye hybrid.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-09",
+    "slot": "evening",
+    "id": "S012",
+    "images": [
+      "images/S012_1.jpg",
+      "images/S012_2.jpg",
+      "images/S012_3.jpg",
+      "images/S012_4.jpg",
+      "images/S012_5.jpg",
+      "images/S012_6.jpg"
+    ],
+    "caption": "Baarish hote hi cab fare 2x kaise ho jaata hai? 6 slides mein samjho: full scan ka trap, zones, event streams aur rolling windows.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #streaming #backend #softwareengineer"
   },
   {
     "date": "2026-11-10",
-    "id": "T04",
+    "slot": "morning",
+    "id": "S013",
     "images": [
-      "images/T04_slide1.jpg",
-      "images/T04_slide2.jpg",
-      "images/T04_slide3.jpg"
+      "images/S013_1.jpg",
+      "images/S013_2.jpg",
+      "images/S013_3.jpg",
+      "images/S013_4.jpg",
+      "images/S013_5.jpg",
+      "images/S013_6.jpg"
     ],
-    "caption": "How does Google Maps know about traffic? It's your phone's speed data. #googlemaps #howitworks #techfacts #traffic"
+    "caption": "Do letter type karte hi poora sawaal kaise aa jaata hai? 6 slides mein samjho: DB scan ka trap, trie aur cached top-k suggestions.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #trie #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-10",
+    "slot": "evening",
+    "id": "S014",
+    "images": [
+      "images/S014_1.jpg",
+      "images/S014_2.jpg",
+      "images/S014_3.jpg",
+      "images/S014_4.jpg",
+      "images/S014_5.jpg",
+      "images/S014_6.jpg"
+    ],
+    "caption": "Itna lamba link 7 letters mein kaise fit hota hai, aur collision kyun nahi hota? 6 slides mein samjho: random code ka trap, unique IDs aur base62.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #codinginterview #softwareengineer"
   },
   {
     "date": "2026-11-11",
-    "id": "T09",
+    "slot": "morning",
+    "id": "S015",
     "images": [
-      "images/T09_slide1.jpg",
-      "images/T09_slide2.jpg",
-      "images/T09_slide3.jpg"
+      "images/S015_1.jpg",
+      "images/S015_2.jpg",
+      "images/S015_3.jpg",
+      "images/S015_4.jpg",
+      "images/S015_5.jpg",
+      "images/S015_6.jpg"
     ],
-    "caption": "Why does a microwave heat food but not the plate? Water molecules explained. #microwave #science #howitworks #kitchenscience"
+    "caption": "'Too many attempts, try again in 30 seconds' kaun decide karta hai? 6 slides mein samjho: no-limit ka trap, token bucket aur 429 responses.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #ratelimiting #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-11",
+    "slot": "evening",
+    "id": "S016",
+    "images": [
+      "images/S016_1.jpg",
+      "images/S016_2.jpg",
+      "images/S016_3.jpg",
+      "images/S016_4.jpg",
+      "images/S016_5.jpg",
+      "images/S016_6.jpg"
+    ],
+    "caption": "Flash sale mein 100 phone aur 101 orders, yeh kaise hota hai? 6 slides mein samjho: read-then-write ka trap, waiting room aur atomic decrement.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #ecommerce #backend #codinginterview #softwareengineer"
   },
   {
     "date": "2026-11-12",
-    "id": "T05",
+    "slot": "morning",
+    "id": "S017",
     "images": [
-      "images/T05_slide1.jpg",
-      "images/T05_slide2.jpg",
-      "images/T05_slide3.jpg"
+      "images/S017_1.jpg",
+      "images/S017_2.jpg",
+      "images/S017_3.jpg",
+      "images/S017_4.jpg",
+      "images/S017_5.jpg",
+      "images/S017_6.jpg"
     ],
-    "caption": "Why does phone charging slow down after 80%? Battery protection explained. #smartphone #batterytips #howitworks #techexplained"
+    "caption": "Do log ek hi seat ek saath select karein, toh seat kisko milti hai? 6 slides mein samjho: show-level lock ka trap, per-seat conditional update aur TTL hold.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-12",
+    "slot": "evening",
+    "id": "S018",
+    "images": [
+      "images/S018_1.jpg",
+      "images/S018_2.jpg",
+      "images/S018_3.jpg",
+      "images/S018_4.jpg",
+      "images/S018_5.jpg",
+      "images/S018_6.jpg"
+    ],
+    "caption": "Fantasy app mein lakhon users ki rank har ball pe kaise update hoti hai? 6 slides mein samjho: ORDER BY ka trap aur Redis sorted sets.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #redis #backend #codinginterview #softwareengineer"
   },
   {
     "date": "2026-11-13",
-    "id": "T10",
+    "slot": "morning",
+    "id": "S019",
     "images": [
-      "images/T10_slide1.jpg",
-      "images/T10_slide2.jpg",
-      "images/T10_slide3.jpg"
+      "images/S019_1.jpg",
+      "images/S019_2.jpg",
+      "images/S019_3.jpg",
+      "images/S019_4.jpg",
+      "images/S019_5.jpg",
+      "images/S019_6.jpg"
     ],
-    "caption": "Why does an OTP expire in 30 seconds? Time-based OTP explained. #otp #cybersecurity #onlinesafety #howitworks"
+    "caption": "Live score ke liye app baar baar refresh kare ya server khud bataye? 6 slides mein samjho: polling ka trap, SSE, WebSocket aur pub/sub.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #websocket #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-13",
+    "slot": "evening",
+    "id": "S020",
+    "images": [
+      "images/S020_1.jpg",
+      "images/S020_2.jpg",
+      "images/S020_3.jpg",
+      "images/S020_4.jpg",
+      "images/S020_5.jpg",
+      "images/S020_6.jpg"
+    ],
+    "caption": "Cache lagane ke baad bhi database down kyun ho jaata hai? 6 slides mein samjho: cache stampede, request coalescing aur jittered TTL.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #caching #redis #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-14",
+    "slot": "morning",
+    "id": "S021",
+    "images": [
+      "images/S021_1.jpg",
+      "images/S021_2.jpg",
+      "images/S021_3.jpg",
+      "images/S021_4.jpg",
+      "images/S021_5.jpg",
+      "images/S021_6.jpg"
+    ],
+    "caption": "Server outage ke baad wapas aata hai aur turant phir down kyun ho jaata hai? 6 slides mein samjho: retry storm, exponential backoff aur jitter.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #distributedsystems #softwareengineer"
+  },
+  {
+    "date": "2026-11-14",
+    "slot": "evening",
+    "id": "S022",
+    "images": [
+      "images/S022_1.jpg",
+      "images/S022_2.jpg",
+      "images/S022_3.jpg",
+      "images/S022_4.jpg",
+      "images/S022_5.jpg",
+      "images/S022_6.jpg"
+    ],
+    "caption": "Naya server add karte hi cache khaali kyun ho jaata hai? 6 slides mein samjho: hash % N ka trap, hash ring aur virtual nodes.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #distributedsystems #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-15",
+    "slot": "morning",
+    "id": "S023",
+    "images": [
+      "images/S023_1.jpg",
+      "images/S023_2.jpg",
+      "images/S023_3.jpg",
+      "images/S023_4.jpg",
+      "images/S023_5.jpg",
+      "images/S023_6.jpg"
+    ],
+    "caption": "1 crore rows mein ek email dhoondhne mein 30 second kyun? 6 slides: full table scan ka trap, B-tree index aur uski cost.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #sql #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-15",
+    "slot": "evening",
+    "id": "S024",
+    "images": [
+      "images/S024_1.jpg",
+      "images/S024_2.jpg",
+      "images/S024_3.jpg",
+      "images/S024_4.jpg",
+      "images/S024_5.jpg",
+      "images/S024_6.jpg"
+    ],
+    "caption": "Database full ho gaya, bada server bhi kaafi nahi? 6 slides: vertical scaling ka trap, user_id sharding aur uske trade-offs.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #scalability #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-16",
+    "slot": "morning",
+    "id": "S025",
+    "images": [
+      "images/S025_1.jpg",
+      "images/S025_2.jpg",
+      "images/S025_3.jpg",
+      "images/S025_4.jpg",
+      "images/S025_5.jpg",
+      "images/S025_6.jpg"
+    ],
+    "caption": "Comment post kiya aur refresh pe gayab? Bug nahi, replica lag hai. 6 slides: async replication ka trap aur read-your-writes fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-16",
+    "slot": "evening",
+    "id": "S026",
+    "images": [
+      "images/S026_1.jpg",
+      "images/S026_2.jpg",
+      "images/S026_3.jpg",
+      "images/S026_4.jpg",
+      "images/S026_5.jpg",
+      "images/S026_6.jpg"
+    ],
+    "caption": "Network toot jaaye toh ATM paisa de ya mana kare? Yahi CAP theorem hai. 6 slides: 'teeno chahiye' ka trap aur CP vs AP choice.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #distributedsystems #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-17",
+    "slot": "morning",
+    "id": "S027",
+    "images": [
+      "images/S027_1.jpg",
+      "images/S027_2.jpg",
+      "images/S027_3.jpg",
+      "images/S027_4.jpg",
+      "images/S027_5.jpg",
+      "images/S027_6.jpg"
+    ],
+    "caption": "Sale shuru hote hi orders ka tsunami. App kaise bachega? 6 slides: synchronous calls ka trap aur message queue fix, dabbawala style.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #kafka #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-17",
+    "slot": "evening",
+    "id": "S028",
+    "images": [
+      "images/S028_1.jpg",
+      "images/S028_2.jpg",
+      "images/S028_3.jpg",
+      "images/S028_4.jpg",
+      "images/S028_5.jpg",
+      "images/S028_6.jpg"
+    ],
+    "caption": "Ek kharab message ne poori queue kaise rok di? 6 slides: retry-forever ka trap aur dead letter queue fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #microservices #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-18",
+    "slot": "morning",
+    "id": "S029",
+    "images": [
+      "images/S029_1.jpg",
+      "images/S029_2.jpg",
+      "images/S029_3.jpg",
+      "images/S029_4.jpg",
+      "images/S029_5.jpg",
+      "images/S029_6.jpg"
+    ],
+    "caption": "Ek click pe do baar paise kaise kat gaye? 6 slides: retry ka double-charge trap aur idempotency key fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #payments #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-18",
+    "slot": "evening",
+    "id": "S030",
+    "images": [
+      "images/S030_1.jpg",
+      "images/S030_2.jpg",
+      "images/S030_3.jpg",
+      "images/S030_4.jpg",
+      "images/S030_5.jpg",
+      "images/S030_6.jpg"
+    ],
+    "caption": "Ek chhoti service down hui aur poora app gir gaya? 6 slides: cascading failure ka trap aur circuit breaker fix, MCB style.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #microservices #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-19",
+    "slot": "morning",
+    "id": "S031",
+    "images": [
+      "images/S031_1.jpg",
+      "images/S031_2.jpg",
+      "images/S031_3.jpg",
+      "images/S031_4.jpg",
+      "images/S031_5.jpg",
+      "images/S031_6.jpg"
+    ],
+    "caption": "4 servers hain, phir bhi ek hi server pe load kyun? 6 slides: round robin ka trap aur least connections fix, railway counter style.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #loadbalancing #backend #devops #codinginterview"
+  },
+  {
+    "date": "2026-11-19",
+    "slot": "evening",
+    "id": "S032",
+    "images": [
+      "images/S032_1.jpg",
+      "images/S032_2.jpg",
+      "images/S032_3.jpg",
+      "images/S032_4.jpg",
+      "images/S032_5.jpg",
+      "images/S032_6.jpg"
+    ],
+    "caption": "Server Mumbai mein, user Patna mein, phir bhi video turant kaise chalta hai? 6 slides: origin overload ka trap aur CDN edge caching.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #cdn #webperformance #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-20",
+    "slot": "morning",
+    "id": "S033",
+    "images": [
+      "images/S033_1.jpg",
+      "images/S033_2.jpg",
+      "images/S033_3.jpg",
+      "images/S033_4.jpg",
+      "images/S033_5.jpg",
+      "images/S033_6.jpg"
+    ],
+    "caption": "google.com type karte hi phone ko server ka address kaise milta hai? 6 slides: DNS lookup, TTL ka trap aur safe migration.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #dns #networking #devops #backend"
+  },
+  {
+    "date": "2026-11-20",
+    "slot": "evening",
+    "id": "S034",
+    "images": [
+      "images/S034_1.jpg",
+      "images/S034_2.jpg",
+      "images/S034_3.jpg",
+      "images/S034_4.jpg",
+      "images/S034_5.jpg",
+      "images/S034_6.jpg"
+    ],
+    "caption": "Cafe WiFi pe password daala, koi padh toh nahi lega? 6 slides: plain HTTP ka trap aur TLS handshake, taala-chaabi style.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #cybersecurity #https #webdevelopment #backend"
+  },
+  {
+    "date": "2026-11-21",
+    "slot": "morning",
+    "id": "S035",
+    "images": [
+      "images/S035_1.jpg",
+      "images/S035_2.jpg",
+      "images/S035_3.jpg",
+      "images/S035_4.jpg",
+      "images/S035_5.jpg",
+      "images/S035_6.jpg"
+    ],
+    "caption": "Logout kiya phir bhi account khula kaise? 6 slides: long-lived JWT ka trap, sessions vs JWT, aur refresh token fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #jwt #websecurity #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-21",
+    "slot": "evening",
+    "id": "S036",
+    "images": [
+      "images/S036_1.jpg",
+      "images/S036_2.jpg",
+      "images/S036_3.jpg",
+      "images/S036_4.jpg",
+      "images/S036_5.jpg",
+      "images/S036_6.jpg"
+    ],
+    "caption": "Login with Google dabaya, toh app ko tumhara password mila? Nahi. 6 slides: password sharing ka trap aur OAuth tokens, valet key style.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #oauth #websecurity #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-22",
+    "slot": "morning",
+    "id": "S037",
+    "images": [
+      "images/S037_1.jpg",
+      "images/S037_2.jpg",
+      "images/S037_3.jpg",
+      "images/S037_4.jpg",
+      "images/S037_5.jpg",
+      "images/S037_6.jpg"
+    ],
+    "caption": "Forgot password pe site tumhara purana password kyun nahi bhejti? Kyunki usse pata hi nahi. 6 slides: plain text ka trap aur salted slow hashing.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #cybersecurity #websecurity #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-22",
+    "slot": "evening",
+    "id": "S038",
+    "images": [
+      "images/S038_1.jpg",
+      "images/S038_2.jpg",
+      "images/S038_3.jpg",
+      "images/S038_4.jpg",
+      "images/S038_5.jpg",
+      "images/S038_6.jpg"
+    ],
+    "caption": "10 servers ek hi counter se ID maang rahe hain, sab atak gaye. 6 slides: central counter ka trap aur Snowflake-style IDs.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #distributedsystems #database #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-23",
+    "slot": "morning",
+    "id": "S039",
+    "images": [
+      "images/S039_1.jpg",
+      "images/S039_2.jpg",
+      "images/S039_3.jpg",
+      "images/S039_4.jpg",
+      "images/S039_5.jpg",
+      "images/S039_6.jpg"
+    ],
+    "caption": "Username type karte hi 'already taken' turant kaise aata hai? 6 slides: har keystroke pe DB query ka trap aur Bloom filter fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #datastructures #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-23",
+    "slot": "evening",
+    "id": "S040",
+    "images": [
+      "images/S040_1.jpg",
+      "images/S040_2.jpg",
+      "images/S040_3.jpg",
+      "images/S040_4.jpg",
+      "images/S040_5.jpg",
+      "images/S040_6.jpg"
+    ],
+    "caption": "Infinite scroll mein wahi post dobara kyun aa jaati hai? 6 slides: OFFSET pagination ka trap aur cursor pagination fix.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #api #database #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-24",
+    "slot": "morning",
+    "id": "S041",
+    "images": [
+      "images/S041_1.jpg",
+      "images/S041_2.jpg",
+      "images/S041_3.jpg",
+      "images/S041_4.jpg",
+      "images/S041_5.jpg",
+      "images/S041_6.jpg"
+    ],
+    "caption": "Database write ke beech light chali gayi, phir bhi data kaise bach gaya? 6 slides: in-place update ka trap aur write-ahead log.\n\nSave karo next interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #backend #codinginterview #softwareengineer"
+  },
+  {
+    "date": "2026-11-24",
+    "slot": "evening",
+    "id": "S042",
+    "images": [
+      "images/S042_1.jpg",
+      "images/S042_2.jpg",
+      "images/S042_3.jpg",
+      "images/S042_4.jpg",
+      "images/S042_5.jpg",
+      "images/S042_6.jpg"
+    ],
+    "caption": "Upload 100% ho gaya, phir bhi 'processing...' kyun likha aata hai? 6 slides mein samjho: transcoding pipeline, job queue aur parallel workers.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #videostreaming #softwareengineer"
+  },
+  {
+    "date": "2026-11-25",
+    "slot": "morning",
+    "id": "S043",
+    "images": [
+      "images/S043_1.jpg",
+      "images/S043_2.jpg",
+      "images/S043_3.jpg",
+      "images/S043_4.jpg",
+      "images/S043_5.jpg",
+      "images/S043_6.jpg"
+    ],
+    "caption": "Network weak hote hi video blur kyun ho jaata hai? Yeh bug nahi, feature hai. 6 slides mein samjho: segments, bitrate ladder aur adaptive streaming.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #videostreaming #backend #codinginterview"
+  },
+  {
+    "date": "2026-11-25",
+    "slot": "evening",
+    "id": "S044",
+    "images": [
+      "images/S044_1.jpg",
+      "images/S044_2.jpg",
+      "images/S044_3.jpg",
+      "images/S044_4.jpg",
+      "images/S044_5.jpg",
+      "images/S044_6.jpg"
+    ],
+    "caption": "Forward hote hote photo blur kyun ho jaati hai? 6 slides mein samjho: resizing, lossy compression aur re-encoding loss.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #softwareengineer #imageprocessing"
+  },
+  {
+    "date": "2026-11-26",
+    "slot": "morning",
+    "id": "S045",
+    "images": [
+      "images/S045_1.jpg",
+      "images/S045_2.jpg",
+      "images/S045_3.jpg",
+      "images/S045_4.jpg",
+      "images/S045_5.jpg",
+      "images/S045_6.jpg"
+    ],
+    "caption": "Do log ek hi doc mein type karein toh kiska text bachta hai? 6 slides mein samjho: last-write-wins trap, operations aur OT/CRDT merge.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #distributedsystems #codinginterview"
+  },
+  {
+    "date": "2026-11-26",
+    "slot": "evening",
+    "id": "S046",
+    "images": [
+      "images/S046_1.jpg",
+      "images/S046_2.jpg",
+      "images/S046_3.jpg",
+      "images/S046_4.jpg",
+      "images/S046_5.jpg",
+      "images/S046_6.jpg"
+    ],
+    "caption": "Ek line badli aur poori file dubara upload? Achhe sync apps aisa nahi karte. 6 slides mein samjho: chunking, hashing aur delta upload.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #cloudstorage #softwareengineer"
+  },
+  {
+    "date": "2026-11-27",
+    "slot": "morning",
+    "id": "S047",
+    "images": [
+      "images/S047_1.jpg",
+      "images/S047_2.jpg",
+      "images/S047_3.jpg",
+      "images/S047_4.jpg",
+      "images/S047_5.jpg",
+      "images/S047_6.jpg"
+    ],
+    "caption": "Wicket gira aur crore phones pe notification ek saath kaise? 6 slides mein samjho: fan-out, batching aur worker pools.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #pushnotifications #softwareengineer"
+  },
+  {
+    "date": "2026-11-27",
+    "slot": "evening",
+    "id": "S048",
+    "images": [
+      "images/S048_1.jpg",
+      "images/S048_2.jpg",
+      "images/S048_3.jpg",
+      "images/S048_4.jpg",
+      "images/S048_5.jpg",
+      "images/S048_6.jpg"
+    ],
+    "caption": "Galat spelling likhi, phir bhi sahi product mil gaya. Kaise? 6 slides mein samjho: exact-match trap, n-grams aur edit distance.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #elasticsearch #codinginterview"
+  },
+  {
+    "date": "2026-11-28",
+    "slot": "morning",
+    "id": "S049",
+    "images": [
+      "images/S049_1.jpg",
+      "images/S049_2.jpg",
+      "images/S049_3.jpg",
+      "images/S049_4.jpg",
+      "images/S049_5.jpg",
+      "images/S049_6.jpg"
+    ],
+    "caption": "'People you may know' mein woh log kaise aa jaate hain jinhe tum sach mein jaante ho? 6 slides mein samjho: friends-of-friends graph aur precompute.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #graphdatabase #softwareengineer"
+  },
+  {
+    "date": "2026-11-28",
+    "slot": "evening",
+    "id": "S050",
+    "images": [
+      "images/S050_1.jpg",
+      "images/S050_2.jpg",
+      "images/S050_3.jpg",
+      "images/S050_4.jpg",
+      "images/S050_5.jpg",
+      "images/S050_6.jpg"
+    ],
+    "caption": "Chat mein jawab pehle aur sawaal baad mein kyun dikhta hai? 6 slides mein samjho: clock drift trap aur per-chat sequence numbers.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #distributedsystems #codinginterview"
+  },
+  {
+    "date": "2026-11-29",
+    "slot": "morning",
+    "id": "S051",
+    "images": [
+      "images/S051_1.jpg",
+      "images/S051_2.jpg",
+      "images/S051_3.jpg",
+      "images/S051_4.jpg",
+      "images/S051_5.jpg",
+      "images/S051_6.jpg"
+    ],
+    "caption": "Naya update aaya aur app 5 minute down? Badi apps aise deploy nahi karti. 6 slides mein samjho: blue-green, canary aur instant rollback.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #devops #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-29",
+    "slot": "evening",
+    "id": "S052",
+    "images": [
+      "images/S052_1.jpg",
+      "images/S052_2.jpg",
+      "images/S052_3.jpg",
+      "images/S052_4.jpg",
+      "images/S052_5.jpg",
+      "images/S052_6.jpg"
+    ],
+    "caption": "Naya feature sabko ek saath kyun nahi milta? Smart teams pehle 1% pe test karti hain. 6 slides mein samjho: feature flags, rollout aur kill switch.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #devops #backend #softwareengineer"
+  },
+  {
+    "date": "2026-11-30",
+    "slot": "morning",
+    "id": "S053",
+    "images": [
+      "images/S053_1.jpg",
+      "images/S053_2.jpg",
+      "images/S053_3.jpg",
+      "images/S053_4.jpg",
+      "images/S053_5.jpg",
+      "images/S053_6.jpg"
+    ],
+    "caption": "Site slow hai, par kaunsi service slow hai? Andaza mat lagao. 6 slides mein samjho: metrics, logs, traces aur trace_id.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #devops #observability #backend"
+  },
+  {
+    "date": "2026-11-30",
+    "slot": "evening",
+    "id": "S054",
+    "images": [
+      "images/S054_1.jpg",
+      "images/S054_2.jpg",
+      "images/S054_3.jpg",
+      "images/S054_4.jpg",
+      "images/S054_5.jpg",
+      "images/S054_6.jpg"
+    ],
+    "caption": "3 replicas the, phir bhi ek galat DELETE ne sab uda diya? 6 slides mein samjho: replication vs backup aur point-in-time restore.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #database #backend #devops"
+  },
+  {
+    "date": "2026-12-01",
+    "slot": "morning",
+    "id": "S055",
+    "images": [
+      "images/S055_1.jpg",
+      "images/S055_2.jpg",
+      "images/S055_3.jpg",
+      "images/S055_4.jpg",
+      "images/S055_5.jpg",
+      "images/S055_6.jpg"
+    ],
+    "caption": "Poora data centre down ho jaaye toh app chalegi? 6 slides mein samjho: single-region trap, cross-region replication aur failover.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #cloud #backend #devops"
+  },
+  {
+    "date": "2026-12-01",
+    "slot": "evening",
+    "id": "S056",
+    "images": [
+      "images/S056_1.jpg",
+      "images/S056_2.jpg",
+      "images/S056_3.jpg",
+      "images/S056_4.jpg",
+      "images/S056_5.jpg",
+      "images/S056_6.jpg"
+    ],
+    "caption": "'typing...' chhota sa feature lagta hai, par crore users pe? 6 slides mein samjho: ephemeral events, WebSockets aur TTL.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #websockets #backend #softwareengineer"
+  },
+  {
+    "date": "2026-12-02",
+    "slot": "morning",
+    "id": "S057",
+    "images": [
+      "images/S057_1.jpg",
+      "images/S057_2.jpg",
+      "images/S057_3.jpg",
+      "images/S057_4.jpg",
+      "images/S057_5.jpg",
+      "images/S057_6.jpg"
+    ],
+    "caption": "Ek hi cron job do servers pe chala aur salary do baar? 6 slides mein samjho: distributed lock, TTL aur idempotent jobs.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #backend #redis #distributedsystems"
+  },
+  {
+    "date": "2026-12-02",
+    "slot": "evening",
+    "id": "S058",
+    "images": [
+      "images/S058_1.jpg",
+      "images/S058_2.jpg",
+      "images/S058_3.jpg",
+      "images/S058_4.jpg",
+      "images/S058_5.jpg",
+      "images/S058_6.jpg"
+    ],
+    "caption": "Balance column overwrite kiya aur ek payment gayab? Banks hisaab aise nahi rakhte. 6 slides mein samjho: ledger, append-only entries aur snapshots.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #fintech #backend #codinginterview"
+  },
+  {
+    "date": "2026-12-03",
+    "slot": "morning",
+    "id": "S059",
+    "images": [
+      "images/S059_1.jpg",
+      "images/S059_2.jpg",
+      "images/S059_3.jpg",
+      "images/S059_4.jpg",
+      "images/S059_5.jpg",
+      "images/S059_6.jpg"
+    ],
+    "caption": "Paisa account se kat gaya, par order abhi bhi pending? 6 slides mein samjho: missed webhooks, idempotent handlers aur reconciliation.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #payments #backend #softwareengineer"
+  },
+  {
+    "date": "2026-12-03",
+    "slot": "evening",
+    "id": "S060",
+    "images": [
+      "images/S060_1.jpg",
+      "images/S060_2.jpg",
+      "images/S060_3.jpg",
+      "images/S060_4.jpg",
+      "images/S060_5.jpg",
+      "images/S060_6.jpg"
+    ],
+    "caption": "Search box mein 'iphone' likha aur 6 API calls chali gayi? 6 slides mein samjho: debounce, stale request cancel aur caching.\n\nSave karo next system design interview ke liye. Comment karo: A ya B?\n\n#systemdesign #frontend #javascript #backend"
   }
 ]

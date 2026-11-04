@@ -1,11 +1,13 @@
-name: Daily Instagram post
+name: Instagram autopost
 on:
   schedule:
-    - cron: "15 13 * * *"   # 18:45 IST (GitHub can run a few minutes late)
+    # GitHub cron is UTC and can start late; odd minutes avoid the top-of-hour rush.
+    - cron: "7 3 * * *"    # 08:37 IST, morning slot
+    - cron: "37 13 * * *"  # 19:07 IST, evening slot
   workflow_dispatch:
     inputs:
       post_id:
-        description: "Post now by id (e.g. T01). Leave empty for today's scheduled post."
+        description: "Post now by id (e.g. S001). Leave empty for the next due slot."
         required: false
       dry_run:
         description: "Only check token + image URLs, do not post"
@@ -13,6 +15,9 @@ on:
         default: false
 permissions:
   contents: write
+concurrency:
+  group: autopost   # never run two posting jobs at once (prevents double posts)
+  cancel-in-progress: false
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -28,6 +33,7 @@ jobs:
           POST_ID: ${{ github.event.inputs.post_id }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
       - name: Save posted log
+        if: always()
         run: |
           git config user.name "autopost-bot"; git config user.email "bot@users.noreply.github.com"
-          git add posted.json && git commit -m "Log post $(date -u +%F)" && git push || echo "nothing to log"
+          git add posted.json && git commit -m "Log post $(date -u +%F)" && git pull --rebase -q && git push || echo "nothing to log"
