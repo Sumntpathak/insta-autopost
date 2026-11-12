@@ -151,6 +151,29 @@
       "attempted_at": "2026-11-13T00:30:32.836171+05:30",
       "media_id": "18114839237464415",
       "published_at": "2026-11-13T00:30:42.603384+05:30"
+    },
+    "PL-N20261113-06": {
+      "id": "PL-N20261113-06",
+      "scene": "pl-ring",
+      "variant": 1,
+      "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896052751522936",
+      "content_sha256": "d7941cda33e139b18c085e6be1b27387fa8e7ba79e88a9d980bc928505c4721b",
+      "source": {
+        "scene": "pl-ring",
+        "variant": 1,
+        "seed_used": 203,
+        "winner": 3,
+        "source_win_seconds": 14.354166666666666,
+        "source_seconds": 15.729166666666666,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-13T00:32:17.798873+05:30"
     }
   }
 }
