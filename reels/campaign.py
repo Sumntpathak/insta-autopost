@@ -47,7 +47,7 @@ def active(state, now):
 
 
 def plan(state, now):
-    if not active(state, now):
+    if CONFIG.get('paused', False) or not active(state, now):
         return None
     day = (now.date() - dt.date.fromisoformat(state['start_date'])).days
     for index, slot in enumerate(CONFIG['slots_ist']):
