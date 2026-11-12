@@ -134,7 +134,7 @@
       "caption": "Pick a marble: who reaches the finish first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896052097522936",
       "content_sha256": "647d7e875a4f11a0213686a91ffdbed7408b1d25355e246a0af75a8188d31324",
       "source": {
@@ -148,7 +148,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-13T00:30:32.836171+05:30"
+      "attempted_at": "2026-11-13T00:30:32.836171+05:30",
+      "media_id": "18114839237464415",
+      "published_at": "2026-11-13T00:30:42.603384+05:30"
     }
   }
 }
