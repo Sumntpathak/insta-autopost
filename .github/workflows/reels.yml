@@ -1,5 +1,8 @@
 name: Physics reels — 30-day trial
 on:
+  push:
+    branches: [main]
+    paths: ['reels/config.json']
   schedule:
     - cron: '7,37 * * * *'
     - cron: '47 17 * * *' # 23:17 IST: daily insights snapshot
@@ -27,7 +30,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       META_TOKEN: ${{ secrets.META_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
-      MODE: ${{ inputs.mode || (github.event.schedule == '47 17 * * *' && 'insights' || 'post') }}
+      MODE: ${{ inputs.mode || (github.event_name == 'push' && 'start' || (github.event.schedule == '47 17 * * *' && 'insights' || 'post')) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -74,6 +77,8 @@ jobs:
       - name: Install renderer
         if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
           npm ci --prefix reels
       - name: Render 15 seconds
         if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
@@ -108,11 +113,11 @@ jobs:
         id: window
         run: echo "active=$(python reels/campaign.py active)" >> "$GITHUB_OUTPUT"
       - name: Export recent Instagram insights
-        if: (env.MODE == 'insights' && (github.event_name == 'workflow_dispatch' || steps.window.outputs.active == 'true')) || (env.MODE == 'post' && steps.init.outputs.needed == 'true')
+        if: (env.MODE == 'insights' && (github.event_name == 'workflow_dispatch' || steps.window.outputs.active == 'true')) || ((env.MODE == 'post' || env.MODE == 'start') && steps.init.outputs.needed == 'true')
         continue-on-error: true
         run: python reels/campaign.py insights
       - uses: actions/upload-artifact@v4
-        if: always() && (env.MODE == 'preview' || env.MODE == 'insights' || (env.MODE == 'post' && steps.init.outputs.needed == 'true') || steps.plan.outputs.due == 'true')
+        if: always() && (env.MODE == 'preview' || env.MODE == 'insights' || ((env.MODE == 'post' || env.MODE == 'start') && steps.init.outputs.needed == 'true') || steps.plan.outputs.due == 'true')
         with:
           name: reel-run-${{ github.run_id }}
           path: reels/out/

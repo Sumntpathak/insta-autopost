@@ -30,7 +30,8 @@ After merging, Actions → **Physics reels — 30-day trial** → Run workflow:
   to reset an initialized campaign. No immediate post.
 - `post`: publish one due slot. Automatic runs check every half-hour, at :07/:37.
 
-The first automatic run validates the account, initializes the campaign for the next
+Merging a change to `reels/config.json` triggers initialization (scheduled runs also
+initialize if needed). The first automatic run validates the account, initializes the campaign for the next
 IST day, and exports baseline insights. It never restarts an expired campaign.
 `start` can alternatively initialize a chosen future date before that first run. Ten slots (IST):
 07:00, 08:40, 10:20, 12:00, 13:40, 15:20, 17:00, 18:40, 20:20, 22:00.
