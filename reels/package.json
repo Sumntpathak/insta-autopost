@@ -1,0 +1,12 @@
+{
+  "name": "shipstack-reels",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.80",
+    "matter-js": "0.20.0"
+  }
+}

@@ -25,7 +25,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Check reel trial
+        id: trial
+        run: echo "active=$(python reels/campaign.py active)" >> "$GITHUB_OUTPUT"
       - run: python post.py
+        if: steps.trial.outputs.active != 'true'
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}

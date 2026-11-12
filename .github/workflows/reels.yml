@@ -1,0 +1,119 @@
+name: Physics reels — 30-day trial
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+    - cron: '47 17 * * *' # 23:17 IST: daily insights snapshot
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [preview, insights, check, start, post]
+        default: preview
+        description: 'start initializes tomorrow in IST; post publishes one due reel'
+      start_date:
+        description: 'Optional YYYY-MM-DD (IST), used only with start'
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      MODE: ${{ inputs.mode || (github.event.schedule == '47 17 * * *' && 'insights' || 'post') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Configure journal commits
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+      - name: Check initialization
+        id: init
+        run: |
+          python - <<'PYTHON'
+          import json, os
+          initialized = bool(json.load(open('reels/state.json')).get('start_date'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f"needed={'false' if initialized else 'true'}\n")
+          PYTHON
+      - name: Validate account
+        if: env.MODE == 'check' || env.MODE == 'start' || (env.MODE == 'post' && steps.init.outputs.needed == 'true')
+        run: python reels/campaign.py check
+      - name: Start 30-day trial
+        if: env.MODE == 'start' || (env.MODE == 'post' && steps.init.outputs.needed == 'true')
+        env:
+          START_DATE: ${{ inputs.start_date }}
+        run: |
+          if [ -n "$START_DATE" ]; then
+            python reels/campaign.py start --date "$START_DATE"
+          else
+            python reels/campaign.py start
+          fi
+      - name: Choose oldest due slot today
+        if: env.MODE == 'post'
+        id: plan
+        run: python reels/campaign.py plan
+      - uses: actions/setup-node@v4
+        if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: reels/package-lock.json
+      - name: Install renderer
+        if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
+        run: |
+          npm ci --prefix reels
+      - name: Render 15 seconds
+        if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
+        env:
+          SCENE: ${{ steps.plan.outputs.scene || 'avalanche' }}
+          SEED: ${{ steps.plan.outputs.seed || '123' }}
+        run: node reels/render.mjs "$SCENE" "$SEED" reels/out/reel.mp4
+      - name: Verify MP4 before publishing
+        if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
+        run: python reels/verify.py reels/out/reel.mp4
+      - name: Host clip as a public release asset
+        if: steps.plan.outputs.due == 'true'
+        id: host
+        env:
+          REEL_ID: ${{ steps.plan.outputs.id }}
+        run: |
+          TAG="reels-$(date -u +%Y-%m)"
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --target "$(git rev-parse HEAD)" --title "Generated physics reels $TAG" --notes "Original renders of MIT-licensed Matter.js examples; source and notices in reels/vendor." --latest=false
+          fi
+          cp reels/out/reel.mp4 "reels/out/$REEL_ID.mp4"
+          gh release upload "$TAG" "reels/out/$REEL_ID.mp4" --clobber
+          URL="https://github.com/$GH_REPO/releases/download/$TAG/$REEL_ID.mp4"
+          curl --fail --location --range 0-1023 --output /dev/null "$URL"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Publish due Reel
+        if: steps.plan.outputs.due == 'true'
+        env:
+          VIDEO_URL: ${{ steps.host.outputs.url }}
+        run: python reels/campaign.py publish --url "$VIDEO_URL"
+      - name: Campaign window
+        id: window
+        run: echo "active=$(python reels/campaign.py active)" >> "$GITHUB_OUTPUT"
+      - name: Export recent Instagram insights
+        if: (env.MODE == 'insights' && (github.event_name == 'workflow_dispatch' || steps.window.outputs.active == 'true')) || (env.MODE == 'post' && steps.init.outputs.needed == 'true')
+        continue-on-error: true
+        run: python reels/campaign.py insights
+      - uses: actions/upload-artifact@v4
+        if: always() && (env.MODE == 'preview' || env.MODE == 'insights' || (env.MODE == 'post' && steps.init.outputs.needed == 'true') || steps.plan.outputs.due == 'true')
+        with:
+          name: reel-run-${{ github.run_id }}
+          path: reels/out/
+          retention-days: 35
