@@ -1,7 +1,7 @@
 name: Reel validation
 on:
   pull_request:
-    paths: ['reels/**', '.github/workflows/reels*.yml', '.github/workflows/daily-post.yml']
+    paths: ['reels/**', '.github/workflows/reels*.yml', '.github/workflows/daily-post.yml', '.github/workflows/pythonic-night.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,8 +24,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
       - run: npm ci --prefix reels
+      - run: pip install -r reels/pythonic/requirements.txt
       - run: |
-          node reels/render.mjs spinner 123 reels/out/preview.mp4
+          python reels/pythonic/render.py --scene pl-ring --variant 0 --out reels/out/preview.mp4
           python reels/verify.py reels/out/preview.mp4
       - uses: actions/upload-artifact@v4
         with:

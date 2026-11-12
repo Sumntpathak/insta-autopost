@@ -39,14 +39,14 @@ Instagram Login tokens expire after ~60 days. Refresh before then and update the
 
 The first 10 text-only posts (v1) are kept in `archive/v1/`.
 
-## Physics Reel experiment
+## Pythonic Life Reel collection
 
-The [30-day Reel pipeline](reels/README.md) targets ten 15-second portrait clips a
-day for @shipstack_. Collision Circuit v2 uses three circular physics variants,
-particle trails/counters, a reversal at ten seconds, and an original 128 BPM
-instrumental with collision sounds. Export validation rejects silent audio.
+The [Pythonic Life integration](reels/pythonic/README.md) adapts five MIT-licensed
+formats to 15-second portrait reels: Ring Escape, Balloon Pop, Last Ball Standing,
+Crumbling Floor and Marble Race. Music and collision sounds are synthesized by
+the upstream scripts. Existing Instagram post history and the 30-day window remain.
 
-`reels/config.json` controls the posting pause. The campaign journal preserves
-published IDs. Carousels pause during the campaign. Previews and daily recent-media
-insights are available as workflow artifacts. This is a measured experiment,
-not a guarantee of reach.
+The explicit overnight manifest contains ten different scene/variant combinations.
+GitHub renders and verifies them, then publishes once per ID using a persistent
+journal. Facebook also publishes when its own Page credentials validate; missing
+Facebook access does not block the authorized Instagram batch. No reach guarantee.
