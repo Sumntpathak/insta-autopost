@@ -83,7 +83,7 @@ jobs:
       - name: Render 15 seconds
         if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
         env:
-          SCENE: ${{ steps.plan.outputs.scene || 'avalanche' }}
+          SCENE: ${{ steps.plan.outputs.scene || 'spinner' }}
           SEED: ${{ steps.plan.outputs.seed || '123' }}
         run: node reels/render.mjs "$SCENE" "$SEED" reels/out/reel.mp4
       - name: Verify MP4 before publishing

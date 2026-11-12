@@ -41,8 +41,12 @@ The first 10 text-only posts (v1) are kept in `archive/v1/`.
 
 ## Physics Reel experiment
 
-The [30-day Reel pipeline](reels/README.md) targets 10 original renders per day,
-using five existing Matter.js simulations. After deployment, its first automatic run
-validates @shipstack_, initializes tomorrow in IST, and attempts a baseline insights
-export. The carousel schedule pauses during the trial; the Reel campaign stops after
-30 days. Actions → Physics reels — 30-day trial → preview/insights provides artifacts.
+The [30-day Reel pipeline](reels/README.md) targets ten 15-second portrait clips a
+day for @shipstack_. Collision Circuit v2 uses three circular physics variants,
+particle trails/counters, a reversal at ten seconds, and an original 128 BPM
+instrumental with collision sounds. Export validation rejects silent audio.
+
+`reels/config.json` controls the posting pause. The campaign journal preserves
+published IDs. Carousels pause during the campaign. Previews and daily recent-media
+insights are available as workflow artifacts. This is a measured experiment,
+not a guarantee of reach.
