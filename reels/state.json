@@ -226,6 +226,29 @@
       "attempted_at": "2026-11-13T00:35:01.527411+05:30",
       "media_id": "17917128246542616",
       "published_at": "2026-11-13T00:35:08.565520+05:30"
+    },
+    "PL-N20261113-09": {
+      "id": "PL-N20261113-09",
+      "scene": "pl-floor",
+      "variant": 1,
+      "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896053897522936",
+      "content_sha256": "39ad5c7435b6c11832397dfcab099ba354c484a6dff04a4cc49bc6b0d93ebdfc",
+      "source": {
+        "scene": "pl-floor",
+        "variant": 1,
+        "seed_used": 415,
+        "winner": 4,
+        "source_win_seconds": 9.6125,
+        "source_seconds": 10.6875,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-13T00:36:22.754023+05:30"
     }
   }
 }
