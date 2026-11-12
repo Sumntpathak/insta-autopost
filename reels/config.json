@@ -1,0 +1,8 @@
+{
+  "account": "shipstack_",
+  "days": 30,
+  "daily_target": 10,
+  "duration_seconds": 15,
+  "slots_ist": ["07:00", "08:40", "10:20", "12:00", "13:40", "15:20", "17:00", "18:40", "20:20", "22:00"],
+  "scenes": ["ballPool", "newtonsCradle", "avalanche", "restitution", "chains"]
+}
