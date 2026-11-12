@@ -2,7 +2,7 @@ name: Physics reels — 30-day trial
 on:
   push:
     branches: [main]
-    paths: ['reels/config.json']
+    paths: ['reels/config.json', 'reels/trigger.json']
   schedule:
     - cron: '7,37 * * * *'
     - cron: '47 17 * * *' # 23:17 IST: daily insights snapshot
@@ -30,7 +30,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       META_TOKEN: ${{ secrets.META_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
-      MODE: ${{ inputs.mode || (github.event_name == 'push' && 'start' || (github.event.schedule == '47 17 * * *' && 'insights' || 'post')) }}
+      MODE: ${{ inputs.mode || (github.event.schedule == '47 17 * * *' && 'insights' || 'post') }}
     steps:
       - uses: actions/checkout@v4
         with:
