@@ -59,7 +59,7 @@
       "caption": "Pick a balloon: which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896050831522936",
       "content_sha256": "9712396e56fa26b8268318215a90657ab15e6cd8967055471289e4afe24af00b",
       "source": {
@@ -73,7 +73,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-13T00:26:25.742928+05:30"
+      "attempted_at": "2026-11-13T00:26:25.742928+05:30",
+      "media_id": "18144314803719265",
+      "published_at": "2026-11-13T00:26:35.010060+05:30"
     }
   }
 }
