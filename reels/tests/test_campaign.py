@@ -15,6 +15,15 @@ def at(day=1, hour=23, minute=0):
 
 
 class CampaignTests(unittest.TestCase):
+    def setUp(self):
+        patcher=patch.dict(c.CONFIG, {'paused':False})
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_paused_campaign_has_no_due_post(self):
+        with patch.dict(c.CONFIG, {'paused':True}):
+            self.assertIsNone(c.plan({'start_date':'2026-12-01','posts':{}},at()))
+
     def test_inactive_before_start_and_after_day_30(self):
         state = {'start_date': '2026-12-01', 'posts': {}}
         self.assertIsNone(c.plan({'start_date': None, 'posts': {}}, at()))
@@ -34,7 +43,7 @@ class CampaignTests(unittest.TestCase):
             self.assertIsNone(c.plan(state, at(day)))
         self.assertEqual(len(ids), 300)
         self.assertEqual(len(seeds), 300)
-        self.assertEqual(len(scenes), 5)
+        self.assertEqual(len(scenes), len(c.CONFIG['scenes']))
 
     def test_due_times_and_no_backlog_from_previous_day(self):
         state = {'start_date': '2026-12-01', 'posts': {}}

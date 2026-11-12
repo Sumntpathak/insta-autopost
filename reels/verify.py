@@ -1,5 +1,6 @@
 """Reject bad exports before making a publishing request."""
 import json
+import re
 import subprocess
 import sys
 from fractions import Fraction
@@ -15,7 +16,10 @@ def verify(path):
     assert Fraction(video['avg_frame_rate']) == 30, 'Expected 30 FPS'
     assert int(video['nb_frames']) == 450, 'Expected 450 frames'
     assert any(s['codec_type'] == 'audio' and s['codec_name'] == 'aac' for s in info['streams']), 'Expected AAC audio track'
-    print('Verified: 1080x1920, H.264/AAC, 15 seconds, 450 frames')
+    audio = subprocess.run(['ffmpeg', '-v', 'info', '-i', str(path), '-vn', '-af', 'volumedetect', '-f', 'null', '-'], capture_output=True, text=True, check=True)
+    match = re.search(r'mean_volume: (-?[0-9.]+) dB', audio.stderr)
+    assert match and float(match.group(1)) > -40, 'Audio must contain audible music, not silence'
+    print('Verified: 1080x1920, H.264/AAC, 15 seconds, 450 frames, audible music')
 
 
 if __name__ == '__main__':

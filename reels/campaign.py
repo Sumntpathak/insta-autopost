@@ -65,6 +65,9 @@ def plan(state, now):
 
 def caption(scene, day, index):
     hooks = {
+        'spinner': ['One bounce. One more ball. Watch the circle fill.', 'What happens when every bounce adds another ball?'],
+        'orbit': ['One circle. Hundreds of collisions.', 'Watch one ball become a crowd.'],
+        'splitter': ['Three paddles. One growing cloud of color.', 'Can you follow one ball through the chaos?'],
         'ballPool': ['Tiny collisions, unexpected patterns.', 'Can you follow just one ball?'],
         'newtonsCradle': ['Watch where the energy goes.', 'One small push sets everything moving.'],
         'avalanche': ['Every collision changes the path.', 'A simple path becomes beautiful chaos.'],
