@@ -1,3 +1,11 @@
+# Active provider: Pythonic Life
+
+The current daily generator uses the five Pythonic Life formats documented in
+[pythonic/README.md](pythonic/README.md). The prior Collision Circuit renderer and
+source examples remain in history/source for reference. The daily Instagram target
+is ten posts; this month's existing dates and journal are preserved. The explicit
+overnight ten-video batch is additionally authorized and idempotent.
+
 # Collision Circuit — 30-day Reel experiment
 
 @shipstack_ targets ten 15-second 1080×1920 reels per day for thirty days. This is an

@@ -65,6 +65,11 @@ def plan(state, now):
 
 def caption(scene, day, index):
     hooks = {
+        'pl-ring': ['Pick a ball: who escapes all three rings?', 'Which ball will reach the outside first?'],
+        'pl-balloon': ['Pick a balloon: which one pops first?', 'Every bounce inflates it. Who pops first?'],
+        'pl-last': ['Pick a ball: who survives the spinning blade?', 'Last ball standing. Which one is your pick?'],
+        'pl-floor': ['The floor is crumbling. Which ball stays up?', 'Pick a ball before the tiles break.'],
+        'pl-marble': ['Pick a marble: who reaches the finish first?', 'Follow your marble through the obstacles.'],
         'spinner': ['One bounce. One more ball. Watch the circle fill.', 'What happens when every bounce adds another ball?'],
         'orbit': ['One circle. Hundreds of collisions.', 'Watch one ball become a crowd.'],
         'splitter': ['Three paddles. One growing cloud of color.', 'Can you follow one ball through the chaos?'],

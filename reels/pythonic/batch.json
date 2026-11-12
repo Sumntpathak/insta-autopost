@@ -1,0 +1,77 @@
+{
+  "batch_id": "pythonic-life-2026-11-13-overnight",
+  "enabled": true,
+  "count": 10,
+  "items": [
+    {
+      "id": "PL-N20261113-01",
+      "scene": "pl-ring",
+      "variant": 0,
+      "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-02",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "caption": "Pick a balloon: which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-03",
+      "scene": "pl-last",
+      "variant": 0,
+      "caption": "Pick a ball: which one survives the spinning blade?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-04",
+      "scene": "pl-floor",
+      "variant": 0,
+      "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-05",
+      "scene": "pl-marble",
+      "variant": 0,
+      "caption": "Pick a marble: who reaches the finish first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-06",
+      "scene": "pl-ring",
+      "variant": 1,
+      "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-07",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "caption": "Pick a balloon: which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-08",
+      "scene": "pl-last",
+      "variant": 1,
+      "caption": "Pick a ball: which one survives the spinning blade?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-09",
+      "scene": "pl-floor",
+      "variant": 1,
+      "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-N20261113-10",
+      "scene": "pl-marble",
+      "variant": 1,
+      "caption": "Pick a marble: who reaches the finish first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "collection": "pythonic-life"
+    }
+  ]
+}

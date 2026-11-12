@@ -16,11 +16,14 @@
     "22:00"
   ],
   "scenes": [
-    "spinner",
-    "orbit",
-    "splitter"
+    "pl-ring",
+    "pl-balloon",
+    "pl-last",
+    "pl-floor",
+    "pl-marble"
   ],
   "paused": false,
-  "design_version": 2,
-  "soundtrack": "Collision Circuit — original 128 BPM instrumental"
+  "design_version": 3,
+  "soundtrack": "Pythonic Life synthesized music and collision sounds",
+  "provider": "pythonic-life"
 }

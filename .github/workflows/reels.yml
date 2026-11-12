@@ -80,12 +80,18 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
           npm ci --prefix reels
+          pip install -r reels/pythonic/requirements.txt
       - name: Render 15 seconds
         if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
         env:
-          SCENE: ${{ steps.plan.outputs.scene || 'spinner' }}
+          SCENE: ${{ steps.plan.outputs.scene || 'pl-ring' }}
           SEED: ${{ steps.plan.outputs.seed || '123' }}
-        run: node reels/render.mjs "$SCENE" "$SEED" reels/out/reel.mp4
+        run: |
+          if [[ "$SCENE" == pl-* ]]; then
+            python reels/pythonic/render.py --scene "$SCENE" --variant "$((SEED % 2))" --seed "$SEED" --out reels/out/reel.mp4
+          else
+            node reels/render.mjs "$SCENE" "$SEED" reels/out/reel.mp4
+          fi
       - name: Verify MP4 before publishing
         if: env.MODE == 'preview' || steps.plan.outputs.due == 'true'
         run: python reels/verify.py reels/out/reel.mp4
