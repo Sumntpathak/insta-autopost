@@ -109,7 +109,7 @@
       "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896051671522936",
       "content_sha256": "41ce05d6f6f82c26f4997e0006e9423c1d12a8aa01ad7676c8a047d11cf1f013",
       "source": {
@@ -123,7 +123,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-13T00:29:10.893586+05:30"
+      "attempted_at": "2026-11-13T00:29:10.893586+05:30",
+      "media_id": "18643944655017937",
+      "published_at": "2026-11-13T00:29:18.711932+05:30"
     }
   }
 }
