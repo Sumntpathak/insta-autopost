@@ -159,7 +159,7 @@
       "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896052751522936",
       "content_sha256": "d7941cda33e139b18c085e6be1b27387fa8e7ba79e88a9d980bc928505c4721b",
       "source": {
@@ -173,7 +173,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-13T00:32:17.798873+05:30"
+      "attempted_at": "2026-11-13T00:32:17.798873+05:30",
+      "media_id": "18040414262848136",
+      "published_at": "2026-11-13T00:32:25.366098+05:30"
     }
   }
 }
