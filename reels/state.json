@@ -1406,6 +1406,23 @@
         "seconds": 23.78
       },
       "attempted_at": "2026-11-13T20:44:42.847726+05:30"
+    },
+    "AI-20261113-10": {
+      "id": "AI-20261113-10",
+      "scene": "ep10_coin_flips",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 10/10\nHow Bayesian learning updates a belief after coin flips.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 28.2,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896287687522936",
+      "content_sha256": "5060a1c270dbfbea1dd9fb8968c5dd9980aabfc3b0f512bdbb7c4506a8f50d57",
+      "source": {
+        "scene": "ep10_coin_flips",
+        "variant": 0,
+        "seconds": 28.2
+      },
+      "attempted_at": "2026-11-13T20:45:44.854515+05:30"
     }
   }
 }
