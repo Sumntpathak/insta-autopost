@@ -1009,6 +1009,22 @@
       "attempted_at": "2026-11-13T15:54:33.256177+05:30",
       "media_id": "18148851802602071",
       "published_at": "2026-11-13T15:54:40.910478+05:30"
+    },
+    "DL-20261113-08": {
+      "id": "DL-20261113-08",
+      "scene": "discipline-lift",
+      "variant": 7,
+      "caption": "A missed day is one day. What gets you back on track?\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896215576522936",
+      "content_sha256": "9414c2918e8a1477ea4c4a18212dd42eef87baadb2c1bc652f1bdede86c7e201",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 7,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:55:25.401072+05:30"
     }
   }
 }
