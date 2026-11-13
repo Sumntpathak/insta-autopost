@@ -869,6 +869,18 @@
         "attempted_at": "2026-11-13T15:15:53.210400+05:30",
         "published_at": "2026-11-13T15:16:14.360681+05:30"
       }
+    },
+    "CL-20261113-10": {
+      "id": "CL-20261113-10",
+      "scene": "climb",
+      "title": "Compare less. Create more.",
+      "caption": "Make the next thing at your own pace.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "1515993950585167",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:16:34.724297+05:30"
+      }
     }
   }
 }
