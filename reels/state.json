@@ -1276,7 +1276,7 @@
       "caption": "AI in Motion \u00b7 02/10\nHow momentum helps gradient descent.\n\n#MachineLearning #AIExplained #ShipStack",
       "seconds": 25.34,
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896282125522936",
       "content_sha256": "921876ea9850158e6f27fbb07fc75f344fd3a747f1f2aee3b3f9f95bad5b5144",
       "source": {
@@ -1284,7 +1284,9 @@
         "variant": 0,
         "seconds": 25.34
       },
-      "attempted_at": "2026-11-13T20:28:36.751864+05:30"
+      "attempted_at": "2026-11-13T20:28:36.751864+05:30",
+      "media_id": "17970321399195690",
+      "published_at": "2026-11-13T20:28:45.332837+05:30"
     }
   }
 }
