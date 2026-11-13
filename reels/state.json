@@ -1355,6 +1355,23 @@
         "seconds": 24.1
       },
       "attempted_at": "2026-11-13T20:41:49.362664+05:30"
+    },
+    "AI-20261113-07": {
+      "id": "AI-20261113-07",
+      "scene": "ep07_evolution",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 07/10\nHow a genetic algorithm teaches rockets to fly.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 31.9,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896286610522936",
+      "content_sha256": "a7d47102c0ccedd2bf35afd59a8cb0f4a8982aafa85247a5ae5ad3c2e5144056",
+      "source": {
+        "scene": "ep07_evolution",
+        "variant": 0,
+        "seconds": 31.9
+      },
+      "attempted_at": "2026-11-13T20:42:52.006704+05:30"
     }
   }
 }
