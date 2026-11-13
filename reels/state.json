@@ -1560,6 +1560,18 @@
         "attempted_at": "2026-11-13T23:39:03.718120+05:30",
         "published_at": "2026-11-13T23:39:25.281338+05:30"
       }
+    },
+    "FBMAN-20261113-10": {
+      "id": "FBMAN-20261113-10",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Two blocks can calculate \u03c0. Count the wall and block hits: 3 \u2192 31 \u2192 314 \u2192 3,141. A simulation of Galperin\u2019s frictionless collision experiment.\n\n#Physics #Math #ShipStack",
+      "content_sha256": "c35acb146d8c219ed6e99fbbc8ea18436192ddb9873f80442c73aa094ce97cd1",
+      "facebook": {
+        "video_id": "1716800220229539",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:39:31.444428+05:30"
+      }
     }
   }
 }
