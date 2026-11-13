@@ -24,7 +24,7 @@ jobs:
           meta = Meta()
           for label,path,fields in [('account',meta.ig_id,'username'),('quota',meta.ig_id+'/content_publishing_limit','quota_usage,config'),('balloon','17896295262522936','status_code'),('pi','17896295805522936','status_code')]:
               q=('fields=' if label!='quota' else 'fields=')+fields
-              req=urllib.request.Request(meta.api+path+'?'+q,headers={'Authorization':'Bearer '+meta.token})
+              req=urllib.request.Request(meta.api.rstrip('/')+'/'+path+'?'+q,headers={'Authorization':'Bearer '+meta.token})
               try:
                   with urllib.request.urlopen(req,timeout=25) as response:
                       print('DIAG',label,json.load(response))
