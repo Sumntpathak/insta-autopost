@@ -1,0 +1,89 @@
+name: Pinball Balloon Pop repeat batch
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/pinball-repeat.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GH_TOKEN: ${{ github.token }}
+      PYTHONUNBUFFERED: '1'
+      CLIP: reels/pinball/Pinball_Balloon_Pop_15s.mp4
+      TAG: pinball-repeat-2026-11-13
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Verify approved clip and prepare the journal
+        run: |
+          echo "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47  $CLIP" | sha256sum -c
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+      - name: Host the approved clip
+        run: |
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --title "Pinball Balloon Pop preview" --latest=false
+          fi
+          gh release upload "$TAG" "$CLIP" --clobber
+      - name: Publish the same shot ten times on Instagram
+        env:
+          PYTHONPATH: reels
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import os
+          from pathlib import Path
+          import time
+
+          from campaign import IST, Meta, persist, read_state
+
+          meta = Meta()
+          print(f"Account: {meta.check_account()['username']}")
+          repo, tag = os.environ['GITHUB_REPOSITORY'], os.environ['TAG']
+          filename = Path(os.environ['CLIP']).name
+          url = f'https://github.com/{repo}/releases/download/{tag}/{filename}'
+          caption = 'One shot to pop the balloon. Watch the impact in slow motion.\n\n#pinball #balloonpop #physics'
+          for number in range(1, 11):
+              key = f'PB-20261113-{number:02d}'
+              state = read_state()
+              if key in state['posts']:
+                  print(f"{key} already attempted: {state['posts'][key]['status']}")
+                  continue
+              container = meta.call(f'{meta.ig_id}/media', {
+                  'media_type': 'REELS', 'video_url': url,
+                  'caption': caption, 'share_to_feed': 'true',
+              }, 'POST')['id']
+              meta.ready(container)
+              now = dt.datetime.now(IST)
+              record = {
+                  'id': key, 'date': now.date().isoformat(), 'scene': 'pinball-balloon-pop',
+                  'caption': caption, 'container_id': container, 'status': 'publishing',
+                  'attempted_at': now.isoformat(),
+                  'content_sha256': '46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47',
+              }
+              state['posts'][key] = record
+              persist(state)
+              result = meta.call(f'{meta.ig_id}/media_publish', {'creation_id': container}, 'POST')
+              record.update(status='published', media_id=result['id'], published_at=dt.datetime.now(IST).isoformat())
+              persist(state)
+              print(f"{key} published as {result['id']}")
+              if number < 10:
+                  time.sleep(15)
+          records = read_state()['posts']
+          confirmed = sum(records.get(f'PB-20261113-{n:02d}', {}).get('status') == 'published'
+                          for n in range(1, 11))
+          if confirmed != 10:
+              raise SystemExit(f'{confirmed}/10 posts confirmed. Check any outstanding containers before retrying.')
+          print(f'{confirmed}/10 posts confirmed.')
+          PY
