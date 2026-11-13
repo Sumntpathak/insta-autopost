@@ -107,6 +107,8 @@ def main():
     posted = load("posted.json")
     done = {p["id"] for p in posted}
     force = os.environ.get("POST_ID", "").strip()
+    if force in done:
+        print(f"{force} already posted, skipping"); return
     if force:
         candidates = [i for i in schedule if i["id"] == force]
         if not candidates:

@@ -22,7 +22,7 @@ node schedule.mjs 2026-12-04 morning    # rebuilds ../schedule.json (skip ids al
 ```
 
 ## Post one right now
-Actions -> Instagram autopost -> Run workflow -> type an id (e.g. S001).
+Actions -> Instagram autopost -> Run workflow -> type an unpublished ID from `schedule.json`.
 
 ## Test without posting
 Actions -> Instagram autopost -> Run workflow -> tick **dry_run**. It checks the token and that
@@ -37,7 +37,7 @@ Settings -> Secrets and variables -> Actions:
 Instagram Login tokens expire after ~60 days. Refresh before then and update the
 `META_TOKEN` secret, or posting stops.
 
-The first 10 text-only posts (v1) are kept in `archive/v1/`.
+Published carousel images and the retired v1 archive are available in Git history. `posted.json` keeps the carousel publication record.
 
 ## Pythonic Life Reel collection
 
@@ -46,7 +46,4 @@ formats to 15-second portrait reels: Ring Escape, Balloon Pop, Last Ball Standin
 Crumbling Floor and Marble Race. Music and collision sounds are synthesized by
 the upstream scripts. Existing Instagram post history and the 30-day window remain.
 
-The explicit overnight manifest contains ten different scene/variant combinations.
-GitHub renders and verifies them, then publishes once per ID using a persistent
-journal. Facebook also publishes when its own Page credentials validate; missing
-Facebook access does not block the authorized Instagram batch. No reach guarantee.
+Completed one-off batches are recorded in `reels/state.json`. Their release assets remain available under GitHub Releases.

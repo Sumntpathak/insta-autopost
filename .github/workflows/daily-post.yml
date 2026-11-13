@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       post_id:
-        description: "Post now by id (e.g. S001). Leave empty for the next due slot."
+        description: "Post now by an unpublished ID from schedule.json. Leave empty for the next due slot."
         required: false
       dry_run:
         description: "Only check token + image URLs, do not post"

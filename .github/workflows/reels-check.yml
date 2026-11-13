@@ -1,7 +1,7 @@
 name: Reel validation
 on:
   pull_request:
-    paths: ['reels/**', '.github/workflows/reels*.yml', '.github/workflows/daily-post.yml', '.github/workflows/pythonic-night.yml']
+    paths: ['reels/**', '.github/workflows/reels*.yml', '.github/workflows/daily-post.yml']
   workflow_dispatch:
 permissions:
   contents: read
