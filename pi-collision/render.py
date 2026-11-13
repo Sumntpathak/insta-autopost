@@ -3,10 +3,9 @@ import bisect
 import math
 from pathlib import Path
 import subprocess
-import wave
 
 from PIL import Image, ImageDraw, ImageFont
-import numpy as np
+from score import render_score
 
 W, H, FPS = 1080, 1920, 30
 WALL, FLOOR, SMALL = 116, 1070, 120
@@ -120,29 +119,9 @@ def frame(t):
         label(d,(540,645),'Each 100× mass ratio adds one digit',27,COLORS['soft'])
     return im
 
-def render_audio(path):
-    rate = 48000
-    samples = np.zeros(rate*15)
-    def tone(at, frequency, gain, seconds=.12):
-        x = np.arange(round(seconds*rate))/rate
-        data = gain*np.sin(2*np.pi*frequency*x)*np.exp(-x/(seconds/5))*np.minimum(x*390,1)
-        idx = round(at*rate)
-        samples[idx:idx+len(data)] += data
-    for i, (_,_,start,end) in enumerate(ROUNDS):
-        times = TIMES[i]
-        step = max(1,(len(times)-4)//18)
-        for index in sorted(set(range(1,4)) | set(range(4,len(times)-1,step)) | {len(times)-1}):
-            if index < len(times):
-                tone(start+times[index], 440 if index%2 else 680, .27 if index<4 else .14)
-    for i,freq in enumerate([392,494,587,784]):
-        tone(13.52+i*.14,freq,.24,.55)
-    with wave.open(str(path),'wb') as output:
-        output.setparams((1,2,rate,0,'NONE','not compressed'))
-        output.writeframes((np.clip(samples,-.9,.9)*32767).astype('<i2').tobytes())
-
 def render(path):
     audio = path.with_suffix('.wav')
-    render_audio(audio)
+    render_score(audio, ROUNDS, TIMES)
     command = ['ffmpeg','-y','-v','error','-f','rawvideo','-pixel_format','rgb24',
                '-video_size',f'{W}x{H}','-framerate',str(FPS),'-i','-','-i',str(audio),
                '-c:v','libx264','-threads','4','-preset','fast','-crf','18','-pix_fmt','yuv420p',
