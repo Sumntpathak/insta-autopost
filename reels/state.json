@@ -427,7 +427,7 @@
       "caption": "Watch the last hit. Which balloon takes it?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896148154522936",
       "content_sha256": "b44f0fee247be81aeb74e8216f562fca9ffa99e69fdd4cc36afaf5b827372df6",
       "source": {
@@ -442,7 +442,9 @@
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f",
         "pop_seconds": 12.4
       },
-      "attempted_at": "2026-11-13T09:53:34.577670+05:30"
+      "attempted_at": "2026-11-13T09:53:34.577670+05:30",
+      "media_id": "18638868118063295",
+      "published_at": "2026-11-13T09:53:40.906901+05:30"
     }
   }
 }
