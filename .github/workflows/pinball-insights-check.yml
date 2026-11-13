@@ -1,0 +1,34 @@
+name: Pinball Insights check
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/pinball-insights-check.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      PYTHONPATH: reels
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python - <<'PY'
+          import json
+          from campaign import Meta, read_state
+          meta = Meta()
+          meta.check_account()
+          for key, post in read_state()['posts'].items():
+              if not key.startswith('PB-20261113-') or not post.get('media_id'):
+                  continue
+              mid = post['media_id']
+              try:
+                  data = meta.call(mid, {'fields':'permalink,like_count,comments_count'})
+                  values = meta.call(mid+'/insights', {'metric':'views,reach,likes,saved,shares,comments'}).get('data', [])
+                  metrics = {m['name']: m.get('total_value',{}).get('value', (m.get('values') or [{}])[0].get('value')) for m in values}
+                  print('PINBALL_RESULT', json.dumps([key, data.get('permalink'), metrics]))
+              except RuntimeError as error:
+                  print('PINBALL_RESULT', json.dumps([key, str(error)]))
+          PY
