@@ -1521,6 +1521,18 @@
         "attempted_at": "2026-11-13T23:37:40.059810+05:30",
         "published_at": "2026-11-13T23:38:00.901700+05:30"
       }
+    },
+    "FBMAN-20261113-07": {
+      "id": "FBMAN-20261113-07",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Red, blue, yellow. One of them goes first. What\u2019s your call?\n\n#BalloonRace #Physics #ShipStack",
+      "content_sha256": "3a09eb692034fc38b198b9b27c99b344739b3eb3e26aa541a0cc4e9a91bba19d",
+      "facebook": {
+        "video_id": "1673434487898571",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:38:07.983985+05:30"
+      }
     }
   }
 }
