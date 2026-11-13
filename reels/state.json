@@ -1338,6 +1338,23 @@
         "seconds": 25.5
       },
       "attempted_at": "2026-11-13T20:40:57.499230+05:30"
+    },
+    "AI-20261113-06": {
+      "id": "AI-20261113-06",
+      "scene": "ep06_trial_error",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 06/10\nHow Q-learning finds its way through a maze.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 24.1,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896286085522936",
+      "content_sha256": "f5551c57ee320063397d73cccb198797f634ab54675bdfd2f5db20e119499f70",
+      "source": {
+        "scene": "ep06_trial_error",
+        "variant": 0,
+        "seconds": 24.1
+      },
+      "attempted_at": "2026-11-13T20:41:49.362664+05:30"
     }
   }
 }
