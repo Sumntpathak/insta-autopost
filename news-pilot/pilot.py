@@ -34,6 +34,9 @@ def scan():
             print(f'{name}: {type(error).__name__}')
 
 def render(item, directory):
+    if item.get('layout') == 'support-routing':
+        from editorial import render_gemini
+        return render_gemini(item, directory)
     directory.mkdir(parents=True, exist_ok=True)
     ink, paper, muted, accent = '#171a17', '#f7f4eb', '#4e544a', '#c32d22'
     def font(size, serif=False, bold=False):
