@@ -1,0 +1,66 @@
+name: ShipStack climb reel batch
+on:
+  push:
+    branches: [main]
+    paths: ['climb-pilot/batch.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install -r reels/pythonic/requirements.txt
+      - name: Render and verify reel
+        env:
+          INDEX: ${{ matrix.index }}
+        run: |
+          mkdir -p climb-output
+          id=$(python -c 'import json,os; print(json.load(open("climb-pilot/batch.json"))[int(os.environ["INDEX"])]["id"])')
+          python climb-pilot/render.py "$INDEX" "climb-output/$id.mp4"
+          python reels/verify.py "climb-output/$id.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: climb-${{ matrix.index }}
+          path: climb-output/*.mp4
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    env:
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      PYTHONPATH: reels:reels/pythonic
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: climb-*
+          path: climb-output
+          merge-multiple: true
+      - name: Publish ten originals to ShipStack Facebook
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python climb-pilot/publish.py
