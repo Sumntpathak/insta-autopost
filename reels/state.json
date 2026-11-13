@@ -505,7 +505,7 @@
       "caption": "Pick the balloon you think will burst first.\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896149264522936",
       "content_sha256": "5a93113dfef0ef5b5653c2bf7aff2e7d6322d24a2151c65cf6b834a20eb0e0dd",
       "source": {
@@ -520,7 +520,9 @@
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f",
         "pop_seconds": 12.4
       },
-      "attempted_at": "2026-11-13T09:57:38.131299+05:30"
+      "attempted_at": "2026-11-13T09:57:38.131299+05:30",
+      "media_id": "18075808469759885",
+      "published_at": "2026-11-13T09:57:47.508177+05:30"
     }
   }
 }
