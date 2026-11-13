@@ -1016,7 +1016,7 @@
       "variant": 7,
       "caption": "A missed day is one day. What gets you back on track?\n\n#ShipStack #Discipline #MotionDesign",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896215576522936",
       "content_sha256": "9414c2918e8a1477ea4c4a18212dd42eef87baadb2c1bc652f1bdede86c7e201",
       "source": {
@@ -1024,7 +1024,9 @@
         "variant": 7,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T15:55:25.401072+05:30"
+      "attempted_at": "2026-11-13T15:55:25.401072+05:30",
+      "media_id": "17878942716650622",
+      "published_at": "2026-11-13T15:55:34.621594+05:30"
     }
   }
 }
