@@ -955,6 +955,22 @@
       "attempted_at": "2026-11-13T15:51:48.838315+05:30",
       "media_id": "18113342753220295",
       "published_at": "2026-11-13T15:51:56.677737+05:30"
+    },
+    "DL-20261113-05": {
+      "id": "DL-20261113-05",
+      "scene": "discipline-lift",
+      "variant": 4,
+      "caption": "Who reminds you to run your own race?\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896214385522936",
+      "content_sha256": "e4f6706d0d748bf6d004e1185836640bb3cd168e5fc18c5071f2f52711d4582e",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 4,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:52:47.546589+05:30"
     }
   }
 }
