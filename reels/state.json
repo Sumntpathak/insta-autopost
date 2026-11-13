@@ -1423,6 +1423,15 @@
         "seconds": 28.2
       },
       "attempted_at": "2026-11-13T20:45:44.854515+05:30"
+    },
+    "NEWS-20261113-02": {
+      "id": "NEWS-20261113-02",
+      "date": "2026-11-13",
+      "scene": "technology-brief",
+      "caption": "One input. Up to 1,000 AI checks.\n\nGoogle says its Gemini Decisions API can evaluate up to 1,000 closed-set questions against the same input. Here is what that could look like for a support team.\n\nBefore automating ticket routing, benchmark against human-labeled tickets, track wrong routes, and test when to hand a case back to a reviewer.\n\nSources\nhttps://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "status": "publishing",
+      "container_id": "17896291527522936",
+      "attempted_at": "2026-11-13T20:59:21.174836+05:30"
     }
   }
 }
