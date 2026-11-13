@@ -908,7 +908,7 @@
       "variant": 1,
       "caption": "Ever abandoned one idea for a better one halfway through?\n\n#ShipStack #Discipline #MotionDesign",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896212873522936",
       "content_sha256": "0ca77fe47abaa528244eaa20f8d617c6b0d8fb1ec8efa2bcdd2090d7ec240b81",
       "source": {
@@ -916,7 +916,9 @@
         "variant": 1,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T15:49:43.833905+05:30"
+      "attempted_at": "2026-11-13T15:49:43.833905+05:30",
+      "media_id": "18134700481874576",
+      "published_at": "2026-11-13T15:49:50.970326+05:30"
     }
   }
 }
