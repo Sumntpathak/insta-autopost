@@ -1556,8 +1556,9 @@
       "content_sha256": "2ea617635f6e8463a650b660437735c4ac8285322620541b86a66da48f32dda3",
       "facebook": {
         "video_id": "1878939719826011",
-        "status": "publishing",
-        "attempted_at": "2026-11-13T23:39:03.718120+05:30"
+        "status": "published",
+        "attempted_at": "2026-11-13T23:39:03.718120+05:30",
+        "published_at": "2026-11-13T23:39:25.281338+05:30"
       }
     }
   }
