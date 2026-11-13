@@ -39,5 +39,14 @@ jobs:
                   print('Configured Page: '+str(data.get('name'))+' ('+str(data.get('id'))+')')
               except urllib.error.HTTPError as error:
                   print('FACEBOOK_READY=false')
-                  print('Facebook API rejected the Page check: HTTP '+str(error.code))
+                  def reason(error):
+                      details=json.load(error).get('error', {})
+                      return {key:details.get(key) for key in ('type','code','error_subcode')}
+                  print('Page check error: '+json.dumps(reason(error)))
+                  try:
+                      who=urllib.request.Request('https://graph.facebook.com/v23.0/me?fields=id',headers={'Authorization':'Bearer '+token})
+                      with urllib.request.urlopen(who,timeout=20) as response: identity=json.load(response)
+                      print('Token identity matches configured Page: '+str(identity.get('id')==page))
+                  except urllib.error.HTTPError as identity_error:
+                      print('Token identity error: '+json.dumps(reason(identity_error)))
           PY
