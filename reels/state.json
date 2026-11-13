@@ -840,8 +840,9 @@
       "status": "facebook_only",
       "facebook": {
         "video_id": "1431617365755704",
-        "status": "publishing",
-        "attempted_at": "2026-11-13T15:14:24.674617+05:30"
+        "status": "published",
+        "attempted_at": "2026-11-13T15:14:24.674617+05:30",
+        "published_at": "2026-11-13T15:17:23.079821+05:30"
       }
     },
     "CL-20261113-08": {
