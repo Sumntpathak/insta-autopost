@@ -1249,6 +1249,23 @@
         "seconds": 15
       },
       "attempted_at": "2026-11-13T19:33:05.447249+05:30"
+    },
+    "AI-20261113-01": {
+      "id": "AI-20261113-01",
+      "scene": "ep01_line_fit",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 01/10\nHow gradient descent fits a line.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 27,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896281648522936",
+      "content_sha256": "6506b604d68c716f562bcba765e5c2d0f502be4c39efc0cd2924aa25ae24b956",
+      "source": {
+        "scene": "ep01_line_fit",
+        "variant": 0,
+        "seconds": 27
+      },
+      "attempted_at": "2026-11-13T20:27:47.462785+05:30"
     }
   }
 }
