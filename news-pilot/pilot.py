@@ -16,7 +16,8 @@ FEEDS = {
     'Google': 'https://blog.google/rss/',
     'AWS': 'https://aws.amazon.com/about-aws/whats-new/recent/feed/',
     'OpenAI': 'https://openai.com/news/rss.xml',
-    'Search Engine Land': 'https://searchengineland.com/feed',
+    'Search Engine Journal': 'https://www.searchenginejournal.com/feed/',
+    'Marketing Dive': 'https://www.marketingdive.com/feeds/news/',
 }
 
 def scan():
