@@ -53,16 +53,25 @@ def main():
                 continue
             if prior:
                 video = prior['video_id']
-                status = fb.call(video, {'fields': 'status'}).get('status', {})
+                try:
+                    status = fb.call(video, {'fields': 'status'}).get('status', {})
+                except RuntimeError as error:
+                    print(f'Unconfirmed prior attempt {key}: {error}', flush=True)
+                    continue
                 phase = status.get('publishing_phase', {})
                 if phase.get('publish_status') != 'published':
-                    raise RuntimeError(f'Previous attempt for {key} needs reconciliation: {video}')
+                    print(f'Unconfirmed prior attempt {key}: {video}', flush=True)
+                    continue
             else:
                 video = fb.upload(clips[key])
                 record['facebook'] = {'video_id': video, 'status': 'publishing',
                                       'attempted_at': dt.datetime.now(IST).isoformat()}
                 persist(state)
-                fb.finish(video, record['caption'])
+                try:
+                    fb.finish(video, record['caption'])
+                except RuntimeError as error:
+                    print(f'Unconfirmed publication {key}: {error}', flush=True)
+                    continue
             record['facebook'].update(status='published', published_at=dt.datetime.now(IST).isoformat())
             persist(state)
             print(f'FACEBOOK_PUBLISHED {key} {video}', flush=True)
