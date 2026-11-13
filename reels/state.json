@@ -375,7 +375,7 @@
       "caption": "Which balloon will burst on the next hit?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896146930522936",
       "content_sha256": "f5314788a22f9d1273e1d921f49e953c58d5fbdbe26eac64f6f909fd5f2aaea2",
       "source": {
@@ -390,7 +390,9 @@
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f",
         "pop_seconds": 12.4
       },
-      "attempted_at": "2026-11-13T09:50:45.760181+05:30"
+      "attempted_at": "2026-11-13T09:50:45.760181+05:30",
+      "media_id": "18111836720247993",
+      "published_at": "2026-11-13T09:50:55.211542+05:30"
     }
   }
 }
