@@ -1185,6 +1185,22 @@
         "seconds": 15
       },
       "attempted_at": "2026-11-13T18:57:34.552364+05:30"
+    },
+    "EK-20261113-08": {
+      "id": "EK-20261113-08",
+      "scene": "ek-manzil-aur",
+      "variant": 7,
+      "caption": "EK MANZIL AUR \u00b7 The rooftop \u00b7 Part 2/2\nFollow @shipstack_ for the next staircase story.\n\n#EkManzilAur #ShipStack",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896259097522936",
+      "content_sha256": "6a57aed5d00e4610c9767843809af731037f280cc1f5f5035fcdade7a7ef02ff",
+      "source": {
+        "scene": "ek-manzil-aur",
+        "variant": 7,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T18:59:14.939183+05:30"
     }
   }
 }
