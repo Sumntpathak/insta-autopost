@@ -1,0 +1,34 @@
+name: Resume ShipStack AI shorts
+on:
+  push:
+    branches: [main]
+    paths: ['ai_shorts/resume.py']
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - name: Resume Instagram publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BATCH_MANIFEST: ai_shorts/batch.json
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          mkdir output
+          gh release download shipstack-ai-shorts-2026-11-13 --pattern '*.mp4' --dir output
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for e in json.loads(Path('ai_shorts/batch.json').read_text())['items']:
+              Path('output', e['id']+'.mp4.json').write_text(json.dumps({k:e[k] for k in ('scene','variant','seconds')}))
+          PY
+          python ai_shorts/resume.py
