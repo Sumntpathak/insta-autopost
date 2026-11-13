@@ -865,8 +865,9 @@
       "status": "facebook_only",
       "facebook": {
         "video_id": "3306474162874032",
-        "status": "publishing",
-        "attempted_at": "2026-11-13T15:15:53.210400+05:30"
+        "status": "published",
+        "attempted_at": "2026-11-13T15:15:53.210400+05:30",
+        "published_at": "2026-11-13T15:16:14.360681+05:30"
       }
     }
   }
