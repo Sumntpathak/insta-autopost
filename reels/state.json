@@ -1027,6 +1027,22 @@
       "attempted_at": "2026-11-13T15:55:25.401072+05:30",
       "media_id": "17878942716650622",
       "published_at": "2026-11-13T15:55:34.621594+05:30"
+    },
+    "DL-20261113-09": {
+      "id": "DL-20261113-09",
+      "scene": "discipline-lift",
+      "variant": 8,
+      "caption": "A little buffer can change the whole day.\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896215888522936",
+      "content_sha256": "7ee3239c1b327187cf841ceaefcd6687e7f9927d89fb7efcaddcfddedf0725e6",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 8,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:56:19.394809+05:30"
     }
   }
 }
