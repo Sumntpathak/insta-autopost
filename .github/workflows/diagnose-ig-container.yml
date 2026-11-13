@@ -1,0 +1,35 @@
+name: Diagnose Instagram container access
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/diagnose-ig-container.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      PYTHONPATH: reels
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect existing containers without publishing
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.error
+          import urllib.request
+          from campaign import Meta
+          meta = Meta()
+          for label,path,fields in [('account',meta.ig_id,'username'),('quota',meta.ig_id+'/content_publishing_limit','quota_usage,config'),('balloon','17896295262522936','status_code'),('pi','17896295805522936','status_code')]:
+              q=('fields=' if label!='quota' else 'fields=')+fields
+              req=urllib.request.Request(meta.api+path+'?'+q,headers={'Authorization':'Bearer '+meta.token})
+              try:
+                  with urllib.request.urlopen(req,timeout=25) as response:
+                      print('DIAG',label,json.load(response))
+              except urllib.error.HTTPError as exc:
+                  try: e=json.load(exc).get('error',{})
+                  except ValueError: e={}
+                  print('DIAG',label,exc.code,{k:e.get(k) for k in ('code','error_subcode','type','is_transient')},'message',str(e.get('message','')).replace(meta.token,'[redacted]')[:400] if 'http' not in str(e.get('message','')).lower() else '[omitted]', 'content-type',exc.headers.get('Content-Type'))
+          PY
