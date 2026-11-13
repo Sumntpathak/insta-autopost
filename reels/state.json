@@ -1517,8 +1517,9 @@
       "content_sha256": "2c45134e5c4ea15e41a21a9941ac1a8884444a06e3e36ee2712b439e49b7b94f",
       "facebook": {
         "video_id": "1864052208350721",
-        "status": "publishing",
-        "attempted_at": "2026-11-13T23:37:40.059810+05:30"
+        "status": "published",
+        "attempted_at": "2026-11-13T23:37:40.059810+05:30",
+        "published_at": "2026-11-13T23:38:00.901700+05:30"
       }
     }
   }
