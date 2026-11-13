@@ -1287,6 +1287,23 @@
       "attempted_at": "2026-11-13T20:28:36.751864+05:30",
       "media_id": "17970321399195690",
       "published_at": "2026-11-13T20:28:45.332837+05:30"
+    },
+    "AI-20261113-03": {
+      "id": "AI-20261113-03",
+      "scene": "ep03_layers",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 03/10\nWhy a hidden layer can learn XOR.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 28.2,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896282431522936",
+      "content_sha256": "b8a9677abc69c0a2789441f83bedc1659eaecb45be17d379dcd77018e137e092",
+      "source": {
+        "scene": "ep03_layers",
+        "variant": 0,
+        "seconds": 28.2
+      },
+      "attempted_at": "2026-11-13T20:29:47.714436+05:30"
     }
   }
 }
