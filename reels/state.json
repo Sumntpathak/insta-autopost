@@ -1547,6 +1547,18 @@
         "attempted_at": "2026-11-13T23:38:35.050643+05:30",
         "published_at": "2026-11-13T23:38:56.197535+05:30"
       }
+    },
+    "FBMAN-20261113-09": {
+      "id": "FBMAN-20261113-09",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Red or blue: which ball survives the space pinball table?\n\n#Pinball #Physics #ShipStack",
+      "content_sha256": "2ea617635f6e8463a650b660437735c4ac8285322620541b86a66da48f32dda3",
+      "facebook": {
+        "video_id": "1878939719826011",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:39:03.718120+05:30"
+      }
     }
   }
 }
