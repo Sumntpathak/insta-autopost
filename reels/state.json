@@ -1456,6 +1456,18 @@
         "attempted_at": "2026-11-13T23:34:41.752092+05:30",
         "published_at": "2026-11-13T23:35:46.088929+05:30"
       }
+    },
+    "FBMAN-20261113-02": {
+      "id": "FBMAN-20261113-02",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Watch the first three hits. Which balloon are you backing? \ud83c\udf88\n\n#BalloonRace #Physics #ShipStack",
+      "content_sha256": "7e42d1eb9a277cd4dfe99e04802cee3ea22cb7848fa6529ad93b5f0542f7aba5",
+      "facebook": {
+        "video_id": "1812184096725518",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:35:52.751063+05:30"
+      }
     }
   }
 }
