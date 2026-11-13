@@ -919,6 +919,22 @@
       "attempted_at": "2026-11-13T15:49:43.833905+05:30",
       "media_id": "18134700481874576",
       "published_at": "2026-11-13T15:49:50.970326+05:30"
+    },
+    "DL-20261113-03": {
+      "id": "DL-20261113-03",
+      "scene": "discipline-lift",
+      "variant": 2,
+      "caption": "What is one thing you could start in five minutes?\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896213362522936",
+      "content_sha256": "b4805022dc9cc350f0d1f3abe3f398e11f04f32fe8e7cf0983849ac2068feee4",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 2,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:50:56.284640+05:30"
     }
   }
 }
