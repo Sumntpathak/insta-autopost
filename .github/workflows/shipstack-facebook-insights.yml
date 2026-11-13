@@ -30,6 +30,7 @@ jobs:
               raise RuntimeError('Facebook Page name did not match ShipStack')
           selection = json.loads(Path('facebook-pilot/selection.json').read_text())
           state = read_state()['posts']
+          selection.extend({'id': key} for key in state if key.startswith('CL-20261113-'))
           print('SNAPSHOT_IST', datetime.datetime.now(IST).isoformat())
           for item in selection:
               post = state[item['id']].get('facebook', {})
