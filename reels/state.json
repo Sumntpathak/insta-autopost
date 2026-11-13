@@ -609,6 +609,16 @@
       "content_sha256": "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47",
       "media_id": "18054050069816161",
       "published_at": "2026-11-13T12:07:15.188897+05:30"
+    },
+    "PB-20261113-06": {
+      "id": "PB-20261113-06",
+      "date": "2026-11-13",
+      "scene": "pinball-balloon-pop",
+      "caption": "One shot to pop the balloon. Watch the impact in slow motion.\n\n#pinball #balloonpop #physics",
+      "container_id": "17896173846522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-13T12:07:57.705237+05:30",
+      "content_sha256": "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47"
     }
   }
 }
