@@ -1443,6 +1443,18 @@
       "container_id": "17896317804522936",
       "status": "publishing",
       "attempted_at": "2026-11-13T22:52:05.446950+05:30"
+    },
+    "FBMAN-20261113-01": {
+      "id": "FBMAN-20261113-01",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Red, blue, or yellow? Pick one before the first bounce. \ud83c\udf88\n\n#BalloonRace #Physics #ShipStack",
+      "content_sha256": "b80af71a9dc94165e4a5869177f3c1bf74e319dc51e63166edf2a427c9dcaf11",
+      "facebook": {
+        "video_id": "1441846867553677",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:34:41.752092+05:30"
+      }
     }
   }
 }
