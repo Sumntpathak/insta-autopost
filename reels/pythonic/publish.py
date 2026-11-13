@@ -51,7 +51,7 @@ def publish_one(item,file,meta,facebook=None):
         return done
     file=Path(file)
     info=json.loads(file.with_suffix('.mp4.json').read_text())
-    if info['scene']!=item['scene'] or info['variant']!=item['variant'] or info['seconds']!=15:
+    if info['scene']!=item['scene'] or info['variant']!=item['variant'] or info['seconds']!=item.get('seconds', 15):
         raise RuntimeError('Rendered metadata does not match the selected item')
     digest=hashlib.sha256(file.read_bytes()).hexdigest()
     if any(p.get('content_sha256')==digest for p in state['posts'].values()):

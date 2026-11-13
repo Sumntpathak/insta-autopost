@@ -1,0 +1,70 @@
+name: ShipStack AI in Motion
+on:
+  push:
+    branches: [main]
+    paths: ['ai_shorts/batch.json']
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: ['01','02','03','04','05','06','07','08','09','10']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Render and verify
+        env:
+          EP: ${{ matrix.episode }}
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          command -v ffmpeg || sudo apt-get install -y ffmpeg
+          pip install numpy scipy pillow
+          mkdir output
+          clip="$PWD/output/AI-20261113-$EP.mp4"
+          script=$(basename ai_shorts/ep"$EP"_*.py)
+          (cd ai_shorts && python "$script" all --out "$clip")
+          ffmpeg -v error -xerror -i "$clip" -f null -
+          python - "$clip" "${script%.py}" <<'PY'
+          import json, os, subprocess, sys
+          from pathlib import Path
+          file, scene = sys.argv[1:]
+          probe = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',file]))
+          video = next(s for s in probe['streams'] if s['codec_type']=='video')
+          assert (video['width'], video['height'], video['avg_frame_rate']) == (1080,1920,'60/1')
+          assert 23 < float(probe['format']['duration']) < 33
+          assert any(s['codec_name']=='aac' for s in probe['streams'])
+          expected = json.loads(Path('ai_shorts/batch.json').read_text())['items'][int(os.environ['EP'])-1]['seconds']
+          assert abs(float(probe['format']['duration']) - expected) < .1
+          Path(file+'.json').write_text(json.dumps(dict(scene=scene,variant=0,seconds=expected)))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ai-motion-${{ matrix.episode }}
+          path: output/
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'ai-motion-*', path: output, merge-multiple: true}
+      - name: Publish to Instagram
+        env:
+          GH_TOKEN: ${{ github.token }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BATCH_MANIFEST: ai_shorts/batch.json
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python ai_shorts/publish_batch.py

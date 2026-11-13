@@ -1,0 +1,77 @@
+{
+  "batch_id": "shipstack-ai-shorts-2026-11-13",
+  "enabled": true,
+  "count": 10,
+  "items": [
+    {
+      "id": "AI-20261113-01",
+      "scene": "ep01_line_fit",
+      "variant": 0,
+      "caption": "AI in Motion · 01/10\nHow gradient descent fits a line.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 27
+    },
+    {
+      "id": "AI-20261113-02",
+      "scene": "ep02_downhill",
+      "variant": 0,
+      "caption": "AI in Motion · 02/10\nHow momentum helps gradient descent.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 25.34
+    },
+    {
+      "id": "AI-20261113-03",
+      "scene": "ep03_layers",
+      "variant": 0,
+      "caption": "AI in Motion · 03/10\nWhy a hidden layer can learn XOR.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 28.2
+    },
+    {
+      "id": "AI-20261113-04",
+      "scene": "ep04_kmeans",
+      "variant": 0,
+      "caption": "AI in Motion · 04/10\nHow k-means finds groups without labels.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 26.05
+    },
+    {
+      "id": "AI-20261113-05",
+      "scene": "ep05_overfit",
+      "variant": 0,
+      "caption": "AI in Motion · 05/10\nWhat overfitting looks like.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 25.5
+    },
+    {
+      "id": "AI-20261113-06",
+      "scene": "ep06_trial_error",
+      "variant": 0,
+      "caption": "AI in Motion · 06/10\nHow Q-learning finds its way through a maze.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 24.1
+    },
+    {
+      "id": "AI-20261113-07",
+      "scene": "ep07_evolution",
+      "variant": 0,
+      "caption": "AI in Motion · 07/10\nHow a genetic algorithm teaches rockets to fly.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 31.9
+    },
+    {
+      "id": "AI-20261113-08",
+      "scene": "ep08_diffusion",
+      "variant": 0,
+      "caption": "AI in Motion · 08/10\nHow diffusion turns noise into an image (illustration).\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 29.8
+    },
+    {
+      "id": "AI-20261113-09",
+      "scene": "ep09_attention",
+      "variant": 0,
+      "caption": "AI in Motion · 09/10\nHow attention can connect a pronoun to its referent (illustration).\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 23.78
+    },
+    {
+      "id": "AI-20261113-10",
+      "scene": "ep10_coin_flips",
+      "variant": 0,
+      "caption": "AI in Motion · 10/10\nHow Bayesian learning updates a belief after coin flips.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 28.2
+    }
+  ]
+}
