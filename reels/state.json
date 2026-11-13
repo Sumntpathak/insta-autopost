@@ -890,7 +890,7 @@
       "variant": 0,
       "caption": "A distraction can reset your progress. What do you mute first?\n\n#ShipStack #Discipline #MotionDesign",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896212663522936",
       "content_sha256": "e586dd167aa63c37168dd8083dce6ef50304d461a8b9ec2744154116a8d6b54b",
       "source": {
@@ -898,7 +898,9 @@
         "variant": 0,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T15:47:47.854641+05:30"
+      "attempted_at": "2026-11-13T15:47:47.854641+05:30",
+      "media_id": "17951866455345130",
+      "published_at": "2026-11-13T15:47:57.423143+05:30"
     }
   }
 }
