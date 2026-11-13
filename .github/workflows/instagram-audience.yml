@@ -1,0 +1,34 @@
+name: Instagram audience countries
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/instagram-audience.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audience:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read account audience by country
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          PYTHONPATH: reels
+        run: |
+          python - <<'PY'
+          import json
+          from campaign import Meta
+          meta = Meta()
+          print(meta.check_account())
+          for metric in ('reached_audience_demographics', 'engaged_audience_demographics'):
+              params = dict(metric=metric, period='lifetime', metric_type='total_value',
+                            breakdown='country', timeframe='this_month')
+              try:
+                  data = meta.call(f'{meta.ig_id}/insights', params)
+              except RuntimeError as error:
+                  print(metric, str(error))
+                  continue
+              print(metric, json.dumps(data.get('data', [])))
+          PY
