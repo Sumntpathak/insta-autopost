@@ -1,0 +1,32 @@
+name: ShipStack Facebook reel pilot
+on:
+  push:
+    branches: [main]
+    paths: ['facebook-pilot/selection.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+      PYTHONPATH: reels:reels/pythonic
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python facebook-pilot/publish.py
