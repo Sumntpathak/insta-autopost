@@ -1304,6 +1304,23 @@
         "seconds": 28.2
       },
       "attempted_at": "2026-11-13T20:29:47.714436+05:30"
+    },
+    "AI-20261113-04": {
+      "id": "AI-20261113-04",
+      "scene": "ep04_kmeans",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 04/10\nHow k-means finds groups without labels.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 26.05,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896285386522936",
+      "content_sha256": "f8a2944b1ab43976420499863e32ebcbfd7bee67cacf6f53bab3de6b2735c30f",
+      "source": {
+        "scene": "ep04_kmeans",
+        "variant": 0,
+        "seconds": 26.05
+      },
+      "attempted_at": "2026-11-13T20:40:13.695726+05:30"
     }
   }
 }
