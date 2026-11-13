@@ -2,7 +2,7 @@ name: Publish ShipStack Facebook physics pack
 on:
   push:
     branches: [main]
-    paths: ['facebook-manual/20261113.json']
+    paths: ['facebook-manual/20261113.json', 'facebook-manual/publish.py']
 permissions:
   contents: write
 concurrency:
