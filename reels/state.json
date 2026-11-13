@@ -792,6 +792,18 @@
         "attempted_at": "2026-11-13T15:11:41.374362+05:30",
         "published_at": "2026-11-13T15:12:06.028919+05:30"
       }
+    },
+    "CL-20261113-04": {
+      "id": "CL-20261113-04",
+      "scene": "climb",
+      "title": "Protect your time",
+      "caption": "Every request takes time. One clear no can make room for the work that matters.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "4189747437988614",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:12:26.505590+05:30"
+      }
     }
   }
 }
