@@ -628,9 +628,11 @@
       "scene": "pinball-balloon-pop",
       "caption": "One shot to pop the balloon. Watch the impact in slow motion.\n\n#pinball #balloonpop #physics",
       "container_id": "17896174734522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-13T12:08:47.772582+05:30",
-      "content_sha256": "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47"
+      "content_sha256": "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47",
+      "media_id": "18127204039930665",
+      "published_at": "2026-11-13T12:08:54.028215+05:30"
     }
   }
 }
