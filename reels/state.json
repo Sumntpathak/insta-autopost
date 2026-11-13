@@ -669,6 +669,15 @@
       "content_sha256": "46e49bcf6bc0471a4d912f6b22eea3b338e1db08574bd4c5fdb0c220a2786b47",
       "media_id": "18342270532256289",
       "published_at": "2026-11-13T12:12:08.971225+05:30"
+    },
+    "NEWS-20261113-01": {
+      "id": "NEWS-20261113-01",
+      "date": "2026-11-13",
+      "scene": "technology-brief",
+      "caption": "Google brings ads to AI search in India\n\nA placement change that paid-search teams should track.\n\nLog the rollout date. Track spend, conversion quality and acquisition cost. Label your findings as overall Search performance.\n\nSources\nhttps://blog.google/products/ads-commerce/ads-in-ai-mode-global/\nhttps://www.searchenginejournal.com/google-expands-ads-in-ai-mode-multiturn-ads/596540/",
+      "status": "publishing",
+      "container_id": "17896183308522936",
+      "attempted_at": "2026-11-13T12:46:08.387107+05:30"
     }
   }
 }
