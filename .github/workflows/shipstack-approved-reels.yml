@@ -1,0 +1,26 @@
+name: Publish approved ShipStack reels
+on:
+  push:
+    branches: [main]
+    paths: ['approved-reels/20261113.json']
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - name: Publish and verify
+        env:
+          GH_TOKEN: ${{ github.token }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BATCH_MANIFEST: approved-reels/20261113.json
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python approved-reels/publish_20261113.py

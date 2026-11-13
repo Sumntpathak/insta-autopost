@@ -1,0 +1,21 @@
+{
+  "batch_id": "shipstack-approved-reels-2026-11-13",
+  "enabled": true,
+  "count": 2,
+  "items": [
+    {
+      "id": "BR-20261113-01",
+      "scene": "three-balloon-ivory",
+      "variant": 0,
+      "seconds": 15,
+      "caption": "Red, blue, or yellow? Pick a balloon before the first bounce. 🎈\n\n#BalloonRace #Physics #ShipStack"
+    },
+    {
+      "id": "PIREF-20261113-01",
+      "scene": "pi-blocks-reference",
+      "variant": 0,
+      "seconds": 29.6,
+      "caption": "Two blocks can calculate π. Count the collisions as the mass ratio rises.\n\nOriginal clip by @phys_icsbox.\n\n#Physics #Math #Pi"
+    }
+  ]
+}
