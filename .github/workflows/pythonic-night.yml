@@ -1,4 +1,4 @@
-name: Pythonic Life — overnight 10
+name: Pythonic Life — 10-reel batch
 on:
   push:
     branches: [main]
@@ -77,6 +77,10 @@ jobs:
           pattern: pythonic-*-${{ github.run_id }}
           path: reels/out/pythonic
           merge-multiple: true
+      - name: Load the manifest from this run
+        env:
+          RUN_SHA: ${{ github.sha }}
+        run: git show "$RUN_SHA:reels/pythonic/batch.json" > "$RUNNER_TEMP/pythonic-batch.json"
       - name: Configure posting journal
         run: |
           git config user.name autopost-bot
@@ -90,5 +94,6 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          BATCH_MANIFEST: ${{ runner.temp }}/pythonic-batch.json
           PYTHONUNBUFFERED: '1'
         run: python reels/pythonic/publish.py --spacing 45
