@@ -28,6 +28,14 @@ jobs:
                   data = meta.call(mid, {'fields':'permalink,like_count,comments_count'})
                   values = meta.call(mid+'/insights', {'metric':'views,reach,likes,saved,shares,comments'}).get('data', [])
                   metrics = {m['name']: m.get('total_value',{}).get('value', (m.get('values') or [{}])[0].get('value')) for m in values}
+                  for metric in ('ig_reels_avg_watch_time', 'ig_reels_video_view_total_time'):
+                      try:
+                          result = meta.call(mid+'/insights', {'metric':metric}).get('data', [])
+                          if result:
+                              entry = result[0]
+                              metrics[metric] = entry.get('total_value', {}).get('value', (entry.get('values') or [{}])[0].get('value'))
+                      except RuntimeError:
+                          continue
                   print('PINBALL_RESULT', json.dumps([key, data.get('permalink'), metrics]))
               except RuntimeError as error:
                   print('PINBALL_RESULT', json.dumps([key, str(error)]))
