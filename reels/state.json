@@ -805,6 +805,18 @@
         "attempted_at": "2026-11-13T15:12:26.505590+05:30",
         "published_at": "2026-11-13T15:12:42.967931+05:30"
       }
+    },
+    "CL-20261113-05": {
+      "id": "CL-20261113-05",
+      "scene": "climb",
+      "title": "Finish one thing",
+      "caption": "New ideas can wait. Pick one thing and finish it.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "3013118142374673",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:13:02.770513+05:30"
+      }
     }
   }
 }
