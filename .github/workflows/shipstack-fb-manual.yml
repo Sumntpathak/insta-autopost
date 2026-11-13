@@ -1,0 +1,26 @@
+name: Publish ShipStack Facebook physics pack
+on:
+  push:
+    branches: [main]
+    paths: ['facebook-manual/20261113.json']
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      FB_PAGE_ID: '1390488964137653'
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      PYTHONPATH: reels:reels/pythonic
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - name: Publish and verify Facebook Reels
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python facebook-manual/publish.py
