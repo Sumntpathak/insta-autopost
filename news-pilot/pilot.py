@@ -35,19 +35,24 @@ def scan():
 
 def render(item, directory):
     directory.mkdir(parents=True, exist_ok=True)
-    navy, paper, red = '#172232', '#f8f3e7', '#a3322d'
-    def font(size, serif=False):
-        face = 'DejaVuSerif-Bold' if serif else 'DejaVuSans'
-        return ImageFont.truetype(f'/usr/share/fonts/truetype/dejavu/{face}.ttf', size)
-    cards = [[item['headline'], item['deck']], *item['slides']]
-    for i, (title, body) in enumerate(cards):
-        im = Image.new('RGB', (1080, 1350), paper)
+    ink, paper, muted, accent = '#171a17', '#f7f4eb', '#4e544a', '#c32d22'
+    def font(size, serif=False, bold=False):
+        family = 'Serif' if serif else 'Sans'
+        suffix = '-Bold' if bold else ''
+        return ImageFont.truetype(f'/usr/share/fonts/truetype/dejavu/DejaVu{family}{suffix}.ttf',size)
+
+    cover_titles = {'ENTERPRISE AI':'Google’s API for 1,000 decisions',
+                    'BIG TECH':'Google puts Gemini in glasses',
+                    'MARKETING':'Ads enter Google’s AI search'}
+    cards = [[cover_titles.get(item['section'], item['headline']),item['deck']], *item['slides']]
+    for i,(title,body) in enumerate(cards):
+        im = Image.new('RGB',(1080,1350),paper)
         d = ImageDraw.Draw(im)
-        def block(value, x, y, face, fill, leading, width=884):
+        def block(value,x,y,face,fill,leading,width=936):
             line = ''
             for word in value.split():
                 trial = f'{line} {word}'.strip()
-                if line and d.textlength(trial, font=face) > width:
+                if line and d.textlength(trial,font=face)>width:
                     d.text((x,y),line,font=face,fill=fill)
                     y += leading
                     line = word
@@ -55,27 +60,47 @@ def render(item, directory):
                     line = trial
             d.text((x,y),line,font=face,fill=fill)
             return y + leading
-        d.text((86,58),'The Technology Brief',font=font(47,True),fill=navy)
-        d.text((994,75),'13 NOV 2026',font=font(23),fill=navy,anchor='ra')
-        d.line((86,133,994,133),fill=navy,width=3)
-        d.text((86,178),item['section'],font=font(27),fill=red)
-        y=block(title,86,251,font(70 if i==0 else 66,True),navy,86)
-        d.line((86,y+24,213,y+24),fill=red,width=6)
-        bottom=block(body,86,y+77,font(43),navy,64)
-        if i==0:
-            top=max(bottom+30,765)
-            d.rectangle((86,top,994,1097),fill='#eee5d2')
-            motifs={'MARKETING':('10','MARKETS IN THE EXPANSION'),
-                    'ENTERPRISE AI':('1,000','QUESTIONS PER INPUT'),
-                    'BIG TECH':('AI','EYEWEAR WITH GEMINI')}
-            value,label=motifs[item['section']]
-            d.text((128,top+40),value,font=font(125,True),fill=red)
-            d.text((134,top+199),label,font=font(30),fill=navy)
-        elif i==3:
-            d.line((86,bottom+32,994,bottom+32),fill=red,width=3)
-        d.line((86,1163,994,1163),fill=navy,width=2)
-        d.text((86,1202),item['credit'],font=font(25),fill=navy)
-        d.text((994,1202),f'{i+1} / 4',font=font(25),fill=red,anchor='ra')
+        d.text((72,54),'The Technology Brief',font=font(51,True,True),fill=ink)
+        d.text((1008,81),'13 NOV 2026',font=font(24),fill=muted,anchor='ra')
+        d.line((72,140,1008,140),fill=ink,width=3)
+        d.text((72,174),item['section'],font=font(25,bold=True),fill=accent)
+        y = block(title,72,230,font(89 if i==0 else 76,True,True),ink,101 if i==0 else 89)
+        if i == 0:
+            block(body,74,y+17,font(37),muted,51)
+            d.rectangle((72,615,1008,1165),fill='#dbe2d2')
+            if item['section']=='BIG TECH':
+                d.ellipse((320,650,778,1108),fill='#eab56e')
+                d.rounded_rectangle((160,795,487,1005),radius=78,fill='#f6e3ac',outline=ink,width=22)
+                d.rounded_rectangle((594,795,921,1005),radius=78,fill='#f6e3ac',outline=ink,width=22)
+                d.arc((470,827,610,930),195,345,fill=ink,width=18)
+                d.line((162,815,106,761),fill=ink,width=21)
+                d.line((918,815,974,761),fill=ink,width=21)
+                for x in (244,677):
+                    d.line((x,950,x+105,841),fill='#fff6d6',width=17)
+                d.ellipse((873,820,896,843),fill=accent)
+            else:
+                value,label = ('1,000','QUESTIONS PER INPUT') if item['section']=='ENTERPRISE AI' else ('10','MARKETS IN THE EXPANSION')
+                for x in range(120,975,44):
+                    for yy in range(652,1112,44):
+                        d.ellipse((x,yy,x+6,yy+6),fill='#a9b4a4')
+                d.rectangle((117,733,959,1049),fill='#dbe2d2')
+                d.text((540,871),value,font=font(248,True,True),fill=ink,anchor='mm')
+                d.text((540,1034),label,font=font(29,bold=True),fill=accent,anchor='mm')
+        elif i == 3:
+            d.rectangle((72,520,1008,1130),fill='#dbe2d2')
+            sentences = body.rstrip('.').split('. ')
+            y = 571
+            for n,sentence in enumerate(sentences,1):
+                d.text((111,y),f'{n:02}',font=font(37,True,True),fill=accent)
+                y = block(sentence+'.',203,y,font(39),ink,52,755)+34
+                if n<len(sentences):
+                    d.line((111,y-16,963,y-16),fill='#99a395',width=2)
+        else:
+            d.line((72,y+23,222,y+23),fill=accent,width=6)
+            block(body,72,y+80,font(52),ink,72)
+        d.line((72,1211,1008,1211),fill=ink,width=2)
+        d.text((72,1249),item['credit'],font=font(25),fill=muted)
+        d.text((1008,1249),f'{i+1} / 4',font=font(25,bold=True),fill=accent,anchor='ra')
         im.save(directory / f"{item['id']}-{i+1}.jpg",quality=94,subsampling=0)
 
 def publish(item):
