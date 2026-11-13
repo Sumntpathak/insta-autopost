@@ -753,6 +753,18 @@
       "attempted_at": "2026-11-13T14:56:51.089768+05:30",
       "media_id": "17897575452614394",
       "published_at": "2026-11-13T14:57:28.109637+05:30"
+    },
+    "CL-20261113-01": {
+      "id": "CL-20261113-01",
+      "scene": "climb",
+      "title": "Beat distraction",
+      "caption": "One notification can derail a whole climb. Muting it changes the next attempt.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "1452601260182246",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:10:19.156720+05:30"
+      }
     }
   }
 }
