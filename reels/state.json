@@ -1081,6 +1081,22 @@
       "attempted_at": "2026-11-13T18:51:07.404252+05:30",
       "media_id": "18111805082352040",
       "published_at": "2026-11-13T18:51:16.625285+05:30"
+    },
+    "EK-20261113-02": {
+      "id": "EK-20261113-02",
+      "scene": "ek-manzil-aur",
+      "variant": 1,
+      "caption": "EK MANZIL AUR \u00b7 One floor higher \u00b7 Part 2/2\nFollow @shipstack_ for the next staircase story.\n\n#EkManzilAur #ShipStack",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896256556522936",
+      "content_sha256": "e6ea8e11e9b88ff4bcab0e740f40f8af746fdace5c56ecc60c88af52cdebe483",
+      "source": {
+        "scene": "ek-manzil-aur",
+        "variant": 1,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T18:51:56.632579+05:30"
     }
   }
 }
