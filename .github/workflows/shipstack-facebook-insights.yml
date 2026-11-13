@@ -1,0 +1,63 @@
+name: ShipStack Facebook Insights
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/shipstack-facebook-insights.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    env:
+      FB_PAGE_ID: '1390488964137653'
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      PYTHONPATH: reels:reels/pythonic
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - run: |
+          python - <<'PY'
+          import datetime
+          import json
+          from pathlib import Path
+          from campaign import IST, read_state
+          from facebook import Facebook
+
+          fb = Facebook()
+          if fb.check().get('name', '').casefold() != 'shipstack':
+              raise RuntimeError('Facebook Page name did not match ShipStack')
+          selection = json.loads(Path('facebook-pilot/selection.json').read_text())
+          state = read_state()['posts']
+          print('SNAPSHOT_IST', datetime.datetime.now(IST).isoformat())
+          for item in selection:
+              post = state[item['id']].get('facebook', {})
+              if post.get('status') != 'published':
+                  continue
+              video = post['video_id']
+              metrics = {}
+              for metric in ('total_video_views', 'total_video_avg_time_watched', 'total_video_views_unique',
+                             'post_video_views', 'post_video_view_time', 'post_video_avg_time_watched'):
+                  try:
+                      for entry in fb.call(video + '/video_insights', {'metric': metric}).get('data', []):
+                          values = entry.get('values', [])
+                          if values:
+                              metrics[entry['name']] = values[-1].get('value')
+                  except RuntimeError:
+                      continue
+              for field in ('views', 'reactions.limit(0).summary(true)', 'comments.limit(0).summary(true)', 'permalink_url'):
+                  try:
+                      info = fb.call(video, {'fields': field})
+                  except RuntimeError:
+                      continue
+                  if field.startswith(('reactions', 'comments')):
+                      key = field.split('.')[0]
+                      value = info.get(key, {}).get('summary', {}).get('total_count')
+                  else:
+                      key = field
+                      value = info.get(field)
+                  if value is not None:
+                      metrics[key] = value
+              print('FB_INSIGHTS', json.dumps({'id': item['id'], **post, 'metrics': metrics}))
+          PY
