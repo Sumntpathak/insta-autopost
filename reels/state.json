@@ -843,6 +843,18 @@
         "status": "publishing",
         "attempted_at": "2026-11-13T15:14:24.674617+05:30"
       }
+    },
+    "CL-20261113-08": {
+      "id": "CL-20261113-08",
+      "scene": "climb",
+      "title": "Ask for help sooner",
+      "caption": "When you hit the same obstacle twice, ask someone for help.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "2636099643493849",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:15:13.125593+05:30"
+      }
     }
   }
 }
