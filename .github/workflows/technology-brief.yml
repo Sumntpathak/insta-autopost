@@ -2,7 +2,7 @@ name: Technology Brief pilot
 on:
   push:
     branches: [main]
-    paths: ['news-pilot/editions.json']
+    paths: ['news-pilot/editions.json', '.github/workflows/technology-brief.yml']
   schedule:
     - cron: '2-57/5 7-18 13 11 *'
   workflow_dispatch:
@@ -15,6 +15,8 @@ jobs:
       PYTHONPATH: reels
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
       - run: pip install 'Pillow==11.2.1'
       - run: python news-pilot/pilot.py scan
   publish:
