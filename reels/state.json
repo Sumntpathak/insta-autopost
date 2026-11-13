@@ -1495,6 +1495,18 @@
         "attempted_at": "2026-11-13T23:36:44.232263+05:30",
         "published_at": "2026-11-13T23:37:06.655382+05:30"
       }
+    },
+    "FBMAN-20261113-05": {
+      "id": "FBMAN-20261113-05",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Which lane are you watching? Listen for the taps before the pop.\n\n#BalloonRace #Physics #ShipStack",
+      "content_sha256": "006598d8360e17a85478a46fb143f5b8b4e7ea77e2171967dbce06c4024ba210",
+      "facebook": {
+        "video_id": "999543769236576",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:37:12.647801+05:30"
+      }
     }
   }
 }
