@@ -1052,7 +1052,7 @@
       "variant": 9,
       "caption": "What mistake made you better at something?\n\n#ShipStack #Discipline #MotionDesign",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896216269522936",
       "content_sha256": "e8607853f51c0d5bd6eed193e9d6cdafe37934ac4f2cb36b15edec4fb259b087",
       "source": {
@@ -1060,7 +1060,9 @@
         "variant": 9,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T15:57:11.619704+05:30"
+      "attempted_at": "2026-11-13T15:57:11.619704+05:30",
+      "media_id": "18134857441703648",
+      "published_at": "2026-11-13T15:57:19.146441+05:30"
     }
   }
 }
