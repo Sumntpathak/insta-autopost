@@ -883,6 +883,22 @@
         "attempted_at": "2026-11-13T15:16:34.724297+05:30",
         "published_at": "2026-11-13T15:16:54.361788+05:30"
       }
+    },
+    "DL-20261113-01": {
+      "id": "DL-20261113-01",
+      "scene": "discipline-lift",
+      "variant": 0,
+      "caption": "A distraction can reset your progress. What do you mute first?\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896212663522936",
+      "content_sha256": "e586dd167aa63c37168dd8083dce6ef50304d461a8b9ec2744154116a8d6b54b",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 0,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:47:47.854641+05:30"
     }
   }
 }
