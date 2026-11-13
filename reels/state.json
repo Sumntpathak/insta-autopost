@@ -1321,6 +1321,23 @@
         "seconds": 26.05
       },
       "attempted_at": "2026-11-13T20:40:13.695726+05:30"
+    },
+    "AI-20261113-05": {
+      "id": "AI-20261113-05",
+      "scene": "ep05_overfit",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 05/10\nWhat overfitting looks like.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 25.5,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896285665522936",
+      "content_sha256": "84b25793afae6dc316e70652ee20534c87d982b21db750eb6a2bc36007716e21",
+      "source": {
+        "scene": "ep05_overfit",
+        "variant": 0,
+        "seconds": 25.5
+      },
+      "attempted_at": "2026-11-13T20:40:57.499230+05:30"
     }
   }
 }
