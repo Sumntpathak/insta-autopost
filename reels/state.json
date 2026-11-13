@@ -1142,7 +1142,7 @@
       "variant": 4,
       "caption": "EK MANZIL AUR \u00b7 The snack floor \u00b7 Part 1/2\nPart 2 is on @shipstack_.\n\n#EkManzilAur #ShipStack",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896257711522936",
       "content_sha256": "8daed0f25863fdc06932e5a822ed49339c76de4afd0c778a3d0020465844fce9",
       "source": {
@@ -1150,7 +1150,9 @@
         "variant": 4,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T18:55:00.627364+05:30"
+      "attempted_at": "2026-11-13T18:55:00.627364+05:30",
+      "media_id": "18117201251026595",
+      "published_at": "2026-11-13T18:55:09.588849+05:30"
     }
   }
 }
