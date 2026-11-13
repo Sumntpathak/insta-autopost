@@ -1,0 +1,43 @@
+name: Publish ShipStack Pi collision reel
+on:
+  push:
+    branches: [main]
+    paths: ['pi-collision/batch.json']
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GH_TOKEN: ${{ github.token }}
+      BATCH_MANIFEST: pi-collision/batch.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render and verify
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install numpy Pillow
+          python pi-collision/render.py PI-20261113-01.mp4
+          python reels/verify.py PI-20261113-01.mp4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pi-collisions-preview
+          path: PI-20261113-01.mp4
+      - name: Publish reel to Instagram
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python pi-collision/publish.py

@@ -1,0 +1,13 @@
+{
+  "batch_id": "shipstack-pi-collisions-2026-11-13",
+  "enabled": true,
+  "count": 1,
+  "items": [
+    {
+      "id": "PI-20261113-01",
+      "scene": "pi-collisions",
+      "variant": 0,
+      "caption": "Two blocks can calculate π. Count every block and wall collision: 3 → 31 → 314 → 3,141. Each 100× increase in the mass ratio gives another digit in this demonstration.\n\nOriginal ShipStack animation of Gregory Galperin’s experiment. Idealized physics: frictionless surface and perfectly elastic collisions.\n\n#Physics #Pi #MathVisuals #ShipStack"
+    }
+  ]
+}
