@@ -1508,6 +1508,18 @@
         "attempted_at": "2026-11-13T23:37:12.647801+05:30",
         "published_at": "2026-11-13T23:37:33.721899+05:30"
       }
+    },
+    "FBMAN-20261113-06": {
+      "id": "FBMAN-20261113-06",
+      "scene": "facebook-manual-physics",
+      "status": "facebook_only",
+      "caption": "Which balloon bursts first? Did you stick with your first guess?\n\n#BalloonRace #Physics #ShipStack",
+      "content_sha256": "2c45134e5c4ea15e41a21a9941ac1a8884444a06e3e36ee2712b439e49b7b94f",
+      "facebook": {
+        "video_id": "1864052208350721",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T23:37:40.059810+05:30"
+      }
     }
   }
 }
