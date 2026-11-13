@@ -779,6 +779,18 @@
         "attempted_at": "2026-11-13T15:11:00.810322+05:30",
         "published_at": "2026-11-13T15:11:21.434159+05:30"
       }
+    },
+    "CL-20261113-03": {
+      "id": "CL-20261113-03",
+      "scene": "climb",
+      "title": "Make the habit smaller",
+      "caption": "A habit can feel too big to start. Try ten minutes.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "1835659987525995",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:11:41.374362+05:30"
+      }
     }
   }
 }
