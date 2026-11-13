@@ -1,0 +1,87 @@
+{
+  "batch_id": "shipstack-short-physics-2026-11-13",
+  "enabled": true,
+  "count": 10,
+  "items": [
+    {
+      "id": "BR-20261113-01",
+      "scene": "three-balloon-ivory",
+      "variant": 0,
+      "seconds": 15,
+      "seed": 78001,
+      "caption": "Red, blue, or yellow? Pick a balloon before the first bounce. 🎈\n\n#BalloonRace #Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-02",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seconds": 15,
+      "seed": 78098,
+      "caption": "Which balloon pops first? · Round 2\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-03",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seconds": 15,
+      "seed": 78195,
+      "caption": "Which balloon pops first? · Round 3\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-04",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seconds": 15,
+      "seed": 78292,
+      "caption": "Which balloon pops first? · Round 4\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-05",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seconds": 15,
+      "seed": 78389,
+      "caption": "Which balloon pops first? · Round 5\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-06",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seconds": 15,
+      "seed": 78486,
+      "caption": "Which balloon pops first? · Round 6\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-07",
+      "scene": "pl-ring",
+      "variant": 0,
+      "seconds": 15,
+      "seed": 78583,
+      "caption": "Which ball escapes the rings? · Round 7\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-08",
+      "scene": "pl-ring",
+      "variant": 1,
+      "seconds": 15,
+      "seed": 78680,
+      "caption": "Which ball escapes the rings? · Round 8\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-09",
+      "scene": "pl-last",
+      "variant": 0,
+      "seconds": 15,
+      "seed": 78777,
+      "caption": "Which ball survives? · Round 9\n\n#Physics #ShipStack"
+    },
+    {
+      "id": "SHORT-20261113-10",
+      "scene": "pl-last",
+      "variant": 1,
+      "seconds": 15,
+      "seed": 78874,
+      "caption": "Which ball survives? · Round 10\n\n#Physics #ShipStack"
+    }
+  ]
+}

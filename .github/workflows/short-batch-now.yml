@@ -1,0 +1,79 @@
+name: Start 15-second ShipStack batch
+on:
+  push:
+    branches: [main]
+    paths: ['short-batch/20261113.json']
+permissions:
+  contents: read
+env:
+  BATCH_MANIFEST: short-batch/20261113.json
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - name: Publish approved Balloon Race
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python short-batch/first.py
+  render:
+    needs: first
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        index: [1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Render and verify
+        env:
+          INDEX: ${{ matrix.index }}
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          command -v ffmpeg || sudo apt-get install -y ffmpeg
+          pip install -r reels/pythonic/requirements.txt
+          python - <<'PY'
+          import json,os,subprocess
+          item=json.load(open(os.environ['BATCH_MANIFEST']))['items'][int(os.environ['INDEX'])]
+          path='output/'+item['id']+'.mp4'
+          subprocess.run(['python','reels/pythonic/render.py','--scene',item['scene'],'--variant',str(item['variant']),'--seed',str(item['seed']),'--out',path],check=True)
+          subprocess.run(['python','reels/verify.py',path],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: short-${{ matrix.index }}
+          path: output/
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 53
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'short-*', path: output, merge-multiple: true}
+      - name: Publish remaining shorts
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python short-batch/rest.py
