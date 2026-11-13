@@ -766,6 +766,18 @@
         "attempted_at": "2026-11-13T15:10:19.156720+05:30",
         "published_at": "2026-11-13T15:10:41.252989+05:30"
       }
+    },
+    "CL-20261113-02": {
+      "id": "CL-20261113-02",
+      "scene": "climb",
+      "title": "Start before you feel ready",
+      "caption": "Doubt gets a vote. Take one small step anyway.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "1652638016314503",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:11:00.810322+05:30"
+      }
     }
   }
 }
