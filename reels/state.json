@@ -944,7 +944,7 @@
       "variant": 3,
       "caption": "The hardest scroll to skip is the last one.\n\n#ShipStack #Discipline #MotionDesign",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896213860522936",
       "content_sha256": "e918fb76bb4a292c678202bf60cfc64c7f8dd69ca7d2d4eea8bda488f54efbdd",
       "source": {
@@ -952,7 +952,9 @@
         "variant": 3,
         "seconds": 15
       },
-      "attempted_at": "2026-11-13T15:51:48.838315+05:30"
+      "attempted_at": "2026-11-13T15:51:48.838315+05:30",
+      "media_id": "18113342753220295",
+      "published_at": "2026-11-13T15:51:56.677737+05:30"
     }
   }
 }
