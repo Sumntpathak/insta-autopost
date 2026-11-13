@@ -17,28 +17,34 @@ if subprocess.run(['gh', 'release', 'view', tag], capture_output=True).returncod
     subprocess.run(['gh', 'release', 'upload', tag, *map(str, sorted(Path('output').glob('*.mp4')))], check=True)
 for entry in entries:
     key = entry['id']
-    existing = publish.campaign.read_state()['posts'].get(key)
-    if existing:
-        if existing['status'] != 'published':
-            from datetime import datetime
-            recent = meta.call(f'{meta.ig_id}/media', {'fields':'id,caption,permalink','limit':50}).get('data', [])
-            matches = [m for m in recent if m.get('caption','').strip() == entry['caption'].strip()]
-            container = existing['container_id']
-            status = meta.call(container, {'fields':'status_code'}).get('status_code')
-            print(key, 'container', status, flush=True)
-            if len(matches) == 1:
-                media = matches[0]['id']
-            elif not matches and status == 'FINISHED':
-                media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id':container}, 'POST')['id']
-            else:
-                raise SystemExit(f'{key} requires reconciliation before resubmitting')
-            state = publish.campaign.read_state()
-            state['posts'][key].update(status='published', media_id=media, published_at=datetime.now(publish.campaign.IST).isoformat())
-            publish.campaign.persist(state)
-        print(f'{key} already published', flush=True)
-        continue
-    if not Path('output', key + '.mp4').exists():
-        raise SystemExit(f'Asset missing for {key}')
-    publish.publish_one(entry, Path('output', key + '.mp4'), meta)
+    try:
+        existing = publish.campaign.read_state()['posts'].get(key)
+        if existing:
+            if existing['status'] != 'published':
+                from datetime import datetime
+                recent = meta.call(f'{meta.ig_id}/media', {'fields':'id,caption,permalink','limit':50}).get('data', [])
+                matches = [m for m in recent if m.get('caption','').strip() == entry['caption'].strip()]
+                container = existing['container_id']
+                status = meta.call(container, {'fields':'status_code'}).get('status_code')
+                print(key, 'container', status, flush=True)
+                if len(matches) == 1:
+                    media = matches[0]['id']
+                elif not matches and status == 'FINISHED':
+                    media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id':container}, 'POST')['id']
+                else:
+                    raise SystemExit(f'{key} requires reconciliation before resubmitting')
+                state = publish.campaign.read_state()
+                state['posts'][key].update(status='published', media_id=media, published_at=datetime.now(publish.campaign.IST).isoformat())
+                publish.campaign.persist(state)
+            print(f'{key} already published', flush=True)
+            continue
+        if not Path('output', key + '.mp4').exists():
+            raise SystemExit(f'Asset missing for {key}')
+        publish.publish_one(entry, Path('output', key + '.mp4'), meta)
+    except RuntimeError as error:
+        print(f'{key}: {error}', flush=True)
     time.sleep(12)
-print('Confirmed 10 Instagram Reels', flush=True)
+count = sum(publish.campaign.read_state()['posts'].get(item['id'], {}).get('status') == 'published' for item in entries)
+print(f'Confirmed {count}/10 Instagram Reels', flush=True)
+if count != len(entries):
+    raise SystemExit(1)
