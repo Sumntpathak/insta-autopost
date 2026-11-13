@@ -531,7 +531,7 @@
       "caption": "Which balloon gets the last bounce?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896150023522936",
       "content_sha256": "ef49518048b2a52f886f432081cce4558a8b6f075318e07437452ece5e929d04",
       "source": {
@@ -546,7 +546,9 @@
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f",
         "pop_seconds": 12.4
       },
-      "attempted_at": "2026-11-13T09:59:54.304870+05:30"
+      "attempted_at": "2026-11-13T09:59:54.304870+05:30",
+      "media_id": "18163234771498353",
+      "published_at": "2026-11-13T10:00:02.791707+05:30"
     }
   }
 }
