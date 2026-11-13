@@ -16,6 +16,8 @@ from PIL import Image, ImageFont, ImageDraw
 
 HERE=Path(__file__).resolve().parent
 UPSTREAM=HERE/'upstream'
+
+from balloon_slow import BalloonRace, POP_TIME, SCENE as SLOW_BALLOON
 SCENES={
  'pl-ring':'14-ring-escape/ring_escape.py',
  'pl-marble':'10-marble-race/marble_race.py',
@@ -87,10 +89,16 @@ def load_scene(scene,variant=0,seed=None):
                        provider='Pythonic Life',source_commit='e062d70f067afa7b99a58f375e9a064582b5959f')
 
 def render(scene,variant,output,seed=None,probe=False):
-    module,info=load_scene(scene,variant,seed)
+    if scene == SLOW_BALLOON:
+        upstream, info = load_scene('pl-balloon')
+        module = BalloonRace(upstream, variant)
+        info.update(scene=scene, variant=variant, seed_used=module.seed, winner=module.winner + 1,
+                    source_win_seconds=module.win, source_seconds=15, pop_seconds=POP_TIME)
+    else:
+        module,info=load_scene(scene,variant,seed)
     if probe:
         # Exercise a first frame and the result frame, including font availability.
-        for t in (0,info['source_win_seconds']+.6):
+        for t in (0, info.get('pop_seconds', info['source_win_seconds']) + .6):
             img=module.render(int(t*module.FPS))
             assert img.shape==(1920,1080,3),img.shape
         print(json.dumps(info));return info
@@ -102,7 +110,7 @@ def render(scene,variant,output,seed=None,probe=False):
     try:
         for f in range(450):
             source_t=info['source_seconds']*f/449
-            frame=module.render(int(source_t*module.FPS))
+            frame=module.render(f if scene == SLOW_BALLOON else int(source_t*module.FPS))
             branded=Image.fromarray(frame).copy()
             draw=ImageDraw.Draw(branded)
             light=float(np.mean(frame[0,0]))>150
@@ -135,6 +143,6 @@ def render(scene,variant,output,seed=None,probe=False):
     silent.unlink();wav.unlink();print('Rendered '+str(output));return info
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--scene',choices=list(SCENES),required=True);p.add_argument('--variant',type=int,default=0)
+    p=argparse.ArgumentParser();p.add_argument('--scene',choices=[*SCENES, SLOW_BALLOON],required=True);p.add_argument('--variant',type=int,default=0)
     p.add_argument('--seed',type=int);p.add_argument('--out',default='reels/out/pythonic.mp4');p.add_argument('--probe',action='store_true')
     a=p.parse_args();render(a.scene,a.variant,a.out,a.seed,a.probe)

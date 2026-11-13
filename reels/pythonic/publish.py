@@ -1,7 +1,8 @@
-"""Publish the explicit overnight manifest once, preserving the common posting journal."""
+"""Publish the explicit batch manifest once, preserving the common posting journal."""
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -13,11 +14,11 @@ sys.path[:0]=[str(HERE),str(HERE.parent)]
 import campaign
 from facebook import Facebook
 
-MANIFEST=HERE/'batch.json'
+MANIFEST=Path(os.environ.get('BATCH_MANIFEST', HERE/'batch.json'))
 
 def items():
     data=json.loads(MANIFEST.read_text())
-    if not data.get('enabled'):raise RuntimeError('Overnight batch is disabled')
+    if not data.get('enabled'):raise RuntimeError('Batch is disabled')
     entries=data['items']
     if len(entries)!=data['count'] or len({x['id'] for x in entries})!=len(entries):
         raise RuntimeError('Manifest count or IDs are invalid')
@@ -55,7 +56,7 @@ def publish_one(item,file,meta,facebook=None):
     digest=hashlib.sha256(file.read_bytes()).hexdigest()
     if any(p.get('content_sha256')==digest for p in state['posts'].values()):
         raise RuntimeError('An identical clip is already in the posting journal')
-    repo=__import__('os').environ['GITHUB_REPOSITORY']
+    repo=os.environ['GITHUB_REPOSITORY']
     tag=json.loads(MANIFEST.read_text())['batch_id']
     subprocess.run(['gh','release','upload',tag,str(file),'--clobber'],check=True)
     url=f'https://github.com/{repo}/releases/download/{tag}/{file.name}'
@@ -87,7 +88,7 @@ def main():
     tag=json.loads(MANIFEST.read_text())['batch_id']
     exists=subprocess.run(['gh','release','view',tag],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     if exists.returncode:
-        subprocess.run(['gh','release','create',tag,'--target','main','--title','Pythonic Life overnight batch',
+        subprocess.run(['gh','release','create',tag,'--target','main','--title','Pythonic Life reel batch',
                         '--notes','Original renders adapted from MIT-licensed Pythonic Life scripts; attribution in reels/pythonic/UPSTREAM.md.','--latest=false'],check=True)
     for index,item in enumerate(entries):
         before=campaign.read_state()['posts'].get(item['id'])

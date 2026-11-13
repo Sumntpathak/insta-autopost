@@ -1,76 +1,76 @@
 {
-  "batch_id": "pythonic-life-2026-11-13-overnight",
+  "batch_id": "pythonic-life-2026-11-13-balloon-slow",
   "enabled": true,
   "count": 10,
   "items": [
     {
-      "id": "PL-N20261113-01",
-      "scene": "pl-ring",
+      "id": "PL-B20261113-01",
+      "scene": "pl-balloon-slow",
       "variant": 0,
-      "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "caption": "Pick a balloon. Which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     },
     {
-      "id": "PL-N20261113-02",
-      "scene": "pl-balloon",
-      "variant": 0,
-      "caption": "Pick a balloon: which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
-      "collection": "pythonic-life"
-    },
-    {
-      "id": "PL-N20261113-03",
-      "scene": "pl-last",
-      "variant": 0,
-      "caption": "Pick a ball: which one survives the spinning blade?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
-      "collection": "pythonic-life"
-    },
-    {
-      "id": "PL-N20261113-04",
-      "scene": "pl-floor",
-      "variant": 0,
-      "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
-      "collection": "pythonic-life"
-    },
-    {
-      "id": "PL-N20261113-05",
-      "scene": "pl-marble",
-      "variant": 0,
-      "caption": "Pick a marble: who reaches the finish first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
-      "collection": "pythonic-life"
-    },
-    {
-      "id": "PL-N20261113-06",
-      "scene": "pl-ring",
+      "id": "PL-B20261113-02",
+      "scene": "pl-balloon-slow",
       "variant": 1,
-      "caption": "Pick a ball: which one escapes all three rings?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "caption": "Which balloon reaches its limit first?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     },
     {
-      "id": "PL-N20261113-07",
-      "scene": "pl-balloon",
-      "variant": 1,
-      "caption": "Pick a balloon: which one pops first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "id": "PL-B20261113-03",
+      "scene": "pl-balloon-slow",
+      "variant": 2,
+      "caption": "Pick a number before the last bounce.\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     },
     {
-      "id": "PL-N20261113-08",
-      "scene": "pl-last",
-      "variant": 1,
-      "caption": "Pick a ball: which one survives the spinning blade?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "id": "PL-B20261113-04",
+      "scene": "pl-balloon-slow",
+      "variant": 3,
+      "caption": "Which balloon will burst on the next hit?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     },
     {
-      "id": "PL-N20261113-09",
-      "scene": "pl-floor",
-      "variant": 1,
-      "caption": "Pick a ball: which one stays above the crumbling floor?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "id": "PL-B20261113-05",
+      "scene": "pl-balloon-slow",
+      "variant": 4,
+      "caption": "Can you call the winner before slow motion?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     },
     {
-      "id": "PL-N20261113-10",
-      "scene": "pl-marble",
-      "variant": 1,
-      "caption": "Pick a marble: who reaches the finish first?\n\n@shipstack_ \u00b7 Physics animations\n#simulation #satisfying #physics",
+      "id": "PL-B20261113-06",
+      "scene": "pl-balloon-slow",
+      "variant": 5,
+      "caption": "Watch the last hit. Which balloon takes it?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-B20261113-07",
+      "scene": "pl-balloon-slow",
+      "variant": 6,
+      "caption": "Pick your balloon before it reaches 100%.\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-B20261113-08",
+      "scene": "pl-balloon-slow",
+      "variant": 7,
+      "caption": "Which one survives the longest without popping?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-B20261113-09",
+      "scene": "pl-balloon-slow",
+      "variant": 8,
+      "caption": "Pick the balloon you think will burst first.\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-B20261113-10",
+      "scene": "pl-balloon-slow",
+      "variant": 9,
+      "caption": "Which balloon gets the last bounce?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life"
     }
   ]
