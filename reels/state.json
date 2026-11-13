@@ -401,7 +401,7 @@
       "caption": "Can you call the winner before slow motion?\n\n@shipstack_ \u00b7 Physics animations\n#balloonpop #physics #satisfying",
       "collection": "pythonic-life",
       "date": "2026-11-13",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896147404522936",
       "content_sha256": "bab12eb1f599da70cf09fa7aed837b0763240f4ef85e0094db936ad999e534ea",
       "source": {
@@ -416,7 +416,9 @@
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f",
         "pop_seconds": 12.4
       },
-      "attempted_at": "2026-11-13T09:52:10.753052+05:30"
+      "attempted_at": "2026-11-13T09:52:10.753052+05:30",
+      "media_id": "17913469950307749",
+      "published_at": "2026-11-13T09:52:20.343680+05:30"
     }
   }
 }
