@@ -973,6 +973,22 @@
       "attempted_at": "2026-11-13T15:52:47.546589+05:30",
       "media_id": "18210732607372032",
       "published_at": "2026-11-13T15:52:55.786021+05:30"
+    },
+    "DL-20261113-06": {
+      "id": "DL-20261113-06",
+      "scene": "discipline-lift",
+      "variant": 5,
+      "caption": "What would you start if you could be a beginner again?\n\n#ShipStack #Discipline #MotionDesign",
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896214763522936",
+      "content_sha256": "166b02dd8de2eeb0e37b52cae26f40756b5afc17fbee2782569e46cb09aaae8a",
+      "source": {
+        "scene": "discipline-lift",
+        "variant": 5,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-13T15:53:40.443298+05:30"
     }
   }
 }
