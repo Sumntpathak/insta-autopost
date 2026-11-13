@@ -1268,6 +1268,23 @@
       "attempted_at": "2026-11-13T20:27:47.462785+05:30",
       "media_id": "18110113189960906",
       "published_at": "2026-11-13T20:27:55.224821+05:30"
+    },
+    "AI-20261113-02": {
+      "id": "AI-20261113-02",
+      "scene": "ep02_downhill",
+      "variant": 0,
+      "caption": "AI in Motion \u00b7 02/10\nHow momentum helps gradient descent.\n\n#MachineLearning #AIExplained #ShipStack",
+      "seconds": 25.34,
+      "date": "2026-11-13",
+      "status": "publishing",
+      "container_id": "17896282125522936",
+      "content_sha256": "921876ea9850158e6f27fbb07fc75f344fd3a747f1f2aee3b3f9f95bad5b5144",
+      "source": {
+        "scene": "ep02_downhill",
+        "variant": 0,
+        "seconds": 25.34
+      },
+      "attempted_at": "2026-11-13T20:28:36.751864+05:30"
     }
   }
 }
