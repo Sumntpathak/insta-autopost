@@ -856,6 +856,18 @@
         "attempted_at": "2026-11-13T15:15:13.125593+05:30",
         "published_at": "2026-11-13T15:15:32.896555+05:30"
       }
+    },
+    "CL-20261113-09": {
+      "id": "CL-20261113-09",
+      "scene": "climb",
+      "title": "Build a buffer",
+      "caption": "Leave a little room in the plan for surprises.\n\n#ShipStack #MotionDesign",
+      "status": "facebook_only",
+      "facebook": {
+        "video_id": "3306474162874032",
+        "status": "publishing",
+        "attempted_at": "2026-11-13T15:15:53.210400+05:30"
+      }
     }
   }
 }
