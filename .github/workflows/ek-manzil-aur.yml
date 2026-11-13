@@ -1,0 +1,80 @@
+name: Ek Manzil Aur Instagram batch
+on:
+  push:
+    branches: [main]
+    paths: ['staircase/batch.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Set up renderer
+        working-directory: staircase
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          npm install --no-audit --no-fund
+          pip install numpy scipy
+      - name: Render and validate
+        working-directory: staircase
+        env:
+          INDEX: ${{ matrix.index }}
+        run: |
+          mkdir -p output
+          id=$(python -c 'import json,os; print(json.load(open("batch.json"))["items"][int(os.environ["INDEX"])]["id"])')
+          ./node_modules/.bin/esbuild scene.tsx --bundle --platform=node --packages=external --outfile=scene.cjs
+          python score.py "$INDEX"
+          node render.cjs "$INDEX" "output/$id.mp4"
+          ffmpeg -v error -xerror -i "output/$id.mp4" -f null -
+          python ../reels/verify.py "output/$id.mp4"
+          python -c 'import json,sys; json.dump(dict(scene="ek-manzil-aur",variant=int(sys.argv[1]),seconds=15),sys.stdout)' "$INDEX" > "output/$id.mp4.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staircase-${{ matrix.index }}
+          path: staircase/output/*.mp4*
+          retention-days: 14
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: staircase-*
+          path: nispa-output
+          merge-multiple: true
+      - name: Publish to Instagram
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+          BATCH_MANIFEST: ${{ runner.temp }}/staircase-batch.json
+          RUN_SHA: ${{ github.sha }}
+        run: |
+          git show "$RUN_SHA:staircase/batch.json" > "$BATCH_MANIFEST"
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python nispa-batch/publish.py

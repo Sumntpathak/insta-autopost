@@ -1,4 +1,4 @@
-"""Publish the approved discipline batch to Instagram."""
+"""Publish an approved ten-reel batch to Instagram."""
 import json
 import os
 from pathlib import Path
@@ -15,10 +15,11 @@ if len(entries) != 10:
     raise RuntimeError('Expected ten reels')
 meta = campaign.Meta()
 meta.check_account()
-tag = json.loads(publish.MANIFEST.read_text())['batch_id']
+manifest = json.loads(publish.MANIFEST.read_text())
+tag = manifest['batch_id']
 if subprocess.run(['gh', 'release', 'view', tag], capture_output=True).returncode:
-    subprocess.run(['gh', 'release', 'create', tag, '--title', 'Discipline Lift',
-                    '--notes', 'Original scenes using nispa/stickman-video (MIT). License: nispa-batch/LICENSE.',
+    subprocess.run(['gh', 'release', 'create', tag, '--title', manifest.get('release_title', 'Discipline Lift'),
+                    '--notes', manifest.get('release_notes', 'Original scenes using nispa/stickman-video (MIT). License: nispa-batch/LICENSE.'),
                     '--latest=false'], check=True)
 for i, entry in enumerate(entries):
     key = entry['id']
