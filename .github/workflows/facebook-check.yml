@@ -23,6 +23,8 @@ jobs:
           page=os.environ.get('FB_PAGE_ID','').strip()
           explicit=os.environ.get('FB_PAGE_TOKEN','').strip()
           token=explicit or os.environ.get('META_TOKEN','').strip()
+          print('Configured ID matches ShipStack: '+str(page=='61595003966637'))
+          print('Dedicated Facebook token present: '+str(bool(explicit)))
           problems=[]
           if not page: problems.append('FB_PAGE_ID is not configured')
           if not token: problems.append('FB_PAGE_TOKEN is not configured')
@@ -47,6 +49,12 @@ jobs:
                       who=urllib.request.Request('https://graph.facebook.com/v23.0/me?fields=id',headers={'Authorization':'Bearer '+token})
                       with urllib.request.urlopen(who,timeout=20) as response: identity=json.load(response)
                       print('Token identity matches configured Page: '+str(identity.get('id')==page))
+                      request=urllib.request.Request('https://graph.facebook.com/v23.0/me/accounts?fields=id,tasks&limit=100',headers={'Authorization':'Bearer '+token})
+                      with urllib.request.urlopen(request,timeout=20) as response: pages=json.load(response)
+                      match=next((p for p in pages.get('data',[]) if p.get('id')==page),None)
+                      print('ShipStack listed by token: '+str(bool(match)))
+                      print('Listed Page count: '+str(len(pages.get('data',[]))))
+                      if match: print('ShipStack tasks: '+json.dumps(match.get('tasks',[])))
                   except urllib.error.HTTPError as identity_error:
                       print('Token identity error: '+json.dumps(reason(identity_error)))
           PY
