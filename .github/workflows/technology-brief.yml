@@ -1,0 +1,44 @@
+name: Technology Brief pilot
+on:
+  push:
+    branches: [main]
+    paths: ['news-pilot/editions.json']
+  schedule:
+    - cron: '2-57/5 7-18 13 11 *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: reels
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install 'Pillow==11.2.1'
+      - run: python news-pilot/pilot.py scan
+  publish:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: reels
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'Pillow==11.2.1'
+      - run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python news-pilot/pilot.py publish
