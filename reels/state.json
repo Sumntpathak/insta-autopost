@@ -2279,7 +2279,7 @@
       "seconds": 15,
       "caption": "Guess the voice of Cinderella. How early did you get it?\n\nAmanda Seyfried voices Cinderella in Steps, an animated comedy coming to Netflix on Nov. 20.\n\n#ShipStack #GuessBefore50 #Streaming",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896547475522936",
       "content_sha256": "1ce88aa62206c51c9ad8159a93ea5dd3d08ce4eb8988d9d425ab2447c76a028c",
       "source": {
@@ -2287,7 +2287,9 @@
         "variant": 9,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T17:00:28.450498+05:30"
+      "attempted_at": "2026-11-14T17:00:28.450498+05:30",
+      "media_id": "18152236351547025",
+      "published_at": "2026-11-14T17:00:36.000472+05:30"
     }
   }
 }
