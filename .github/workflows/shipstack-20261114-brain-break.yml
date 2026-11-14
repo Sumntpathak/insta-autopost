@@ -1,0 +1,65 @@
+name: Publish ShipStack Brain Break reels
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/shipstack-20261114-brain-break.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      matrix:
+        index: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render and validate edition
+        env:
+          EDITION: ${{ matrix.index }}
+        run: |
+          if ! command -v ffmpeg >/dev/null || [ ! -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg fonts-dejavu-core
+          fi
+          python -m pip install pillow numpy
+          python reels/brain-break/render.py "$EDITION" output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brain-break-${{ matrix.index }}
+          path: output/
+          if-no-files-found: error
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: brain-break-*
+          path: output
+          merge-multiple: true
+      - name: Publish and journal Instagram reels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BATCH_MANIFEST: output/manifest.json
+          PYTHONPATH: reels/pythonic
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python reels/brain-break/publish_batch.py
