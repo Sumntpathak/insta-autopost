@@ -2317,7 +2317,7 @@
       "seconds": 15,
       "caption": "Gold Vault \u00b7 Sapphire Edition\nFollow the gold ball through eleven swaps. Lock in your cup before the reveal.\n\n#ShipStack #GoldVault #CupChallenge",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896556799522936",
       "content_sha256": "f3645758ecf95e5fa0081a1d6da2a6eb7eb48014e13cc897556644f5e65b040b",
       "source": {
@@ -2325,7 +2325,9 @@
         "variant": 1,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T17:47:27.557751+05:30"
+      "attempted_at": "2026-11-14T17:47:27.557751+05:30",
+      "media_id": "18049674788823671",
+      "published_at": "2026-11-14T17:47:37.997574+05:30"
     }
   }
 }
