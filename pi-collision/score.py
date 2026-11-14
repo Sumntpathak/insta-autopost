@@ -1,4 +1,4 @@
-"""Original collision-led electronic score."""
+"""Original collision-led electronic score for the generated fallback reel."""
 import wave
 
 import numpy as np

@@ -39,12 +39,13 @@ print('Previous container:', status, flush=True)
 if status not in {'FINISHED', 'ERROR', 'EXPIRED'} or record.get('previous_container_id'):
     raise SystemExit('Previous attempt needs reconciliation before another upload.')
 
-clip = Path('PI-20261113-01.mp4')
+submitted = Path('pi-collision/Two_Blocks_Calculate_Pi.mp4')
+clip = submitted if submitted.is_file() else Path('PI-20261113-01.mp4')
 tag = json.loads(publish.MANIFEST.read_text())['batch_id']
-asset = clip.rename('Pi_Collisions_15s_ShipStack.mp4')
+asset = clip if clip == submitted else clip.rename('Pi_Collisions_15s_ShipStack.mp4')
 subprocess.run(['gh', 'release', 'upload', tag, str(asset)], check=True)
 repo = 'Sumntpathak/insta-autopost'
-url = f'https://github.com/{repo}/releases/download/{tag}/{asset}'
+url = f'https://github.com/{repo}/releases/download/{tag}/{asset.name}'
 container = meta.call(f'{meta.ig_id}/media', {'media_type': 'REELS', 'video_url': url,
                       'caption': entry['caption'], 'share_to_feed': 'true'}, 'POST')['id']
 meta.ready(container)
