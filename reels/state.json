@@ -1662,6 +1662,29 @@
       "attempted_at": "2026-11-14T12:37:29.300037+05:30",
       "media_id": "18013982195815522",
       "published_at": "2026-11-14T12:37:36.879556+05:30"
+    },
+    "MIDDAY-20261114-04": {
+      "id": "MIDDAY-20261114-04",
+      "scene": "pl-ring",
+      "variant": 1,
+      "seed": 141797,
+      "caption": "Which ball escapes the rings first? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896489071522936",
+      "content_sha256": "e2f6c7976b74a5ad7cc5e0c38771a365d1e8f0253ad1568f69e5a67e2359bdef",
+      "source": {
+        "scene": "pl-ring",
+        "variant": 1,
+        "seed_used": 141866,
+        "winner": 4,
+        "source_win_seconds": 14.6,
+        "source_seconds": 15.975,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T12:43:28.480424+05:30"
     }
   }
 }
