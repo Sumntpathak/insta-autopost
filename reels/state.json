@@ -2037,6 +2037,29 @@
       "attempted_at": "2026-11-14T14:24:26.777897+05:30",
       "media_id": "18085231832527263",
       "published_at": "2026-11-14T14:24:33.664156+05:30"
+    },
+    "BALLOON-20261114-09": {
+      "id": "BALLOON-20261114-09",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seed": 340001,
+      "caption": "The balloons grow with every hit. Pick the first one to pop.\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896516065522936",
+      "content_sha256": "da4e895075bc46598424107ad8c70e74cf046c588a6571d682034762f983f135",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 0,
+        "seed_used": 340006,
+        "winner": 6,
+        "source_win_seconds": 9.11111111111111,
+        "source_seconds": 10.18611111111111,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T14:29:53.491232+05:30"
     }
   }
 }
