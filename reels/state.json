@@ -1595,7 +1595,7 @@
       "seed": 141200,
       "caption": "Which balloon pops first? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896483959522936",
       "content_sha256": "ca3b58ea055e6193854a3443582cf6badbd79dfae3ae4366b109d49fff39c307",
       "source": {
@@ -1609,7 +1609,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-14T12:29:00.430386+05:30"
+      "attempted_at": "2026-11-14T12:29:00.430386+05:30",
+      "media_id": "18120466142469244",
+      "published_at": "2026-11-14T12:29:09.515396+05:30"
     }
   }
 }
