@@ -1962,6 +1962,29 @@
       "attempted_at": "2026-11-14T14:09:27.910352+05:30",
       "media_id": "17876735064638310",
       "published_at": "2026-11-14T14:09:35.656032+05:30"
+    },
+    "BALLOON-20261114-06": {
+      "id": "BALLOON-20261114-06",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seed": 325001,
+      "caption": "One bounce at a time. Which balloon hits its limit first?\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896511991522936",
+      "content_sha256": "dfec81e64d8fba33ac8d10785ad458ba6ae3b72b1c73d8aa361d7b750836588e",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 1,
+        "seed_used": 325004,
+        "winner": 3,
+        "source_win_seconds": 9.655555555555557,
+        "source_seconds": 10.730555555555556,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T14:14:27.130229+05:30"
     }
   }
 }
