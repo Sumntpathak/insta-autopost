@@ -2252,6 +2252,23 @@
       "attempted_at": "2026-11-14T16:58:11.111259+05:30",
       "media_id": "18103397951421453",
       "published_at": "2026-11-14T16:58:18.620309+05:30"
+    },
+    "TRENDING-20261114-09": {
+      "id": "TRENDING-20261114-09",
+      "scene": "news-pinball-reveal",
+      "variant": 8,
+      "seconds": 15,
+      "caption": "Guess India's new Test pick. How early did you get it?\n\nIndia called up Gurnoor Brar for his first Test squad after he took nine wickets in the ongoing New Zealand ODI series.\n\n#ShipStack #GuessBefore50 #Cricket",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896546899522936",
+      "content_sha256": "95bb89a9a990a36a03f15a88107489ca1f390383be7792c93744bcfe1a0b52a6",
+      "source": {
+        "scene": "news-pinball-reveal",
+        "variant": 8,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-14T16:59:18.660114+05:30"
     }
   }
 }
