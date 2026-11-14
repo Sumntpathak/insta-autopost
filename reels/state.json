@@ -1670,7 +1670,7 @@
       "seed": 141797,
       "caption": "Which ball escapes the rings first? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896489071522936",
       "content_sha256": "e2f6c7976b74a5ad7cc5e0c38771a365d1e8f0253ad1568f69e5a67e2359bdef",
       "source": {
@@ -1684,7 +1684,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-14T12:43:28.480424+05:30"
+      "attempted_at": "2026-11-14T12:43:28.480424+05:30",
+      "media_id": "18136580099505625",
+      "published_at": "2026-11-14T12:43:35.770644+05:30"
     }
   }
 }
