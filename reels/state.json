@@ -1612,6 +1612,29 @@
       "attempted_at": "2026-11-14T12:29:00.430386+05:30",
       "media_id": "18120466142469244",
       "published_at": "2026-11-14T12:29:09.515396+05:30"
+    },
+    "MIDDAY-20261114-02": {
+      "id": "MIDDAY-20261114-02",
+      "scene": "pl-last",
+      "variant": 1,
+      "seed": 141399,
+      "caption": "Which ball survives the spinning blade? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896484772522936",
+      "content_sha256": "00797e310b448e4347d92d5decc582455fc99089dd6ead972b80953cc3564ecc",
+      "source": {
+        "scene": "pl-last",
+        "variant": 1,
+        "seed_used": 141426,
+        "winner": 5,
+        "source_win_seconds": 8.483333333333333,
+        "source_seconds": 9.558333333333332,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T12:31:51.585005+05:30"
     }
   }
 }
