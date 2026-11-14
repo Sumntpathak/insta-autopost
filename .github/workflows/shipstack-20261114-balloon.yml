@@ -1,0 +1,126 @@
+name: ShipStack November 14 balloon reel batch
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/shipstack-20261114-balloon.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        index: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Build manifest and render reel
+        env:
+          REEL_INDEX: ${{ matrix.index }}
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          command -v ffmpeg || sudo apt-get install -y ffmpeg
+          pip install -r reels/pythonic/requirements.txt
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          hooks = [
+              'Which balloon pops first? Pick your color before the first bounce.',
+              'Every bounce inflates a balloon. Which one pops first?',
+              'Guess the first balloon to burst. Lock in your color now.',
+              'Which balloon will burst on the next hit?',
+              'Pick a balloon before it starts growing. Which one pops first?',
+              'One bounce at a time. Which balloon hits its limit first?',
+              'Who pops first? Make your pick before the balloons collide.',
+              'Which color loses this balloon race? Watch the final bounce.',
+              'The balloons grow with every hit. Pick the first one to pop.',
+              'Pick your balloon. Can you predict which one bursts first?'
+          ]
+          entries = [
+              dict(id=f'BALLOON-20261114-{i+1:02}', scene='pl-balloon', variant=i%2,
+                   seed=300001 + 5000*i,
+                   caption=f'{hook}\n\n#BalloonRace #Physics #ShipStack')
+              for i, hook in enumerate(hooks)
+          ]
+          output = Path('output')
+          output.mkdir(exist_ok=True)
+          i = int(os.environ['REEL_INDEX'])
+          item = entries[i]
+          if i == 0:
+              (output/'manifest.json').write_text(json.dumps(dict(
+                  batch_id='shipstack-balloon-2026-11-14', enabled=True, count=10, items=entries)))
+          path = output/(item['id']+'.mp4')
+          subprocess.run(['python','reels/pythonic/render.py','--scene',item['scene'],
+                          '--variant',str(item['variant']),'--seed',str(item['seed']),
+                          '--out',str(path)], check=True)
+          subprocess.run(['python','reels/verify.py',str(path)],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balloon-${{ matrix.index }}
+          path: output/
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'balloon-*', path: output, merge-multiple: true}
+      - name: Publish the ten scheduled Instagram reels
+        env:
+          BATCH_MANIFEST: output/manifest.json
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          PYTHONPATH=reels/pythonic python - <<'PY'
+          import datetime as dt
+          import json
+          from pathlib import Path
+          import subprocess
+          import time
+          import publish
+
+          meta = publish.campaign.Meta()
+          meta.check_account()
+          tag = json.loads(publish.MANIFEST.read_text())['batch_id']
+          if subprocess.run(['gh','release','view',tag],capture_output=True).returncode:
+              subprocess.run(['gh','release','create',tag,'--title','ShipStack November 14 balloon reels',
+                              '--notes','15-second physics reels. Upstream attribution in reels/pythonic/UPSTREAM.md.'],check=True)
+          ist = publish.campaign.IST
+          start = dt.datetime(2026, 11, 14, 13, 49, tzinfo=ist)
+          deadline = start + dt.timedelta(hours=1)
+          entries = publish.items()
+          failures = 0
+          for index, item in enumerate(entries):
+              target = start + dt.timedelta(minutes=5*index)
+              now = dt.datetime.now(ist)
+              if now >= deadline:
+                  print('WINDOW_ENDED', item['id'], flush=True)
+                  break
+              if target > now:
+                  time.sleep((target-now).total_seconds())
+              print('BALLOON_SLOT', target.strftime('%H:%M IST'), item['id'], flush=True)
+              try:
+                  result = publish.publish_one(item, Path('output')/(item['id']+'.mp4'), meta)
+                  if result.get('status') != 'published':
+                      failures += 1
+              except RuntimeError as error:
+                  print('BALLOON_REJECTED', item['id'], str(error), flush=True)
+                  failures += 1
+          records = publish.campaign.read_state()['posts']
+          count = sum(records.get(item['id'], {}).get('status') == 'published' for item in entries)
+          print(f'BALLOON_CONFIRMED {count}/{len(entries)}; {failures} failed or unconfirmed', flush=True)
+          if count != len(entries):
+              raise SystemExit(1)
+          PY
