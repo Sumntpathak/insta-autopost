@@ -1870,7 +1870,7 @@
       "seed": 305001,
       "caption": "Every bounce inflates a balloon. Which one pops first?\n\n#BalloonRace #Physics #ShipStack",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896505388522936",
       "content_sha256": "5d963dd895b2428032622c2d097c7aab0b18f10d4a75fbdd061d3d1474d68804",
       "source": {
@@ -1884,7 +1884,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-14T13:54:26.946744+05:30"
+      "attempted_at": "2026-11-14T13:54:26.946744+05:30",
+      "media_id": "18091983710250983",
+      "published_at": "2026-11-14T13:54:34.548450+05:30"
     }
   }
 }
