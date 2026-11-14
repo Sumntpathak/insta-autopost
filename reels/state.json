@@ -1737,6 +1737,29 @@
       "attempted_at": "2026-11-14T12:55:28.733619+05:30",
       "media_id": "18085929326335165",
       "published_at": "2026-11-14T12:55:36.420872+05:30"
+    },
+    "MIDDAY-20261114-07": {
+      "id": "MIDDAY-20261114-07",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seed": 142394,
+      "caption": "Which balloon pops first? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896492680522936",
+      "content_sha256": "f11e2339c46a6fb1655e3b5515763f6e57ae0471db3dc9e88fa0829a53669b2d",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 0,
+        "seed_used": 142396,
+        "winner": 3,
+        "source_win_seconds": 9.561111111111112,
+        "source_seconds": 10.636111111111111,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T13:01:29.284505+05:30"
     }
   }
 }
