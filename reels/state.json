@@ -2355,7 +2355,7 @@
       "seconds": 15,
       "caption": "Gold Vault \u00b7 Ruby Edition\nFollow the gold ball through eleven swaps. Lock in your cup before the reveal.\n\n#ShipStack #GoldVault #CupChallenge",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896557675522936",
       "content_sha256": "c71cd8e5081b13ecddeec3309e10e19336c2b6477edba6e54bdcbb25332afa52",
       "source": {
@@ -2363,7 +2363,9 @@
         "variant": 3,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T17:49:30.900360+05:30"
+      "attempted_at": "2026-11-14T17:49:30.900360+05:30",
+      "media_id": "18578995762072321",
+      "published_at": "2026-11-14T17:49:40.910392+05:30"
     }
   }
 }
