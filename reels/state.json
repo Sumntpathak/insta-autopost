@@ -2298,7 +2298,7 @@
       "seconds": 15,
       "caption": "Gold Vault \u00b7 Jade Edition\nFollow the gold ball through eleven swaps. Lock in your cup before the reveal.\n\n#ShipStack #GoldVault #CupChallenge",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896556598522936",
       "content_sha256": "a3951dd0a294f82ebbf54ada6aad79e21ac6cc105b48e59793d4494fb8f97877",
       "source": {
@@ -2306,7 +2306,9 @@
         "variant": 0,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T17:46:29.143076+05:30"
+      "attempted_at": "2026-11-14T17:46:29.143076+05:30",
+      "media_id": "17996939921999090",
+      "published_at": "2026-11-14T17:46:37.662739+05:30"
     }
   }
 }
