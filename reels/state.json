@@ -2176,6 +2176,23 @@
       "attempted_at": "2026-11-14T16:53:08.663487+05:30",
       "media_id": "18231272107328972",
       "published_at": "2026-11-14T16:53:18.165180+05:30"
+    },
+    "TRENDING-20261114-05": {
+      "id": "TRENDING-20261114-05",
+      "scene": "news-pinball-reveal",
+      "variant": 4,
+      "seconds": 15,
+      "caption": "Guess the hat-trick scorer. How early did you get it?\n\nReijnders scored three before halftime as the Netherlands beat Greece 7\u20130 in the Nations League.\n\n#ShipStack #GuessBefore50 #Football",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896545363522936",
+      "content_sha256": "689a19eaa8f5e4305a8a8d4bfee37adf7690cb4d1ba9eb1d1895646f98350a9f",
+      "source": {
+        "scene": "news-pinball-reveal",
+        "variant": 4,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-14T16:54:18.445929+05:30"
     }
   }
 }
