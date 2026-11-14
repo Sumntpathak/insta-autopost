@@ -2203,7 +2203,7 @@
       "seconds": 15,
       "caption": "Guess the Bollywood actor. How early did you get it?\n\nTripathi and Aditi Rao Hydari star in Parivarik ManuRanjan, which premiered on Sony LIV on Nov. 13.\n\n#ShipStack #GuessBefore50 #Bollywood",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896545648522936",
       "content_sha256": "5a0aed3c6995bf7c76c4eb9feb6a70a1c1fde6560e9ea55c59bdc725b71f6633",
       "source": {
@@ -2211,7 +2211,9 @@
         "variant": 5,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T16:55:26.287094+05:30"
+      "attempted_at": "2026-11-14T16:55:26.287094+05:30",
+      "media_id": "18133865062774611",
+      "published_at": "2026-11-14T16:55:37.339655+05:30"
     }
   }
 }
