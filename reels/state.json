@@ -2222,7 +2222,7 @@
       "seconds": 15,
       "caption": "Guess the UFC headliner. How early did you get it?\n\nCiryl Gane is scheduled to face Josh Hokit in the UFC 334 main event in New York on Nov. 14 local time.\n\n#ShipStack #GuessBefore50 #Mma",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896546077522936",
       "content_sha256": "9e480f532686c6522a12a3372180136d986406f5bc03b86177d7a214f0cef2e9",
       "source": {
@@ -2230,7 +2230,9 @@
         "variant": 6,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T16:57:03.844997+05:30"
+      "attempted_at": "2026-11-14T16:57:03.844997+05:30",
+      "media_id": "18390327574231880",
+      "published_at": "2026-11-14T16:57:11.132957+05:30"
     }
   }
 }
