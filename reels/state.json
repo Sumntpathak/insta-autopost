@@ -2062,6 +2062,29 @@
       "attempted_at": "2026-11-14T14:29:53.491232+05:30",
       "media_id": "17921324883528077",
       "published_at": "2026-11-14T14:30:00.667141+05:30"
+    },
+    "BALLOON-20261114-10": {
+      "id": "BALLOON-20261114-10",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seed": 345001,
+      "caption": "Pick your balloon. Can you predict which one bursts first?\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896517379522936",
+      "content_sha256": "edcfe7524c75369db0d256be33b4c506c5f78e24ee663d244a7db60666e1bc9e",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 1,
+        "seed_used": 345002,
+        "winner": 2,
+        "source_win_seconds": 9.922222222222222,
+        "source_seconds": 10.997222222222222,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T14:34:26.841596+05:30"
     }
   }
 }
