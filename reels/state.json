@@ -1945,7 +1945,7 @@
       "seed": 320001,
       "caption": "Pick a balloon before it starts growing. Which one pops first?\n\n#BalloonRace #Physics #ShipStack",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896510914522936",
       "content_sha256": "7154d255d55d6709ee34c2f25eb2cad2ba3fc5579db613266a7b0b521ec459d3",
       "source": {
@@ -1959,7 +1959,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-14T14:09:27.910352+05:30"
+      "attempted_at": "2026-11-14T14:09:27.910352+05:30",
+      "media_id": "17876735064638310",
+      "published_at": "2026-11-14T14:09:35.656032+05:30"
     }
   }
 }
