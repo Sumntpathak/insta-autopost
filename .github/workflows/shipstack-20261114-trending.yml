@@ -1,0 +1,199 @@
+name: Publish ShipStack trending celebrity reels
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/shipstack-20261114-trending.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        index: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Render and verify the approved reel
+        env:
+          INDEX: ${{ matrix.index }}
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python -m pip install numpy pillow
+          mkdir -p output
+          cat >output/data.json <<'JSON'
+          [["harry_kane","FOOTBALL","Guess the England striker","A winner at Wembley","126 caps","HARRY KANE","Kane scored the winner against Croatia on his record 126th England men's appearance.","England 2–1 Croatia · Nov. 12","https://www.uefa.com/uefanationsleague/news/02ab-220e66a3c090-9304054ed1ca-1000--uefa-nations-league-matchday-5-harry-kane-sends-england-in/"],["lisa","MUSIC","Guess the solo star","BLACKPINK","A new documentary","LISA","Always Lalisa follows Lisa's move into solo music. It premieres on YouTube Premium on Nov. 18.","Always Lalisa · Nov. 18","https://blog.youtube/culture-and-trends/youtube-premium-always-lalisa-documentary/"],["rishabh_pant","CRICKET","Guess the India keeper","A left-handed batter","Back in the Test squad","RISHABH PANT","Pant was cleared to play and joined India's Test squad in Wellington for the New Zealand series.","First Test · Nov. 19","https://www.icc-cricket.com/tournaments/world-test-championship/news/india-release-spinner-for-pacer-in-test-squad-to-face-kiwis"],["victor_wembanyama","BASKETBALL","Guess the Spurs star","San Antonio","32.6 points per game","VICTOR WEMBANYAMA","Wembanyama averaged 32.6 points over the ten games before San Antonio faced Golden State.","Ten-game scoring run · NBA","https://www.nba.com/news/starting-5-november-13-2026"],["tijjani_reijnders","FOOTBALL","Guess the hat-trick scorer","Three before halftime","Netherlands 7–0 Greece","TIJJANI REIJNDERS","Reijnders scored three before halftime as the Netherlands beat Greece 7–0 in the Nations League.","Nations League · Nov. 13","https://www.uefa.com/uefanationsleague/news/02ab-220e66a3c090-9304054ed1ca-1000--uefa-nations-league-matchday-5-harry-kane-sends-england-in/"],["pankaj_tripathi","BOLLYWOOD","Guess the Bollywood actor","Aditi Rao Hydari co-stars","A new comedy on Sony LIV","PANKAJ TRIPATHI","Tripathi and Aditi Rao Hydari star in Parivarik ManuRanjan, which premiered on Sony LIV on Nov. 13.","Parivarik ManuRanjan · Nov. 13","https://www.hindustantimes.com/entertainment/bollywood/exclusive-pankaj-tripathi-and-aditi-rao-hydari-parivarik-manuranjan-to-premiere-on-sony-liv-on-november-13-101793349373155.html/"],["ciryl_gane","MMA","Guess the UFC headliner","Madison Square Garden","Across from Josh Hokit","CIRYL GANE","Ciryl Gane is scheduled to face Josh Hokit in the UFC 334 main event in New York on Nov. 14 local time.","UFC 334 · Nov. 14 ET","https://www.ufc.com/news/how-watch-and-stream-ufc"],["nicolas_cage","HOLLYWOOD","Guess who plays Madden","An NFL coach turned broadcaster","A new Prime Video biopic","NICOLAS CAGE","Nicolas Cage plays John Madden in Madden, the football biopic set to premiere on Prime Video on Nov. 18.","Madden · Nov. 18","https://www.aboutamazon.com/news/entertainment/madden-movie-nicolas-cage-prime-video"],["gurnoor_brar","CRICKET","Guess India's new Test pick","Nine ODI wickets in New Zealand","A first Test call-up","GURNOOR BRAR","India called up Gurnoor Brar for his first Test squad after he took nine wickets in the ongoing New Zealand ODI series.","India Test squad update · Nov. 14","https://www.icc-cricket.com/tournaments/world-test-championship/news/india-release-spinner-for-pacer-in-test-squad-to-face-kiwis"],["amanda_seyfried","STREAMING","Guess the voice of Cinderella","Ali Wong plays Lilith","A new spin on a fairy tale","AMANDA SEYFRIED","Amanda Seyfried voices Cinderella in Steps, an animated comedy coming to Netflix on Nov. 20.","Steps · Nov. 20","https://www.netflix.com/tudum/articles/new-on-netflix?lv=true"]]
+          JSON
+          cat >/tmp/render_trending.py <<'PY'
+          import json, math, wave, subprocess, sys
+          from pathlib import Path
+          from functools import lru_cache
+          import numpy as np
+          from PIL import Image,ImageDraw,ImageFont
+          root=Path('output')
+          entries=json.loads((root/'data.json').read_text())
+          i=int(sys.argv[1]); slug,desk,hook,c1,c2,name,story,date,url=entries[i]
+          W,H=540,960
+          ink='#242018'; paper='#f6edda'; red='#922e37'
+          colors=['#80d8d5','#eab981','#87d4a9','#bed3ff','#ecc981','#e8adb8','#e8a477','#dac0ed','#a4dcc7','#eac5cf']
+          accent=colors[i]
+          @lru_cache
+          def font(s,kind):
+           return ImageFont.truetype({'mast':'/usr/share/fonts/truetype/dejavu/DejaVuMathTeXGyre.ttf','serif':'/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf','sans':'/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf','body':'/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'}[kind],s)
+          def label(d,x,y,s,size,kind,c=ink,a='lm',limit=None):
+           while limit and d.textlength(s,font=font(size,kind))>limit:size-=1
+           d.text((x,y),s,font=font(size,kind),fill=c,anchor=a)
+          def wrap(s,d,f,w):
+           lines=['']
+           for word in s.split():
+            trial=(lines[-1]+' '+word).strip()
+            if d.textlength(trial,font=f)>w and lines[-1]:lines.append(word)
+            else:lines[-1]=trial
+           return lines
+          base=Image.new('RGB',(W,H),paper); d=ImageDraw.Draw(base)
+          d.line((38,62,480,62),fill=ink,width=2)
+          label(d,259,98,'𝕾𝖍𝖎𝖕𝕾𝖙𝖆𝖈𝖐',44,'mast',a='mm')
+          d.line((38,133,480,133),fill=ink,width=2)
+          label(d,38,155,desk,15,'sans',red)
+          label(d,480,155,'14 NOV 2026',13,'sans',a='rm')
+          d.line((38,174,480,174),fill='#c0b092')
+          label(d,38,210,hook,40,'serif',limit=442)
+          label(d,38,251,'Beat the 50% reveal.',19,'body')
+          board=Image.new('RGB',(442,365),'#192c39'); bd=ImageDraw.Draw(board)
+          for x in range(17,442,15):
+           for y in range(17,365,15):bd.point((x,y),fill='#456172')
+          bd.rounded_rectangle((7,7,434,357),radius=22,outline='#729497',width=2)
+          label(bd,221,76,desk,17,'sans',accent,'mm')
+          parts=name.split()
+          lines=[name] if len(name)<=13 else [' '.join(parts[:-1]),parts[-1]]
+          for j,line in enumerate(lines):label(bd,221,169+j*48 if len(lines)>1 else 188,line,53,'sans','#fff8eb','mm',384)
+          label(bd,221,286,date,15,'sans',accent,'mm',398)
+          mask=Image.new('L',board.size,0); md=ImageDraw.Draw(mask)
+          covered=Image.new('RGB',board.size,'#0a141e'); cd=ImageDraw.Draw(covered)
+          for j in range(11,440,16):cd.line((j,0,0,j), fill='#111f2a')
+          for j in range(15,365,16):cd.line((440,j,440-j,0),fill='#111f2a')
+          def coord(t):
+           # Triangle-wave reflection keeps velocity continuous between wall hits.
+           def reflect(k,w):
+            v=k%(2*w)
+            return v if v<w else 2*w-v
+           return 12+reflect(15+t*(274+i*8),418),12+reflect(64+t*(184-i*3),341)
+          events=[]
+          for k in range(1,300):
+           t=k/30;x,y=coord(t); ox,oy=coord(t-1/30)
+           if min(x,442-x)<19 and min(ox,442-ox)>=19 or min(y,365-y)<18 and min(oy,365-oy)>=18:events.append(t)
+          audio=np.zeros(15*44100)
+          for j,t in enumerate(events+[10.4]):
+           s=np.arange(3300)/44100;k=round(t*44100)
+           audio[k:k+len(s)]+=.19*np.sin(2*np.pi*(490+j%5*95)*s)*np.exp(-s*47)
+          wav=root/f'{slug}.wav'
+          with wave.open(str(wav),'wb') as f:
+           f.setparams((1,2,44100,0,'NONE','not compressed'));f.writeframes((audio*32767).astype('<i2').tobytes())
+          out=root/f'TRENDING-20261114-{i+1:02}.mp4'
+          p=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','540x960','-r','30','-i','-','-i',str(wav),'-vf','scale=1080:1920','-threads','2','-c:v','libx264','-preset','ultrafast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-movflags','+faststart','-t','15',str(out)],stdin=subprocess.PIPE)
+          for f in range(450):
+           t=f/30; x,y=coord(t)
+           if t<10.4:
+            ox,oy=coord(max(0,t-1/30)); width=12+int(t*6.6)
+            md.line((ox,oy,x,y),fill=255,width=width)
+            r=width/2;md.ellipse((x-r,y-r,x+r,y+r),fill=255)
+           else:md.rectangle((0,0,442,365),fill=255)
+           count=round(mask.histogram()[255]*100/(442*365))
+           tile=Image.composite(board,covered,mask)
+           td=ImageDraw.Draw(tile)
+           for k in (4,2):
+            a,b=coord(max(0,t-k/30)); rr=7-k
+            td.ellipse((a-rr,b-rr,a+rr,b+rr),fill='#748b8d')
+           td.ellipse((x-9,y-9,x+9,y+9),fill='#e4ebed',outline='#69858f',width=2)
+           td.ellipse((x-4,y-5,x,y-1),fill='white')
+           im=base.copy();im.paste(tile,(38,284)); d=ImageDraw.Draw(im)
+           d.line((38,677,480,677),fill='#d0bfa1',width=6)
+           d.line((38,677,38+round(442*count/100),677),fill=red,width=6)
+           label(d,38,712,('ANSWER REVEALED' if t>=10.4 else 'IMAGE REVEALED'),14,'sans',red)
+           label(d,480,712,f'{count}%',24,'sans',a='rm')
+           if t<10.4:
+            label(d,38,771,c1 if t<5.7 else c2,29,'serif',limit=440)
+           else:
+            for j,line in enumerate(wrap(story,d,font(19,'body'),440)):
+             label(d,38,752+24*j,line,19,'body')
+           
+           p.stdin.write(im.tobytes())
+          p.stdin.close()
+          assert p.wait()==0
+          wav.unlink()
+          PY
+          python /tmp/render_trending.py "$INDEX"
+          cat > /tmp/trending_manifest.json <<'JSON'
+          {"batch_id":"shipstack-trending-2026-11-14","enabled":true,"count":10,"items":[{"id":"TRENDING-20261114-01","scene":"news-pinball-reveal","variant":0,"seconds":15,"caption":"Guess the England striker. How early did you get it?\n\nKane scored the winner against Croatia on his record 126th England men's appearance.\n\n#ShipStack #GuessBefore50 #Football"},{"id":"TRENDING-20261114-02","scene":"news-pinball-reveal","variant":1,"seconds":15,"caption":"Guess the solo star. How early did you get it?\n\nAlways Lalisa follows Lisa's move into solo music. It premieres on YouTube Premium on Nov. 18.\n\n#ShipStack #GuessBefore50 #Music"},{"id":"TRENDING-20261114-03","scene":"news-pinball-reveal","variant":2,"seconds":15,"caption":"Guess the India keeper. How early did you get it?\n\nPant was cleared to play and joined India's Test squad in Wellington for the New Zealand series.\n\n#ShipStack #GuessBefore50 #Cricket"},{"id":"TRENDING-20261114-04","scene":"news-pinball-reveal","variant":3,"seconds":15,"caption":"Guess the Spurs star. How early did you get it?\n\nWembanyama averaged 32.6 points over the ten games before San Antonio faced Golden State.\n\n#ShipStack #GuessBefore50 #Basketball"},{"id":"TRENDING-20261114-05","scene":"news-pinball-reveal","variant":4,"seconds":15,"caption":"Guess the hat-trick scorer. How early did you get it?\n\nReijnders scored three before halftime as the Netherlands beat Greece 7–0 in the Nations League.\n\n#ShipStack #GuessBefore50 #Football"},{"id":"TRENDING-20261114-06","scene":"news-pinball-reveal","variant":5,"seconds":15,"caption":"Guess the Bollywood actor. How early did you get it?\n\nTripathi and Aditi Rao Hydari star in Parivarik ManuRanjan, which premiered on Sony LIV on Nov. 13.\n\n#ShipStack #GuessBefore50 #Bollywood"},{"id":"TRENDING-20261114-07","scene":"news-pinball-reveal","variant":6,"seconds":15,"caption":"Guess the UFC headliner. How early did you get it?\n\nCiryl Gane is scheduled to face Josh Hokit in the UFC 334 main event in New York on Nov. 14 local time.\n\n#ShipStack #GuessBefore50 #Mma"},{"id":"TRENDING-20261114-08","scene":"news-pinball-reveal","variant":7,"seconds":15,"caption":"Guess who plays Madden. How early did you get it?\n\nNicolas Cage plays John Madden in Madden, the football biopic set to premiere on Prime Video on Nov. 18.\n\n#ShipStack #GuessBefore50 #Hollywood"},{"id":"TRENDING-20261114-09","scene":"news-pinball-reveal","variant":8,"seconds":15,"caption":"Guess India's new Test pick. How early did you get it?\n\nIndia called up Gurnoor Brar for his first Test squad after he took nine wickets in the ongoing New Zealand ODI series.\n\n#ShipStack #GuessBefore50 #Cricket"},{"id":"TRENDING-20261114-10","scene":"news-pinball-reveal","variant":9,"seconds":15,"caption":"Guess the voice of Cinderella. How early did you get it?\n\nAmanda Seyfried voices Cinderella in Steps, an animated comedy coming to Netflix on Nov. 20.\n\n#ShipStack #GuessBefore50 #Streaming"}]}
+          JSON
+          python - <<'PY'
+          import json, os, pathlib, shutil, subprocess
+          manifest = pathlib.Path('/tmp/trending_manifest.json')
+          i = int(os.environ['INDEX'])
+          if i == 0:
+              shutil.copyfile(manifest, 'output/manifest.json')
+          item = json.loads(manifest.read_text())['items'][i]
+          clip = pathlib.Path('output') / (item['id'] + '.mp4')
+          subprocess.run(['python','reels/verify.py',str(clip)],check=True)
+          clip.with_suffix('.mp4.json').write_text(json.dumps({
+              key: item[key] for key in ('scene','variant','seconds')
+          }))
+          pathlib.Path('output/data.json').unlink()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trending-${{ matrix.index }}
+          path: output/
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'trending-*', path: output, merge-multiple: true}
+      - name: Publish authorized batch to Instagram
+        env:
+          BATCH_MANIFEST: output/manifest.json
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          PYTHONPATH=reels/pythonic python - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+          import time
+          import publish
+
+          meta = publish.campaign.Meta()
+          meta.check_account()
+          entries = publish.items()
+          tag = json.loads(publish.MANIFEST.read_text())['batch_id']
+          if subprocess.run(['gh','release','view',tag],capture_output=True).returncode:
+              subprocess.run(['gh','release','create',tag,'--title','ShipStack news reveal reels',
+                              '--notes','Ten sourced November news reveals.'],check=True)
+          for index, item in enumerate(entries):
+              if index:
+                  time.sleep(30)
+              try:
+                  record = publish.publish_one(item, Path('output')/(item['id']+'.mp4'), meta)
+                  if record.get('status') != 'published':
+                      print('UNCONFIRMED', item['id'], flush=True)
+              except RuntimeError as error:
+                  print('PUBLISH_ERROR', item['id'], str(error), flush=True)
+          state = publish.campaign.read_state()['posts']
+          count = sum(state.get(item['id'], {}).get('status') == 'published' for item in entries)
+          print(f'TRENDING_CONFIRMED {count}/{len(entries)}', flush=True)
+          if count != len(entries):
+              raise SystemExit(1)
+          PY
