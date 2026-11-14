@@ -2469,7 +2469,7 @@
       "seconds": 15,
       "caption": "Rule Switch \u00b7 Find where the arrow ends. Turn as each card tells you.\n\nHow did you do? Save it for another round or send it to a friend.\n\n#ShipStack #BrainBreak #BrainTeaser",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896608024522936",
       "content_sha256": "d32f35498076fe2969622e379a21ef5d9edfc84e1bd32772adb5d03d10b3889a",
       "source": {
@@ -2477,7 +2477,9 @@
         "variant": 5,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T20:57:25.839398+05:30"
+      "attempted_at": "2026-11-14T20:57:25.839398+05:30",
+      "media_id": "17936561298141882",
+      "published_at": "2026-11-14T20:57:33.029253+05:30"
     }
   }
 }
