@@ -1887,6 +1887,29 @@
       "attempted_at": "2026-11-14T13:54:26.946744+05:30",
       "media_id": "18091983710250983",
       "published_at": "2026-11-14T13:54:34.548450+05:30"
+    },
+    "BALLOON-20261114-03": {
+      "id": "BALLOON-20261114-03",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seed": 310001,
+      "caption": "Guess the first balloon to burst. Lock in your color now.\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896508232522936",
+      "content_sha256": "00cbf7728638d714dda21ddcd76f3202f570306dc2acb9ec02cad865af7f7727",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 0,
+        "seed_used": 310003,
+        "winner": 4,
+        "source_win_seconds": 8.872222222222222,
+        "source_seconds": 9.947222222222221,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T13:59:27.677257+05:30"
     }
   }
 }
