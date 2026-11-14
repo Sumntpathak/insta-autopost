@@ -2328,6 +2328,23 @@
       "attempted_at": "2026-11-14T17:47:27.557751+05:30",
       "media_id": "18049674788823671",
       "published_at": "2026-11-14T17:47:37.997574+05:30"
+    },
+    "GOLD-VAULT-20261114-03": {
+      "id": "GOLD-VAULT-20261114-03",
+      "scene": "gold-vault",
+      "variant": 2,
+      "seconds": 15,
+      "caption": "Gold Vault \u00b7 Amethyst Edition\nFollow the gold ball through eleven swaps. Lock in your cup before the reveal.\n\n#ShipStack #GoldVault #CupChallenge",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896557288522936",
+      "content_sha256": "7e6705b8b35019000e488c74f8e9303ef429db069838e9f5d36235ba9bb52515",
+      "source": {
+        "scene": "gold-vault",
+        "variant": 2,
+        "seconds": 15
+      },
+      "attempted_at": "2026-11-14T17:48:33.001047+05:30"
     }
   }
 }
