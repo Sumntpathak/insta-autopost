@@ -2127,7 +2127,7 @@
       "seconds": 15,
       "caption": "Guess the solo star. How early did you get it?\n\nAlways Lalisa follows Lisa's move into solo music. It premieres on YouTube Premium on Nov. 18.\n\n#ShipStack #GuessBefore50 #Music",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896544193522936",
       "content_sha256": "25db5685130ec8f7d6728b607e4efc0c8d4a6dfa0be0f413a46cf7cd77b8d547",
       "source": {
@@ -2135,7 +2135,9 @@
         "variant": 1,
         "seconds": 15
       },
-      "attempted_at": "2026-11-14T16:49:58.107596+05:30"
+      "attempted_at": "2026-11-14T16:49:58.107596+05:30",
+      "media_id": "18103821596359330",
+      "published_at": "2026-11-14T16:50:05.956736+05:30"
     }
   }
 }
