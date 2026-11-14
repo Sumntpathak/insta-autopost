@@ -1720,7 +1720,7 @@
       "seed": 142195,
       "caption": "Which ball survives the crumbling floor? Pick a color. Got it right? Tap \u2764\ufe0f.\n\n#Physics #ShipStack",
       "date": "2026-11-14",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896491450522936",
       "content_sha256": "d47a2ed17c5649be7b44bc0e0858d74add47aabad290a07b65c1c692c7aa4e4c",
       "source": {
@@ -1734,7 +1734,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-14T12:55:28.733619+05:30"
+      "attempted_at": "2026-11-14T12:55:28.733619+05:30",
+      "media_id": "18085929326335165",
+      "published_at": "2026-11-14T12:55:36.420872+05:30"
     }
   }
 }
