@@ -22,6 +22,7 @@ jobs:
           INDEX: ${{ matrix.index }}
           OPENBLAS_NUM_THREADS: '1'
         run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-liberation; }
           python -m pip install numpy pillow
           mkdir -p output
           cat >output/data.json <<'JSON'
