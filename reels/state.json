@@ -1837,6 +1837,29 @@
       "attempted_at": "2026-11-14T13:19:55.337891+05:30",
       "media_id": "17917455897495865",
       "published_at": "2026-11-14T13:20:03.193338+05:30"
+    },
+    "BALLOON-20261114-01": {
+      "id": "BALLOON-20261114-01",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seed": 300001,
+      "caption": "Which balloon pops first? Pick your color before the first bounce.\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896504650522936",
+      "content_sha256": "47f77c484c68dd46494263928c8ac33969d92c038524e6e26fe8a6760442dc1a",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 0,
+        "seed_used": 300002,
+        "winner": 6,
+        "source_win_seconds": 9.794444444444444,
+        "source_seconds": 10.869444444444444,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T13:52:03.771145+05:30"
     }
   }
 }
