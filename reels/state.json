@@ -2012,6 +2012,29 @@
       "attempted_at": "2026-11-14T14:19:26.958873+05:30",
       "media_id": "18496263091107063",
       "published_at": "2026-11-14T14:19:34.284288+05:30"
+    },
+    "BALLOON-20261114-08": {
+      "id": "BALLOON-20261114-08",
+      "scene": "pl-balloon",
+      "variant": 1,
+      "seed": 335001,
+      "caption": "Which color loses this balloon race? Watch the final bounce.\n\n#BalloonRace #Physics #ShipStack",
+      "date": "2026-11-14",
+      "status": "publishing",
+      "container_id": "17896514781522936",
+      "content_sha256": "90e8209e27b99ac85b47878ef68c2d610348307438bbae4cf4045160287289b2",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 1,
+        "seed_used": 335007,
+        "winner": 2,
+        "source_win_seconds": 9.577777777777778,
+        "source_seconds": 10.652777777777777,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-14T14:24:26.777897+05:30"
     }
   }
 }
