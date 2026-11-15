@@ -6,7 +6,7 @@ Story: a gust flips one friend's umbrella inside out. His dry friend laughs. The
 
 The two characters have separate hair signatures and readable surprised, annoyed, amused, overheated, pleading and angry expressions. Body movement, handoffs and sound cues carry the story.
 
-Audio is original procedural cartoon sound design: rain, wind, spring snaps, water, cup sounds, nonverbal synthesized laughter, huffs and a grumble. These are stylized synthetic vocal reactions, not recordings of human actors or spoken dialogue.
+Audio combines recorded CC0 laughter and water drops found on GitHub with original procedural cartoon rain, wind, spring snaps, splashes, cup sounds, huffs and a grumble. The two characters' laughter uses a recorded sample, adjusted in playback rate and timing. Other vocal reactions remain stylized synthesis. There is no spoken dialogue. See [sound sources and licenses](assets/SOURCES.md).
 
 ```bash
 python -m pip install Pillow numpy scipy

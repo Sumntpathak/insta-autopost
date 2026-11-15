@@ -340,6 +340,19 @@ def frame(t,width=1080):
 SR=48000
 
 
+def recorded(name):
+    file=HERE/'assets'/name
+    if not file.exists():raise FileNotFoundError(f'Missing recorded sound: {file}')
+    raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(file),'-f','f32le','-ac','1','-ar',str(SR),'pipe:1'])
+    sound=np.frombuffer(raw,dtype='<f4').astype(np.float64)
+    active=np.flatnonzero(np.abs(sound)>max(.0001,np.max(np.abs(sound))*.015))
+    if not len(active):raise ValueError(f'Recorded sound is silent: {name}')
+    sound=sound[max(0,active[0]-480):min(len(sound),active[-1]+480)]
+    fade=min(240,len(sound)//4)
+    sound[:fade]*=np.linspace(0,1,fade);sound[-fade:]*=np.linspace(1,0,fade)
+    return sound*.85/max(.01,np.max(np.abs(sound)))
+
+
 def voice(duration=.22,pitch=190,vowel='a',seed=1):
     rng=np.random.default_rng(seed);t=np.arange(int(SR*duration))/SR
     f=pitch*(1-.17*t/max(duration,.01))*(1+.015*np.sin(2*np.pi*6*t))
@@ -360,6 +373,8 @@ def voice(duration=.22,pitch=190,vowel='a',seed=1):
 
 def soundtrack(path):
     rng=np.random.default_rng(491);audio=np.zeros((DURATION*SR,2),np.float64)
+    laugh_recording=recorded('laugh.wav')
+    water_recording=recorded('water-drop.wav')
     def add(start,sound,gain=.3,pan=0):
         at=int(start*SR);length=min(len(sound),len(audio)-at)
         if length<=0:return
@@ -372,10 +387,10 @@ def soundtrack(path):
         tt=np.arange(int(SR*d))/SR
         return np.sin(2*np.pi*(hz*tt+fall*tt*tt/2))*np.exp(-tt*7/d)
     def laugh(start,pitch,pan):
-        for i in range(6):
-            add(start+i*.235,voice(.19,pitch+(i%3)*14,'a',i+int(start*50)),.34 if i<4 else .22,pan)
-        puff=noise(.13,1700)*np.linspace(1,0,int(SR*.13))
-        add(start+1.43,puff,.1,pan)
+        rate=pitch/190
+        clip=signal.resample(laugh_recording,max(1,round(len(laugh_recording)/rate)))
+        add(start,clip,.55,pan)
+        add(start+len(clip)/SR+.09,clip,.43,pan)
     rain=noise(6.5,8500)
     envelope=np.clip(np.arange(len(rain))/SR/.35,0,1)*np.clip((6.45-np.arange(len(rain))/SR)/.7,0,1)
     add(0,rain*envelope,.045)
@@ -391,7 +406,7 @@ def soundtrack(path):
     add(6.77,tone(.4,1568),.06)
     for start in (7.9,8.32):add(start,noise(.18,1300)*np.hanning(int(SR*.18)),.18,.4)
     for start in (9.3,9.55,10.55,10.85,23.95,24.2):
-        add(start,tone(.11,740,2100),.1,-.3 if start<12 else .3)
+        add(start,water_recording,.24,-.3 if start<12 else .3)
     slurp=noise(.32,3300)*(.3+.7*np.sin(np.arange(int(SR*.32))/SR*70)**2)*np.hanning(int(SR*.32))
     add(10.65,slurp,.18,-.3)
     add(11.15,voice(.3,155,'a',50),.16,-.3)
@@ -400,7 +415,7 @@ def soundtrack(path):
     add(16.56,click,.45,.35)
     splash=noise(.8,6500)*np.exp(-np.arange(int(SR*.8))/SR*4)
     add(17.0,splash,.35,.25)
-    for start in (17.5,18.0,18.6,20.0):add(start,tone(.15,600,1500),.09,.3)
+    for start in (17.5,18.0,18.6,20.0):add(start,water_recording,.27,.3)
     add(18.35,voice(.35,112,'u',68),.27,.35)
     grumble=voice(.62,87,'u',77)
     grumble*=.7+.3*np.sin(np.arange(len(grumble))/SR*math.tau*23)
@@ -408,8 +423,8 @@ def soundtrack(path):
     laugh(20.0,225,-.35)
     add(23.5,tone(.13,1280),.12)
     add(24.35,slurp,.17,.35)
-    for i in range(3):add(25.2+i*.23,voice(.18,160+i*10,'a',90+i),.15,.3)
-    # Original effects only: no dialogue, copyrighted clips or stock laugh track.
+    add(25.2,laugh_recording[:int(SR*.65)],.27,.3)
+    # Recorded CC0 laughter/drops plus original nonverbal cartoon foley.
     fade=np.minimum(1,np.arange(len(audio))/(SR*.05))*np.minimum(1,(len(audio)-np.arange(len(audio)))/(SR*.35))
     audio*=fade[:,None]
     audio=np.tanh(audio*1.15)
@@ -449,7 +464,7 @@ def render(output,width=1080,fps=30):
         if proc.wait()!=0:raise RuntimeError(error)
     except BaseException:
         proc.kill();proc.wait();raise
-    output.with_suffix('.json').write_text(json.dumps({'title':'The Last Laugh','duration':DURATION,'width':width,'height':width*16//9,'fps':fps,'style':'Original black ink on white; wordless stick-figure comedy','audio':'Original synthesized nonverbal cartoon laughter, grunts and foley','published':False},indent=2))
+    output.with_suffix('.json').write_text(json.dumps({'title':'The Last Laugh','duration':DURATION,'width':width,'height':width*16//9,'fps':fps,'style':'Original black ink on white; wordless stick-figure comedy','audio':'GitHub-sourced CC0 recorded laughter and water drops, plus original synthesized grunts and foley','audio_sources':'comedy/assets/sources.json','published':False},indent=2))
     print(output,flush=True)
 
 

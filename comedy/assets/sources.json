@@ -1,0 +1,22 @@
+[
+  {
+    "file": "laugh.wav",
+    "repository": "code4fukui/sound-cc0",
+    "commit": "0bdbbe370c42897e12b7c5b0b26d96228e0d2931",
+    "source_url": "https://raw.githubusercontent.com/code4fukui/sound-cc0/0bdbbe370c42897e12b7c5b0b26d96228e0d2931/wahaha.wav",
+    "license": "CC0",
+    "license_evidence": "https://github.com/code4fukui/sound-cc0/blob/0bdbbe370c42897e12b7c5b0b26d96228e0d2931/sounds.csv",
+    "sha256": "8e85fb1e61a380fed6b120557ad4f91454f5c9faf6351706274df21db7adcc15",
+    "bytes": 82566
+  },
+  {
+    "file": "water-drop.wav",
+    "repository": "Lelio88/dewdrop",
+    "commit": "35da4d0ec47d27bf582c7aa7102c40a278eff49b",
+    "source_url": "https://raw.githubusercontent.com/Lelio88/dewdrop/35da4d0ec47d27bf582c7aa7102c40a278eff49b/android/app/src/main/res/raw/drop.wav",
+    "license": "CC0 1.0",
+    "license_evidence": "https://github.com/Lelio88/dewdrop/blob/35da4d0ec47d27bf582c7aa7102c40a278eff49b/CREDITS.md",
+    "sha256": "ebaa9f0bb4b077e7d222048409b770437119e4720648cd79ccd600f125a6cbe8",
+    "bytes": 39882
+  }
+]
