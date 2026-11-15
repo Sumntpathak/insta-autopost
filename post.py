@@ -100,6 +100,9 @@ def dry_run(schedule, now):
 
 
 def main():
+    from team.active import active as team_active
+    if team_active():
+        print('Global ShipStack team owns publishing during the pilot.'); return
     now = datetime.datetime.now(IST)
     schedule = sorted(load("schedule.json"), key=slot_dt)
     if DRY_RUN:

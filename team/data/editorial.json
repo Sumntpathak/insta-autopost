@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Keep secrets out of your repository",
+    "source": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Keep secrets out of your repository\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Store a secret, not a password in code",
+        "body": "Use the repository\u2019s secret store for credentials needed by automation."
+      },
+      {
+        "title": "Give access only where needed",
+        "body": "Pass a credential only to the step that requires it."
+      },
+      {
+        "title": "A leak needs more than deletion",
+        "body": "If a credential was exposed, revoke or rotate it. Removing the file alone does not undo exposure."
+      },
+      {
+        "title": "Check before sharing",
+        "body": "Inspect logs, screenshots and commits before making them public."
+      }
+    ]
+  },
+  {
+    "title": "Use a branch for a focused change",
+    "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Use a branch for a focused change\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Give each change its own space",
+        "body": "A branch lets you work on a change separately from the main line of a project."
+      },
+      {
+        "title": "Keep the goal small",
+        "body": "Name the change clearly and avoid mixing unrelated work."
+      },
+      {
+        "title": "Review the difference",
+        "body": "Check what changed before merging it back."
+      },
+      {
+        "title": "Keep the record useful",
+        "body": "Explain why the change matters, not just which files you edited."
+      }
+    ]
+  },
+  {
+    "title": "Make a README useful in one minute",
+    "source": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Make a README useful in one minute\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Start with the purpose",
+        "body": "Tell a new reader what the project does and who it helps."
+      },
+      {
+        "title": "Show a working first step",
+        "body": "Include a short setup example that matches the current project."
+      },
+      {
+        "title": "Make the next action clear",
+        "body": "Link to usage, support and contribution guidance."
+      },
+      {
+        "title": "Keep examples current",
+        "body": "Update the README when setup or behavior changes."
+      }
+    ]
+  },
+  {
+    "title": "Turn a vague task into an issue",
+    "source": "https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Turn a vague task into an issue\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Write down the actual outcome",
+        "body": "Describe the problem and what a successful result would look like."
+      },
+      {
+        "title": "Add useful context",
+        "body": "For a bug, include steps, expected behavior and observed behavior."
+      },
+      {
+        "title": "Keep the scope visible",
+        "body": "Split unrelated tasks so each can be discussed and tracked."
+      },
+      {
+        "title": "Close the feedback loop",
+        "body": "Record the fix or decision so others can follow the outcome."
+      }
+    ]
+  },
+  {
+    "title": "Review before you merge",
+    "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Review before you merge\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Explain the change",
+        "body": "A pull request gives reviewers a place to inspect and discuss proposed changes."
+      },
+      {
+        "title": "Show the evidence",
+        "body": "State how you checked the behavior and what remains uncertain."
+      },
+      {
+        "title": "Keep review manageable",
+        "body": "A focused change is easier to understand than several unrelated changes."
+      },
+      {
+        "title": "Resolve the important feedback",
+        "body": "Check the final version after revisions, not only the first draft."
+      }
+    ]
+  },
+  {
+    "title": "Automation needs a failure path",
+    "source": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions",
+    "verified": true,
+    "verification": "agent-curated general workflow guidance",
+    "caption": "Automation needs a failure path\n\nA small practical step for clearer work.\n\nSource: https://docs.github.com/en/actions/about-github-actions/understanding-github-actions\n\nWhat would you add? Follow @shipstack_ for smart tools and sharper thinking.",
+    "cards": [
+      {
+        "title": "Name the trigger",
+        "body": "Decide which event should start the workflow."
+      },
+      {
+        "title": "Separate the steps",
+        "body": "Make preparation, checks and publication distinct."
+      },
+      {
+        "title": "Make failures visible",
+        "body": "Keep useful logs without printing credentials or private data."
+      },
+      {
+        "title": "Check the outcome",
+        "body": "A started workflow is not the same as a successful external action."
+      }
+    ]
+  }
+]

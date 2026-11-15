@@ -47,6 +47,13 @@ def active(state, now):
 
 
 def plan(state, now):
+    # One publishing owner during the global pilot; keep all old history intact.
+    import sys
+    if str(HERE.parent) not in sys.path:
+        sys.path.insert(0, str(HERE.parent))
+    from team.active import active as team_active
+    if team_active():
+        return None
     if CONFIG.get('paused', False) or not active(state, now):
         return None
     day = (now.date() - dt.date.fromisoformat(state['start_date'])).days

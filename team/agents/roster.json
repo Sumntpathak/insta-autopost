@@ -1,0 +1,56 @@
+[
+  {
+    "id": "01-ceo-growth",
+    "role": "CEO and growth lead",
+    "implementation": "team.runner.baseline; team.analytics.recommend_split",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/marketing/marketing-instagram-curator.md"
+  },
+  {
+    "id": "02-analytics",
+    "role": "Daily and historical analyst",
+    "implementation": "team.analytics; python -m team.cli baseline",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/support/support-analytics-reporter.md"
+  },
+  {
+    "id": "03-news-research",
+    "role": "News researcher",
+    "implementation": "team.content.news",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/product/product-trend-researcher.md"
+  },
+  {
+    "id": "04-editor-seo",
+    "role": "Editor and Instagram search specialist",
+    "implementation": "team.editor; team.content.authored_briefs",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/marketing/marketing-seo-specialist.md"
+  },
+  {
+    "id": "05-carousel-designer",
+    "role": "Carousel designer",
+    "implementation": "team.content.render_cards",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/marketing/marketing-carousel-growth-engine.md"
+  },
+  {
+    "id": "06-motion-director",
+    "role": "3D motion and reels director",
+    "implementation": "team.glass_engine",
+    "reference": "https://github.com/remotion-dev/skills"
+  },
+  {
+    "id": "07-quality",
+    "role": "Editorial and technical reviewer",
+    "implementation": "team.content.quality; team.editor.draft; team.runner.run",
+    "reference": "https://github.com/msitarzewski/agency-agents/blob/main/testing/testing-reality-checker.md"
+  },
+  {
+    "id": "08-publishing",
+    "role": "Scheduling and publishing operator",
+    "implementation": "team.planner; team.platforms; team.runner",
+    "reference": "https://developers.facebook.com/documentation/instagram-platform/content-publishing"
+  },
+  {
+    "id": "09-community",
+    "role": "Community reply specialist",
+    "implementation": "team.community; team.webhook",
+    "reference": "https://developers.facebook.com/docs/graph-api/webhooks/getting-started/webhooks-for-instagram/"
+  }
+]

@@ -1,0 +1,112 @@
+name: ShipStack global content team
+on:
+  push:
+    branches: [main]
+    paths: ['team/**', '.github/workflows/shipstack-team.yml']
+  schedule:
+    - cron: '4,14,24,34,44,54 * * * *'
+    - cron: '22 1 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [check, plan, preview, baseline, activate, cycle, community]
+        default: check
+      start_at:
+        description: 'Future UTC ISO timestamp, required for activate'
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  team:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      SHIPSTACK_MODEL: ${{ vars.SHIPSTACK_MODEL }}
+      MODE: ${{ inputs.mode || (github.event_name == 'push' && 'check') || (github.event.schedule == '22 1 * * *' && 'baseline') || 'cycle' }}
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Skip idle scheduled work outside the enabled pilot
+        if: github.event_name == 'schedule'
+        run: |
+          python - <<'PY'
+          import os
+          from team.active import active
+          if not active():
+              with open(os.environ['GITHUB_ENV'], 'a') as output:
+                  output.write('MODE=idle\n')
+          PY
+      - uses: actions/setup-python@v5
+        if: env.MODE != 'idle'
+        with:
+          python-version: '3.12'
+      - name: Install rendering dependencies
+        if: env.MODE != 'idle'
+        run: |
+          python -m pip install 'Pillow>=11,<14'
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
+      - name: Configure durable journal
+        if: env.MODE != 'idle'
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+      - name: Test team boundaries
+        if: env.MODE != 'idle'
+        run: python -m unittest discover -s team/tests -v
+      - name: Create seven-day planning artifact
+        if: env.MODE == 'check' || env.MODE == 'plan'
+        run: python -m team.cli plan
+      - name: Check account identities and Instagram quota
+        if: env.MODE == 'check'
+        id: readiness
+        continue-on-error: true
+        run: python -m team.cli check
+      - name: Read historical outcomes and prepare CEO review
+        if: env.MODE == 'baseline' || github.event_name == 'push'
+        run: python -m team.cli baseline
+      - name: Initialize the pilot after explicit configuration
+        if: env.MODE == 'activate'
+        env:
+          START_AT: ${{ inputs.start_at }}
+        run: python -m team.cli activate --start "$START_AT"
+      - name: Preview due briefs without publication
+        if: env.MODE == 'preview'
+        run: python -m team.cli preview
+      - name: Publish approved due slots
+        if: env.MODE == 'cycle'
+        run: python -m team.cli cycle --live
+      - name: Reply to eligible comments
+        if: env.MODE == 'community' || env.MODE == 'cycle'
+        run: python -m team.cli community
+      - name: Upload reports and rendered content, excluding private inbox
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shipstack-team-${{ github.run_id }}
+          path: |
+            team/out/*.json
+            team/out/*/*.mp4
+            team/out/*/*.jpg
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Surface readiness failure
+        if: steps.readiness.outcome == 'failure'
+        run: |
+          echo 'Account readiness failed. Review readiness.json; the pilot remains uninitialized.'
+          exit 1

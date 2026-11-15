@@ -1,5 +1,9 @@
 # @shipstack_ autopost (free)
 
+## Global ShipStack team pilot
+
+The new [coordinated content team](team/README.md) adds a seven-day, 100-total-posts/day plan across Instagram and Facebook, source-backed editorial work, the refined 3D/glass renderer, historical analytics, a CEO review, scheduling and eligible community replies. It is **disabled and uninitialized** until readiness checks and activation are completed. Existing publishing histories and legacy schedules are preserved. See the team README for capabilities, setup and current limitations.
+
 GitHub Actions posts a **6-slide system-design carousel twice a day** to Instagram:
 **08:37 IST** (morning slot) and **19:07 IST** (evening slot), from `schedule.json`.
 
