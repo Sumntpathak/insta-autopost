@@ -2653,7 +2653,7 @@
       "seconds": 38.2,
       "caption": "Take a desk break with four gentle movements.\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
       "date": "2026-11-15",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896779411522936",
       "content_sha256": "5b56ed5142c6b701b2edad6b3345a60e822e1701df67912c4c61a9947e871083",
       "source": {
@@ -2661,7 +2661,9 @@
         "variant": 0,
         "seconds": 38.2
       },
-      "attempted_at": "2026-11-15T12:29:24.543033+05:30"
+      "attempted_at": "2026-11-15T12:29:24.543033+05:30",
+      "media_id": "18130930183834886",
+      "published_at": "2026-11-15T12:29:31.300538+05:30"
     }
   }
 }
