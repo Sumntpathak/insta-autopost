@@ -101,6 +101,8 @@ jobs:
           name: shipstack-team-${{ github.run_id }}
           path: |
             team/out/*.json
+            team/out/*.md
+            team/out/*.csv
             team/out/*/*.mp4
             team/out/*/*.jpg
           if-no-files-found: ignore

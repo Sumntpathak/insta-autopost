@@ -146,5 +146,7 @@ def baseline(cfg,state):
                       'Use the next-day allocation proposal only when evidence is sufficient.'],
       'commercial_status':'Sponsorship readiness assessment only; no paid campaigns, outreach or revenue claims.'}
     path=save_report('ceo-review.json',summary)
-    return {'report':str(path),'platform_post_counts':{r['platform']:len(r['posts']) for r in reports},
+    from .ceo import write
+    narrative=write(reports,state,cfg)
+    return {'report':str(path),'narrative':str(narrative),'platform_post_counts':{r['platform']:len(r['posts']) for r in reports},
             'complete_inventory':all(r['inventory_complete'] for r in reports)}
