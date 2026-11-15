@@ -2569,6 +2569,23 @@
       "attempted_at": "2026-11-15T12:20:33.935446+05:30",
       "media_id": "18074468924771178",
       "published_at": "2026-11-15T12:20:41.140556+05:30"
+    },
+    "RESET-20261115-02": {
+      "id": "RESET-20261115-02",
+      "scene": "eye2",
+      "variant": 0,
+      "seconds": 37.2,
+      "caption": "Follow the gold dot through diagonals, a zigzag and a spiral.\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
+      "date": "2026-11-15",
+      "status": "publishing",
+      "container_id": "17896777662522936",
+      "content_sha256": "c90494fef4f35c6abb29f4f1e9c913d3132391197a1e147d9c491249f17edced",
+      "source": {
+        "scene": "eye2",
+        "variant": 0,
+        "seconds": 37.2
+      },
+      "attempted_at": "2026-11-15T12:22:19.249066+05:30"
     }
   }
 }
