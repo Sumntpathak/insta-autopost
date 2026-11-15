@@ -57,7 +57,11 @@ def plan(state, now):
     if CONFIG.get('paused', False) or not active(state, now):
         return None
     day = (now.date() - dt.date.fromisoformat(state['start_date'])).days
-    for index, slot in enumerate(CONFIG['slots_ist']):
+    # One-night extended posting window requested for 16 Nov IST.
+    # Every slot has a unique journal key, so attempted posts are never retried.
+    overnight = [f'{h:02d}:{m:02d}' for h in range(0, 7) for m in (0, 30)] if now.date().isoformat() == '2026-11-16' else []
+    slots = overnight + CONFIG['slots_ist']
+    for index, slot in enumerate(slots):
         hour, minute = map(int, slot.split(':'))
         due = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         key = f"R-{state['start_date']}-{day+1:02d}-{index+1:02d}"
