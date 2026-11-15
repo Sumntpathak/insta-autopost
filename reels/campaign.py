@@ -59,7 +59,7 @@ def plan(state, now):
     day = (now.date() - dt.date.fromisoformat(state['start_date'])).days
     # One-night extended posting window requested for 16 Nov IST.
     # Every slot has a unique journal key, so attempted posts are never retried.
-    overnight = [f'{h:02d}:{m:02d}' for h in range(0, 7) for m in (0, 30)] if now.date().isoformat() == '2026-11-16' else []
+    overnight = [f'{h:02d}:{m:02d}' for h in range(0, 7) for m in range(0, 60, 10)] if now.date().isoformat() == '2026-11-16' else []
     slots = overnight + CONFIG['slots_ist']
     for index, slot in enumerate(slots):
         hour, minute = map(int, slot.split(':'))
