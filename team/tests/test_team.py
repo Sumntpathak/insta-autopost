@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import patch
 
 from team import content
-from team.analytics import metric_value,recommend_split,recommend_formats,summarize
+from team.analytics import collect,metric_value,recommend_split,recommend_formats,summarize
 from team.community import reply_text,handle as handle_comment
 from team.planner import due,has_capacity,slots
 from team.platforms import Graph
@@ -69,6 +69,27 @@ class TeamTests(unittest.TestCase):
     def test_broken_pagination_is_not_reported_complete(self):
         graph=Graph.__new__(Graph); graph.call=lambda *a:{'data':[],'paging':{'next':'url'}}
         with self.assertRaises(RuntimeError):list(graph.pages('me/media'))
+
+    def test_facebook_reel_reads_its_video_object(self):
+        from team.platforms import APIError
+        class Client:
+            id='page'
+            def check(self,expected):return {'id':'page','name':expected}
+            def pages(self,*a):yield {'id':'page_post','created_time':START.isoformat(),'permalink_url':'https://www.facebook.com/reel/12345/'}
+            def call(self,path,params):
+                if path=='page':return {'followers_count':1}
+                if path=='12345/video_insights':
+                    value={'total_video_views':240,'total_video_views_unique':70,'total_video_avg_time_watched':4000}.get(params['metric'])
+                    if value is None:raise APIError(400,100)
+                    return {'data':[{'values':[{'value':value}]}]}
+                if path=='12345':return {'reactions':{'summary':{'total_count':3}},'comments':{'summary':{'total_count':1}},'shares':{'count':2}}
+                raise APIError(400,100)
+        report=collect(Client(),'facebook','ShipStack');row=report['posts'][0]
+        self.assertEqual(row['video_id'],'12345')
+        self.assertEqual(row['metrics']['views'],240)
+        self.assertEqual(row['metrics']['unique_3_second_video_viewers'],70)
+        self.assertNotIn('reach',row['metrics'])
+        self.assertEqual(row['metrics']['reactions'],3)
 
     def test_missing_metrics_stay_missing(self):
         report={'platform':'instagram','posts':[{'id':'1','metrics':{'likes':3}}],'inventory_complete':True,'errors':[]}

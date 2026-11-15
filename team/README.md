@@ -36,6 +36,8 @@ Role instructions and source references are in `agents/`. These are implemented 
 
 `analytics.py` follows media pagination beyond the old 100-item cap, collects supported post counters, attempts audience and follower counts, and writes a CEO review. A successful account check is not proof that media processing, insights, comments or messaging scopes work. The latest observed legacy reel failure was HTTP 403 during container status polling, after media creation. Its root cause has not been established.
 
+Facebook Reels have separate post and video IDs. The collector also reads video-level counters and watch time where available. Facebook unique media viewers remain a separately labeled audience measure; three-second video viewers are not presented as reach. Empty audience-demographic responses are marked unavailable.
+
 `editor.py` optionally uses the OpenAI Responses API for drafting and a separate model verification call. It needs an API key and a Responses-compatible model configured by the operator. The small seed editorial library alone is insufficient for a full 100/day pilot. Model checks reduce risk but do not guarantee factual correctness; failed source fetches and reviews hold the item. No paid model calls were made during local development.
 
 ## Commands

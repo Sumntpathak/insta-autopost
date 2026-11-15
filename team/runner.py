@@ -18,6 +18,9 @@ def clients(): return {'instagram':Instagram(),'facebook':Facebook()}
 
 def check(cfg):
     report={'checked_at':now().isoformat(),'platforms':{},'ready':True}
+    from .editor import available
+    report['production']={'editorial_model_configured':available(),'curated_items':len(content.authored_briefs()),
+                          'pilot_enabled':cfg['enabled'],'messaging_webhook_deployed_by_this_workflow':False}
     for platform,constructor,name in [('instagram',Instagram,cfg['instagram_account']),('facebook',Facebook,cfg['facebook_page_name'])]:
         try:
             api=constructor(); account=api.check(name)
