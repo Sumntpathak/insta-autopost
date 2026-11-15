@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths: ['reels/config.json', 'reels/trigger.json']
   schedule:
-    - cron: '7,37 * * * *'
+    - cron: '*/10 * * * *' # Check every 10 minutes; campaign planner enforces due slots
     - cron: '47 17 * * *' # 23:17 IST: daily insights snapshot
   workflow_dispatch:
     inputs:
