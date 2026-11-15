@@ -2634,7 +2634,7 @@
       "seconds": 33.2,
       "caption": "Two inhales and a long exhale. Follow the circle for three rounds.\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
       "date": "2026-11-15",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896778934522936",
       "content_sha256": "7dbe3e05194685bb0fe045cde27d245b55b4616d8966a947b1504c9a5b7374f7",
       "source": {
@@ -2642,7 +2642,9 @@
         "variant": 0,
         "seconds": 33.2
       },
-      "attempted_at": "2026-11-15T12:27:50.736778+05:30"
+      "attempted_at": "2026-11-15T12:27:50.736778+05:30",
+      "media_id": "18119624432004196",
+      "published_at": "2026-11-15T12:27:56.090000+05:30"
     }
   }
 }
