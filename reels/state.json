@@ -2596,7 +2596,7 @@
       "seconds": 38.2,
       "caption": "Follow the square through two rounds of box breathing.\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
       "date": "2026-11-15",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896778034522936",
       "content_sha256": "4a8313229578b82d483de1ba656e0eb1da86dff0dcdebf2cc72c7a884a67bd02",
       "source": {
@@ -2604,7 +2604,9 @@
         "variant": 0,
         "seconds": 38.2
       },
-      "attempted_at": "2026-11-15T12:23:55.642164+05:30"
+      "attempted_at": "2026-11-15T12:23:55.642164+05:30",
+      "media_id": "17875546440637087",
+      "published_at": "2026-11-15T12:24:02.636760+05:30"
     }
   }
 }
