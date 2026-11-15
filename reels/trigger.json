@@ -1,4 +1,5 @@
 {
-  "requested_date_ist": "2026-11-12",
-  "reason": "Start posting today as requested"
+  "requested_date_ist": "2026-11-16",
+  "reason": "User requested overnight posting of ready reels; trigger existing idempotent due-slot workflow",
+  "requested_mode": "post"
 }
