@@ -2615,7 +2615,7 @@
       "seconds": 44.2,
       "caption": "Follow the circle through two rounds of 4-7-8 breathing.\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
       "date": "2026-11-15",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17896778607522936",
       "content_sha256": "b33f36e9befbada854a99e849ef19adcf5197009c51389bad06d8aa6a5cc2511",
       "source": {
@@ -2623,7 +2623,9 @@
         "variant": 0,
         "seconds": 44.2
       },
-      "attempted_at": "2026-11-15T12:25:30.590044+05:30"
+      "attempted_at": "2026-11-15T12:25:30.590044+05:30",
+      "media_id": "18119390821814103",
+      "published_at": "2026-11-15T12:25:37.056523+05:30"
     }
   }
 }
