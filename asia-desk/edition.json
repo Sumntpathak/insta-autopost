@@ -1,0 +1,15 @@
+{
+  "id": "ASIA-20261115",
+  "date": "2026-11-15",
+  "edition": "Sunday, 15 November 2026",
+  "cutoff": "15 NOV · 12:30 IST",
+  "stories": [
+    {"desk":"JAPAN","source":"The Japan Times","time":"15 Nov · Date only","label":"ENERGY","headline":"Fukushima fuel removal is on track, workers say","deck":"Crews began moving spent fuel out of the No. 2 reactor building in June. The work is part of the plant’s decommissioning.","url":"https://www.japantimes.co.jp/news/2026/11/15/japan/fukushima-plant-fuel-removal/"},
+    {"desk":"KOREAN PENINSULA","source":"The Korea Herald","time":"15 Nov · 11:15 KST · Published","label":"DIPLOMACY","headline":"Senior North Korean official arrives in Russia","deck":"Jo Yong-won led a party and government delegation to Moscow, according to North Korean state media.","url":"https://www.koreaherald.com/article/10937389"},
+    {"desk":"HONG KONG","source":"South China Morning Post","time":"15 Nov · 13:20 HKT · Published","label":"TRADE","headline":"Hong Kong trade chief calls for more markets","deck":"Commerce secretary Algernon Yau warned that the surge in AI-related exports could slow, urging the city to widen its trade links.","url":"https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3374472/hong-kong-must-expand-trade-not-wait-luck-ai-exports-could-slow-commerce-chief"},
+    {"desk":"SOUTHEAST ASIA","source":"The Straits Times","time":"14 Nov · 17:29 SGT · Published","label":"DIGITAL ECONOMY","headline":"ASEAN signs pact on digital trade","deck":"The bloc aims to start implementing the agreement in early 2027, with early projects to put it into practice.","url":"https://www.straitstimes.com/asia/se-asia/asean-states-sign-digital-economy-framework-agreement-which-kicks-in-from-early-2027"},
+    {"desk":"INDIA","source":"The Indian Express","time":"15 Nov · 03:07 IST · Updated","label":"AIR QUALITY","headline":"India orders 191 units sealed as Delhi air worsens","deck":"The Centre asked states in the national capital region to name officials responsible for enforcing pollution controls.","url":"https://indianexpress.com/article/india/delhi-air-pollution-bhupender-yadav-caqm-crackdown-191-industries-sealed-officials-accountability-10963249/"},
+    {"desk":"PHILIPPINES","source":"The Jakarta Post / AFP","time":"15 Nov · 07:03 WIB · Published","label":"REGIONAL SUMMIT","headline":"World leaders gather in Manila for ASEAN summit","deck":"Trade, security and energy are on the agenda. A proposed US-backed industrial hub has drawn protests over potential displacement.","url":"https://www.thejakartapost.com/world/2026/11/15/global-powers-converge-on-manila-as-asean-summit-kicks-off"},
+    {"desk":"PAKISTAN","source":"Dawn","time":"15 Nov · 08:12 PKT · Updated","label":"POLITICS","headline":"Pakistan’s leaders agree referendum needs parliament’s approval","deck":"The president and prime minister said any move to create new provinces must follow constitutional procedure, Dawn reported.","url":"https://www.dawn.com/news/2044647"}
+  ]
+}
