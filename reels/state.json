@@ -2550,6 +2550,23 @@
       "attempted_at": "2026-11-14T22:02:54.449536+05:30",
       "media_id": "18114806945626187",
       "published_at": "2026-11-14T22:03:27.113591+05:30"
+    },
+    "RESET-20261115-01": {
+      "id": "RESET-20261115-01",
+      "scene": "focus",
+      "variant": 0,
+      "seconds": 26.200000000000003,
+      "caption": "Can you track the gold dot through all three levels?\n\nSave this for your next break.\n\n#ShipStack #ResetSeries",
+      "date": "2026-11-15",
+      "status": "publishing",
+      "container_id": "17896777173522936",
+      "content_sha256": "0097ec1ef910f3e5afcae7d70c3fd7f09d7a422620c2e5bcedad82bfadd3fc25",
+      "source": {
+        "scene": "focus",
+        "variant": 0,
+        "seconds": 26.200000000000003
+      },
+      "attempted_at": "2026-11-15T12:20:33.935446+05:30"
     }
   }
 }
