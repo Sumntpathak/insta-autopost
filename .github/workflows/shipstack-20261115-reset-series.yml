@@ -1,0 +1,66 @@
+name: Publish ShipStack Reset Series
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/shipstack-20261115-reset-series.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        reel: [focus, eye2, box, sleep, sigh, neck, unclench, ground, soft, posture]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render supplied clip
+        env:
+          REEL: ${{ matrix.reel }}
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install pygame numpy
+          python reels/reset-series/prepare.py "$REEL"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reset-${{ matrix.reel }}
+          path: output/
+          if-no-files-found: error
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    permissions:
+      contents: write
+    concurrency:
+      group: autopost
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: reset-*
+          path: output
+          merge-multiple: true
+      - name: Publish to ShipStack
+        env:
+          GH_TOKEN: ${{ github.token }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BATCH_MANIFEST: output/manifest.json
+          PYTHONPATH: reels/pythonic
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python reels/reset-series/publish_instagram.py
