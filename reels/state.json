@@ -3070,6 +3070,30 @@
       "attempted_at": "2026-11-16T23:22:38.544183+05:30",
       "media_id": "18121884298767680",
       "published_at": "2026-11-16T23:22:46.264389+05:30"
+    },
+    "SS-20261116-ORIG-10": {
+      "id": "SS-20261116-ORIG-10",
+      "scene": "pl-balloon",
+      "variant": 0,
+      "seconds": 15,
+      "caption": "Which balloon lasts longest?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
+      "collection": "shipstack-original",
+      "date": "2026-11-16",
+      "status": "publishing",
+      "container_id": "17897208540522936",
+      "content_sha256": "169d09dae371a069f72488e4b094cc12fe33a815f42cde8742c463c991644bef",
+      "source": {
+        "scene": "pl-balloon",
+        "variant": 0,
+        "seed_used": 108773,
+        "winner": 2,
+        "source_win_seconds": 9.838888888888889,
+        "source_seconds": 10.913888888888888,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-16T23:23:46.926131+05:30"
     }
   }
 }
