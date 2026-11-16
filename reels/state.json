@@ -3122,6 +3122,30 @@
       "attempted_at": "2026-11-16T23:44:05.528624+05:30",
       "media_id": "18134949718756960",
       "published_at": "2026-11-16T23:44:13.424960+05:30"
+    },
+    "SS-20261116-PREMIUM-02": {
+      "id": "SS-20261116-PREMIUM-02",
+      "scene": "pl-ring",
+      "variant": 0,
+      "seconds": 15,
+      "caption": "Three rings. Which ball escapes? Predict before the first collision.\n\nComment your prediction before the reveal. Follow @shipstack_ for the next round.\n\n#satisfyingphysics #physicsreels #marblerace",
+      "collection": "shipstack-premium",
+      "date": "2026-11-16",
+      "status": "publishing",
+      "container_id": "17897214420522936",
+      "content_sha256": "731243f9312906ceaa8c3489c66d5b94ad4844547c57e584cb117b01978f4e41",
+      "source": {
+        "scene": "pl-ring",
+        "variant": 0,
+        "seed_used": 291780,
+        "winner": 2,
+        "source_win_seconds": 14.545833333333333,
+        "source_seconds": 15.920833333333333,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-16T23:46:08.774364+05:30"
     }
   }
 }
