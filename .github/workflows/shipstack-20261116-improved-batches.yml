@@ -37,6 +37,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Configure journal commits
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
       - name: Install system deps
         run: |
           sudo apt-get update -qq
@@ -87,7 +91,6 @@ jobs:
         env:
           BATCH_MANIFEST: ${{ steps.select.outputs.manifest }}
         run: |
-          # Temporarily point the existing publisher at our new manifest
           export BATCH_MANIFEST="$BATCH_MANIFEST"
           python reels/pythonic/publish.py --dir reels/out/pythonic --spacing 35
       - name: Dry-run summary
