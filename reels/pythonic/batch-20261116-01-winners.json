@@ -1,0 +1,78 @@
+{
+  "batch_id": "shipstack-20261116-winners",
+  "enabled": true,
+  "count": 10,
+  "description": "Comment-driving physics reels with stronger CTAs",
+  "items": [
+    {
+      "id": "PL-20261116-01",
+      "scene": "pl-ring",
+      "variant": 11,
+      "caption": "Comment 1, 2 or 3 — which ball escapes all three rings?\n\nI'm betting on #2. Prove me wrong.\n\n@shipstack_ · Physics simulations\n#satisfyingphysics #simulation #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-02",
+      "scene": "pl-last",
+      "variant": 8,
+      "caption": "Which ball survives the spinning blade?\n\nDrop your number before it starts.\n\n@shipstack_\n#satisfying #physics #lastballstanding",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-03",
+      "scene": "pl-marble",
+      "variant": 4,
+      "caption": "Race is live. Who reaches the finish first?\n\nComment your pick now.\n\n@shipstack_ · Physics simulations\n#marblerace #satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-04",
+      "scene": "pl-floor",
+      "variant": 6,
+      "caption": "The floor is crumbling. Which ball stays up longest?\n\n1, 2, 3 or 4?\n\n@shipstack_\n#satisfying #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-05",
+      "scene": "pl-balloon",
+      "variant": 7,
+      "caption": "Which balloon pops first?\n\nComment your number. No changing answers.\n\n@shipstack_ · Physics animations\n#balloonpop #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-06",
+      "scene": "pl-ring",
+      "variant": 14,
+      "caption": "Three rings. One escape.\n\nI'm going with the middle one. What about you?\n\n@shipstack_\n#physics #simulation #satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-07",
+      "scene": "pl-last",
+      "variant": 12,
+      "caption": "Last ball standing. Who survives?\n\nComment the number you trust.\n\n@shipstack_\n#lastball #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-08",
+      "scene": "pl-marble",
+      "variant": 9,
+      "caption": "Pick a marble. Who wins the race?\n\nDrop 1–4 in the comments.\n\n@shipstack_ · Physics simulations\n#marblerace #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-09",
+      "scene": "pl-floor",
+      "variant": 3,
+      "caption": "Tiles are falling. Which ball holds on?\n\nYour pick before it starts.\n\n@shipstack_\n#satisfyingphysics #simulation",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-10",
+      "scene": "pl-balloon",
+      "variant": 15,
+      "caption": "Slow motion or not — which balloon bursts first?\n\nComment now.\n\n@shipstack_\n#balloonpop #physics",
+      "collection": "pythonic-life"
+    }
+  ]
+}

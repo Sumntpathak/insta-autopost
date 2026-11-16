@@ -1,0 +1,78 @@
+{
+  "batch_id": "shipstack-20261116-saves",
+  "enabled": true,
+  "count": 10,
+  "description": "Save-trigger and softer physics reels",
+  "items": [
+    {
+      "id": "PL-20261116-11",
+      "scene": "pl-balloon-slow",
+      "variant": 2,
+      "caption": "Save this for your next 15-second brain reset.\n\nWhich balloon do you think pops first?\n\n@shipstack_\n#brainbreak #satisfying #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-12",
+      "scene": "pl-ring",
+      "variant": 5,
+      "caption": "Watch once. Save it. Watch again later.\n\nWhich ball escapes?\n\n@shipstack_ · Physics simulations\n#satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-13",
+      "scene": "pl-last",
+      "variant": 1,
+      "caption": "15 seconds of pure focus.\n\nSave this. Come back when you need a reset.\n\n@shipstack_\n#brainbreak #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-14",
+      "scene": "pl-marble",
+      "variant": 0,
+      "caption": "Satisfying race. Save it for later.\n\nWho do you think wins?\n\n@shipstack_\n#marblerace #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-15",
+      "scene": "pl-floor",
+      "variant": 9,
+      "caption": "Crumbling floor + pure tension.\n\nSave this one.\n\n@shipstack_\n#satisfyingphysics #simulation",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-16",
+      "scene": "pl-balloon-slow",
+      "variant": 6,
+      "caption": "Slow motion balloon battle.\n\nSave for your next break.\n\n@shipstack_\n#balloonpop #brainbreak",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-17",
+      "scene": "pl-ring",
+      "variant": 18,
+      "caption": "Three rings. One winner.\n\nSave this and test yourself later.\n\n@shipstack_\n#physics #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-18",
+      "scene": "pl-last",
+      "variant": 4,
+      "caption": "Who survives the blade?\n\nSave it. Replay when you need 15 seconds of calm chaos.\n\n@shipstack_\n#lastball #satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-19",
+      "scene": "pl-marble",
+      "variant": 11,
+      "caption": "Clean marble race.\n\nSave this for later.\n\n@shipstack_\n#marblerace #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-20",
+      "scene": "pl-balloon",
+      "variant": 3,
+      "caption": "Which one pops first?\n\nSave + comment your pick.\n\n@shipstack_\n#balloonpop #satisfying",
+      "collection": "pythonic-life"
+    }
+  ]
+}

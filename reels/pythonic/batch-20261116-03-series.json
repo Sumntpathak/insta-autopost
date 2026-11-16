@@ -1,0 +1,78 @@
+{
+  "batch_id": "shipstack-20261116-series",
+  "enabled": true,
+  "count": 10,
+  "description": "Series continuity + mixed strong captions",
+  "items": [
+    {
+      "id": "PL-20261116-21",
+      "scene": "pl-ring",
+      "variant": 21,
+      "caption": "Day 1 of Who Escapes the Rings.\n\nComment your number. We'll see who is right.\n\n@shipstack_\n#physicsreels #satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-22",
+      "scene": "pl-last",
+      "variant": 7,
+      "caption": "Day 2 — Last Ball Standing.\n\nSame rules. New round. Drop your pick.\n\n@shipstack_\n#lastball #physics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-23",
+      "scene": "pl-marble",
+      "variant": 2,
+      "caption": "Day 3 of the Marble Series.\n\nWho takes the win today?\n\n@shipstack_\n#marblerace #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-24",
+      "scene": "pl-floor",
+      "variant": 12,
+      "caption": "Floor is falling again.\n\nPart of the survival series. Which ball holds?\n\n@shipstack_\n#satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-25",
+      "scene": "pl-balloon",
+      "variant": 10,
+      "caption": "Balloon series continues.\n\nWhich one is finished first?\n\n@shipstack_\n#balloonpop #physicsreels",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-26",
+      "scene": "pl-ring",
+      "variant": 25,
+      "caption": "Final ring challenge of the day.\n\nComment 1, 2 or 3.\n\n@shipstack_ · Physics simulations\n#satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-27",
+      "scene": "pl-last",
+      "variant": 16,
+      "caption": "One more last-ball test.\n\nWho survives this time?\n\n@shipstack_\n#lastball #simulation",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-28",
+      "scene": "pl-marble",
+      "variant": 6,
+      "caption": "Marble race — end of day edition.\n\nPick before the race starts.\n\n@shipstack_\n#marblerace #satisfying",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-29",
+      "scene": "pl-floor",
+      "variant": 0,
+      "caption": "Last crumbling floor of the day.\n\nSave it or comment your survivor.\n\n@shipstack_\n#physics #satisfyingphysics",
+      "collection": "pythonic-life"
+    },
+    {
+      "id": "PL-20261116-30",
+      "scene": "pl-balloon-slow",
+      "variant": 8,
+      "caption": "Closing balloon of the day.\n\nWhich one pops first? Comment + save.\n\n@shipstack_\n#balloonpop #brainbreak",
+      "collection": "pythonic-life"
+    }
+  ]
+}
