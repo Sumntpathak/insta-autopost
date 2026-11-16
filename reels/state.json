@@ -3183,7 +3183,7 @@
       "caption": "Pick your flag before the first cut! IN vs PK vs TR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
       "collection": "flag-battle",
       "date": "2026-11-17",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897228664522936",
       "content_sha256": "73d393acac040dd47f35e13f730061910ecc31d8d1040e7cea5c19d0387be67a",
       "source": {
@@ -3204,7 +3204,9 @@
         "variant": 1,
         "seconds": 13.567
       },
-      "attempted_at": "2026-11-17T00:45:50.601023+05:30"
+      "attempted_at": "2026-11-17T00:45:50.601023+05:30",
+      "media_id": "17964442725254232",
+      "published_at": "2026-11-17T00:45:59.357881+05:30"
     }
   }
 }
