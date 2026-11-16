@@ -2949,7 +2949,7 @@
       "caption": "Which balloon pops first?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897205870522936",
       "content_sha256": "f724f7a1002bf86bb965c1084cc751bdd485c117970866648f747de698cda22b",
       "source": {
@@ -2963,7 +2963,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:17:52.378026+05:30"
+      "attempted_at": "2026-11-16T23:17:52.378026+05:30",
+      "media_id": "18112741661005333",
+      "published_at": "2026-11-16T23:17:59.762923+05:30"
     }
   }
 }
