@@ -3105,7 +3105,7 @@
       "caption": "Pick a marble before the race. Which one crosses first?\n\nComment your prediction before the reveal. Follow @shipstack_ for the next round.\n\n#satisfyingphysics #physicsreels #marblerace",
       "collection": "shipstack-premium",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897213775522936",
       "content_sha256": "c4b1d83d2d0efcee70a16a999f9e7645f77d97cfe57a8b79f7cbe77be99ce66c",
       "source": {
@@ -3119,7 +3119,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:44:05.528624+05:30"
+      "attempted_at": "2026-11-16T23:44:05.528624+05:30",
+      "media_id": "18134949718756960",
+      "published_at": "2026-11-16T23:44:13.424960+05:30"
     }
   }
 }
