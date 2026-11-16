@@ -2845,7 +2845,7 @@
       "caption": "Which ball escapes first?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897203497522936",
       "content_sha256": "6c23f0402faf17a16edbc984259cc27e0b34cea419442975efd32c5691cc271f",
       "source": {
@@ -2859,7 +2859,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:12:55.968531+05:30"
+      "attempted_at": "2026-11-16T23:12:55.968531+05:30",
+      "media_id": "18419736391085052",
+      "published_at": "2026-11-16T23:13:03.962204+05:30"
     }
   }
 }
