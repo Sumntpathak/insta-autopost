@@ -1,0 +1,73 @@
+name: ShipStack Flag Battle — 10 episode launch
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/flag-battle-launch.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      BATCH_MANIFEST: reels/flag-battle/publish-10.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install numpy==2.2.6 Pillow==11.2.1
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+      - name: Validate and render all ten episodes
+        run: |
+          python - <<'PY'
+          import json,subprocess,hashlib
+          from pathlib import Path
+          manifest=json.loads(Path('reels/flag-battle/episodes-10.json').read_text())
+          output=Path('reels/out/flag-battle');output.mkdir(parents=True,exist_ok=True)
+          items=[];hashes=set()
+          for i,entry in enumerate(manifest['episodes'],1):
+              ident=entry['id'];file=output/(ident+'.mp4')
+              subprocess.run(['python','reels/flag-battle/string_battle.py','--episode',str(i),'--out',str(file)],check=True)
+              data=json.loads(file.with_suffix('.json').read_text())
+              if len(data['eliminations'])!=len(entry['countries'])-1 or data['winner'] in data['eliminations']:
+                  raise RuntimeError('Invalid winner/elimination sequence for '+ident)
+              duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1',str(file)]))
+              if duration<3:raise RuntimeError('Video too short '+ident)
+              digest=hashlib.sha256(file.read_bytes()).hexdigest()
+              if digest in hashes:raise RuntimeError('Duplicate file '+ident)
+              hashes.add(digest)
+              data.update(scene='flag-battle',variant=i,seconds=round(duration,3))
+              file.with_suffix('.mp4.json').write_text(json.dumps(data))
+              items.append(dict(id=ident,scene='flag-battle',variant=i,seconds=round(duration,3),
+                                caption=entry['caption'],collection='flag-battle'))
+              print('RENDERED_AND_VALIDATED',ident,data['winner'],duration,flush=True)
+          Path('reels/flag-battle/publish-10.json').write_text(json.dumps(dict(
+              batch_id='shipstack-flag-battle-20261117',enabled=True,count=10,items=items),indent=2))
+          PY
+      - name: Publish to Instagram with journal protection
+        run: python reels/pythonic/publish.py --dir reels/out/flag-battle --spacing 60
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shipstack-flag-battle-${{ github.run_id }}
+          path: |
+            reels/out/flag-battle/*.json
+            reels/flag-battle/publish-10.json
+          retention-days: 14
