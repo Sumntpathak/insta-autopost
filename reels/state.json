@@ -3157,7 +3157,7 @@
       "caption": "The tiles are disappearing. Which ball will survive?\n\nComment your prediction before the reveal. Follow @shipstack_ for the next round.\n\n#satisfyingphysics #physicsreels #marblerace",
       "collection": "shipstack-premium",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897215041522936",
       "content_sha256": "bc994d7cfc8df21551f6c0a01e41125376c087f8e113f2393bc3e4036a4e3179",
       "source": {
@@ -3171,7 +3171,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:47:23.940612+05:30"
+      "attempted_at": "2026-11-16T23:47:23.940612+05:30",
+      "media_id": "18171592639488705",
+      "published_at": "2026-11-16T23:47:30.426298+05:30"
     }
   }
 }
