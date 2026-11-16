@@ -3240,6 +3240,37 @@
       "attempted_at": "2026-11-17T00:47:28.450767+05:30",
       "media_id": "18135549047509040",
       "published_at": "2026-11-17T00:47:35.874771+05:30"
+    },
+    "SS-FLAG-03": {
+      "id": "SS-FLAG-03",
+      "scene": "flag-battle",
+      "variant": 3,
+      "seconds": 13.5,
+      "caption": "Pick your flag before the first cut! JP vs KR vs CN. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
+      "collection": "flag-battle",
+      "date": "2026-11-17",
+      "status": "publishing",
+      "container_id": "17897229450522936",
+      "content_sha256": "cf4c265d5c27e6e5ad17cbb6d8abecc734083119a988d200067f56cd55345b7f",
+      "source": {
+        "episode": 3,
+        "seed": 12955,
+        "countries": [
+          "JP",
+          "KR",
+          "CN"
+        ],
+        "winner": "KR",
+        "duration": 8.958,
+        "eliminations": [
+          "JP",
+          "CN"
+        ],
+        "scene": "flag-battle",
+        "variant": 3,
+        "seconds": 13.5
+      },
+      "attempted_at": "2026-11-17T00:48:54.573348+05:30"
     }
   }
 }
