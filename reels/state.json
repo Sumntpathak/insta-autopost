@@ -3079,7 +3079,7 @@
       "caption": "Which balloon lasts longest?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897208540522936",
       "content_sha256": "169d09dae371a069f72488e4b094cc12fe33a815f42cde8742c463c991644bef",
       "source": {
@@ -3093,7 +3093,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:23:46.926131+05:30"
+      "attempted_at": "2026-11-16T23:23:46.926131+05:30",
+      "media_id": "18121686926096320",
+      "published_at": "2026-11-16T23:23:55.525032+05:30"
     }
   }
 }
