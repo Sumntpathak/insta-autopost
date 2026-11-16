@@ -2897,7 +2897,7 @@
       "caption": "Who survives the spinning blade?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897204622522936",
       "content_sha256": "586b43fc109e4337aa76fb2d4c0584d3ff61bb3970154eeebdb2d039870f2bc8",
       "source": {
@@ -2911,7 +2911,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:15:21.716371+05:30"
+      "attempted_at": "2026-11-16T23:15:21.716371+05:30",
+      "media_id": "18120907379087405",
+      "published_at": "2026-11-16T23:15:29.607841+05:30"
     }
   }
 }
