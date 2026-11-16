@@ -2888,6 +2888,30 @@
       "attempted_at": "2026-11-16T23:14:09.029157+05:30",
       "media_id": "18121101215003674",
       "published_at": "2026-11-16T23:14:16.692505+05:30"
+    },
+    "SS-20261116-ORIG-03": {
+      "id": "SS-20261116-ORIG-03",
+      "scene": "pl-last",
+      "variant": 1,
+      "seconds": 15,
+      "caption": "Who survives the spinning blade?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
+      "collection": "shipstack-original",
+      "date": "2026-11-16",
+      "status": "publishing",
+      "container_id": "17897204622522936",
+      "content_sha256": "586b43fc109e4337aa76fb2d4c0584d3ff61bb3970154eeebdb2d039870f2bc8",
+      "source": {
+        "scene": "pl-last",
+        "variant": 1,
+        "seed_used": 96335,
+        "winner": 8,
+        "source_win_seconds": 8.320833333333333,
+        "source_seconds": 9.395833333333332,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-16T23:15:21.716371+05:30"
     }
   }
 }
