@@ -1,0 +1,32 @@
+name: Validate Flag Battle simulations
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'reels/flag-battle/**'
+      - '.github/workflows/flag-battle-validate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy Pillow
+      - name: Verify all ten episodes have unique real survivors
+        run: |
+          set -e
+          for i in $(seq 1 10); do
+            echo "Validating episode $i"
+            python reels/flag-battle/string_battle.py --episode "$i" --simulate-only --max-seconds 150
+          done
+      - name: Smoke render episode 1
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python reels/flag-battle/string_battle.py --episode 1 --out /tmp/flag_battle_ep01.mp4
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 /tmp/flag_battle_ep01.mp4
