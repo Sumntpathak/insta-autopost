@@ -3131,7 +3131,7 @@
       "caption": "Three rings. Which ball escapes? Predict before the first collision.\n\nComment your prediction before the reveal. Follow @shipstack_ for the next round.\n\n#satisfyingphysics #physicsreels #marblerace",
       "collection": "shipstack-premium",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897214420522936",
       "content_sha256": "731243f9312906ceaa8c3489c66d5b94ad4844547c57e584cb117b01978f4e41",
       "source": {
@@ -3145,7 +3145,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:46:08.774364+05:30"
+      "attempted_at": "2026-11-16T23:46:08.774364+05:30",
+      "media_id": "18505321636102947",
+      "published_at": "2026-11-16T23:46:15.375700+05:30"
     }
   }
 }
