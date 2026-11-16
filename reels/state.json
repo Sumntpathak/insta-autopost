@@ -2923,7 +2923,7 @@
       "caption": "Which ball survives the falling floor?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897205195522936",
       "content_sha256": "f8ebb215807405f8b64d9d92feabd5b66cc67267c9d9b37e8449f974aa73fdbc",
       "source": {
@@ -2937,7 +2937,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:16:39.628929+05:30"
+      "attempted_at": "2026-11-16T23:16:39.628929+05:30",
+      "media_id": "17996079591113061",
+      "published_at": "2026-11-16T23:16:47.350795+05:30"
     }
   }
 }
