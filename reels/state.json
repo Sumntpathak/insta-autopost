@@ -2748,6 +2748,29 @@
       "attempted_at": "2026-11-16T08:23:04.412350+05:30",
       "media_id": "18109599949963946",
       "published_at": "2026-11-16T08:23:43.735393+05:30"
+    },
+    "PL-20261116-01": {
+      "id": "PL-20261116-01",
+      "scene": "pl-ring",
+      "variant": 11,
+      "caption": "Comment 1, 2 or 3 \u2014 which ball escapes all three rings?\n\nI'm betting on #2. Prove me wrong.\n\n@shipstack_ \u00b7 Physics simulations\n#satisfyingphysics #simulation #physicsreels",
+      "collection": "pythonic-life",
+      "date": "2026-11-16",
+      "status": "publishing",
+      "container_id": "17897035647522936",
+      "content_sha256": "9a66d1b03bc4cef85206eb1ff44b8c6249e1c6d8382103e9b136bda262eaaf0f",
+      "source": {
+        "scene": "pl-ring",
+        "variant": 11,
+        "seed_used": 905,
+        "winner": 6,
+        "source_win_seconds": 14.5,
+        "source_seconds": 15.875,
+        "seconds": 15,
+        "provider": "Pythonic Life",
+        "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
+      },
+      "attempted_at": "2026-11-16T11:03:05.022982+05:30"
     }
   }
 }
