@@ -3001,7 +3001,7 @@
       "caption": "Can you predict the closest finish?\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897206980522936",
       "content_sha256": "a9e059adbc46d70f15b09251198f68c9fb818fd67530f77060fc7ae14fccce97",
       "source": {
@@ -3015,7 +3015,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:20:16.915517+05:30"
+      "attempted_at": "2026-11-16T23:20:16.915517+05:30",
+      "media_id": "18157257682483064",
+      "published_at": "2026-11-16T23:20:24.985698+05:30"
     }
   }
 }
