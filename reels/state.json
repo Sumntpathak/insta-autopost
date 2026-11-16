@@ -3207,6 +3207,37 @@
       "attempted_at": "2026-11-17T00:45:50.601023+05:30",
       "media_id": "17964442725254232",
       "published_at": "2026-11-17T00:45:59.357881+05:30"
+    },
+    "SS-FLAG-02": {
+      "id": "SS-FLAG-02",
+      "scene": "flag-battle",
+      "variant": 2,
+      "seconds": 13.733,
+      "caption": "Pick your flag before the first cut! US vs CN vs JP. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
+      "collection": "flag-battle",
+      "date": "2026-11-17",
+      "status": "publishing",
+      "container_id": "17897229060522936",
+      "content_sha256": "b063243ebbf134b198623972e08b2ffa171628bb0d26901380fe8cc66ef25166",
+      "source": {
+        "episode": 2,
+        "seed": 11978,
+        "countries": [
+          "US",
+          "CN",
+          "JP"
+        ],
+        "winner": "CN",
+        "duration": 9.167,
+        "eliminations": [
+          "US",
+          "JP"
+        ],
+        "scene": "flag-battle",
+        "variant": 2,
+        "seconds": 13.733
+      },
+      "attempted_at": "2026-11-17T00:47:28.450767+05:30"
     }
   }
 }
