@@ -3174,6 +3174,37 @@
       "attempted_at": "2026-11-16T23:47:23.940612+05:30",
       "media_id": "18171592639488705",
       "published_at": "2026-11-16T23:47:30.426298+05:30"
+    },
+    "SS-FLAG-01": {
+      "id": "SS-FLAG-01",
+      "scene": "flag-battle",
+      "variant": 1,
+      "seconds": 13.567,
+      "caption": "Pick your flag before the first cut! IN vs PK vs TR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
+      "collection": "flag-battle",
+      "date": "2026-11-17",
+      "status": "publishing",
+      "container_id": "17897228664522936",
+      "content_sha256": "73d393acac040dd47f35e13f730061910ecc31d8d1040e7cea5c19d0387be67a",
+      "source": {
+        "episode": 1,
+        "seed": 11001,
+        "countries": [
+          "IN",
+          "PK",
+          "TR"
+        ],
+        "winner": "IN",
+        "duration": 9.008,
+        "eliminations": [
+          "TR",
+          "PK"
+        ],
+        "scene": "flag-battle",
+        "variant": 1,
+        "seconds": 13.567
+      },
+      "attempted_at": "2026-11-17T00:45:50.601023+05:30"
     }
   }
 }
