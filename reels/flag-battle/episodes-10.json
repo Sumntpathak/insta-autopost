@@ -1,0 +1,121 @@
+{
+  "series": "SHIPSTACK FLAG BATTLE",
+  "reference": "https://ballengine.app/help/simulation-modes/flag-battle-mode",
+  "implementation": "original code; public rules only; no BallEngine assets",
+  "publish_policy": "render-and-QA-before-post",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "background": "#000000",
+    "entrants": 3,
+    "rule": "last-country-with-strings",
+    "strings_initial": 36,
+    "strings_wall_bounce": 1,
+    "acceleration_percent_per_second": 4,
+    "stall_disables_new_strings": true,
+    "sound": "original synthesized note per cut; no copied music"
+  },
+  "episodes": [
+    {
+      "id": "SS-FLAG-01",
+      "countries": [
+        "IN",
+        "PK",
+        "TR"
+      ],
+      "seed": 11001,
+      "caption": "Pick your flag before the first cut! IN vs PK vs TR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-02",
+      "countries": [
+        "US",
+        "CN",
+        "JP"
+      ],
+      "seed": 11978,
+      "caption": "Pick your flag before the first cut! US vs CN vs JP. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-03",
+      "countries": [
+        "JP",
+        "KR",
+        "CN"
+      ],
+      "seed": 12955,
+      "caption": "Pick your flag before the first cut! JP vs KR vs CN. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-04",
+      "countries": [
+        "BR",
+        "AR",
+        "FR"
+      ],
+      "seed": 13932,
+      "caption": "Pick your flag before the first cut! BR vs AR vs FR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-05",
+      "countries": [
+        "IN",
+        "US",
+        "JP"
+      ],
+      "seed": 14909,
+      "caption": "Pick your flag before the first cut! IN vs US vs JP. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-06",
+      "countries": [
+        "DE",
+        "FR",
+        "GB"
+      ],
+      "seed": 15886,
+      "caption": "Pick your flag before the first cut! DE vs FR vs GB. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-07",
+      "countries": [
+        "NP",
+        "IN",
+        "BD"
+      ],
+      "seed": 16863,
+      "caption": "Pick your flag before the first cut! NP vs IN vs BD. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-08",
+      "countries": [
+        "BR",
+        "PT",
+        "ES"
+      ],
+      "seed": 17840,
+      "caption": "Pick your flag before the first cut! BR vs PT vs ES. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-09",
+      "countries": [
+        "TR",
+        "DE",
+        "IT"
+      ],
+      "seed": 18817,
+      "caption": "Pick your flag before the first cut! TR vs DE vs IT. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    },
+    {
+      "id": "SS-FLAG-10",
+      "countries": [
+        "IN",
+        "BR",
+        "US"
+      ],
+      "seed": 19794,
+      "caption": "Pick your flag before the first cut! IN vs BR vs US. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying"
+    }
+  ]
+}
