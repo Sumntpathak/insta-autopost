@@ -3027,7 +3027,7 @@
       "caption": "Last ball standing: round two.\n\nMake your prediction before the result. Did you get it right?\n\n@shipstack_ #satisfyingphysics #marblerace #physicsreels",
       "collection": "shipstack-original",
       "date": "2026-11-16",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897207778522936",
       "content_sha256": "89db714871dc62d3ade435e96029b936c525c58716b555a1a5c1e8e89e8b6e17",
       "source": {
@@ -3041,7 +3041,9 @@
         "provider": "Pythonic Life",
         "source_commit": "e062d70f067afa7b99a58f375e9a064582b5959f"
       },
-      "attempted_at": "2026-11-16T23:21:24.797876+05:30"
+      "attempted_at": "2026-11-16T23:21:24.797876+05:30",
+      "media_id": "17900426853610879",
+      "published_at": "2026-11-16T23:21:33.461304+05:30"
     }
   }
 }
