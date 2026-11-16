@@ -3273,6 +3273,37 @@
       "attempted_at": "2026-11-17T00:48:54.573348+05:30",
       "media_id": "18101861795385585",
       "published_at": "2026-11-17T00:49:02.051814+05:30"
+    },
+    "SS-FLAG-04": {
+      "id": "SS-FLAG-04",
+      "scene": "flag-battle",
+      "variant": 4,
+      "seconds": 13.067,
+      "caption": "Pick your flag before the first cut! BR vs AR vs FR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
+      "collection": "flag-battle",
+      "date": "2026-11-17",
+      "status": "publishing",
+      "container_id": "17897229867522936",
+      "content_sha256": "adfc2c5ad7abc79b479f00b12550319997055f4a503d2b7f1b7dee33d73c95ea",
+      "source": {
+        "episode": 4,
+        "seed": 13932,
+        "countries": [
+          "BR",
+          "AR",
+          "FR"
+        ],
+        "winner": "FR",
+        "duration": 8.517,
+        "eliminations": [
+          "AR",
+          "BR"
+        ],
+        "scene": "flag-battle",
+        "variant": 4,
+        "seconds": 13.067
+      },
+      "attempted_at": "2026-11-17T00:50:31.008402+05:30"
     }
   }
 }
