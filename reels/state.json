@@ -3282,7 +3282,7 @@
       "caption": "Pick your flag before the first cut! BR vs AR vs FR. Who will be the last country standing? Comment your prediction. #shipstack #physics #flagbattle #satisfying",
       "collection": "flag-battle",
       "date": "2026-11-17",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897229867522936",
       "content_sha256": "adfc2c5ad7abc79b479f00b12550319997055f4a503d2b7f1b7dee33d73c95ea",
       "source": {
@@ -3303,7 +3303,9 @@
         "variant": 4,
         "seconds": 13.067
       },
-      "attempted_at": "2026-11-17T00:50:31.008402+05:30"
+      "attempted_at": "2026-11-17T00:50:31.008402+05:30",
+      "media_id": "18109103267362192",
+      "published_at": "2026-11-17T00:50:38.446495+05:30"
     }
   }
 }
