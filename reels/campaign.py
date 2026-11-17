@@ -35,8 +35,19 @@ def persist(state):
     if changed.returncode == 0:
         return
     subprocess.run(['git', 'commit', '-m', 'Record reel campaign state'], check=True)
-    subprocess.run(['git', 'pull', '--rebase'], check=True)
-    subprocess.run(['git', 'push'], check=True)
+    push_with_retry()
+
+
+def push_with_retry(attempts=4, run=subprocess.run, sleep=time.sleep):
+    """Several workflows write state.json; retry a lost push race instead of failing after publish."""
+    for attempt in range(1, attempts + 1):
+        if run(['git', 'pull', '--rebase'], check=False).returncode != 0:
+            run(['git', 'rebase', '--abort'], check=False)
+        elif run(['git', 'push'], check=False).returncode == 0:
+            return
+        if attempt < attempts:
+            sleep(5 * attempt)
+    raise RuntimeError(f'State push failed after {attempts} attempts')
 
 
 def active(state, now):
@@ -153,14 +164,26 @@ def publish(item, url):
     print(f"Published {item['id']} as {media}")
 
 
+REEL_METRICS = ('ig_reels_avg_watch_time', 'ig_reels_video_view_total_time')
+
+
 def insights(output):
     meta = Meta()
     account = meta.check_account()
     report = {'collected_at': dt.datetime.now(IST).isoformat(), 'account': account,
               'metrics': ['views', 'reach', 'saved', 'shares', 'likes', 'comments'], 'posts': []}
     # Include the existing carousels as a baseline, plus any campaign reels.
-    media = meta.call(f'{meta.ig_id}/media', {'fields': 'id,caption,media_type,media_product_type,timestamp,permalink', 'limit': 100})
-    for post in media.get('data', []):
+    posts, after = [], None
+    while len(posts) < 300:  # campaign reels alone exceed one 100-item page
+        params = {'fields': 'id,caption,media_type,media_product_type,timestamp,permalink', 'limit': 100}
+        if after:
+            params['after'] = after
+        page = meta.call(f'{meta.ig_id}/media', params)
+        posts += page.get('data', [])
+        after = page.get('paging', {}).get('cursors', {}).get('after')
+        if not page.get('data') or not page.get('paging', {}).get('next'):
+            break
+    for post in posts:
         row = {**post, 'metrics': {}, 'unavailable': []}
         try:
             results = meta.call(f"{post['id']}/insights", {'metric': ','.join(report['metrics'])}).get('data', [])
@@ -178,9 +201,20 @@ def insights(output):
                 value = values[0].get('value') if values else None
             if value is not None:
                 row['metrics'][entry['name']] = value
+        if post.get('media_product_type') == 'REELS':
+            # Watch time is the clearest design signal (where viewers drop off); Reels only.
+            for metric in REEL_METRICS:
+                try:
+                    entry = (meta.call(f"{post['id']}/insights", {'metric': metric}).get('data') or [None])[0]
+                except RuntimeError:
+                    entry = None
+                value = entry and (entry.get('total_value', {}).get('value')
+                                   if 'total_value' in entry else (entry.get('values') or [{}])[0].get('value'))
+                if value is not None:
+                    row['metrics'][metric] = value
         row['unavailable'] = [m for m in report['metrics'] if m not in row['metrics']]
         report['posts'].append(row)
-    report['coverage'] = 'Most recent 100 media; point-in-time metrics, not a complete 300-post campaign report'
+    report['coverage'] = f'Most recent {len(posts)} media (max 300); point-in-time metrics'
     Path(output).parent.mkdir(parents=True, exist_ok=True)
     Path(output).write_text(json.dumps(report, indent=2))
     print(f"Saved insights for {len(report['posts'])} recent media. Unavailable metrics remain missing, never zero.")

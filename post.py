@@ -21,16 +21,27 @@ IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 SLOT_TIME = {"morning": (8, 30), "evening": (19, 0)}
 
 
+class APIError(Exception):
+    """Meta answered with an HTTP error: the request definitely did not succeed."""
+
+
 def call(path, data=None, method="POST"):
-    data = dict(data or {}, access_token=TOKEN)
-    q = urllib.parse.urlencode(data)
-    url = f"{API}/{path}" + (f"?{q}" if method == "GET" else "")
-    req = urllib.request.Request(url, data=None if method == "GET" else q.encode(), method=method)
+    # The token travels in a header, never in a URL that proxies or logs could keep.
+    q = urllib.parse.urlencode(data or {})
+    url = f"{API}/{path}" + (f"?{q}" if method == "GET" and q else "")
+    req = urllib.request.Request(url, data=None if method == "GET" else q.encode(), method=method,
+                                 headers={"Authorization": f"Bearer {TOKEN}"})
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             return json.load(r)
     except urllib.error.HTTPError as e:
-        sys.exit(f"API error on {path}: {e.read().decode()}")
+        # Keep Meta's error code/message for debugging, but never echo the raw body.
+        try:
+            err = json.loads(e.read().decode()).get("error", {})
+        except ValueError:
+            err = {}
+        detail = f"{err.get('type', '')} {err.get('code', '')}: {err.get('message', '')}".replace(TOKEN, "***")
+        raise APIError(f"Meta HTTP {e.code} on {path}: {detail.strip()}") from None
 
 
 def wait_ready(container_id):
@@ -39,18 +50,19 @@ def wait_ready(container_id):
         if status == "FINISHED":
             return
         if status in ("ERROR", "EXPIRED"):
-            sys.exit(f"container {container_id} failed with status {status}")
+            raise APIError(f"container {container_id} failed with status {status}")
         time.sleep(5)
-    sys.exit(f"container {container_id} not ready after 3 minutes")
+    raise APIError(f"container {container_id} not ready after 3 minutes")
 
 
-def post_instagram(urls, caption):
+def prepare_instagram(urls, caption):
+    """Upload and process the carousel. Nothing is visible on the account yet."""
     kids = [call(f"{IG_ID}/media", {"image_url": u, "is_carousel_item": "true"})["id"] for u in urls]
     for kid in kids:
         wait_ready(kid)
     box = call(f"{IG_ID}/media", {"media_type": "CAROUSEL", "children": ",".join(kids), "caption": caption})["id"]
     wait_ready(box)
-    return call(f"{IG_ID}/media_publish", {"creation_id": box})["id"]
+    return box
 
 
 def post_facebook(urls, caption):
@@ -87,7 +99,7 @@ def dry_run(schedule, now):
             try:
                 with urllib.request.urlopen(req, timeout=30) as r:
                     ok = r.status == 200
-            except urllib.error.HTTPError:
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError):
                 ok = False
             if not ok:
                 bad.append(RAW + p)
@@ -97,6 +109,44 @@ def dry_run(schedule, now):
     print(f"already due now: {due[:10]}")
     if bad:
         sys.exit("unreachable images:\n" + "\n".join(bad[:20]))
+
+
+def publish(item, urls, posted, now):
+    """Journal before the irreversible call, so an ambiguous failure can never re-post.
+
+    - Upload/processing errors happen before anything is public: nothing is recorded, the
+      next run retries.
+    - media_publish is journalled first as "publishing" with its container id. A definite
+      HTTP error removes the entry (safe to retry); a timeout or dropped connection keeps it,
+      so the slot is skipped until someone reconciles the container by hand.
+    """
+    try:
+        box = prepare_instagram(urls, item["caption"])
+    except APIError as e:
+        sys.exit(f"{item['id']}: not published, will retry next run ({e})")
+    rec = {"id": item["id"], "date": now.date().isoformat(), "slot": item.get("slot"),
+           "posted_at": now.isoformat(timespec="minutes"), "status": "publishing", "container_id": box}
+    posted.append(rec)
+    save_posted(posted)
+    try:
+        rec["instagram"] = call(f"{IG_ID}/media_publish", {"creation_id": box})["id"]
+    except APIError as e:
+        posted.remove(rec)
+        save_posted(posted)
+        sys.exit(f"{item['id']}: Meta rejected publish, will retry next run ({e})")
+    except Exception as e:  # timeout / connection reset: the post may be live
+        sys.exit(f"{item['id']}: publish outcome unknown ({type(e).__name__}); "
+                 f"kept as 'publishing' with container {box}. Check the account before clearing it.")
+    rec["status"] = "published"
+    save_posted(posted)
+    if PAGE_ID:
+        try:
+            rec["facebook"] = post_facebook(urls, item["caption"])
+        except APIError as e:
+            rec["facebook_error"] = str(e)  # visible in posted.json for a manual retry
+        save_posted(posted)
+    print("Posted", rec)
+    return rec
 
 
 def main():
@@ -124,18 +174,14 @@ def main():
     if item["id"] in done:
         print(f"{item['id']} already posted, skipping"); return
     urls = [RAW + p for p in item["images"]]
-    rec = {"id": item["id"], "date": now.date().isoformat(), "slot": item.get("slot"),
-           "posted_at": now.isoformat(timespec="minutes"), "instagram": post_instagram(urls, item["caption"])}
-    posted.append(rec)
-    save_posted(posted)  # record immediately so a later failure can never cause a double post
-    if PAGE_ID:
-        rec["facebook"] = post_facebook(urls, item["caption"])
-        save_posted(posted)
-    print("Posted", rec)
+    publish(item, urls, posted, now)
     behind = len(candidates) - 1
     if behind > 0 and not force:
         print(f"{behind} more due slot(s) waiting; they will go out on the next runs")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except APIError as e:
+        sys.exit(str(e))

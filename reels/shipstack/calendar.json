@@ -1,0 +1,1269 @@
+{
+ "paused": false,
+ "timezone": "Asia/Kolkata",
+ "start": "2026-11-19",
+ "days": 30,
+ "note": "Edit freely: change format/episode/time per slot, or set paused=true to stop.",
+ "slots": [
+  {
+   "id": "CAL-2026-11-19-0810-lab01",
+   "date": "2026-11-19",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 1
+  },
+  {
+   "id": "CAL-2026-11-19-1040-balloon",
+   "date": "2026-11-19",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 11
+  },
+  {
+   "id": "CAL-2026-11-19-1310-strings",
+   "date": "2026-11-19",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 11
+  },
+  {
+   "id": "CAL-2026-11-19-1610-ring",
+   "date": "2026-11-19",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 11
+  },
+  {
+   "id": "CAL-2026-11-19-1910-balloon",
+   "date": "2026-11-19",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 12
+  },
+  {
+   "id": "CAL-2026-11-19-2140-strings",
+   "date": "2026-11-19",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 12
+  },
+  {
+   "id": "CAL-2026-11-20-0810-lab02",
+   "date": "2026-11-20",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 1
+  },
+  {
+   "id": "CAL-2026-11-20-1040-balloon",
+   "date": "2026-11-20",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 13
+  },
+  {
+   "id": "CAL-2026-11-20-1310-strings",
+   "date": "2026-11-20",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 13
+  },
+  {
+   "id": "CAL-2026-11-20-1610-ring",
+   "date": "2026-11-20",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 12
+  },
+  {
+   "id": "CAL-2026-11-20-1910-balloon",
+   "date": "2026-11-20",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 14
+  },
+  {
+   "id": "CAL-2026-11-20-2140-strings",
+   "date": "2026-11-20",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 14
+  },
+  {
+   "id": "CAL-2026-11-21-0810-lab01",
+   "date": "2026-11-21",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 2
+  },
+  {
+   "id": "CAL-2026-11-21-1040-balloon",
+   "date": "2026-11-21",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 15
+  },
+  {
+   "id": "CAL-2026-11-21-1310-strings",
+   "date": "2026-11-21",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 15
+  },
+  {
+   "id": "CAL-2026-11-21-1610-ring",
+   "date": "2026-11-21",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 13
+  },
+  {
+   "id": "CAL-2026-11-21-1910-balloon",
+   "date": "2026-11-21",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 16
+  },
+  {
+   "id": "CAL-2026-11-21-2140-strings",
+   "date": "2026-11-21",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 16
+  },
+  {
+   "id": "CAL-2026-11-22-0810-lab02",
+   "date": "2026-11-22",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 2
+  },
+  {
+   "id": "CAL-2026-11-22-1040-balloon",
+   "date": "2026-11-22",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 17
+  },
+  {
+   "id": "CAL-2026-11-22-1310-strings",
+   "date": "2026-11-22",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 17
+  },
+  {
+   "id": "CAL-2026-11-22-1610-ring",
+   "date": "2026-11-22",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 14
+  },
+  {
+   "id": "CAL-2026-11-22-1910-balloon",
+   "date": "2026-11-22",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 18
+  },
+  {
+   "id": "CAL-2026-11-22-2140-strings",
+   "date": "2026-11-22",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 18
+  },
+  {
+   "id": "CAL-2026-11-23-0810-lab01",
+   "date": "2026-11-23",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 3
+  },
+  {
+   "id": "CAL-2026-11-23-1040-balloon",
+   "date": "2026-11-23",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 19
+  },
+  {
+   "id": "CAL-2026-11-23-1310-strings",
+   "date": "2026-11-23",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 19
+  },
+  {
+   "id": "CAL-2026-11-23-1610-ring",
+   "date": "2026-11-23",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 15
+  },
+  {
+   "id": "CAL-2026-11-23-1910-balloon",
+   "date": "2026-11-23",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 20
+  },
+  {
+   "id": "CAL-2026-11-23-2140-strings",
+   "date": "2026-11-23",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 20
+  },
+  {
+   "id": "CAL-2026-11-24-0810-lab02",
+   "date": "2026-11-24",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 3
+  },
+  {
+   "id": "CAL-2026-11-24-1040-balloon",
+   "date": "2026-11-24",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 21
+  },
+  {
+   "id": "CAL-2026-11-24-1310-strings",
+   "date": "2026-11-24",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 21
+  },
+  {
+   "id": "CAL-2026-11-24-1610-ring",
+   "date": "2026-11-24",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 16
+  },
+  {
+   "id": "CAL-2026-11-24-1910-balloon",
+   "date": "2026-11-24",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 22
+  },
+  {
+   "id": "CAL-2026-11-24-2140-strings",
+   "date": "2026-11-24",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 22
+  },
+  {
+   "id": "CAL-2026-11-25-0810-lab01",
+   "date": "2026-11-25",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 4
+  },
+  {
+   "id": "CAL-2026-11-25-1040-balloon",
+   "date": "2026-11-25",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 23
+  },
+  {
+   "id": "CAL-2026-11-25-1310-strings",
+   "date": "2026-11-25",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 23
+  },
+  {
+   "id": "CAL-2026-11-25-1610-ring",
+   "date": "2026-11-25",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 17
+  },
+  {
+   "id": "CAL-2026-11-25-1910-balloon",
+   "date": "2026-11-25",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 24
+  },
+  {
+   "id": "CAL-2026-11-25-2140-strings",
+   "date": "2026-11-25",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 24
+  },
+  {
+   "id": "CAL-2026-11-26-0810-lab02",
+   "date": "2026-11-26",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 4
+  },
+  {
+   "id": "CAL-2026-11-26-1040-balloon",
+   "date": "2026-11-26",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 25
+  },
+  {
+   "id": "CAL-2026-11-26-1310-strings",
+   "date": "2026-11-26",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 25
+  },
+  {
+   "id": "CAL-2026-11-26-1610-ring",
+   "date": "2026-11-26",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 18
+  },
+  {
+   "id": "CAL-2026-11-26-1910-balloon",
+   "date": "2026-11-26",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 26
+  },
+  {
+   "id": "CAL-2026-11-26-2140-strings",
+   "date": "2026-11-26",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 26
+  },
+  {
+   "id": "CAL-2026-11-27-0810-lab01",
+   "date": "2026-11-27",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 5
+  },
+  {
+   "id": "CAL-2026-11-27-1040-balloon",
+   "date": "2026-11-27",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 27
+  },
+  {
+   "id": "CAL-2026-11-27-1310-strings",
+   "date": "2026-11-27",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 27
+  },
+  {
+   "id": "CAL-2026-11-27-1610-ring",
+   "date": "2026-11-27",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 19
+  },
+  {
+   "id": "CAL-2026-11-27-1910-balloon",
+   "date": "2026-11-27",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 28
+  },
+  {
+   "id": "CAL-2026-11-27-2140-strings",
+   "date": "2026-11-27",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 28
+  },
+  {
+   "id": "CAL-2026-11-28-0810-lab02",
+   "date": "2026-11-28",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 5
+  },
+  {
+   "id": "CAL-2026-11-28-1040-balloon",
+   "date": "2026-11-28",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 29
+  },
+  {
+   "id": "CAL-2026-11-28-1310-strings",
+   "date": "2026-11-28",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 29
+  },
+  {
+   "id": "CAL-2026-11-28-1610-ring",
+   "date": "2026-11-28",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 20
+  },
+  {
+   "id": "CAL-2026-11-28-1910-balloon",
+   "date": "2026-11-28",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 30
+  },
+  {
+   "id": "CAL-2026-11-28-2140-strings",
+   "date": "2026-11-28",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 30
+  },
+  {
+   "id": "CAL-2026-11-29-0810-lab01",
+   "date": "2026-11-29",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 6
+  },
+  {
+   "id": "CAL-2026-11-29-1040-balloon",
+   "date": "2026-11-29",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 31
+  },
+  {
+   "id": "CAL-2026-11-29-1310-strings",
+   "date": "2026-11-29",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 31
+  },
+  {
+   "id": "CAL-2026-11-29-1610-ring",
+   "date": "2026-11-29",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 21
+  },
+  {
+   "id": "CAL-2026-11-29-1910-balloon",
+   "date": "2026-11-29",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 32
+  },
+  {
+   "id": "CAL-2026-11-29-2140-strings",
+   "date": "2026-11-29",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 32
+  },
+  {
+   "id": "CAL-2026-11-30-0810-lab02",
+   "date": "2026-11-30",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 6
+  },
+  {
+   "id": "CAL-2026-11-30-1040-balloon",
+   "date": "2026-11-30",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 33
+  },
+  {
+   "id": "CAL-2026-11-30-1310-strings",
+   "date": "2026-11-30",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 33
+  },
+  {
+   "id": "CAL-2026-11-30-1610-ring",
+   "date": "2026-11-30",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 22
+  },
+  {
+   "id": "CAL-2026-11-30-1910-balloon",
+   "date": "2026-11-30",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 34
+  },
+  {
+   "id": "CAL-2026-11-30-2140-strings",
+   "date": "2026-11-30",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 34
+  },
+  {
+   "id": "CAL-2026-12-01-0810-lab01",
+   "date": "2026-12-01",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 7
+  },
+  {
+   "id": "CAL-2026-12-01-1040-balloon",
+   "date": "2026-12-01",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 35
+  },
+  {
+   "id": "CAL-2026-12-01-1310-strings",
+   "date": "2026-12-01",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 35
+  },
+  {
+   "id": "CAL-2026-12-01-1610-ring",
+   "date": "2026-12-01",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 23
+  },
+  {
+   "id": "CAL-2026-12-01-1910-balloon",
+   "date": "2026-12-01",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 36
+  },
+  {
+   "id": "CAL-2026-12-01-2140-strings",
+   "date": "2026-12-01",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 36
+  },
+  {
+   "id": "CAL-2026-12-02-0810-lab02",
+   "date": "2026-12-02",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 7
+  },
+  {
+   "id": "CAL-2026-12-02-1040-balloon",
+   "date": "2026-12-02",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 37
+  },
+  {
+   "id": "CAL-2026-12-02-1310-strings",
+   "date": "2026-12-02",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 37
+  },
+  {
+   "id": "CAL-2026-12-02-1610-ring",
+   "date": "2026-12-02",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 24
+  },
+  {
+   "id": "CAL-2026-12-02-1910-balloon",
+   "date": "2026-12-02",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 38
+  },
+  {
+   "id": "CAL-2026-12-02-2140-strings",
+   "date": "2026-12-02",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 38
+  },
+  {
+   "id": "CAL-2026-12-03-0810-lab01",
+   "date": "2026-12-03",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 8
+  },
+  {
+   "id": "CAL-2026-12-03-1040-balloon",
+   "date": "2026-12-03",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 39
+  },
+  {
+   "id": "CAL-2026-12-03-1310-strings",
+   "date": "2026-12-03",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 39
+  },
+  {
+   "id": "CAL-2026-12-03-1610-ring",
+   "date": "2026-12-03",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 25
+  },
+  {
+   "id": "CAL-2026-12-03-1910-balloon",
+   "date": "2026-12-03",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 40
+  },
+  {
+   "id": "CAL-2026-12-03-2140-strings",
+   "date": "2026-12-03",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 40
+  },
+  {
+   "id": "CAL-2026-12-04-0810-lab02",
+   "date": "2026-12-04",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 8
+  },
+  {
+   "id": "CAL-2026-12-04-1040-balloon",
+   "date": "2026-12-04",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 41
+  },
+  {
+   "id": "CAL-2026-12-04-1310-strings",
+   "date": "2026-12-04",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 41
+  },
+  {
+   "id": "CAL-2026-12-04-1610-ring",
+   "date": "2026-12-04",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 26
+  },
+  {
+   "id": "CAL-2026-12-04-1910-balloon",
+   "date": "2026-12-04",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 42
+  },
+  {
+   "id": "CAL-2026-12-04-2140-strings",
+   "date": "2026-12-04",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 42
+  },
+  {
+   "id": "CAL-2026-12-05-0810-lab01",
+   "date": "2026-12-05",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 9
+  },
+  {
+   "id": "CAL-2026-12-05-1040-balloon",
+   "date": "2026-12-05",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 43
+  },
+  {
+   "id": "CAL-2026-12-05-1310-strings",
+   "date": "2026-12-05",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 43
+  },
+  {
+   "id": "CAL-2026-12-05-1610-ring",
+   "date": "2026-12-05",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 27
+  },
+  {
+   "id": "CAL-2026-12-05-1910-balloon",
+   "date": "2026-12-05",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 44
+  },
+  {
+   "id": "CAL-2026-12-05-2140-strings",
+   "date": "2026-12-05",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 44
+  },
+  {
+   "id": "CAL-2026-12-06-0810-lab02",
+   "date": "2026-12-06",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 9
+  },
+  {
+   "id": "CAL-2026-12-06-1040-balloon",
+   "date": "2026-12-06",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 45
+  },
+  {
+   "id": "CAL-2026-12-06-1310-strings",
+   "date": "2026-12-06",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 45
+  },
+  {
+   "id": "CAL-2026-12-06-1610-ring",
+   "date": "2026-12-06",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 28
+  },
+  {
+   "id": "CAL-2026-12-06-1910-balloon",
+   "date": "2026-12-06",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 46
+  },
+  {
+   "id": "CAL-2026-12-06-2140-strings",
+   "date": "2026-12-06",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 46
+  },
+  {
+   "id": "CAL-2026-12-07-0810-lab01",
+   "date": "2026-12-07",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 10
+  },
+  {
+   "id": "CAL-2026-12-07-1040-balloon",
+   "date": "2026-12-07",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 47
+  },
+  {
+   "id": "CAL-2026-12-07-1310-strings",
+   "date": "2026-12-07",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 47
+  },
+  {
+   "id": "CAL-2026-12-07-1610-ring",
+   "date": "2026-12-07",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 29
+  },
+  {
+   "id": "CAL-2026-12-07-1910-balloon",
+   "date": "2026-12-07",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 48
+  },
+  {
+   "id": "CAL-2026-12-07-2140-strings",
+   "date": "2026-12-07",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 48
+  },
+  {
+   "id": "CAL-2026-12-08-0810-lab02",
+   "date": "2026-12-08",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 10
+  },
+  {
+   "id": "CAL-2026-12-08-1040-balloon",
+   "date": "2026-12-08",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 49
+  },
+  {
+   "id": "CAL-2026-12-08-1310-strings",
+   "date": "2026-12-08",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 49
+  },
+  {
+   "id": "CAL-2026-12-08-1610-ring",
+   "date": "2026-12-08",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 30
+  },
+  {
+   "id": "CAL-2026-12-08-1910-balloon",
+   "date": "2026-12-08",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 50
+  },
+  {
+   "id": "CAL-2026-12-08-2140-strings",
+   "date": "2026-12-08",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 50
+  },
+  {
+   "id": "CAL-2026-12-09-0810-lab01",
+   "date": "2026-12-09",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 11
+  },
+  {
+   "id": "CAL-2026-12-09-1040-balloon",
+   "date": "2026-12-09",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 51
+  },
+  {
+   "id": "CAL-2026-12-09-1310-strings",
+   "date": "2026-12-09",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 51
+  },
+  {
+   "id": "CAL-2026-12-09-1610-ring",
+   "date": "2026-12-09",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 31
+  },
+  {
+   "id": "CAL-2026-12-09-1910-balloon",
+   "date": "2026-12-09",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 52
+  },
+  {
+   "id": "CAL-2026-12-09-2140-strings",
+   "date": "2026-12-09",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 52
+  },
+  {
+   "id": "CAL-2026-12-10-0810-lab02",
+   "date": "2026-12-10",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 11
+  },
+  {
+   "id": "CAL-2026-12-10-1040-balloon",
+   "date": "2026-12-10",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 53
+  },
+  {
+   "id": "CAL-2026-12-10-1310-strings",
+   "date": "2026-12-10",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 53
+  },
+  {
+   "id": "CAL-2026-12-10-1610-ring",
+   "date": "2026-12-10",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 32
+  },
+  {
+   "id": "CAL-2026-12-10-1910-balloon",
+   "date": "2026-12-10",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 54
+  },
+  {
+   "id": "CAL-2026-12-10-2140-strings",
+   "date": "2026-12-10",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 54
+  },
+  {
+   "id": "CAL-2026-12-11-0810-lab01",
+   "date": "2026-12-11",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 12
+  },
+  {
+   "id": "CAL-2026-12-11-1040-balloon",
+   "date": "2026-12-11",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 55
+  },
+  {
+   "id": "CAL-2026-12-11-1310-strings",
+   "date": "2026-12-11",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 55
+  },
+  {
+   "id": "CAL-2026-12-11-1610-ring",
+   "date": "2026-12-11",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 33
+  },
+  {
+   "id": "CAL-2026-12-11-1910-balloon",
+   "date": "2026-12-11",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 56
+  },
+  {
+   "id": "CAL-2026-12-11-2140-strings",
+   "date": "2026-12-11",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 56
+  },
+  {
+   "id": "CAL-2026-12-12-0810-lab02",
+   "date": "2026-12-12",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 12
+  },
+  {
+   "id": "CAL-2026-12-12-1040-balloon",
+   "date": "2026-12-12",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 57
+  },
+  {
+   "id": "CAL-2026-12-12-1310-strings",
+   "date": "2026-12-12",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 57
+  },
+  {
+   "id": "CAL-2026-12-12-1610-ring",
+   "date": "2026-12-12",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 34
+  },
+  {
+   "id": "CAL-2026-12-12-1910-balloon",
+   "date": "2026-12-12",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 58
+  },
+  {
+   "id": "CAL-2026-12-12-2140-strings",
+   "date": "2026-12-12",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 58
+  },
+  {
+   "id": "CAL-2026-12-13-0810-lab01",
+   "date": "2026-12-13",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 13
+  },
+  {
+   "id": "CAL-2026-12-13-1040-balloon",
+   "date": "2026-12-13",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 59
+  },
+  {
+   "id": "CAL-2026-12-13-1310-strings",
+   "date": "2026-12-13",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 59
+  },
+  {
+   "id": "CAL-2026-12-13-1610-ring",
+   "date": "2026-12-13",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 35
+  },
+  {
+   "id": "CAL-2026-12-13-1910-balloon",
+   "date": "2026-12-13",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 60
+  },
+  {
+   "id": "CAL-2026-12-13-2140-strings",
+   "date": "2026-12-13",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 60
+  },
+  {
+   "id": "CAL-2026-12-14-0810-lab02",
+   "date": "2026-12-14",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 13
+  },
+  {
+   "id": "CAL-2026-12-14-1040-balloon",
+   "date": "2026-12-14",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 61
+  },
+  {
+   "id": "CAL-2026-12-14-1310-strings",
+   "date": "2026-12-14",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 61
+  },
+  {
+   "id": "CAL-2026-12-14-1610-ring",
+   "date": "2026-12-14",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 36
+  },
+  {
+   "id": "CAL-2026-12-14-1910-balloon",
+   "date": "2026-12-14",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 62
+  },
+  {
+   "id": "CAL-2026-12-14-2140-strings",
+   "date": "2026-12-14",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 62
+  },
+  {
+   "id": "CAL-2026-12-15-0810-lab01",
+   "date": "2026-12-15",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 14
+  },
+  {
+   "id": "CAL-2026-12-15-1040-balloon",
+   "date": "2026-12-15",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 63
+  },
+  {
+   "id": "CAL-2026-12-15-1310-strings",
+   "date": "2026-12-15",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 63
+  },
+  {
+   "id": "CAL-2026-12-15-1610-ring",
+   "date": "2026-12-15",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 37
+  },
+  {
+   "id": "CAL-2026-12-15-1910-balloon",
+   "date": "2026-12-15",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 64
+  },
+  {
+   "id": "CAL-2026-12-15-2140-strings",
+   "date": "2026-12-15",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 64
+  },
+  {
+   "id": "CAL-2026-12-16-0810-lab02",
+   "date": "2026-12-16",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 14
+  },
+  {
+   "id": "CAL-2026-12-16-1040-balloon",
+   "date": "2026-12-16",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 65
+  },
+  {
+   "id": "CAL-2026-12-16-1310-strings",
+   "date": "2026-12-16",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 65
+  },
+  {
+   "id": "CAL-2026-12-16-1610-ring",
+   "date": "2026-12-16",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 38
+  },
+  {
+   "id": "CAL-2026-12-16-1910-balloon",
+   "date": "2026-12-16",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 66
+  },
+  {
+   "id": "CAL-2026-12-16-2140-strings",
+   "date": "2026-12-16",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 66
+  },
+  {
+   "id": "CAL-2026-12-17-0810-lab01",
+   "date": "2026-12-17",
+   "time": "08:10",
+   "format": "lab01",
+   "episode": 15
+  },
+  {
+   "id": "CAL-2026-12-17-1040-balloon",
+   "date": "2026-12-17",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 67
+  },
+  {
+   "id": "CAL-2026-12-17-1310-strings",
+   "date": "2026-12-17",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 67
+  },
+  {
+   "id": "CAL-2026-12-17-1610-ring",
+   "date": "2026-12-17",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 39
+  },
+  {
+   "id": "CAL-2026-12-17-1910-balloon",
+   "date": "2026-12-17",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 68
+  },
+  {
+   "id": "CAL-2026-12-17-2140-strings",
+   "date": "2026-12-17",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 68
+  },
+  {
+   "id": "CAL-2026-12-18-0810-lab02",
+   "date": "2026-12-18",
+   "time": "08:10",
+   "format": "lab02",
+   "episode": 15
+  },
+  {
+   "id": "CAL-2026-12-18-1040-balloon",
+   "date": "2026-12-18",
+   "time": "10:40",
+   "format": "balloon",
+   "episode": 69
+  },
+  {
+   "id": "CAL-2026-12-18-1310-strings",
+   "date": "2026-12-18",
+   "time": "13:10",
+   "format": "strings",
+   "episode": 69
+  },
+  {
+   "id": "CAL-2026-12-18-1610-ring",
+   "date": "2026-12-18",
+   "time": "16:10",
+   "format": "ring",
+   "episode": 40
+  },
+  {
+   "id": "CAL-2026-12-18-1910-balloon",
+   "date": "2026-12-18",
+   "time": "19:10",
+   "format": "balloon",
+   "episode": 70
+  },
+  {
+   "id": "CAL-2026-12-18-2140-strings",
+   "date": "2026-12-18",
+   "time": "21:40",
+   "format": "strings",
+   "episode": 70
+  }
+ ]
+}

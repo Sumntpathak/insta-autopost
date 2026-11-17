@@ -126,6 +126,35 @@ class TeamTests(unittest.TestCase):
             run(cfg,self.state,START,live=True)
         self.assertEqual(self.state['posts'][slot['id']]['status'],'uncertain')
 
+    def test_published_post_stays_published_when_journal_push_fails(self):
+        from team.runner import run
+        cfg={**self.cfg,'max_jobs_per_cycle':1}
+        slot=due(self.state,cfg,START)[0]
+        brief=content.reel_brief(slot,cfg)
+        class Fake:
+            def check(self,*a):return {}
+            def prepare(self,*a):return 'container'
+            def publish(self,*a):return 'media-1'
+        def persist(state):
+            record=state['posts'].get(slot['id'],{})
+            if record.get('status')=='published' and not record.get('error'):
+                raise RuntimeError('push rejected')
+        with patch('team.runner.clients',return_value={'instagram':Fake(),'facebook':Fake()}),patch('team.runner.persist',side_effect=persist),patch('team.runner.save_report'),patch('team.runner.content.news',return_value=([],[])),patch('team.runner.content.choose',return_value=brief),patch('team.runner.produce',return_value=[Path('fake.mp4')]),patch('team.runner.host',return_value=['https://example.test/fake.mp4']):
+            run(cfg,self.state,START,live=True)
+        self.assertEqual(self.state['posts'][slot['id']]['status'],'published')
+        self.assertEqual(self.state['posts'][slot['id']]['media_id'],'media-1')
+
+    def test_journal_push_retries_and_aborts_failed_rebase(self):
+        from team.storage import push_with_retry
+        calls=[];results=iter([1,0,0])  # pull fails once, then pull+push succeed
+        def run(cmd,check=False):
+            calls.append(cmd[1]);rc=0 if cmd[1]=='rebase' else next(results)
+            return type('R',(),{'returncode':rc})()
+        push_with_retry(run=run,sleep=lambda s:None)
+        self.assertEqual(calls,['pull','rebase','pull','push'])
+        with self.assertRaises(RuntimeError):
+            push_with_retry(attempts=2,run=lambda c,check=False:type('R',(),{'returncode':1})(),sleep=lambda s:None)
+
     def test_format_adjustments_keep_a_complete_daily_budget(self):
         rows=[]
         for kind,shares in [('reel',10),('carousel',4),('image',1)]:

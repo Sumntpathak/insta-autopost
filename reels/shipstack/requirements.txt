@@ -1,0 +1,8 @@
+# ShipStack engines. System packages (Ubuntu): ffmpeg libegl1 libpango1.0-dev libcairo2-dev pkg-config
+#   texlive-latex-base texlive-latex-extra texlive-fonts-recommended dvisvgm cm-super
+manim==0.22.1          # MIT  - editorial maths animation (Lab reels)
+signalflow==0.6.0      # MIT  - synthesised sound design
+skia-python==144.1     # BSD-3 - anti-aliased 2D drawing (Arena reels, Lab raster figures)
+pymunk==7.3.1          # MIT  - rigid-body physics (Ring Escape)
+numpy==2.2.6
+Pillow==11.2.1

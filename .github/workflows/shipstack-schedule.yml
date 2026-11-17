@@ -1,0 +1,88 @@
+name: ShipStack month calendar
+# Unattended posting from reels/shipstack/calendar.json (6 reels/day: physics, balloon x2,
+# country battle x2, ring escape). Every 30 min it checks for a due slot; if one is due it
+# renders, verifies, hosts and publishes it through reels/guard.py (60 min gap, 12/day cap).
+# Missed slots older than 2 h are skipped, never posted in a burst.
+# Stop everything: set "paused": true in reels/shipstack/calendar.json (or disable this workflow).
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  slot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write          # release asset + reels/state.json journal
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Find the due slot
+        id: plan
+        run: python -m reels.shipstack.schedule plan
+      - name: Check the posting plan before rendering
+        if: steps.plan.outputs.due == 'true'
+        env:
+          FORMAT: ${{ steps.plan.outputs.format }}
+          SLOT: ${{ steps.plan.outputs.id }}
+        run: python -m reels.shipstack.publish --reel "$FORMAT" --key "$SLOT" --url https://example.invalid/check.mp4 --dry-run
+      - name: System packages
+        if: steps.plan.outputs.due == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg libegl1 libpango1.0-dev libcairo2-dev \
+            pkg-config texlive-latex-base texlive-latex-extra texlive-fonts-recommended dvisvgm cm-super
+      - if: steps.plan.outputs.due == 'true'
+        run: pip install -r reels/shipstack/requirements.txt
+      - name: Render and verify
+        if: steps.plan.outputs.due == 'true'
+        env:
+          FORMAT: ${{ steps.plan.outputs.format }}
+          EPISODE: ${{ steps.plan.outputs.episode }}
+        run: |
+          python -m reels.shipstack --format "$FORMAT" --episode "$EPISODE" --out reels/out/slot.mp4
+          python reels/verify.py reels/out/slot.mp4
+      - name: Host the clip as a public release asset
+        if: steps.plan.outputs.due == 'true'
+        id: host
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SLOT: ${{ steps.plan.outputs.id }}
+        run: |
+          TAG="shipstack-$(date -u +%Y-%m)"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$(git rev-parse HEAD)" \
+            --title "ShipStack reels $TAG" --notes "Rendered by .github/workflows/shipstack-schedule.yml" --latest=false
+          cp reels/out/slot.mp4 "reels/out/$SLOT.mp4"
+          gh release upload "$TAG" "reels/out/$SLOT.mp4" --clobber
+          URL="https://github.com/$GH_REPO/releases/download/$TAG/$SLOT.mp4"
+          curl --fail --location --range 0-1023 --output /dev/null "$URL"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Publish (journal is pushed before media_publish)
+        if: steps.plan.outputs.due == 'true'
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FORMAT: ${{ steps.plan.outputs.format }}
+          EPISODE: ${{ steps.plan.outputs.episode }}
+          SLOT: ${{ steps.plan.outputs.id }}
+          VIDEO_URL: ${{ steps.host.outputs.url }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python -m reels.shipstack.publish --reel "$FORMAT" --episode "$EPISODE" --key "$SLOT" --url "$VIDEO_URL"
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.plan.outputs.due == 'true'
+        with:
+          name: slot-${{ steps.plan.outputs.id }}
+          path: reels/out/slot.mp4
+          retention-days: 14

@@ -1,5 +1,7 @@
 # @shipstack_ autopost (free)
 
+> **Start here:** [AGENTS.md](AGENTS.md) — repo map, safety rules, workflows. New content format: [ShipStack Lab](reels/shipstack/lab/README.md) (render and publish with Actions → *ShipStack Lab reel*).
+
 ## Global ShipStack team pilot
 
 The new [coordinated content team](team/README.md) adds a seven-day, 100-total-posts/day plan across Instagram and Facebook, source-backed editorial work, the refined 3D/glass renderer, historical analytics, a CEO review, scheduling and eligible community replies. It is **disabled and uninitialized** until readiness checks and activation are completed. Existing publishing histories and legacy schedules are preserved. See the team README for capabilities, setup and current limitations.

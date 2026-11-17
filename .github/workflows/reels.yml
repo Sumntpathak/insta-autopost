@@ -119,9 +119,16 @@ jobs:
         id: window
         run: echo "active=$(python reels/campaign.py active)" >> "$GITHUB_OUTPUT"
       - name: Export recent Instagram insights
-        if: (env.MODE == 'insights' && (github.event_name == 'workflow_dispatch' || steps.window.outputs.active == 'true')) || ((env.MODE == 'post' || env.MODE == 'start') && steps.init.outputs.needed == 'true')
+        # Read-only, so the daily snapshot keeps running after the campaign window closes.
+        if: env.MODE == 'insights' || ((env.MODE == 'post' || env.MODE == 'start') && steps.init.outputs.needed == 'true')
+        id: export
         continue-on-error: true
         run: python reels/campaign.py insights
+      - name: Design report from insights
+        if: steps.export.outcome == 'success'
+        run: |
+          python reels/insights_report.py
+          cat reels/out/insights-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always() && (env.MODE == 'preview' || env.MODE == 'insights' || ((env.MODE == 'post' || env.MODE == 'start') && steps.init.outputs.needed == 'true') || steps.plan.outputs.due == 'true')
         with:

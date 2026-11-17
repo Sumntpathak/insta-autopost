@@ -70,7 +70,8 @@ class Instagram(Graph):
         return max(0,total-int(item['quota_usage']))
 
     def ready(self,container):
-        for _ in range(30):
+        # Reels routinely need 1-3 minutes of processing; allow 5 like campaign.Meta.ready.
+        for _ in range(100):
             result=self.call(container,{'fields':'status_code'})
             status=result.get('status_code')
             if status=='FINISHED': return

@@ -1,0 +1,102 @@
+name: ShipStack reel
+# Render -> verify -> (optionally) publish one ShipStack reel (Lab or Arena). Manual only.
+# Default is render + verify + downloadable preview; nothing is posted unless "publish" is ticked.
+# Publishing is further limited by reels/guard.py (2 h gap, 4 posts/day, no same-day repeat).
+on:
+  workflow_dispatch:
+    inputs:
+      reel:
+        description: Which format (python -m reels.shipstack --list)
+        type: choice
+        options: [lab01, lab02, ring, strings, balloon]
+        default: balloon
+      episode:
+        description: Arena episode number (a new number gives a new race)
+        type: number
+        default: 1
+      publish:
+        description: Post to Instagram after rendering (leave off for a preview)
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: autopost            # never overlaps another publisher
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: System packages (FFmpeg, Pango/Cairo for Manim, LaTeX for equations, EGL for skia)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg libegl1 libpango1.0-dev libcairo2-dev \
+            pkg-config texlive-latex-base texlive-latex-extra texlive-fonts-recommended dvisvgm cm-super
+      - run: pip install -r reels/shipstack/requirements.txt
+      - name: Render
+        env:
+          REEL: ${{ inputs.reel }}
+          EPISODE: ${{ inputs.episode }}
+        run: python -m reels.shipstack --format "$REEL" --episode "$EPISODE" --out "reels/out/$REEL.mp4"
+      - name: Verify (H.264/AAC, 1080x1920, 15 s, 30/60 fps, audible)
+        env:
+          REEL: ${{ inputs.reel }}
+        run: python reels/verify.py "reels/out/$REEL.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ inputs.reel }}-${{ github.run_id }}
+          path: reels/out/${{ inputs.reel }}.mp4
+          retention-days: 30
+
+  publish:
+    needs: render
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write        # release asset + reels/state.json journal
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: reel-${{ inputs.reel }}-${{ github.run_id }}
+          path: reels/out
+      - name: Check the posting plan before uploading anything
+        env:
+          REEL: ${{ inputs.reel }}
+        run: python -m reels.shipstack.publish --reel "$REEL" --url https://example.invalid/check.mp4 --dry-run
+      - name: Host the clip as a public release asset
+        id: host
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          REEL: ${{ inputs.reel }}
+        run: |
+          TAG="shipstack-$(date -u +%Y-%m)"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$(git rev-parse HEAD)" \
+            --title "ShipStack reels $TAG" --notes "Rendered by .github/workflows/shipstack-reel.yml" --latest=false
+          NAME="$REEL-${{ github.run_id }}.mp4"
+          cp "reels/out/$REEL.mp4" "reels/out/$NAME"
+          gh release upload "$TAG" "reels/out/$NAME" --clobber
+          URL="https://github.com/$GH_REPO/releases/download/$TAG/$NAME"
+          curl --fail --location --range 0-1023 --output /dev/null "$URL"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Publish (journal is pushed before media_publish)
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          REEL: ${{ inputs.reel }}
+          VIDEO_URL: ${{ steps.host.outputs.url }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python -m reels.shipstack.publish --reel "$REEL" --url "$VIDEO_URL"

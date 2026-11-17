@@ -22,8 +22,9 @@
     "pl-floor",
     "pl-marble"
   ],
-  "paused": false,
+  "paused": true,
   "design_version": 3,
   "soundtrack": "Pythonic Life synthesized music and collision sounds",
-  "provider": "pythonic-life"
+  "provider": "pythonic-life",
+  "paused_reason": "Replaced by the month calendar (reels/shipstack/calendar.json, workflow shipstack-schedule.yml)."
 }

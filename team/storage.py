@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+import time
 from datetime import datetime, timezone
 
 ROOT=Path(__file__).resolve().parent
@@ -29,8 +30,18 @@ def persist(state):
         if result.returncode==0: return
         if result.returncode!=1: raise RuntimeError('Cannot inspect journal changes')
         subprocess.run(['git','commit','-m','Record ShipStack team journal'],check=True)
-        subprocess.run(['git','pull','--rebase'],check=True)
-        subprocess.run(['git','push'],check=True)
+        push_with_retry()
+
+
+def push_with_retry(attempts=4,run=subprocess.run,sleep=time.sleep):
+    """Concurrent workflows commit the same journal; a lost race must retry, not drop state."""
+    for attempt in range(1,attempts+1):
+        if run(['git','pull','--rebase'],check=False).returncode!=0:
+            run(['git','rebase','--abort'],check=False)
+        elif run(['git','push'],check=False).returncode==0:
+            return
+        if attempt<attempts: sleep(5*attempt)
+    raise RuntimeError(f'Journal push failed after {attempts} attempts')
 
 
 def save_report(name,data):

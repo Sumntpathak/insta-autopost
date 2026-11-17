@@ -110,7 +110,10 @@ def run(cfg,state,at,live=False):
             record.update(status='published',media_id=media,published_at=now().isoformat()); persist(state)
             report['jobs'].append({'id':slot['id'],'status':'published','platform':platform})
         except Exception as exc:
-            record['status']='uncertain' if record['status']=='publishing' else 'failed_before_publish'
+            # Once Meta returned a media id the post is live; a later journal/push failure must
+            # not relabel it, or quota, community polling and reports would all ignore it.
+            if record['status']!='published':
+                record['status']='uncertain' if record['status']=='publishing' else 'failed_before_publish'
             record['error']=str(exc); persist(state)
             report['jobs'].append({'id':slot['id'],'status':record['status'],'error':str(exc)})
             # Auth/permission failure should not trigger six identical failed jobs.
