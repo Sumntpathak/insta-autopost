@@ -3328,8 +3328,10 @@
       "seed": 4098904082,
       "caption": "Every bounce inflates it. Who pops first?\n\nPhysics simulations \u00b7 @shipstack_\n#physics #simulation #satisfying",
       "container_id": "17897401806522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-17T17:31:10.766561+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-17T17:31:10.766561+05:30",
+      "media_id": "18137716765672833",
+      "published_at": "2026-11-17T17:31:47.230030+05:30"
     }
   }
 }
