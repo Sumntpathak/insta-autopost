@@ -1,0 +1,16 @@
+{
+  "id": "SHIPNEWS-VOYAGER-20261118",
+  "date": "2026-11-18",
+  "headline": "Voyager 1 reaches calculated one-light-day distance from Earth",
+  "source": "NASA/JPL and Reuters",
+  "source_url": "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/",
+  "additional_source": "https://www.reuters.com/science/nasa-voyager-1-probe-believed-have-reached-light-day-milestone-2026-11-18/",
+  "published_reuters_utc": "2026-11-18T10:18:00Z",
+  "milestone_utc": "2026-11-18T10:16:07Z",
+  "verified": true,
+  "approved": false,
+  "status": "prepared_awaiting_image_upload_and_publisher_execution",
+  "image": "news-single/images/voyager-20261118.jpg",
+  "caption": "SPACE MILESTONE | NASA calculated that Voyager 1 reached a distance of one light-day from Earth at 10:16 UTC (3:46 PM IST) on 18 November 2026. That is roughly 25.9 billion km: light or radio signals take 24 hours to travel one way. Reuters reports NASA awaits the next signal before confirming the milestone. Sources: NASA/JPL https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/ and Reuters https://www.reuters.com/science/nasa-voyager-1-probe-believed-have-reached-light-day-milestone-2026-11-18/ . Artwork: AI-generated editorial illustration, not an actual spacecraft photograph. #ShipStack #Voyager1 #NASA #SpaceNews",
+  "note": "Source and caption verified; image created in automation container but not committed to GitHub. No Meta call made. Do not publish until binary upload, approval, pacing and quota checks, and pre-publish journal persistence are implemented."
+}
