@@ -1,5 +1,7 @@
 name: ShipStack single-news sample
 on:
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       publish:
@@ -30,7 +32,7 @@ jobs:
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          PUBLISH: ${{ github.event_name == 'push' || inputs.publish }}
+          PUBLISH: ${{ github.event_name == 'push' || github.event_name == 'schedule' || inputs.publish }}
         run: python news-single/publish.py
       - name: Persist journal even on ambiguous outcome
         if: always()
