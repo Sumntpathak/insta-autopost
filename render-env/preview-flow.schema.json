@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ShipStack Preview Flow",
+  "type": "object",
+  "required": ["reel", "output", "verify"],
+  "properties": {
+    "reel": {"type": "string"},
+    "episode": {"type": "integer", "minimum": 1},
+    "output": {"type": "string", "pattern": "\\.mp4$"},
+    "verify": {"type": "boolean", "const": true},
+    "publish": {"type": "boolean", "const": false}
+  },
+  "additionalProperties": false
+}
