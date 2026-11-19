@@ -1,0 +1,41 @@
+name: ShipStack news image preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      background:
+        description: Repository path to the generated background image
+        required: true
+        type: string
+      brief:
+        description: Brief JSON path
+        required: false
+        default: news-single/sample.json
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: shipstack-news-preview
+  cancel-in-progress: false
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install Pillow
+      - name: Render branded preview
+        env:
+          BACKGROUND: ${{ inputs.background }}
+          BRIEF: ${{ inputs.brief }}
+        run: |
+          test -f "$BACKGROUND"
+          test -f "$BRIEF"
+          python news-single/render.py --brief "$BRIEF" --background "$BACKGROUND" --output news-single/out/preview.jpg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shipstack-news-preview-${{ github.run_id }}
+          path: news-single/out/preview.jpg
+          retention-days: 3
