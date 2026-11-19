@@ -1,5 +1,5 @@
 """Journaled single-image Instagram publisher for individually verified ShipStack news.
-Requires a reviewed manifest and an already committed 1080x1350 JPEG.
+Requires a reviewed manifest and an already committed 1080x1350 JPG or PNG.
 Never retries an ambiguous media_publish result automatically.
 """
 import datetime as dt
@@ -52,7 +52,7 @@ def validate(item):
     assert len(item["headline"]) >= 15 and item["source"] and item["caption"], "Missing story fields"
     path = ROOT / item["image"]
     assert path.resolve().is_relative_to(DIR.resolve()), "Image must be in news-single/"
-    assert path.is_file() and path.suffix.lower() in (".jpg", ".jpeg"), "Missing committed JPEG"
+    assert path.is_file() and path.suffix.lower() in (".jpg", ".jpeg", ".png"), "Missing committed JPG/PNG"
     from PIL import Image
     with Image.open(path) as im:
         assert im.size == (1080, 1350), "Image must be 1080x1350"
