@@ -1,0 +1,50 @@
+name: ShipStack delete approved post
+on:
+  push:
+    paths:
+      - "news-single/delete-request.json"
+permissions:
+  contents: write
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete approved Instagram media
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          req=json.load(open("news-single/delete-request.json"))
+          media=req["instagram_media_id"]
+          token=os.environ["META_TOKEN"]
+          body=urllib.parse.urlencode({"access_token": token}).encode()
+          request=urllib.request.Request(f"https://graph.facebook.com/v23.0/{media}",data=body,method="DELETE")
+          with urllib.request.urlopen(request,timeout=60) as response:
+              result=json.load(response)
+          if result.get("success") is not True:
+              raise SystemExit(f"Delete not confirmed: {result}")
+          print("CONFIRMED Instagram deletion:", media)
+          PY
+      - name: Record deletion
+        if: success()
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path("news-single/journal.json")
+          data=json.loads(p.read_text())
+          req=json.loads(pathlib.Path("news-single/delete-request.json").read_text())
+          for item in data:
+              if item.get("instagram_media_id")==req["instagram_media_id"]:
+                  item["status"]="deleted"
+                  item["deleted_at"]=req["requested_at"]
+          p.write_text(json.dumps(data,indent=2)+"
+")
+          PY
+          git config user.name "shipstack-news-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add news-single/journal.json
+          git commit -m "Record approved Instagram deletion"
+          git pull --rebase -q
+          git push
