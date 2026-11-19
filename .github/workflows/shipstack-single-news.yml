@@ -1,17 +1,11 @@
 name: ShipStack single-news sample
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       publish:
-        description: "Publish the explicitly approved verified sample (false = validate only)"
+        description: "Publish only an explicitly approved verified sample"
         type: boolean
         default: false
-  push:
-    paths:
-      - "news-single/sample.json"
-      - "news-single/images/SHIPNEWS-20261119-001.png"
 permissions:
   contents: write
 concurrency:
@@ -28,13 +22,12 @@ jobs:
           python-version: "3.12"
       - run: pip install Pillow
       - name: Validate or publish reviewed sample
-        id: publish
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          PUBLISH: ${{ github.event_name == 'push' || github.event_name == 'schedule' || inputs.publish }}
+          PUBLISH: ${{ inputs.publish }}
         run: python news-single/publish.py
-      - name: Persist journal even on ambiguous outcome
+      - name: Persist journal
         if: always()
         run: |
           git config user.name "shipstack-news-bot"
@@ -42,9 +35,5 @@ jobs:
           git add news-single/journal.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Record ShipStack single-news publication attempt"
-          for attempt in 1 2 3 4; do
-            git pull --rebase -q && git push && exit 0
-            sleep $((attempt * 5))
-          done
-          echo "::error::Journal could not be saved. STOP automatic retries; reconcile Instagram manually."
-          exit 1
+          git pull --rebase -q
+          git push
