@@ -3332,6 +3332,18 @@
       "attempted_at": "2026-11-17T17:31:10.766561+05:30",
       "media_id": "18137716765672833",
       "published_at": "2026-11-17T17:31:47.230030+05:30"
+    },
+    "CAL-2026-11-19-1310-strings": {
+      "id": "CAL-2026-11-19-1310-strings",
+      "date": "2026-11-19",
+      "scene": "strings",
+      "collection": "shipstack-arena",
+      "seconds": 15,
+      "episode": 11,
+      "caption": "Which country survives the string battle?\n\nEvery ball shoots strings to the wall. Touch another country's string and it is cut. At each knockout the country with the fewest strings is out. Real simulation, no edits.\n\nComment your country for the next battle.\n\nShipStack Arena \u00b7 @shipstack_\n#simulation #satisfying #countries #physics",
+      "container_id": "17897829597522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-19T15:11:47.457919+05:30"
     }
   }
 }
