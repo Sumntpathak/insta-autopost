@@ -6,6 +6,10 @@ on:
         description: "Publish the explicitly approved verified sample (false = validate only)"
         type: boolean
         default: false
+  push:
+    paths:
+      - "news-single/sample.json"
+      - "news-single/images/SHIPNEWS-20261119-001.png"
 permissions:
   contents: write
 concurrency:
@@ -26,7 +30,7 @@ jobs:
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          PUBLISH: ${{ inputs.publish }}
+          PUBLISH: ${{ github.event_name == 'push' || inputs.publish }}
         run: python news-single/publish.py
       - name: Persist journal even on ambiguous outcome
         if: always()
