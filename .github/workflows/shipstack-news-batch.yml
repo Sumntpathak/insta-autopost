@@ -1,0 +1,30 @@
+name: ShipStack 30 news batch
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish only verified and approved items with committed JPEGs"
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: shipstack-news-batch
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: ${{ inputs.publish == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install Pillow
+      - name: Publish sequentially with five-minute pauses
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python news-batch/publish_batch.py
