@@ -11,7 +11,7 @@
       "verified": true,
       "approved": true,
       "image": "news-batch/images/gta-vi.jpg",
-      "status": "draft",
+      "status": "ready",
       "source": "Reuters",
       "source_url": "https://www.reuters.com/world/india/indias-gamers-skip-work-crowd-cafes-grand-theft-auto-vi-modi-joins-buzz-2026-11-19/",
       "caption": "India’s gaming cafes filled up as Grand Theft Auto VI launched, Reuters reports. Save this before you play: the key story in 60 seconds.\n\nSource: Reuters, 19 November 2026.\n\n#ShipStack #GTAVI #GamingNews"
@@ -306,5 +306,6 @@
       "image": "news-batch/images/leonids.jpg",
       "status": "draft"
     }
-  ]
+  ],
+  "updated_at": "2026-11-19T19:00:00+05:30"
 }
