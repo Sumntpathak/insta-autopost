@@ -1,0 +1,65 @@
+name: ShipStack preview batch
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Deterministic episode number for arena formats
+        type: number
+        default: 1
+  push:
+    paths:
+      - "render-env/**"
+      - "reels/shipstack/**"
+      - "reels/verify.py"
+      - ".github/workflows/shipstack-preview-batch.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: shipstack-preview-batch
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    strategy:
+      fail-fast: false
+      matrix:
+        reel: [lab01, lab02, ring, strings, balloon]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      REEL: ${{ matrix.reel }}
+      EPISODE: ${{ inputs.episode || 1 }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build cached rendering environment
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build preview image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: render-env/Dockerfile
+          load: true
+          tags: shipstack-preview:ci
+          cache-from: type=gha,scope=shipstack-preview
+          cache-to: type=gha,mode=max,scope=shipstack-preview
+
+      - name: Render and verify
+        run: |
+          mkdir -p preview-out
+          docker run --rm \
+            -e REEL="$REEL" -e EPISODE="$EPISODE" \
+            -v "$PWD/preview-out:/workspace/preview-out" \
+            shipstack-preview:ci \
+            sh -lc 'python -m reels.shipstack --format "$REEL" --episode "$EPISODE" --out preview-out/$REEL.mp4 && python reels/verify.py preview-out/$REEL.mp4'
+
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: shipstack-preview-${{ matrix.reel }}-${{ github.run_id }}
+          path: preview-out/${{ matrix.reel }}.mp4
+          retention-days: 7
