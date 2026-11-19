@@ -39,8 +39,7 @@ jobs:
               if item.get("instagram_media_id")==req["instagram_media_id"]:
                   item["status"]="deleted"
                   item["deleted_at"]=req["requested_at"]
-          p.write_text(json.dumps(data,indent=2)+"
-")
+          p.write_text(json.dumps(data,indent=2)+"\\n")
           PY
           git config user.name "shipstack-news-bot"
           git config user.email "bot@users.noreply.github.com"
