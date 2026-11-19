@@ -1,12 +1,15 @@
 name: ShipStack month calendar
-# Unattended posting from reels/shipstack/calendar.json (6 reels/day: physics, balloon x2,
-# country battle x2, ring escape). Every 30 min it checks for a due slot; if one is due it
-# renders, verifies, hosts and publishes it through reels/guard.py (60 min gap, 12/day cap).
-# Missed slots older than 2 h are skipped, never posted in a burst.
+# Unattended posting from reels/shipstack/calendar.json. Every 5 minutes it checks for the
+# oldest due slot; overdue slots remain queued and are recovered one at a time through the
+# 60-minute gap and 12/day cap guards. GitHub schedule delays are therefore self-healing.
 # Stop everything: set "paused": true in reels/shipstack/calendar.json (or disable this workflow).
 on:
   schedule:
-    - cron: '7,37 * * * *'
+    - cron: '*/5 * * * *'
+  push:
+    paths:
+      - 'reels/shipstack/schedule.py'
+      - '.github/workflows/shipstack-schedule.yml'
   workflow_dispatch:
 permissions:
   contents: read
