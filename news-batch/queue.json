@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "format": "photo_first_single_image",
+  "pause_seconds": 300,
+  "items": [
+    {
+      "id": "gta-vi",
+      "order": 1,
+      "topic": "GTA VI",
+      "hook": "12 years of waiting ends today. Save this before you play: everything worth knowing in 60 seconds.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/gta-vi.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "nvidia-earnings",
+      "order": 2,
+      "topic": "Nvidia earnings",
+      "hook": "One company's numbers tonight could move your entire portfolio. Here's what to watch, so save this before the call.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/nvidia-earnings.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "hunger-games",
+      "order": 3,
+      "topic": "Hunger Games",
+      "hook": "Panem is back. Tag the friend you're dragging to opening night.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/hunger-games.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "f1-las-vegas",
+      "order": 4,
+      "topic": "F1 Las Vegas",
+      "hook": "Neon, 340 km/h, and a title on the line. Save this race-weekend schedule in your time zone.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/f1-las-vegas.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "midterms-fallout",
+      "order": 5,
+      "topic": "Midterms fallout",
+      "hook": "The votes are counted, but the fight isn't over. Here's what really changes for you next year.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/midterms-fallout.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "congress-leadership",
+      "order": 6,
+      "topic": "Congress leadership",
+      "hook": "New faces, new fights. The 5 people who will shape the next two years, explained in one post.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/congress-leadership.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "cop31",
+      "order": 7,
+      "topic": "COP31",
+      "hook": "Last 48 hours to save the climate deal. Here's what's at stake, in plain English.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/cop31.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "black-friday",
+      "order": 8,
+      "topic": "Black/White/Yellow Friday",
+      "hook": "Don't add to cart yet. Save this checklist so you only buy real deals.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/black-friday.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "nfl-tnf",
+      "order": 9,
+      "topic": "NFL Thursday Night Football",
+      "hook": "One game could flip the playoff picture. Tag the friend who always loses this bet.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/nfl-tnf.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "atp-finals",
+      "order": 10,
+      "topic": "ATP Finals",
+      "hook": "The 8 best players of the year, one trophy. Who's your pick? Drop it below.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/atp-finals.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "microsoft-ignite",
+      "order": 11,
+      "topic": "Microsoft Ignite",
+      "hook": "Your work apps are about to change. The 5 AI features worth knowing, so save this for Monday.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/microsoft-ignite.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "ai-model-race",
+      "order": 12,
+      "topic": "AI model race",
+      "hook": "Every AI company says it's #1. We cut through the hype: save this cheat sheet.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/ai-model-race.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "avengers-dune",
+      "order": 13,
+      "topic": "Avengers and Dune",
+      "hook": "December 18 just became the biggest movie day of the year. Which one are you seeing first?",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/avengers-dune.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "narnia",
+      "order": 14,
+      "topic": "Narnia",
+      "hook": "Netflix is putting Narnia in IMAX for one week only. Save the dates before they're gone.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/narnia.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "2028-hopefuls",
+      "order": 15,
+      "topic": "2028 hopefuls",
+      "hook": "The 2028 race quietly started this week. Here are the names to watch, so screenshot this and check back in a year.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/2028-hopefuls.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "nba-emirates-cup",
+      "order": 16,
+      "topic": "NBA Emirates Cup",
+      "hook": "The tiebreaker rules nobody understands, explained in 30 seconds. Send this to your group chat.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/nba-emirates-cup.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "champions-league-md5",
+      "order": 17,
+      "topic": "Champions League MD5",
+      "hook": "Win and you're through, lose and you're out. Every scenario in one graphic, so save it.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/champions-league-md5.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "g20-miami",
+      "order": 18,
+      "topic": "G20 Miami",
+      "hook": "World leaders at a golf resort. What could go wrong? Everything to know before December.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/g20-miami.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "eu-ai-act",
+      "order": 19,
+      "topic": "EU AI Act",
+      "hook": "The world's toughest AI law might get softer. Who wins, and who should worry?",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/eu-ai-act.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "thanksgiving-travel",
+      "order": 20,
+      "topic": "Thanksgiving travel",
+      "hook": "Record crowds are coming. Save these 7 tips before you head to the airport.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/thanksgiving-travel.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "davis-cup",
+      "order": 21,
+      "topic": "Davis Cup",
+      "hook": "Country over career. The tennis week that gets players emotional. Which nation are you backing?",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/davis-cup.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "grammys",
+      "order": 22,
+      "topic": "Grammys",
+      "hook": "The snubs everyone's talking about. Agree or disagree? Tag a music snob.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/grammys.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "word-of-year",
+      "order": 23,
+      "topic": "Word of the Year",
+      "hook": "If you used this word in 2026, congratulations: you defined the year.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/word-of-year.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "time-poy",
+      "order": 24,
+      "topic": "TIME Person of the Year",
+      "hook": "Make your prediction now and screenshot it. We'll find out in December who called it.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/time-poy.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "spotify-wrapped",
+      "order": 25,
+      "topic": "Spotify Wrapped",
+      "hook": "Wrapped is almost here. Brace yourself: here's when it drops and how to get ready.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/spotify-wrapped.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "uae-gp",
+      "order": 26,
+      "topic": "UAE National Day and Abu Dhabi GP",
+      "hook": "The UAE's biggest two weeks of the year. Save this events calendar now.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/uae-gp.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "uk-budget",
+      "order": 27,
+      "topic": "UK Budget",
+      "hook": "Your payslip might look different next year. Here's what to watch in the Budget.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/uk-budget.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "galaxy-iphone",
+      "order": 28,
+      "topic": "Galaxy S27 and iPhone 18",
+      "hook": "Hold off on upgrading. Here's what's coming in a few months, so save this before you buy.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/galaxy-iphone.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "awareness-days",
+      "order": 29,
+      "topic": "Men's Day, Toilet Day and Children's Day",
+      "hook": "Three days that matter more than you think. Share this with someone who needs to hear it.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/awareness-days.jpg",
+      "status": "draft"
+    },
+    {
+      "id": "leonids",
+      "order": 30,
+      "topic": "Leonids",
+      "hook": "Missed the meteor shower? These photos are the next best thing, so save them for your lock screen.",
+      "verified": false,
+      "approved": false,
+      "image": "news-batch/images/leonids.jpg",
+      "status": "draft"
+    }
+  ]
+}
