@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     MPLBACKEND=Agg
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
-    python3 python3-pip python3-venv build-essential meson ninja-build \
+    python3 python3-pip python3-venv python3-dev libpython3-dev build-essential meson ninja-build \
     ffmpeg libegl1 libpango1.0-dev libcairo2-dev pkg-config \
     texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
     dvisvgm cm-super ghostscript \
