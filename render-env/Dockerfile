@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     ffmpeg libegl1 libpango1.0-dev libcairo2-dev pkg-config \
     texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
     dvisvgm cm-super ghostscript \
-    libgl1-mesa-glx libglib2.0-0 \
+    libgl1 libglib2.0-0 \
     fonts-dejavu fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
