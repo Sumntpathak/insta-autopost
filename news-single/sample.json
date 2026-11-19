@@ -8,7 +8,7 @@
   "source": "Reuters",
   "source_url": "https://www.reuters.com/legal/transactional/anthropic-prices-blockbuster-ipo-83-share-source-says-2026-11-18/",
   "image": "news-single/images/SHIPNEWS-20261119-001.jpg",
-  "caption": "AI FINANCE | Anthropic has raised approximately $81.31 billion in a record-setting initial public offering, pricing 980 million shares at $83 each, according to Reuters. The reported deal underscores investor appetite for AI businesses even as infrastructure costs and questions about returns remain substantial. The shares are expected to trade under the ticker ANT.\\n\\nSource: Reuters, November 18–19, 2026. https://www.reuters.com/legal/transactional/anthropic-prices-blockbuster-ipo-83-share-source-says-2026-11-18/\\n\\n#ShipStack #Anthropic #AI #IPO #TechnologyNews",
+  "caption": "AI FINANCE | Anthropic has raised approximately $81.31 billion in a record-setting IPO, pricing 980 million shares at $83 each, according to Reuters.\n\nSource: Reuters, November 18–19, 2026.\n\n#ShipStack #Anthropic #AI #IPO #TechnologyNews",
   "verified_at": "2026-11-19T08:17:00+05:30",
-  "editorial_note": "Verified Reuters story; ChatGPT-generated artwork uploaded to the repository. Approved for the first sample publication. Publish trigger armed. PNG validator fixed; retrying publisher. Using Meta-compatible JPEG."
+  "editorial_note": "Paused after first sample for visual redesign. Caption uses real line breaks; next version will use a bold editorial news-card layout with a restrained ShipStack mark."
 }
