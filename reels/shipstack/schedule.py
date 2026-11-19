@@ -5,9 +5,9 @@
 
 calendar.json is the content plan: one entry per post with id, IST date/time, format and
 episode. Each episode is a different race (Arena) or setup (Lab), so nothing repeats.
-`plan` picks the earliest slot that is due, not yet in reels/state.json and at most
-STALE_HOURS old (missed slots are skipped, never posted in a burst). Set "paused": true in
-calendar.json to stop everything.
+`plan` picks the earliest unposted slot that is due. Missed slots stay queued and are
+recovered one at a time under the publisher's spacing and daily-cap guards. Set "paused": true
+in calendar.json to stop everything.
 """
 import argparse
 import datetime as dt
@@ -20,8 +20,6 @@ HERE = Path(__file__).resolve().parent
 CALENDAR = HERE / 'calendar.json'
 STATE = HERE.parent / 'state.json'
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
-STALE_HOURS = 2.0
-
 # Daily rhythm (IST). Balloon Pop is the proven performer, so it runs twice; the 1-2 news slots
 # per hour in between are left free for the news agent.
 DAY = [('08:10', 'physics'), ('10:40', 'balloon'), ('13:10', 'strings'),
@@ -48,7 +46,7 @@ def due(calendar, posts, now):
         return None
     for slot in calendar['slots']:
         at = dt.datetime.fromisoformat(f"{slot['date']}T{slot['time']}:00").replace(tzinfo=IST)
-        if at <= now and now - at <= dt.timedelta(hours=STALE_HOURS) and slot['id'] not in posts:
+        if at <= now and slot['id'] not in posts:
             return slot
     return None
 
