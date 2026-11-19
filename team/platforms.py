@@ -1,10 +1,17 @@
 """Official Meta adapters. Credentials remain in Actions secrets, never journals."""
 import json
 import os
+from pathlib import Path
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+except ImportError:
+    pass
 
 
 class APIError(RuntimeError):

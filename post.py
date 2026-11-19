@@ -5,15 +5,31 @@ the oldest scheduled slot that is due and not yet in posted.json. So if GitHub s
 scheduled run, nothing is lost; the next run catches up.
 """
 import json, os, sys, time, datetime, urllib.request, urllib.parse, urllib.error
+from pathlib import Path
 
-TOKEN = os.environ["META_TOKEN"].strip()    # long-lived token, stored as a GitHub Actions secret
+# Automatically load local .env if available
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+except ImportError:
+    pass
+
+# Default repository attributes if not set in environment
+os.environ.setdefault("GITHUB_REPOSITORY", "Sumntpathak/insta-autopost")
+os.environ.setdefault("GITHUB_REF_NAME", "main")
+
+TOKEN = os.environ.get("META_TOKEN", "").strip()    # long-lived token, stored in .env or GitHub Actions secret
+if not TOKEN:
+    sys.exit("Error: META_TOKEN environment variable is not set. Please set it in .env file.")
 # "IG..." tokens come from Instagram Login and only work on graph.instagram.com;
 # Facebook Login / Page tokens ("EAA...") use graph.facebook.com.
 API = "https://graph.instagram.com/v23.0" if TOKEN.startswith("IG") else "https://graph.facebook.com/v23.0"
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() == "true"
-IG_ID = os.environ["IG_USER_ID"]            # Instagram account id
+IG_ID = os.environ.get("IG_USER_ID", "").strip()            # Instagram account id
+if not IG_ID:
+    sys.exit("Error: IG_USER_ID environment variable is not set. Please set it in .env file.")
 PAGE_ID = os.environ.get("FB_PAGE_ID", "")  # optional: also post to Facebook Page (needs a Page token)
-REPO = os.environ["GITHUB_REPOSITORY"]      # set automatically by GitHub
+REPO = os.environ["GITHUB_REPOSITORY"]      # set automatically by GitHub or defaulted above
 BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
 RAW = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/"
 
@@ -90,8 +106,10 @@ def save_posted(posted):
 
 
 def dry_run(schedule, now):
-    me = call("me", {"fields": "username,account_type"}, "GET")
-    print(f"Token OK for @{me.get('username')} ({me.get('account_type')}) via {API}")
+    fields = "username,account_type" if TOKEN.startswith("IG") else "id,name"
+    me = call("me", {"fields": fields}, "GET")
+    name_str = me.get("username") or me.get("name")
+    print(f"Token OK for {name_str} via {API}")
     bad = []
     for item in schedule:
         for p in item["images"]:

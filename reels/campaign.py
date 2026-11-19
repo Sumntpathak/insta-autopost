@@ -12,6 +12,16 @@ import urllib.parse
 import urllib.request
 
 HERE = Path(__file__).resolve().parent
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(HERE.parent / '.env')
+except ImportError:
+    pass
+
+os.environ.setdefault('GITHUB_REPOSITORY', 'Sumntpathak/insta-autopost')
+os.environ.setdefault('GITHUB_REF_NAME', 'main')
+
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 CONFIG = json.loads((HERE / 'config.json').read_text())
 STATE = HERE / 'state.json'

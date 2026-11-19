@@ -4,7 +4,14 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parent.parent
 QUEUE=ROOT/"news-batch/queue.json"
 JOURNAL=ROOT/"news-batch/journal.json"
-TOKEN=os.environ["META_TOKEN"]; IG_ID=os.environ["IG_USER_ID"]
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except ImportError:
+    pass
+
+TOKEN=os.environ.get("META_TOKEN", "").strip(); IG_ID=os.environ.get("IG_USER_ID", "").strip()
 REPO=os.environ.get("GITHUB_REPOSITORY","Sumntpathak/insta-autopost"); REF=os.environ.get("GITHUB_REF_NAME","main")
 def api(path,data=None,method="POST"):
     q=urllib.parse.urlencode(data or {})

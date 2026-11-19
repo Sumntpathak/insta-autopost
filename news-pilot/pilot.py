@@ -116,7 +116,7 @@ def publish(item):
     meta.check_account()
     directory = ROOT / 'out'
     render(item,directory)
-    repo = os.environ['GITHUB_REPOSITORY']
+    repo = os.environ.get('GITHUB_REPOSITORY', 'Sumntpathak/insta-autopost')
     if subprocess.run(['gh','release','view',TAG],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode:
         subprocess.run(['gh','release','create',TAG,'--title','Technology Brief | 13 Nov 2026','--latest=false'],check=True)
     files = sorted(directory.glob(f'{key}-*.jpg'))
