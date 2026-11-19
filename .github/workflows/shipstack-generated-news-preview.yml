@@ -1,0 +1,48 @@
+name: ShipStack generated news preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: Verified brief JSON path
+        required: false
+        default: news-single/sample.json
+        type: string
+      image_model:
+        description: OpenAI image model
+        required: false
+        default: gpt-image-2.5-flare
+        type: string
+
+permissions:
+  contents: read
+concurrency:
+  group: shipstack-news-generation
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install image tools
+        run: pip install Pillow openai
+      - name: Generate background and branded post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SHIPSTACK_IMAGE_MODEL: ${{ inputs.image_model }}
+          BRIEF: ${{ inputs.brief }}
+        run: |
+          test -n "$OPENAI_API_KEY"
+          test -f "$BRIEF"
+          mkdir -p news-single/out
+          python news-single/generate.py --brief "$BRIEF" --output news-single/out/background.png
+          python news-single/render.py --brief "$BRIEF" --background news-single/out/background.png --output news-single/out/final.jpg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shipstack-generated-news-preview-${{ github.run_id }}
+          path: news-single/out
+          retention-days: 3
