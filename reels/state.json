@@ -3366,9 +3366,11 @@
       "date": "2026-11-19",
       "scene": "technology-brief",
       "caption": "Asia in Seven Headlines | 19 November 2026\n\nBusiness, trade and public policy across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/business/2026/11/19/japan-tobacco-russia-seizure-charge/\nhttps://www.koreaherald.com/article/10943146\nhttps://www.scmp.com/news/hong-kong/law-and-crime/article/3375033/hong-kong-police-arrest-123-and-uncover-108-cases-anti-fraud-operation\nhttps://www.straitstimes.com/asia/east-asia/lack-of-consensus-should-not-be-excuse-for-inaction-says-pm-wong-at-apec-summit\nhttps://indianexpress.com/article/business/epfo-board-cuts-wait-withdraw-full-provident-fund-job-loss-2-months-from-12-10969766/\nhttps://www.thejakartapost.com/indonesia/2026/11/19/breaking-house-passes-long-awaited-asset-forfeiture-law-amid-transparency-concerns\nhttps://www.dawn.com/news/2045679/pm-credits-economic-successes-to-productive-partnership-between-political-military-leadership",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17897870355522936",
-      "attempted_at": "2026-11-19T19:22:35.189689+05:30"
+      "attempted_at": "2026-11-19T19:22:35.189689+05:30",
+      "media_id": "17918919306508819",
+      "published_at": "2026-11-19T19:22:41.125665+05:30"
     }
   }
 }
