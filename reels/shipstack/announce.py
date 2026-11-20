@@ -95,7 +95,8 @@ def publish_post(post, base_url, now=None, meta=None, read_state=campaign.read_s
     if todo_feed:
         url = base_url + item['file']
         if item['type'] == 'REELS':
-            params = {'media_type': 'REELS', 'video_url': url, 'caption': item['caption'], 'share_to_feed': 'true'}
+            params = {'media_type': 'REELS', 'video_url': url, 'caption': item['caption'], 'share_to_feed': 'true',
+                      'thumb_offset': str(item.get('thumb_ms', 2000))}
         else:
             params = {'image_url': url, 'caption': item['caption']}
         results['feed'] = _publish(meta, state, persist, key, params, {**extra, 'kind': item['type'].lower()}, now)

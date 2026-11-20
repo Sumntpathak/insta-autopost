@@ -52,6 +52,8 @@ CAPTIONS['balloon'] = ('Which balloon pops first? Pick one before you watch.\n\n
                        'Real simulation; the last second is in slow motion.\n\n'
                        'Comment your number. Follow for the next race.\n\n'
                        'ShipStack Arena · @shipstack_\n#satisfying #simulation #physics #pickone')
+# Cover frame (ms into the clip) shown on the grid: a moment that differs per episode and is never black.
+THUMB_MS = {'lab01': 2500, 'lab02': 2500, 'ring': 7000, 'strings': 7000, 'balloon': 7000, 'dsa': 1000, 'story': 3500}
 COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
               'strings': 'shipstack-arena', 'balloon': 'shipstack-arena'}
 
@@ -98,7 +100,8 @@ def publish(reel, url, now=None, meta=None, read_state=campaign.read_state, pers
     meta = meta or campaign.Meta()
     meta.check_account()
     container = meta.call(f'{meta.ig_id}/media', {'media_type': 'REELS', 'video_url': url,
-                                                   'caption': caption(reel, episode), 'share_to_feed': 'true'}, 'POST')['id']
+                                                   'caption': caption(reel, episode), 'share_to_feed': 'true',
+                                                   'thumb_offset': str(THUMB_MS.get(reel, 2000))}, 'POST')['id']
     meta.ready(container)
     record = {'id': key, 'date': now.date().isoformat(), 'scene': reel, 'collection': COLLECTION[reel],
               'seconds': 15, 'episode': episode, 'caption': caption(reel, episode), 'container_id': container,

@@ -47,3 +47,10 @@ class StudioTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class CoverTests(unittest.TestCase):
+    def test_every_reel_format_has_a_cover_frame(self):
+        for reel in publish.CAPTIONS:
+            self.assertIn(reel, publish.THUMB_MS, f'{reel} needs a cover frame (thumb_offset)')
+            self.assertGreater(publish.THUMB_MS[reel], 0)                 # never the black first frame
