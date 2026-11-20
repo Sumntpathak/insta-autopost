@@ -3418,11 +3418,13 @@
       "id": "LAUNCH-2026-11-story",
       "date": "2026-11-20",
       "container_id": "17898074151522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-20T17:17:59.831222+05:30",
       "scene": "launch-logo",
       "collection": "shipstack-launch",
-      "kind": "story"
+      "kind": "story",
+      "media_id": "17955606063306651",
+      "published_at": "2026-11-20T17:19:38.710543+05:30"
     }
   }
 }
