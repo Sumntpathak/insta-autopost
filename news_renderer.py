@@ -71,7 +71,7 @@ def wrap_text(draw, text, font, max_width):
     return lines
 
 
-def render_pubity_card(headline, deck, source, category="TECH & AI", bg_image_path=None, output_path="out.jpg"):
+def render_legacy_card(headline, deck, source, category="TECH & AI", bg_image_path=None, output_path="out.jpg"):
     """Renders a 1080x1350 Pubity-style editorial news graphic."""
     if bg_image_path and Path(bg_image_path).exists():
         im = Image.open(bg_image_path).convert("RGB")
@@ -155,3 +155,16 @@ if __name__ == "__main__":
         output_path="test_pubity.jpg"
     )
     print(f"Rendered test card to: {out}")
+
+
+def render_pubity_card(headline, deck, source, category="TECH & AI", bg_image_path=None, output_path="out.jpg",
+                       date=None, credit=None):
+    """News cards now use the ShipStack Studio design (dark editor look, Geist), so the news posts match
+    the DSA and Arena reels on the grid. The old white magazine card is kept as render_legacy_card."""
+    import datetime as _dt
+    from reels.shipstack.studio import cards
+    day = date or _dt.date.today()
+    crumb = day.strftime('%d-%b').lower()
+    cards.news(output_path, crumb, headline, deck or '', source, day.strftime('%d %b %Y'),
+               image=bg_image_path if bg_image_path and Path(bg_image_path).exists() else None, credit=credit)
+    return output_path

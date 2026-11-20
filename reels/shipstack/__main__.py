@@ -15,19 +15,26 @@ FORMATS = {
 }
 
 
-def render(fmt, out, episode=1, seed=None):
-    if fmt.startswith('lab'):
-        from .lab.__main__ import render as lab
-        return lab(fmt, out, variant=episode - 1)          # Lab: episode N = variant N-1
+def _arena(fmt, out, episode, seed):
     if fmt == 'ring':
         from .arena import ring
         return ring.render(out, 2026 + 1000 * episode if seed is None else seed, episode)   # disjoint search ranges
     if fmt == 'strings':
         from .arena import strings
         return strings.render(out, episode=episode, seed=seed)
-    if fmt == 'balloon':
-        from .arena import balloon
-        return balloon.render(out, episode=episode, seed=seed)
+    from .arena import balloon
+    return balloon.render(out, episode=episode, seed=seed)
+
+
+def render(fmt, out, episode=1, seed=None):
+    if fmt.startswith('lab'):
+        from .lab.__main__ import render as lab
+        return lab(fmt, out, variant=episode - 1)          # Lab: episode N = variant N-1
+    if fmt in ('ring', 'strings', 'balloon'):
+        result = _arena(fmt, out, episode, seed)
+        from . import badge
+        badge.apply(out, episode)          # big '#NN' so grid covers never look like re-uploads
+        return result
     if fmt == 'dsa':
         from .studio import dsa
         return dsa.render(out, episode)

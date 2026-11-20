@@ -54,12 +54,20 @@ def news(path, crumb, headline, deck, source, date, image=None, credit=None):
         mask = Image.new('L', ph.size, 0)
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, ph.width - 1, ph.height + 40), 22, fill=255)
         im.paste(ph, (X0, top), mask)
-    y = top + photo_h + 40
-    y = rich(d, (X0, y), headline, T.sans(64, 800), X1 - X0, 76)
-    y += 10
-    for line in T.wrap(d, deck, T.sans(34, 500), X1 - X0)[:3]:
-        d.text((X0, y), line, font=T.sans(34, 500), fill=T.MUTED)
-        y += 46
+    hs, hl, ds, dl = (64, 76, 34, 46) if image else (92, 104, 40, 54)     # text-only cards: bigger, centred
+    if image:
+        y = top + photo_h + 40
+    else:
+        h_lines = len(T.wrap(d, headline.replace('[', '').replace(']', ''), T.sans(hs, 800), X1 - X0))
+        d_lines = min(3, len(T.wrap(d, deck, T.sans(ds, 500), X1 - X0)))
+        block = h_lines * hl + 24 + d_lines * dl + 60
+        y = 210 + max(0, (H - 170 - 210 - block) // 2)
+        d.rounded_rectangle((X0, y - 40, X0 + 120, y - 32), 4, fill=T.SERIES['news'][1])
+    y = rich(d, (X0, y), headline, T.sans(hs, 800), X1 - X0, hl)
+    y += 14
+    for line in T.wrap(d, deck, T.sans(ds, 500), X1 - X0)[:3]:
+        d.text((X0, y), line, font=T.sans(ds, 500), fill=T.MUTED)
+        y += dl
     meta = f'source: {source} · {date}' + (f' · image: {credit}' if credit else '')
     d.text((X0, y + 18), meta, font=T.mono(24, 500), fill=T.MUTED)
     T.footer(im, 'Daily AI news you can save')
