@@ -28,7 +28,7 @@ from .problems import PROBLEMS
 
 W, H, FPS, SECONDS = 1080, 1920, 30, 15
 FRAMES = FPS * SECONDS
-INTRO, OUTRO = 45, 75                     # frames
+INTRO, QUIZ, OUTRO = 45, 36, 66           # frames: hook / predict pause / reveal + call to action
 X0, X1 = 64, W - 64
 BUILTINS = {'len', 'range', 'enumerate', 'min', 'max', 'print', 'sorted', 'sum', 'abs'}
 
@@ -144,8 +144,6 @@ class Reel:
         # code panel
         d.rounded_rectangle((X0, self.code_top, X1, self.code_bottom), 28, fill=T.PANEL)
         d.text((X0 + 28, self.code_top + 14), f"{s['fn'].__name__}.py", font=T.mono(24, 600), fill=T.MUTED)
-        d.text((X1 - 28 - d.textlength('debug ▶', font=T.mono(24, 600)), self.code_top + 14), 'debug ▶',
-               font=T.mono(24, 600), fill=T.SERIES['dsa'][1])
         # state panel
         d.rounded_rectangle((X0, self.state_top, X1, self.state_bottom), 28, fill=T.PANEL)
         d.text((X0 + 28, self.state_top + 18), s['array'], font=T.mono(24, 600), fill=T.MUTED)
@@ -167,13 +165,16 @@ class Reel:
     # -------------------------------------------------------------- per frame
     def schedule(self):
         steps = self.events
-        span = FRAMES - INTRO - OUTRO
+        span = FRAMES - INTRO - QUIZ - OUTRO
         per = span / len(steps)
         return [(INTRO + round(i * per), e) for i, e in enumerate(steps)], per
 
     def frame(self, f, sched, per):
         im = self.base.copy()
         d = ImageDraw.Draw(im, 'RGBA')
+        # progress bar: the viewer always knows how close the answer is
+        d.rounded_rectangle((X0, 64, X1, 72), 4, fill=T.PANEL_2)
+        d.rounded_rectangle((X0, 64, X0 + (X1 - X0) * (f + 1) / FRAMES, 72), 4, fill=T.ACCENT)
         # which step
         k = 0
         for i, (start, _) in enumerate(sched):
@@ -194,10 +195,50 @@ class Reel:
         vars_prev = prev['vars'] if f >= INTRO else {}
         self.draw_array(d, vars_now, vars_prev, t)
         self.draw_watch(d, vars_now, vars_prev, (f - start) / max(1, per))
-        self.draw_note(d, ev, f)
-        if f >= FRAMES - OUTRO:
-            self.draw_result(im, (f - (FRAMES - OUTRO)) / 12)
+        self.draw_step(d, k, f)
+        quiz_at, reveal_at = FRAMES - OUTRO - QUIZ, FRAMES - OUTRO
+        if f < INTRO:
+            self.draw_hook(d, f)
+        elif f < quiz_at:
+            self.draw_note(d, ev, f)
+        elif f < reveal_at:
+            self.draw_quiz(im, f - quiz_at)
+        else:
+            self.draw_result(im, (f - reveal_at) / 10)
         return im
+
+    def draw_step(self, d, k, f):
+        label = 'run ▶' if f < INTRO else f'step {k + 1}/{len(self.events)}'
+        lf = T.mono(24, 600)
+        d.text((X1 - 28 - d.textlength(label, font=lf), self.code_top + 14), label, font=lf, fill=T.SERIES['dsa'][1])
+
+    def draw_hook(self, d, f):
+        """0-1.5 s: ask the viewer to commit to an answer before the code runs."""
+        top = self.note_y - 10
+        d.rounded_rectangle((X0, top, X1, top + 150), 28, fill=T.PANEL_2)
+        d.text((X0 + 32, top + 22), 'PAUSE & PREDICT', font=T.mono(26, 700), fill=T.ACCENT)
+        d.text((X0 + 32, top + 64), 'What does this return?', font=T.sans(46, 800), fill=T.TEXT)
+        n = 3 - min(2, f * 3 // INTRO)
+        cx, cy, rr = X1 - 80, top + 75, 44
+        d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=T.BORDER, width=6)
+        frac = (f % (INTRO / 3)) / (INTRO / 3)
+        d.arc((cx - rr, cy - rr, cx + rr, cy + rr), -90, -90 + 360 * (1 - frac), fill=T.ACCENT, width=6)
+        nf = T.mono(44, 800)
+        d.text((cx - d.textlength(str(n), font=nf) / 2, cy - 28), str(n), font=nf, fill=T.TEXT)
+
+    def draw_quiz(self, im, q):
+        """Predict pause: the answer is hidden for a beat; the comment prompt does the interaction."""
+        d = ImageDraw.Draw(im, 'RGBA')
+        top = self.note_y - 10
+        d.rounded_rectangle((X0, top, X1, top + 196), 28, fill=T.PANEL_2)
+        pulse = 0.5 + 0.5 * math.sin(q / QUIZ * 2 * math.pi * 3)
+        d.text((X0 + 32, top + 20), 'return ', font=T.mono(44, 800), fill=T.ACCENT)
+        qx = X0 + 32 + d.textlength('return ', font=T.mono(44, 800))
+        d.text((qx, top + 20), '?', font=T.mono(44, 800), fill=(255, 216, 77, round(140 + 115 * pulse)))
+        d.text((X0 + 32, top + 92), 'Your answer? Comment it before it shows.', font=T.sans(34, 700), fill=T.TEXT)
+        d.rounded_rectangle((X0 + 32, top + 152, X1 - 32, top + 162), 5, fill=T.PANEL)
+        d.rounded_rectangle((X0 + 32, top + 152, X0 + 32 + (X1 - X0 - 64) * (1 - q / QUIZ), top + 162), 5,
+                            fill=(255, 216, 77))
 
     def draw_array(self, d, now, prev, t):
         ptrs = self.spec['pointers']
@@ -262,40 +303,118 @@ class Reel:
         a = ease(t)
         d = ImageDraw.Draw(im, 'RGBA')
         top = self.note_y - 10
-        d.rounded_rectangle((X0, top, X1, top + 196), 28, fill=T.PANEL_2 + (round(255 * a),))
-        if a > 0.3:
-            d.text((X0 + 32, top + 20), f'return {fmt(self.result, 24)}', font=T.mono(44, 800), fill=T.ACCENT)
-            d.text((X0 + 32, top + 86), self.spec['complexity'], font=T.mono(28, 600), fill=T.MUTED)
-            nxt = PROBLEMS.get(self.ep + 1)
-            d.text((X0 + 32, top + 136), f"Next: #{self.ep + 1:04d} {nxt['title']}" if nxt else 'Follow for the next one',
-                   font=T.sans(30, 700), fill=T.TEXT)
+        grow = round(10 * (1 - a))                              # the answer card pops in
+        d.rounded_rectangle((X0 - grow, top - grow, X1 + grow, top + 196 + grow), 28, fill=T.PANEL_2)
+        d.text((X0 + 32, top + 20), f'return {fmt(self.result, 24)}', font=T.mono(44, 800), fill=T.ACCENT)
+        d.text((X0 + 32, top + 86), self.spec['complexity'], font=T.mono(28, 600), fill=T.MUTED)
+        nxt = PROBLEMS.get(self.ep + 1)
+        cta = f"Got it right? Comment NEXT for #{self.ep + 1:04d}" if nxt else 'Got it right? Follow for the next one'
+        d.text((X0 + 32, top + 136), cta, font=T.sans(30, 700), fill=T.TEXT)
 
 
 # ---------------------------------------------------------------- audio
-def soundtrack(path, ticks):
+NOTE = lambda m: 440.0 * 2 ** ((m - 69) / 12)
+PROGRESSIONS = [[(0, 4, 7, 11), (9, 12, 16, 19), (2, 5, 9, 12), (7, 11, 14, 17)],     # Imaj7 vi7 ii7 V7
+                [(0, 4, 7, 11), (5, 9, 12, 16), (9, 12, 16, 19), (7, 11, 14, 17)],    # Imaj7 IVmaj7 vi7 V7
+                [(9, 12, 16, 19), (5, 9, 12, 16), (0, 4, 7, 11), (7, 11, 14, 17)]]    # vi7 IVmaj7 Imaj7 V7
+
+
+def _lowpass(x, k):
+    """Cheap lo-fi darkening: moving-average FIR."""
+    return np.convolve(x, np.ones(k) / k, mode='same')
+
+
+def soundtrack(path, ticks, seed=1, intro=INTRO, quiz=None, reveal=None):
+    """Free, original lo-fi bed (no samples, no licence), different for every episode (seeded):
+    Rhodes chords + crackle during the hook, drums and bass drop in when the code starts, the beat
+    cuts out for the predict pause (tension), and a chord + chime lands on the answer."""
     sr = 44100
-    t = np.arange(SECONDS * sr) / sr
-    chords = [(220.0, 261.63, 329.63), (174.61, 220.0, 261.63), (130.81, 196.0, 261.63), (196.0, 246.94, 293.66)]
-    pad = np.zeros_like(t)
-    seg = len(t) // len(chords)
-    for i, ch in enumerate(chords):
-        s = slice(i * seg, (i + 1) * seg if i < len(chords) - 1 else len(t))
-        tt = t[s]
-        env = np.minimum(1, np.minimum((tt - tt[0]) / 0.4, (tt[-1] - tt + 1e-9) / 0.4))
-        pad[s] = env * sum(np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt) for f in ch) / len(ch)
-    out = 0.22 * pad
+    n = SECONDS * sr
+    t = np.arange(n) / sr
+    rng = np.random.default_rng(seed)
+    bpm = float(rng.choice([84, 86, 88, 90, 92]))
+    beat = 60 / bpm
+    key = 48 + int(rng.choice([0, 2, 3, 5, 7]))                # C, D, Eb, F or G
+    prog = PROGRESSIONS[seed % len(PROGRESSIONS)]
+    t_intro = intro / FPS
+    t_quiz = (quiz if quiz is not None else FRAMES - OUTRO - QUIZ) / FPS
+    t_reveal = (reveal if reveal is not None else FRAMES - OUTRO) / FPS
+    keys, bass, drums = np.zeros(n), np.zeros(n), np.zeros(n)
+
+    def add(buf, start, sig, gain=1.0):
+        i0 = int(start * sr)
+        if i0 >= n:
+            return
+        m = min(len(sig), n - i0)
+        buf[i0:i0 + m] += gain * sig[:m]
+
+    def rhodes(f, dur):
+        tt = np.arange(int(dur * sr)) / sr
+        s = np.sin(2 * np.pi * f * tt) + 0.35 * np.sin(2 * np.pi * 2 * f * tt) * np.exp(-tt * 6) + \
+            0.12 * np.sin(2 * np.pi * 3 * f * tt) * np.exp(-tt * 9)
+        return s * np.exp(-tt * 1.6) * (1 + 0.15 * np.sin(2 * np.pi * 5 * tt)) * np.minimum(1, tt / 0.01)
+
+    def kick():
+        tt = np.arange(int(0.3 * sr)) / sr
+        return np.sin(2 * np.pi * np.cumsum(48 + 90 * np.exp(-tt * 35)) / sr) * np.exp(-tt * 11)
+
+    def snare():
+        tt = np.arange(int(0.22 * sr)) / sr
+        noise = rng.standard_normal(len(tt))
+        return (0.7 * np.diff(noise, prepend=0) + 0.4 * np.sin(2 * np.pi * 190 * tt)) * np.exp(-tt * 18)
+
+    def hat():
+        tt = np.arange(int(0.05 * sr)) / sr
+        return np.diff(rng.standard_normal(len(tt)), prepend=0) * np.exp(-tt * 90)
+
+    bar = 4 * beat
+    b = 0
+    while b * bar < SECONDS:
+        chord = prog[b % len(prog)]
+        start = b * bar
+        for k, iv in enumerate(chord):                            # gently strummed chord
+            add(keys, start + k * 0.025, rhodes(NOTE(key + 12 + iv), bar + 0.4), 0.22)
+        root = NOTE(key - 12 + chord[0])
+        for off, dur in ((0, 1.4 * beat), (2.5 * beat, 1.2 * beat)):
+            tb = np.arange(int(dur * sr)) / sr
+            s = np.tanh(1.8 * np.sin(2 * np.pi * root * tb)) * np.exp(-tb * 1.8) * np.minimum(1, tb / 0.01)
+            add(bass, start + off, s, 0.5)
+        for q in range(8):                                       # swung 8ths
+            tq = start + q * beat / 2 + (0.08 * beat if q % 2 else 0)
+            add(drums, tq, hat(), 0.12 * (1.0 if q % 2 == 0 else 0.6) * rng.uniform(0.7, 1.0))
+        for q in (0, 2):
+            add(drums, start + q * beat, kick(), 0.9)
+        if rng.random() < 0.5:
+            add(drums, start + 2.5 * beat, kick(), 0.5)
+        for q in (1, 3):
+            add(drums, start + q * beat, snare(), 0.45)
+        b += 1
+    # arrangement: drums+bass enter with the code, drop out for the predict pause, return after the answer
+    on = ((t >= t_intro) & (t < t_quiz)) | (t >= t_reveal + 0.15)
+    fade = np.convolve(on.astype(float), np.ones(int(0.05 * sr)) / int(0.05 * sr), mode='same')
+    music = _lowpass(keys, 6) + _lowpass(bass, 12) * fade + _lowpass(drums, 3) * fade
+    music *= np.where((t >= t_quiz) & (t < t_reveal), 0.55, 1.0)  # duck under the question
+    # riser into the reveal, then chord hit + chime arpeggio on the answer
+    rl = t_reveal - t_quiz
+    rt = np.arange(int(rl * sr)) / sr
+    riser = _lowpass(rng.standard_normal(len(rt)), 4) * (rt / rl) ** 2 * 0.25
+    add(music, t_quiz, riser)
+    for k, iv in enumerate((0, 4, 7, 12, 16)):
+        add(music, t_reveal + k * 0.05, rhodes(NOTE(key + 24 + iv), 1.6), 0.18)
+    # vinyl crackle + soft step ticks
+    crackle = np.zeros(n)
+    idx = rng.integers(0, n, size=SECONDS * 40)
+    crackle[idx] = rng.uniform(-0.5, 0.5, size=len(idx))
+    music += _lowpass(crackle, 3) * 0.3 + rng.standard_normal(n) * 0.004
     for frame in ticks:
-        i0 = int(frame / FPS * sr)
-        n = int(0.06 * sr)
-        if i0 + n < len(out):
-            tt = np.arange(n) / sr
-            out[i0:i0 + n] += 0.25 * np.sin(2 * np.pi * 1320 * tt) * np.exp(-tt * 70)
-    out = np.clip(out, -1, 1)
+        tt = np.arange(int(0.04 * sr)) / sr
+        add(music, frame / FPS, np.sin(2 * np.pi * 1100 * tt) * np.exp(-tt * 120), 0.12)
+    music = music / max(1e-9, np.abs(music).max()) * 0.85
     with wave.open(str(path), 'wb') as w:
         w.setnchannels(1)
         w.setsampwidth(2)
         w.setframerate(sr)
-        w.writeframes((out * 32767).astype('<i2').tobytes())
+        w.writeframes((music * 32767).astype('<i2').tobytes())
 
 
 # ---------------------------------------------------------------- render
@@ -306,7 +425,7 @@ def render(out, episode=1):
     out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / 'a.wav'
-        soundtrack(wav, [s for s, _ in sched])
+        soundtrack(wav, [s for s, _ in sched], seed=episode)
         cmd = ['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),
                '-i', '-', '-i', str(wav), '-frames:v', str(FRAMES), '-c:v', 'libx264', '-pix_fmt', 'yuv420p',
                '-preset', 'medium', '-crf', '18', '-c:a', 'aac', '-b:a', '160k', '-t', str(SECONDS),
