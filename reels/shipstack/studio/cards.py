@@ -76,27 +76,19 @@ def automation(path, crumb, title, steps, result, tool=None):
     y0 = 200 + max(0, (H - 160 - 200 - block) // 2)
     top = rich(d, (X0, y0), title, T.sans(72, 800), X1 - X0, 86) + 36
     bottom = top + 58 + row * len(steps) + 170
-    d.rounded_rectangle((X0, top, X1, bottom), 22, fill=T.PANEL, outline=T.BORDER, width=2)
-    d.line((X0, top + 56, X1, top + 56), fill=T.BORDER, width=2)
-    d.text((X0 + 28, top + 14), 'workflow', font=T.mono(24, 600), fill=T.MUTED)
     if tool:
-        tf = T.mono(24, 600)
-        d.text((X1 - 28 - d.textlength(tool, font=tf), top + 14), tool, font=tf, fill=T.SERIES['automation'][1])
-    y = top + 80
+        d.text((X0, top + 4), tool, font=T.mono(26, 600), fill=T.MUTED)
+    y = top + 70
     for i, step in enumerate(steps, 1):
-        d.rounded_rectangle((X0 + 28, y, X0 + 100, y + 72), 16, outline=T.ACCENT, width=3)
-        n = str(i)
-        nf = T.mono(36, 800)
-        d.text((X0 + 64 - d.textlength(n, font=nf) / 2, y + 14), n, font=nf, fill=T.ACCENT)
-        lines = T.wrap(d, step, T.sans(42, 600), X1 - X0 - 170)[:2]
+        n = f'{i:02d}'
+        d.text((X0, y - 6), n, font=T.mono(54, 800), fill=T.ACCENT)
+        lines = T.wrap(d, step, T.sans(44, 600), X1 - X0 - 130)[:2]
         for j, line in enumerate(lines):
-            d.text((X0 + 128, y + 12 + j * 50 - (16 if len(lines) > 1 else 0)), line, font=T.sans(42, 600), fill=T.TEXT)
-        if i < len(steps):
-            d.line((X0 + 64, y + 74, X0 + 64, y + row - 2), fill=T.BORDER, width=3)
+            d.text((X0 + 130, y + 2 + j * 52), line, font=T.sans(44, 600), fill=T.TEXT)
         y += row
-    d.line((X0, y + 6, X1, y + 6), fill=T.BORDER, width=2)
-    d.text((X0 + 28, y + 30), 'result', font=T.mono(26, 600), fill=T.ACCENT)
-    rich(d, (X0 + 28, y + 72), result, T.sans(44, 700), X1 - X0 - 56, 52)
+    d.rounded_rectangle((X0, y + 10, X1, y + 180), 28, fill=T.PANEL)
+    d.text((X0 + 36, y + 40), 'RESULT', font=T.mono(26, 700), fill=T.MUTED)
+    rich(d, (X0 + 36, y + 84), result, T.sans(46, 700), X1 - X0 - 72, 54)
     T.footer(im, 'Save this for later')
     im.convert('RGB').save(path, quality=95)
 
@@ -111,11 +103,11 @@ def main():
          'The AI company priced its public offering at $83 a share, Reuters reports.',
          'Reuters', '19 Nov 2026', image=root / 'news-single/images/SHIPNEWS-20261119-001.jpg', credit='AI-generated')
     automation(out / 'automation-sample.png', '#0001', 'Automate your [weekly report]',
-               ['Export the numbers to a sheet', 'Ask Claude to draft the summary from it',
+               ['Export the numbers to a sheet', 'Ask Claude to draft the summary',
                 'Schedule it to send every Friday'],
                'A weekly task that [runs itself].', tool='sheets + claude')
     profile = Image.new('RGBA', (1080, 1080), T.BG + (255,))   # profile picture: full square, IG crops it
-    profile.alpha_composite(T.mark(1080, outline=False))
+    profile.alpha_composite(T.mark(1080, bg=T.BG))
     profile.convert('RGB').save(out / 'avatar-1080.png')
     T.mark(1080, tile=False).save(out / 'logo-mark.png')
     T.lockup(320).convert('RGB').save(out / 'logo-lockup-dark.png')

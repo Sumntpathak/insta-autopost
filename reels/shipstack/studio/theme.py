@@ -28,21 +28,20 @@ SYNTAX = {'kw': (255, 123, 114), 'fn': (210, 168, 255), 'num': (121, 192, 255), 
           'com': (139, 148, 158), 'name': (230, 237, 243), 'op': (230, 237, 243), 'builtin': (255, 166, 87)}
 
 
+FONTS = brand.FONTS
+GEIST = FONTS / 'Geist-Variable.ttf'            # Vercel, SIL OFL (fonts/OFL-Geist.txt)
+GEIST_MONO = FONTS / 'GeistMono-Variable.ttf'
+
+
 def sans(size, weight=600):
-    f = ImageFont.truetype(str(brand.SANS), size)
-    try:
-        f.set_variation_by_axes([min(32, max(14, size)), weight])
-    except Exception:
-        pass
+    f = ImageFont.truetype(str(GEIST), size)
+    f.set_variation_by_axes([weight])
     return f
 
 
 def mono(size, weight=500):
-    f = ImageFont.truetype(str(brand.MONO), size)
-    try:
-        f.set_variation_by_axes([weight])
-    except Exception:
-        pass
+    f = ImageFont.truetype(str(GEIST_MONO), size)
+    f.set_variation_by_axes([weight])
     return f
 
 
@@ -70,15 +69,14 @@ def draw_boat(d, s, color):
     d.polygon([(1.9 * u, y), (8.1 * u, y), (6.85 * u, y + hh), (3.15 * u, y + hh)], fill=color)
 
 
-def mark(size, bg=BG, fg=ACCENT, tile=True, outline=True):
-    """Logo mark. tile=True: rounded-square badge (thin border so it reads on dark pages);
+def mark(size, bg=PANEL, fg=ACCENT, tile=True):
+    """Logo mark. tile=True: rounded-square badge (raised panel colour, no border);
     tile=False: the boat alone on transparent, in `fg`."""
     s = size * 4
     im = Image.new('RGBA', (s, s), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     if tile:
-        d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=bg,
-                            outline=BORDER if outline else None, width=max(4, round(s * 0.03)) if outline else 0)
+        d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=bg)
     draw_boat(d, s, fg)
     return im.resize((size, size), Image.Resampling.LANCZOS)
 
@@ -117,18 +115,14 @@ def header(im, series, crumb, top=72):
         d.text((x, top + 14), part, font=f, fill=TEXT if i == 2 else MUTED)
         x += d.textlength(part + ' ', font=f) + 4
     label, color = SERIES[series]
-    tf = sans(24, 800)
-    tw = d.textlength(label, font=tf)
-    d.rounded_rectangle((w - 64 - tw - 36, top + 8, w - 64, top + 56), 24, outline=color, width=3)
-    d.text((w - 64 - tw - 18, top + 18), label, font=tf, fill=color)
-    d.line((64, top + 100, w - 64, top + 100), fill=BORDER, width=2)
+    tf = mono(26, 700)
+    d.text((w - 64 - d.textlength(label, font=tf), top + 16), label, font=tf, fill=color)
 
 
 def footer(im, left, right='@shipstack_', bottom=72):
     d = ImageDraw.Draw(im)
     w, h = im.size
     y = h - bottom - 32
-    d.line((64, y - 28, w - 64, y - 28), fill=BORDER, width=2)
     d.text((64, y), left, font=sans(28, 700), fill=ACCENT)
     f = mono(26, 600)
     d.text((w - 64 - d.textlength(right, font=f), y + 2), right, font=f, fill=MUTED)

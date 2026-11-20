@@ -142,13 +142,12 @@ class Reel:
             d.text((X0, y), line, font=T.sans(34, 500), fill=T.MUTED)
             y += 46
         # code panel
-        d.rounded_rectangle((X0, self.code_top, X1, self.code_bottom), 22, fill=T.PANEL, outline=T.BORDER, width=2)
-        d.line((X0, self.code_top + 56, X1, self.code_top + 56), fill=T.BORDER, width=2)
+        d.rounded_rectangle((X0, self.code_top, X1, self.code_bottom), 28, fill=T.PANEL)
         d.text((X0 + 28, self.code_top + 14), f"{s['fn'].__name__}.py", font=T.mono(24, 600), fill=T.MUTED)
         d.text((X1 - 28 - d.textlength('debug ▶', font=T.mono(24, 600)), self.code_top + 14), 'debug ▶',
                font=T.mono(24, 600), fill=T.SERIES['dsa'][1])
         # state panel
-        d.rounded_rectangle((X0, self.state_top, X1, self.state_bottom), 22, fill=T.PANEL, outline=T.BORDER, width=2)
+        d.rounded_rectangle((X0, self.state_top, X1, self.state_bottom), 28, fill=T.PANEL)
         d.text((X0 + 28, self.state_top + 18), s['array'], font=T.mono(24, 600), fill=T.MUTED)
         d.text((X0 + 28, self.watch_y - 40), 'watch', font=T.mono(24, 600), fill=T.MUTED)
         self.base = im.convert('RGB')
@@ -208,10 +207,10 @@ class Reel:
             x = self.arr_x0 + i * (self.cell + 14)
             on = i in active
             d.rounded_rectangle((x, self.arr_y, x + self.cell, self.arr_y + self.cell), 16,
-                                fill=T.PANEL_2 if not on else T.ACCENT + (60,), outline=T.ACCENT if on else T.BORDER, width=3)
+                                fill=T.ACCENT if on else T.PANEL_2)
             s = str(val)
             d.text((x + (self.cell - d.textlength(s, font=vf)) / 2, self.arr_y + self.cell / 2 - 24), s, font=vf,
-                   fill=T.TEXT)
+                   fill=T.BG if on else T.TEXT)
             d.text((x + (self.cell - d.textlength(str(i), font=idf)) / 2, self.arr_y + self.cell + 8), str(i),
                    font=idf, fill=T.MUTED)
         # pointers: arrows that glide between indices
@@ -263,8 +262,7 @@ class Reel:
         a = ease(t)
         d = ImageDraw.Draw(im, 'RGBA')
         top = self.note_y - 10
-        d.rounded_rectangle((X0, top, X1, top + 196), 22, fill=T.PANEL_2 + (round(255 * a),),
-                            outline=T.ACCENT + (round(255 * a),), width=3)
+        d.rounded_rectangle((X0, top, X1, top + 196), 28, fill=T.PANEL_2 + (round(255 * a),))
         if a > 0.3:
             d.text((X0 + 32, top + 20), f'return {fmt(self.result, 24)}', font=T.mono(44, 800), fill=T.ACCENT)
             d.text((X0 + 32, top + 86), self.spec['complexity'], font=T.mono(28, 600), fill=T.MUTED)
