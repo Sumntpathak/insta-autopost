@@ -1,0 +1,26 @@
+{
+ "logo": {
+  "key": "LAUNCH-2026-11-logo",
+  "story_key": "LAUNCH-2026-11-story",
+  "type": "REELS",
+  "file": "story-logo.mp4",
+  "story_file": "story-logo.mp4",
+  "ready": true,
+  "caption": "We ship. 🚢\n\nShipStack is starting fresh. From today we post three things:\n\n📰 AI news: verified, with every source shown\n⚙️ AI automations: workflows you can copy in minutes\n💻 DSA: famous coding problems, debugged line by line\n\nFirst up: our first news brief and DSA #0001, Two Sum. Follow so you don't miss them.\n\n#ai #automation #dsa #coding #leetcode #programming #tech"
+ },
+ "news": {
+  "key": "LAUNCH-2026-11-news",
+  "type": "IMAGE",
+  "file": "news-brief-1.jpg",
+  "ready": false,
+  "note": "needs a verified, not-yet-posted AI story (the Anthropic IPO card was already posted on 19 Nov)",
+  "caption": ""
+ },
+ "dsa": {
+  "key": "LAUNCH-2026-11-dsa",
+  "type": "REELS",
+  "file": "dsa-0001.mp4",
+  "ready": true,
+  "caption": "DSA #0001 · Two Sum\n\nFind two numbers that add up to the target. Watch the code run line by line, with every variable shown.\n\nPattern: Hash map · O(n) time · O(n) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming"
+ }
+}

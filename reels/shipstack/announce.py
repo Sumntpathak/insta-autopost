@@ -1,17 +1,23 @@
-"""Publish the ShipStack launch: one carousel (logo animation + the three series) and one Story.
+"""Publish one ShipStack launch post (and, with the logo post, the launch Story).
 
-    python -m reels.shipstack.announce --base-url https://.../ [--dry-run] [--story-only]
+    python -m reels.shipstack.announce --post logo|news|dsa --base-url https://.../ [--override-daily-cap] [--dry-run]
 
-Same safety contract as publish.py:
-  1. reels/guard.py must allow posting now (60 min gap, 12/day). Stories are journaled with
-     kind 'story' and do not count toward the feed plan (they never appear in the feed).
-  2. Every container is created and processed first; a 'publishing' record with the container id
-     is pushed to reels/state.json BEFORE media_publish, so an ambiguous failure is never retried.
-  3. A key that is already in the journal is never posted again.
-Assets live in reels/shipstack/launch/ and are hosted by the workflow as release assets.
+The launch is three separate feed posts that fill the profile's top row, posted at least 60 min apart:
+  logo  - the logo animation as a Reel with the announcement caption, plus the same clip as a Story
+  news  - the first verified news card (only if launch/posts.json marks it verified)
+  dsa   - DSA #0001 Two Sum, the debugger reel
+Safety (same contract as publish.py):
+  1. reels/guard.py must allow posting now, checked against the journal AND the live account (posts
+     made by other pipelines). --override-daily-cap lifts only the 12/day cap, never the 60-min gap,
+     and is recorded in the journal. Stories don't count toward the feed plan.
+  2. Each container is processed first; a 'publishing' record with its id is pushed to reels/state.json
+     BEFORE media_publish, so an ambiguous failure is never retried.
+  3. A key already in the journal is never posted again.
+Files and captions: reels/shipstack/launch/ and launch/posts.json.
 """
 import argparse
 import datetime as dt
+import json
 import sys
 from pathlib import Path
 
@@ -20,101 +26,94 @@ sys.path.insert(0, str(ROOT / 'reels'))
 import campaign  # noqa: E402
 import guard  # noqa: E402
 
-SLIDES = [('slide1-logo.mp4', 'VIDEO'), ('slide2-news.jpg', 'IMAGE'), ('slide3-automation.jpg', 'IMAGE'),
-          ('slide4-dsa.jpg', 'IMAGE')]
-STORY = 'story-logo.mp4'
-CAROUSEL_KEY = 'LAUNCH-2026-carousel'
-STORY_KEY = 'LAUNCH-2026-story'
-CAPTION = (
-    'We ship. 🚢\n\n'
-    'ShipStack is starting fresh. From today we post three things:\n\n'
-    '📰 AI news: verified, with every source shown\n'
-    '⚙️ AI automations: workflows you can copy in minutes\n'
-    '💻 DSA: famous coding problems, debugged line by line (episode #0001 is next)\n\n'
-    'Swipe for a preview of each series. Follow so you don\'t miss #0001.\n\n'
-    '#ai #automation #dsa #coding #leetcode #programming #tech'
-)
+POSTS = ROOT / 'reels/shipstack/launch/posts.json'
+NO_CAP = 10 ** 6
 
 
-def live_blocked(meta, now):
-    """The journal only knows this repo's posts; ask Instagram what actually went out today."""
+def load_posts():
+    return json.loads(POSTS.read_text())
+
+
+def live_posts(meta):
+    """The journal only knows this repo's posts; ask Instagram what actually went out."""
     data = meta.call(f'{meta.ig_id}/media', {'fields': 'timestamp', 'limit': 50}).get('data', [])
-    posts = {str(i): {'published_at': dt.datetime.strptime(m['timestamp'], '%Y-%m-%dT%H:%M:%S%z').isoformat()}
-             for i, m in enumerate(data) if m.get('timestamp')}
-    return guard.blocked(posts, now)
+    return {f'live{i}': {'published_at': dt.datetime.strptime(m['timestamp'], '%Y-%m-%dT%H:%M:%S%z').isoformat()}
+            for i, m in enumerate(data) if m.get('timestamp')}
 
 
-def publish_launch(base_url, now=None, meta=None, read_state=campaign.read_state, persist=campaign.persist,
-                   dry_run=False, story_only=False):
+def _publish(meta, state, persist, key, params, record, now):
+    container = meta.call(f'{meta.ig_id}/media', params, 'POST')['id']
+    meta.ready(container)
+    record = {'id': key, 'date': now.date().isoformat(), 'container_id': container, 'status': 'publishing',
+              'attempted_at': now.isoformat(), **record}
+    state['posts'][key] = record
+    persist(state)
+    media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id': container}, 'POST')['id']
+    record.update(status='published', media_id=media, published_at=dt.datetime.now(guard.IST).isoformat())
+    persist(state)
+    print(f'Published {key} as {media}')
+    return media
+
+
+def publish_post(post, base_url, now=None, meta=None, read_state=campaign.read_state, persist=campaign.persist,
+                 dry_run=False, override_daily_cap=False, posts=None):
+    posts = posts or load_posts()
+    if post not in posts:
+        raise ValueError(f'Unknown launch post {post}; choose from {sorted(posts)}')
+    item = posts[post]
+    if not item.get('ready', False):
+        raise RuntimeError(f'Launch post {post} is not ready (it needs verified content): {item.get("note", "")}')
     if not base_url.startswith('https://'):
         raise ValueError('A public HTTPS base URL is required')
     base_url = base_url.rstrip('/') + '/'
     now = now or dt.datetime.now(guard.IST)
+    cap = NO_CAP if override_daily_cap else guard.DAILY_CAP
     state = read_state()
-    todo_carousel = not story_only and CAROUSEL_KEY not in state['posts']
-    todo_story = STORY_KEY not in state['posts']
-    if not todo_carousel and not todo_story:
-        raise RuntimeError('The launch was already attempted; reconcile it instead of re-posting')
-    if todo_carousel:
-        reason = guard.blocked(state['posts'], now)
+    key, story_key = item['key'], item.get('story_key')
+    todo_feed = key not in state['posts']
+    todo_story = bool(story_key) and story_key not in state['posts']
+    if not todo_feed and not todo_story:
+        raise RuntimeError(f'{key} was already attempted; reconcile it instead of re-posting')
+    if todo_feed:
+        reason = guard.blocked(state['posts'], now, cap=cap)
         if reason:
-            raise RuntimeError(f'Posting plan blocks the launch carousel: {reason}')
+            raise RuntimeError(f'Posting plan blocks {key}: {reason}')
     if dry_run:
-        print(f'Dry run OK: carousel={"yes" if todo_carousel else "no"}, story={"yes" if todo_story else "no"}')
+        print(f'Dry run OK: {key} feed={"yes" if todo_feed else "no"} story={"yes" if todo_story else "no"}'
+              f'{" (daily cap overridden)" if override_daily_cap else ""}')
         return None
     meta = meta or campaign.Meta()
     meta.check_account()
-    if todo_carousel:
-        reason = live_blocked(meta, now)
+    if todo_feed:
+        reason = guard.blocked(live_posts(meta), now, cap=cap)
         if reason:
-            raise RuntimeError(f'Posting plan blocks the launch carousel (live account check): {reason}')
+            raise RuntimeError(f'Posting plan blocks {key} (live account check): {reason}')
+    extra = {'scene': f'launch-{post}', 'collection': 'shipstack-launch', 'caption': item['caption']}
+    if override_daily_cap:
+        extra['plan_override'] = 'daily cap lifted for the launch by the account owner; 60-min gap kept'
     results = {}
-    if todo_carousel:
-        children = []
-        for name, kind in SLIDES:
-            params = {'is_carousel_item': 'true'}
-            if kind == 'VIDEO':
-                params.update(media_type='VIDEO', video_url=base_url + name)
-            else:
-                params.update(image_url=base_url + name)
-            child = meta.call(f'{meta.ig_id}/media', params, 'POST')['id']
-            meta.ready(child)
-            children.append(child)
-        container = meta.call(f'{meta.ig_id}/media', {'media_type': 'CAROUSEL', 'children': ','.join(children),
-                                                       'caption': CAPTION}, 'POST')['id']
-        meta.ready(container)
-        record = {'id': CAROUSEL_KEY, 'date': now.date().isoformat(), 'scene': 'launch', 'collection': 'shipstack-brand',
-                  'kind': 'carousel', 'caption': CAPTION, 'container_id': container, 'children': children,
-                  'status': 'publishing', 'attempted_at': now.isoformat()}
-        state['posts'][CAROUSEL_KEY] = record
-        persist(state)
-        media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id': container}, 'POST')['id']
-        record.update(status='published', media_id=media, published_at=dt.datetime.now(guard.IST).isoformat())
-        persist(state)
-        results['carousel'] = media
-        print(f'Published launch carousel as {media}')
+    if todo_feed:
+        url = base_url + item['file']
+        if item['type'] == 'REELS':
+            params = {'media_type': 'REELS', 'video_url': url, 'caption': item['caption'], 'share_to_feed': 'true'}
+        else:
+            params = {'image_url': url, 'caption': item['caption']}
+        results['feed'] = _publish(meta, state, persist, key, params, {**extra, 'kind': item['type'].lower()}, now)
     if todo_story:
-        container = meta.call(f'{meta.ig_id}/media', {'media_type': 'STORIES', 'video_url': base_url + STORY}, 'POST')['id']
-        meta.ready(container)
-        record = {'id': STORY_KEY, 'date': now.date().isoformat(), 'scene': 'launch', 'collection': 'shipstack-brand',
-                  'kind': 'story', 'container_id': container, 'status': 'publishing', 'attempted_at': now.isoformat()}
-        state['posts'][STORY_KEY] = record
-        persist(state)
-        media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id': container}, 'POST')['id']
-        record.update(status='published', media_id=media, published_at=dt.datetime.now(guard.IST).isoformat())
-        persist(state)
-        results['story'] = media
-        print(f'Published launch story as {media}')
+        params = {'media_type': 'STORIES', 'video_url': base_url + item['story_file']}
+        results['story'] = _publish(meta, state, persist, story_key, params,
+                                    {'scene': f'launch-{post}', 'collection': 'shipstack-launch', 'kind': 'story'}, now)
     return results
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--base-url', required=True, help='public HTTPS folder that holds the files in reels/shipstack/launch/')
+    ap.add_argument('--post', required=True, choices=['logo', 'news', 'dsa'])
+    ap.add_argument('--base-url', required=True, help='public HTTPS folder holding reels/shipstack/launch/ files')
+    ap.add_argument('--override-daily-cap', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--story-only', action='store_true')
     a = ap.parse_args()
-    publish_launch(a.base_url, dry_run=a.dry_run, story_only=a.story_only)
+    publish_post(a.post, a.base_url, dry_run=a.dry_run, override_daily_cap=a.override_daily_cap)
 
 
 if __name__ == '__main__':
