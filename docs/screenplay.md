@@ -1,28 +1,27 @@
-# SHIPSTACK: "WE SHIP"
+# SHIPSTACK: "VIEW FROM THE TOP"
 
 Brand film, about 60 seconds. Screenplay and voice-over script.
-Draft 1, 20 Nov 2026. Story only: no design decisions are made here.
+Draft 2, 20 Nov 2026 (replaces draft 1; that version is in git history). Story only: no design here.
 
 ---
 
-## The idea in one line
+## The idea
 
-Everyone is drowning in AI noise, half-finished tutorials and problems they can't crack at 2 AM.
-ShipStack is the one place that cuts through it, so you can stop consuming and start shipping.
+**Reverse effect.** The film is narrated by the villain. A smug "AI guru" in a ₹350-crore penthouse
+looks down at the city below and tells us, proudly, how he got rich. The worse truth comes out of his
+own mouth: **he doesn't sell knowledge, he sells the fear of not having it.** Then a tiny paper boat
+sails into his city, and his empire starts switching off, one floor at a time.
 
-## Who the film is about
+**Tone.** Roast-comedy energy: deadpan, self-aware, very online, a bit of Hinglish. We punch **up** at the
+hype industry, never down at the people stuck in it. The "slum" he looks down on isn't poverty: it's a
+city built out of browser tabs, unfinished tutorials and panic notifications. Everyone has lived there.
 
-**THE BUILDER**: anyone who wants to make things with code and AI. A student preparing for interviews,
-a working developer, someone with an idea. We never see a face or hear a name; the viewer *is* the Builder.
-We only see their world: a screen, a desk, a city at night.
-
-## Structure
-
-| Act | Time | Beat |
-|---|---|---|
-| I. The Noise | 0:00–0:18 | The Builder is overwhelmed: too much news, too much busywork, one problem they can't solve. |
-| II. The Signal | 0:18–0:45 | ShipStack cuts through it, three ways: news that's true, automations that do the work, code you can watch think. |
-| III. The Ship | 0:45–1:00 | The Builder ships. ShipStack's promise. |
+**Characters**
+- **THE GURU**: founder of HYPEX™ (fictional). Silk robe, crystal glass of cutting chai, LinkedIn-influencer voice.
+  Thinks he's the hero of this ad. He is not.
+- **THE BUILDERS**: everyone down in Tab Nagar. Never seen up close; we only see their tabs, their notifications,
+  and later, their boats.
+- **THE BOAT**: the ShipStack mark, a little paper boat with a `>` sail. Never speaks. Doesn't need to.
 
 ---
 
@@ -30,147 +29,160 @@ We only see their world: a screen, a desk, a city at night.
 
 **FADE IN:**
 
-**1. INT. BUILDER'S ROOM: NIGHT** *(0:00–0:06)*
+**1. EXT. PENTHOUSE BALCONY, 47TH FLOOR: SUNRISE** *(0:00–0:07)*
 
-Dark. The only light is a laptop screen. A clock in the corner reads 2:07 AM.
+Gold light. Glass railings. An infinity pool nobody swims in. THE GURU, in a silk robe, sips cutting chai
+from a crystal whisky glass and looks down at the city like he owns it. He does, sort of.
 
-On screen: a code editor. A blinking cursor in an empty function.
+> **THE GURU (V.O.)**
+> *(savouring it)*
+> Three hundred and fifty crore. Forty-seventh floor. And every morning, I look down at my people.
 
-A notification slides in. Then another. Then ten more: *"New AI model beats everything"*, *"This tool will
-replace developers"*, *"You're falling behind"*.
+**2. HIS POV: THE CITY BELOW** *(0:07–0:14)*
 
-They stack until the code is buried.
+It isn't a city of houses. It's a city of **browser tabs**, stacked like shanties, forty to a building.
+Neon street signs: **TUTORIAL NAGAR**. **NOTIFICATION CHOWK**. **DEADLINE COLONY**. Every window plays a
+tutorial paused at 3:07.
 
-> **NARRATOR (V.O.)**
-> Every day, a hundred new AI tools. A thousand headlines. Everyone says you're falling behind.
+> **THE GURU (V.O.)**
+> Forty tabs per household. Every tutorial paused at minute three. *(sigh of pure joy)* Beautiful.
 
-**2. INT. BUILDER'S ROOM: CONTINUOUS** *(0:06–0:12)*
+**3. INT. PENTHOUSE: HIS TROPHY WALL** *(0:14–0:22)*
 
-The Builder closes the notifications one by one. Under them: a browser with forty tabs open. Tutorials
-paused at minute three. A spreadsheet they update by hand every week, the same rows, again.
+Framed, like awards: his products.
+- *"Become an AI Engineer in 7 Days. ₹49,999. Limited seats."* (A tiny line underneath: *since 2019*.)
+- His newsletter: *"AI WILL TAKE YOUR JOB. Subscribe to find out when."*
+- A photo of him shaking hands with himself.
 
-> **NARRATOR (V.O.)**
-> So you open another tab. Another tutorial. Another task you'll do by hand, again next week.
+> **THE GURU (V.O.)**
+> People think I sell knowledge. *(chuckles)* Beta, I sell the fear of not having it.
+> Every new AI tool is one more floor on this building.
 
-**3. INT. BUILDER'S ROOM: CONTINUOUS** *(0:12–0:18)*
+**4. EXT. BALCONY: CONTINUOUS** *(0:22–0:28)*
 
-Back to the editor. A classic interview problem: *find two numbers that add up to a target.*
+He tosses a fresh notification over the railing, the way you'd feed pigeons: **"NEW MODEL BEATS EVERYTHING."**
+It flutters down. Below, a thousand new tabs pop open at once. The city groans.
 
-The Builder types. Deletes. Types. Runs the code. A red error.
-
-The cursor blinks.
-
-> **NARRATOR (V.O.)**
-> And the one problem you actually need to solve? It's still there. Still red.
-
-**SMASH CUT TO:**
-
-**4. BLACK** *(0:18–0:20)*
-
-Silence. One line of text types itself:
-
-`$ ship it`
-
-> **NARRATOR (V.O.)**
-> *(quiet, certain)*
-> What if you could skip the noise?
-
-**5. INT. THE SHIPSTACK WORKSPACE** *(0:20–0:27)*
-
-The mess clears. The forty tabs fold into one clean page.
-
-A single news story arrives: one headline, one key number, and underneath it, the source and the date.
-
-> **NARRATOR (V.O.)**
-> ShipStack reads the noise so you don't have to. AI news that matters, checked, with every source shown.
-
-**6. INT. THE SHIPSTACK WORKSPACE: CONTINUOUS** *(0:27–0:35)*
-
-The weekly spreadsheet from Scene 2 again. This time three steps appear beside it: 01, 02, 03.
-The rows fill themselves. A message goes out on its own: *"Weekly report sent."*
-
-> **NARRATOR (V.O.)**
-> Automations you can copy in minutes. Do the boring work once, and never again.
-
-**7. INT. THE SHIPSTACK WORKSPACE: CONTINUOUS** *(0:35–0:45)*
-
-The Two Sum problem from Scene 3. This time the code runs slowly, line by line. A highlight moves down
-the code. The numbers light up as the code looks at them. A variable changes. Then another. The answer
-appears.
-
-The error is gone.
-
-A counter in the corner: **#0001**. It starts climbing.
-
-> **NARRATOR (V.O.)**
-> And twelve hundred of the most asked coding problems, debugged line by line, so you see exactly
-> how the code thinks. Not memorised. Understood.
-
-**8. EXT. CITY: DAWN** *(0:45–0:52)*
-
-The window behind the laptop. The night sky turns pale. The clock reads 6:40 AM.
-
-Quick moments, one beat each: an interview invite. A script running on its own. A project page that says
-"Live".
-
-> **NARRATOR (V.O.)**
-> Less scrolling. More building.
-
-**9. INT. BUILDER'S ROOM: MORNING** *(0:52–1:00)*
-
-The laptop closes. On the lid, a small sticker: the ShipStack mark.
-
-Three words, one per beat:
-
-**KNOW. SAVE. SHIP.**
-
-Then the handle.
-
-> **NARRATOR (V.O.)**
-> Know what matters. Save what works. Ship what you build.
+> **THE GURU (V.O.)**
+> *(leaning in, the worse truth)*
+> Confused people don't build. Confused people *buy*.
 > *(beat)*
-> This is ShipStack. Follow, and start shipping.
+> Your confusion? That's my business model.
 
-**FADE OUT.**
+**5. EXT. TAB NAGAR: STREET LEVEL** *(0:28–0:33)*
+
+A small sound, like paper on water. Down the main street, between the tab-shanties, sails **a tiny paper boat**.
+Its sail is a `>`. Wherever it passes, tabs quietly close behind it. The street gets lighter.
+
+> **THE GURU (V.O.)**
+> *(the chai stops halfway to his mouth)*
+> …What is that.
+
+**6. EXT. BALCONY: CONTINUOUS. BINOCULARS POV, QUICK CUTS** *(0:33–0:48)*
+
+He grabs gold-plated binoculars. Each thing he sees is worse for him.
+
+- A news story on the boat's sail: one headline, one number, **the source and the date underneath.**
+
+> **THE GURU (V.O.)**
+> They're… citing sources? Who cites sources?
+
+- A spreadsheet that fills itself. A weekly report that sends itself.
+
+> **THE GURU (V.O.)**
+> They automated the exact thing I sell a course on.
+
+- A coding problem running line by line, every variable lighting up, the bug found. A counter: **#0001**, climbing.
+
+> **THE GURU (V.O.)**
+> Twelve hundred coding problems, explained line by line… *(voice cracks)* for **free**?!
+
+His chai glass trembles. A drop falls forty-seven floors.
+
+**7. EXT. THE CITY: WIDE** *(0:48–0:55)*
+
+More boats now: dozens, then hundreds, sailing out of Tab Nagar. Behind them, the tab-shanties fold up like tents.
+
+Up on the tower, his lights go out one floor at a time, each with a little sign:
+*"AI Prompt Mastery: 0 students."* *"7-Day AI Engineer: refunded."* *"Webinar: 1 attendee (his mom)."*
+
+Boats sail past his window. The Builders on them wave.
+
+> **THE GURU**
+> *(shouting from the balcony)*
+> Wait! Come back! I have a *webinar*!
+
+**8. BLACK** *(0:55–0:58)*
+
+Silence. Then a calm new voice.
+
+> **SHIPSTACK NARRATOR (V.O.)**
+> No gurus. No fear. Just know, save, ship.
+> This is ShipStack.
+
+**9. POST-CREDITS STING** *(0:58–1:00)*
+
+The last boat sails by. Paddling behind it on an inflatable flamingo, still in his robe: THE GURU.
+
+> **THE GURU**
+> *(to the boat, very small)*
+> …Do you guys take interns?
+
+**SMASH TO BLACK.**
 
 ---
 
-## VOICE-OVER NARRATION SCRIPT
+## VOICE-OVER SCRIPT
 
-**Voice:** one narrator, calm and confident. Late 20s to 30s, warm, not salesy. Speaks like a senior
-developer explaining something to a friend. No "hype" energy, no shouting.
-**Pace:** about 140 words per minute; 129 words in total, about 60 seconds with the pauses and the silent beat.
-**Accent:** neutral international English, so it works for India, Europe and the US.
+**Two voices.**
+- **THE GURU:** smug, oily, very pleased with himself. Think motivational-reel voice meets Shark Tank pitch.
+  Mostly English, Hinglish where it lands harder ("Beta"). He speaks slowly because he thinks every line is wisdom.
+- **SHIPSTACK NARRATOR:** calm, warm, a little dry. Only speaks once, at the end. The contrast is the joke.
 
-| # | Time | Line | Delivery |
-|---|---|---|---|
-| 1 | 0:00 | Every day, a hundred new AI tools. A thousand headlines. Everyone says you're falling behind. | Slightly tired, matter-of-fact. Speed up a little on "a thousand headlines". |
-| 2 | 0:06 | So you open another tab. Another tutorial. Another task you'll do by hand, again next week. | Rhythm of repetition: "another… another… another". Small sigh before "again next week". |
-| 3 | 0:12 | And the one problem you actually need to solve? It's still there. Still red. | Slow down. Land hard on "still red". |
-| | 0:18 | *(2 seconds of silence)* | |
-| 4 | 0:19 | What if you could skip the noise? | Quiet, almost a whisper. The turning point. |
-| 5 | 0:21 | ShipStack reads the noise so you don't have to. AI news that matters, checked, with every source shown. | Brighter, warmer. First time we say the name: clear, not shouted. |
-| 6 | 0:28 | Automations you can copy in minutes. Do the boring work once, and never again. | Light smile in the voice on "never again". |
-| 7 | 0:36 | And twelve hundred of the most asked coding problems, debugged line by line, so you see exactly how the code thinks. Not memorised. Understood. | Measured, confident. Pause before "Not memorised." Each of the last two phrases gets its own beat. |
-| 8 | 0:46 | Less scrolling. More building. | Short, punchy. |
-| 9 | 0:52 | Know what matters. Save what works. Ship what you build. | One phrase per beat, matching the three words on screen. |
-| 10 | 0:57 | This is ShipStack. Follow, and start shipping. | Warm, final. Let "shipping" ring out under the last note of the music. |
+**Length:** 117 words, about 60 seconds with the pauses and silent beats.
 
-**Pronunciation:** ShipStack = "SHIP-stack", stress on the first syllable.
+| # | Time | Who | Line | Delivery |
+|---|---|---|---|---|
+| 1 | 0:00 | Guru | Three hundred and fifty crore. Forty-seventh floor. And every morning, I look down at my people. | Savouring every number. Long pause before "my people". |
+| 2 | 0:07 | Guru | Forty tabs per household. Every tutorial paused at minute three. *(sigh)* Beautiful. | Like admiring a sunset. |
+| 3 | 0:14 | Guru | People think I sell knowledge. *(chuckle)* Beta, I sell the fear of not having it. Every new AI tool is one more floor on this building. | Conspiratorial, to camera. "Beta" fond and condescending. |
+| 4 | 0:22 | Guru | Confused people don't build. Confused people buy. *(beat)* Your confusion? That's my business model. | The villain monologue. Lean in. Proud of it. |
+| 5 | 0:30 | Guru | …What is that. | Flat, all the smugness gone in one line. |
+| 6 | 0:34 | Guru | They're… citing sources? Who cites sources? | Genuinely offended. |
+| 7 | 0:39 | Guru | They automated the exact thing I sell a course on. | Quiet horror. |
+| 8 | 0:43 | Guru | Twelve hundred coding problems, explained line by line… for free?! | Voice cracks on "free". |
+| 9 | 0:52 | Guru | Wait! Come back! I have a webinar! | Shouted off the balcony, desperate. |
+| 10 | 0:55 | Narrator | No gurus. No fear. Just know, save, ship. This is ShipStack. | Calm, warm, almost amused. The first normal voice in the film. |
+| 11 | 0:58 | Guru | …Do you guys take interns? | Tiny, humbled, from the flamingo. |
+
+**Pronunciation:** ShipStack = "SHIP-stack". HYPEX = "hype-ex".
 
 ---
 
-## Cut-downs (same story, shorter)
+## Why it works
 
-- **30 s:** Scenes 1, 3, 4, 5–7 (each shortened), 9. VO lines 1, 3, 4, 5, 6, 7 ("…debugged line by line."), 9, 10.
-- **15 s:** Scenes 3, 4, 7, 9. VO: "The one problem you need to solve is still red. *(beat)* ShipStack debugs it line by
-  line. Plus AI news that's checked, and automations you can copy. Know. Save. Ship. Follow ShipStack."
+- **The villain tells the truth for us.** "Your confusion is my business model" is the worse truth about the AI-hype
+  economy, and it's funnier coming from him than any claim ShipStack could make about itself.
+- **Reverse effect:** it starts like a luxury flex reel (the scroll-stopper) and ends as a roast of that exact genre.
+- **Every ShipStack promise is a punchline,** said by the person it hurts: sources (news), automation (AI automation),
+  line-by-line DSA. The product is explained without a single sales line.
+- **The boat is the hero and never speaks.** It just sails through and the mess clears.
 
-## Open questions for you
+## Cut-downs
 
-1. **Voice:** your own voice, a hired voice artist, or an AI voice? An AI voice must be labelled as AI in
-   the caption. Your own voice builds the most trust.
-2. **The Builder:** keep the faceless "anyone" approach, or make it your story (why you started ShipStack)?
-   A founder story is more personal, but only if it's true.
-3. **Length:** post the 60-second film first, or the 15-second cut? The 60-second version tells the full story;
-   the 15-second one is easier to watch to the end.
+- **30 s:** Scenes 1, 3 (only "Beta, I sell the fear of not having it"), 4, 5, 6 (one line each, faster), 8, 9.
+- **15 s:** "Three hundred and fifty crore. Every morning I look down at my people." / "Confused people don't build. Confused people buy."
+  / *(boat sails in)* "…Wait. Why are they building?" / boat sails, his lights go out / "No gurus. Just know, save, ship. ShipStack." / "…Do you guys take interns?"
+
+## Guardrails
+
+- The Guru and HYPEX™ are fictional. No real person, company, logo or course is shown or named.
+- The "slum" is a city of browser tabs: the joke is on the hype industry, not on anyone's living conditions.
+- "Free" is only said if the posts really are free (they are: Instagram posts).
+
+## Decisions for you
+
+1. **Voices:** who plays the Guru? It needs real comic timing: a comedian or voice actor beats an AI voice here.
+   An AI voice must be labelled as AI.
+2. **Language mix:** keep the light Hinglish (better for India), or make a pure-English version as well for the global audience?
+3. **First post:** the 60-second film or the 15-second cut?
