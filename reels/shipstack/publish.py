@@ -40,12 +40,19 @@ CAPTIONS = {
                 'Comment your country for the next battle.\n\n'
                 'ShipStack Arena · @shipstack_\n#simulation #satisfying #countries #physics'),
 }
+CAPTIONS['story'] = ('We ship.\n\n'
+                    'From today, ShipStack posts three things:\n'
+                    '→ AI news, verified, every source shown\n'
+                    '→ AI automations you can copy\n'
+                    '→ 1,200 DSA problems, debugged line by line\n\n'
+                    "Follow so you don't miss #0001.\n\n"
+                    '#ai #automation #dsa #coding #leetcode #programming')
 CAPTIONS['balloon'] = ('Which balloon pops first? Pick one before you watch.\n\n'
                        'Every hit from the ball inside inflates it a little. 100% = pop. '
                        'Real simulation; the last second is in slow motion.\n\n'
                        'Comment your number. Follow for the next race.\n\n'
                        'ShipStack Arena · @shipstack_\n#satisfying #simulation #physics #pickone')
-COLLECTION = {'dsa': 'shipstack-dsa', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
+COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
               'strings': 'shipstack-arena', 'balloon': 'shipstack-arena'}
 
 
