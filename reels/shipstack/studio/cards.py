@@ -114,8 +114,8 @@ def main():
                ['Export the numbers to a sheet', 'Ask Claude to draft the summary from it',
                 'Schedule it to send every Friday'],
                'A weekly task that [runs itself].', tool='sheets + claude')
-    profile = Image.new('RGBA', (1080, 1080), T.ACCENT + (255,))   # profile picture: full square, IG crops it
-    profile.alpha_composite(T.mark(1080))
+    profile = Image.new('RGBA', (1080, 1080), T.BG + (255,))   # profile picture: full square, IG crops it
+    profile.alpha_composite(T.mark(1080, outline=False))
     profile.convert('RGB').save(out / 'avatar-1080.png')
     T.mark(1080, tile=False).save(out / 'logo-mark.png')
     T.lockup(320).convert('RGB').save(out / 'logo-lockup-dark.png')

@@ -60,25 +60,26 @@ def wrap(draw, text, f, width):
     return lines
 
 
-def draw_s(d, s, color, x=0, y=0):
-    """The ShipStack mark: an S built from three stacked bars (ship + stack), on a 10x10 grid."""
+def draw_boat(d, s, color):
+    """The ShipStack mark: a boat whose sail is a code chevron '>' (ship + code), on a 10x10 grid."""
     u = s / 10
-    x0, x1, t = x + 2.6 * u, x + 7.4 * u, 1.15 * u
-    ys = [y + 2.6 * u, y + 5 * u - t / 2, y + 7.4 * u - t]
-    for yy in ys:
-        d.rounded_rectangle((x0, yy, x1, yy + t), radius=t / 2, fill=color)
-    d.rounded_rectangle((x0, ys[0], x0 + t, ys[1] + t), radius=t / 2, fill=color)     # top-left drop
-    d.rounded_rectangle((x1 - t, ys[1], x1, ys[2] + t), radius=t / 2, fill=color)     # bottom-right drop
+    cx, cy, w, h, th = 5.2 * u, 3.75 * u, 3.4 * u, 3.5 * u, 1.25 * u * 1.15
+    d.polygon([(cx - w / 2, cy - h / 2), (cx - w / 2 + th, cy - h / 2), (cx + w / 2, cy),
+               (cx - w / 2 + th, cy + h / 2), (cx - w / 2, cy + h / 2), (cx + w / 2 - th, cy)], fill=color)
+    y, hh = 6.15 * u, 1.75 * u
+    d.polygon([(1.9 * u, y), (8.1 * u, y), (6.85 * u, y + hh), (3.15 * u, y + hh)], fill=color)
 
 
-def mark(size, bg=ACCENT, fg=BG, tile=True):
-    """Logo mark. tile=True: rounded-square badge; tile=False: the S alone on transparent."""
+def mark(size, bg=BG, fg=ACCENT, tile=True, outline=True):
+    """Logo mark. tile=True: rounded-square badge (thin border so it reads on dark pages);
+    tile=False: the boat alone on transparent, in `fg`."""
     s = size * 4
     im = Image.new('RGBA', (s, s), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     if tile:
-        d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=bg)
-    draw_s(d, s, fg if tile else bg)
+        d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=bg,
+                            outline=BORDER if outline else None, width=max(4, round(s * 0.03)) if outline else 0)
+    draw_boat(d, s, fg)
     return im.resize((size, size), Image.Resampling.LANCZOS)
 
 
