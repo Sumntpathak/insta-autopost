@@ -3413,6 +3413,16 @@
       "kind": "reels",
       "media_id": "18135139165840473",
       "published_at": "2026-11-20T17:19:02.839612+05:30"
+    },
+    "LAUNCH-2026-11-story": {
+      "id": "LAUNCH-2026-11-story",
+      "date": "2026-11-20",
+      "container_id": "17898074151522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-20T17:17:59.831222+05:30",
+      "scene": "launch-logo",
+      "collection": "shipstack-launch",
+      "kind": "story"
     }
   }
 }
