@@ -3399,6 +3399,18 @@
       "attempted_at": "2026-11-20T06:59:27.703150+05:30",
       "media_id": "17991621809878164",
       "published_at": "2026-11-20T07:00:05.310262+05:30"
+    },
+    "LAUNCH-2026-11-logo": {
+      "id": "LAUNCH-2026-11-logo",
+      "date": "2026-11-20",
+      "container_id": "17898073911522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-20T17:17:59.831222+05:30",
+      "scene": "launch-logo",
+      "collection": "shipstack-launch",
+      "caption": "We ship. \ud83d\udea2\n\nShipStack is starting fresh. From today we post three things:\n\n\ud83d\udcf0 AI news: verified, with every source shown\n\u2699\ufe0f AI automations: workflows you can copy in minutes\n\ud83d\udcbb DSA: famous coding problems, debugged line by line\n\nFirst up: our first news brief and DSA #0001, Two Sum. Follow so you don't miss them.\n\n#ai #automation #dsa #coding #leetcode #programming #tech",
+      "plan_override": "daily cap lifted for the launch by the account owner; 60-min gap kept",
+      "kind": "reels"
     }
   }
 }
