@@ -30,17 +30,21 @@ feed shows balloon and ball simulations. A visitor can't tell what the account i
 - **Highlights:** Start here · Skills · News · Simulations.
 - **Pinned posts (3):** a "Start here" post, the best skill, the best simulation.
 
-## 3. Visual identity (extends `reels/shipstack/brand.py`)
+## 3. Visual identity (v2, `reels/shipstack/graphics.py`)
 
-Keep the existing system and make it stricter, so every post is recognisable without the handle:
-- **Colours:** paper white `#FFFFFF`, ink `#0D1117`, one accent indigo `#4F46E5`. No other accent.
-- **Type:** Instrument Serif for headlines, Inter for body, JetBrains Mono for code and numbers.
-- **News card (1080×1350):** top-left tag in indigo (`AI`, `AUTOMATION`, `DEALS`), a headline of at most 12 words,
-  a one-line deck, a thin rule, then the source strip (`Source: Reuters · 19 Nov`). The mark is small and fixed in one corner.
-- **Skill card/reel:** the skill's name as a verb phrase ("Automate your weekly report"), three numbered steps,
-  one before-and-after result, and a "Save this" footer.
-- **Simulations:** keep the Arena look. Always end on the result with the handle visible.
-- **Rule:** never more than two type sizes on a card, and never a face or logo that is not ours or licensed.
+Dark, high-contrast and built for the phone feed. It borrows the formats proven on big news pages
+(the post-screenshot card and the bold headline over a photo), always as our own post: our avatar and
+handle, no platform logos, no verification badge.
+- **Colours:** black `#0A0A0A`, white text, grey `#8B98A5` for meta, one accent: signal lime `#D7FF3A`.
+- **Type:** Inter only (Black for headlines, SemiBold for body); JetBrains Mono for labels.
+- **Logo:** `>_` terminal prompt on lime (profile picture), and the wordmark `shipstack_`, whose lime underscore matches the handle.
+- **Post card (news):** avatar, `ShipStack @shipstack_ · date`, a 2–4 line statement with the key fact in lime,
+  an optional photo, then `Source: … · Image: …`.
+- **Photo card (news):** full-bleed photo, dark gradient, lime kicker pill, headline in Inter Black with the key
+  phrase on a lime highlighter block, source line.
+- **Skill card:** post style, title with the payoff in lime, three numbered lime steps, a RESULT box, "Save this for later".
+- **Pick One cover:** hook at the top, glowing balls in a lime ring with one gap, "Comment your number".
+- **Rule:** one accent only, at most one highlighted phrase per card, and every news card shows its source and image credit.
 
 ## 4. Voice
 
