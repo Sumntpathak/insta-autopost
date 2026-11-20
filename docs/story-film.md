@@ -5,7 +5,7 @@ the account posts from now on. Built in Remotion (`film/`), music composed in co
 
 ## 1. Pitch
 
-**Logline.** Everyone has an idea. Most people stop at "where do I even start?". ShipStack is the
+**Logline.** Everyone has an idea. Most people stop at "where do I start?". ShipStack is the
 account that gets you from idea to shipped: AI news you can trust, automations you can copy, and
 1,200 DSA problems debugged line by line.
 
@@ -21,7 +21,7 @@ looks exactly like the posts that follow it.
 
 | # | Time | Frames | Picture | Words on screen | Sound |
 |---|---|---|---|---|---|
-| 1 | 0.0–2.0 s | 0–59 | Black editor. A terminal prompt types `$ ship my-idea`. A beat later the reply appears in red: `error: where do I even start?` | (typed) | Soft pad, one key click per letter |
+| 1 | 0.0–2.0 s | 0–59 | Black editor. A terminal prompt types `$ ship my-idea`. A beat later the reply appears in red: `error: where do I start?` | (typed) | Soft pad, one key click per letter |
 | 2 | 2.0–3.5 s | 60–104 | Hard cut to giant type, one word per beat: **Learn it.** **Build it.** **Ship it.** (the last in cyan) | Learn it. / Build it. / Ship it. | Kick on each word |
 | 3 | 3.5–6.0 s | 105–179 | The logo builds: the hull rises, the `>` sail snaps in, the wordmark types `shipstack` and the cyan cursor blinks | shipstack_ | Bass drop at 4.0 s, arpeggio starts |
 | 4a | 6.0–8.2 s | 180–244 | NEWS: a news card slides up; the key figure counts up | AI news. Verified. Every source shown. | Accent hit on the cut |
@@ -51,6 +51,17 @@ Follow so you don't miss #0001.
 - **4 s:** the drop: kick, bass and arpeggio together as the logo lands.
 - **6.0 / 8.2 / 10.3 s:** a short accent hit on each series cut.
 - **12.5 s:** the groove stops; the final A-minor chord rings out under the end card.
+
+## 4. Built with the Remotion agent skills
+
+The film follows Remotion's official agent skills (github.com/remotion-dev/skills, v4.0.545):
+- every animation is an inline `interpolate()` with `Easing.spring` / `Easing.bezier`, using separate
+  `translate` / `scale` properties, with `output: 'perceptual-scale'` on scale;
+- all timing comes from `useVideoConfig().fps` (one beat = fps / 2 at 120 BPM);
+- consecutive scenes are named `TransitionSeries.Sequence`s, with a custom slide-up presentation between
+  the three series (scene lengths include the overlap, so the total stays 450 frames and cuts stay on the beat);
+- music through `Audio` from `@remotion/media`; Geist loaded locally with `@remotion/fonts`;
+- video layout rules: 80 px side / 100 px top-bottom safe area, headlines at least 84 px, supporting text at least 44 px.
 
 ## 4. Director's notes
 
