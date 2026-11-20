@@ -37,6 +37,10 @@ developer workspace:
 - **Logo:** the Bracket Boat, a boat whose sail is a code chevron `>` (ship + code), cyan on a dark rounded square;
   wordmark `shipstack_` in Inter ExtraBold with a cyan underscore that matches the handle. Code: `theme.mark()`,
   `theme.lockup()`; files in `studio/samples/` (avatar, mark, lockups).
+- **Logo animation (the only animated brand element):** a 4-second sting, `film/src/LogoSting.tsx`: cursor → waterline →
+  hull rises → `>` sail draws and snaps up → `shipstack_` types out, with an original sound (`film/sfx.py`).
+  Render: `cd film && COMP=LogoSting OUT=out/logo-sting-1080x1920.mp4 npm run render` (or `LogoStingSquare` for 1080×1080).
+  News posts and DSA reels stay as they are; the story film is dropped.
 - **Header:** the mark, then a file-path breadcrumb naming the series and episode
   (`shipstack / news / 19-nov`, `shipstack / automation / #0001`, `shipstack / dsa / #0001`), then the series tag.
 - **Surface:** editor dark `#0D1117`, panels `#161B22`, borders `#30363D`, text `#E6EDF3`, meta `#8B949E`.
