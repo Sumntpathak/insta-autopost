@@ -10,8 +10,8 @@ leaves room for the news agent's posts.
 import datetime as dt
 
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
-MIN_GAP_MINUTES = 30
-DAILY_CAP = 25
+MIN_GAP_MINUTES = 60
+DAILY_CAP = 12
 
 
 def _time(post):

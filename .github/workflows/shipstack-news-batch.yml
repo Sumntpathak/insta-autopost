@@ -1,8 +1,5 @@
 name: ShipStack 30 news batch
 on:
-  push:
-    paths:
-      - "news-batch/queue.json"
   workflow_dispatch:
     inputs:
       publish:
@@ -17,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: ${{ inputs.publish == true || github.event_name == 'push' }}
+    if: ${{ inputs.publish == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:

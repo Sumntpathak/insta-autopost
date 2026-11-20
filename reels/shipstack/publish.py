@@ -3,7 +3,7 @@
     python -m reels.shipstack.publish --reel ring --url https://.../ring.mp4 [--dry-run]
 
 Safety (same contract as reels/campaign.py):
-  1. reels/guard.py must allow posting now (2 h gap, 4/day cap) and the reel must not
+  1. reels/guard.py must allow posting now (60 min gap, 12/day cap) and the reel must not
      already have been posted today.
   2. The container is created and processed; then a 'publishing' record with its id is
      pushed to reels/state.json BEFORE media_publish, so an ambiguous failure is never retried.
