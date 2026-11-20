@@ -3445,9 +3445,11 @@
       "date": "2026-11-20",
       "scene": "technology-brief",
       "caption": "Asia in Seven Headlines | 20 November 2026\n\nSpace, diplomacy, science and politics across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/business/2026/11/20/companies/h3-rocket-mitsubishi/\nhttps://www.koreaherald.com/article/10944482\nhttps://www.scmp.com/news/hong-kong/society/article/3375117/roaring-back-hong-kongs-100-million-year-old-dinosaur-fossil-makes-its-debut\nhttps://www.straitstimes.com/asia/east-asia/pm-wong-xi-reaffirm-close-singapore-china-ties-amid-growing-global-tensions\nhttps://indianexpress.com/article/political-pulse/rajasthan-panchayat-election-results-congress-bjp-lead-10971573/\nhttps://www.thejakartapost.com/world/2026/11/20/china-us-russia-issue-declaration-toward-peace-after-first-summit\nhttps://www.dawn.com/news/2045911/bilawal-wants-pm-shehbaz-to-become-first-premier-to-complete-5-year-term",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17898112659522936",
-      "attempted_at": "2026-11-20T20:03:25.262655+05:30"
+      "attempted_at": "2026-11-20T20:03:25.262655+05:30",
+      "media_id": "17935576995167594",
+      "published_at": "2026-11-20T20:03:33.409511+05:30"
     }
   }
 }
