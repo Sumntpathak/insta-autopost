@@ -1,12 +1,19 @@
 name: ShipStack delete approved post
+# Manual only: deleting live media must never be a side effect of a push.
 on:
-  push:
-    paths:
-      - news-single/delete-request.json
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type DELETE to remove the media id in news-single/delete-request.json"
+        required: true
 permissions:
-  contents: write
+  contents: read
+concurrency:
+  group: autopost
+  cancel-in-progress: false
 jobs:
   delete:
+    if: ${{ inputs.confirm == 'DELETE' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +22,5 @@ jobs:
           META_TOKEN: ${{ secrets.META_TOKEN }}
         run: |
           MEDIA_ID=$(python -c 'import json; print(json.load(open("news-single/delete-request.json"))["instagram_media_id"])')
-          RESPONSE=$(curl --fail-with-body -sS -X DELETE "https://graph.facebook.com/v23.0/$MEDIA_ID" --data-urlencode "access_token=$META_TOKEN")
-          echo "$RESPONSE"
-          echo "$RESPONSE" | grep -q '"success":true'
-          echo "CONFIRMED Instagram deletion: $MEDIA_ID"
+          STATUS=$(curl -sS -o /dev/null -w '%{http_code}' -X DELETE "https://graph.facebook.com/v23.0/$MEDIA_ID" -H "Authorization: Bearer $META_TOKEN")
+          [ "$STATUS" = "200" ] && echo "CONFIRMED Instagram deletion: $MEDIA_ID" || { echo "Delete failed: HTTP $STATUS"; exit 1; }

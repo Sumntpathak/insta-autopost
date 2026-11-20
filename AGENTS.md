@@ -26,6 +26,7 @@ every change must keep.
 | `reels/shipstack/` | **ShipStack engines (current formats).** `python -m reels.shipstack --list`. |
 | `reels/shipstack/brand.py` | Single source of truth: palette, fonts, page grids. |
 | `reels/shipstack/lab/` | Lab: editorial maths/physics reels (Manim + LaTeX + SignalFlow). See its README. |
+| `reels/shipstack/studio/` | **Studio: the one design for News, AI Automation and DSA.** `cards.py` (news/automation posts), `dsa.py` (debugger reels from `problems.py`). |
 | `reels/shipstack/arena/` | Arena: Balloon Pop, Ring Escape and Country String Battle (skia, 60 fps). See its README. |
 | `reels/shipstack/publish.py` | Guarded publisher for all formats (guard → container → journal → publish) and captions. |
 | `reels/guard.py` | Posting plan rules (60 min gap, 12/day). |
@@ -45,8 +46,9 @@ every change must keep.
 
 | Workflow | Trigger | Posts? | Purpose |
 |---|---|---|---|
-| `shipstack-schedule.yml` | every 30 min | yes, when a calendar slot is due | **Unattended month plan**: render → verify → host → guarded publish of the due slot. |
-| `shipstack-reel.yml` | manual | only if **publish** is ticked | Render → verify → preview artifact → (optional) guarded publish of any format (`lab01`, `lab02`, `ring`, `strings`, `balloon`). **Use this for new content.** |
+| `shipstack-schedule.yml` | every 5 min | yes, when a calendar slot is due | **Unattended month plan**: render → verify → host → guarded publish of the due slot. |
+| `shipstack-reel.yml` | manual | only if **publish** is ticked | Render → verify → preview artifact → (optional) guarded publish of any format (`lab01`, `lab02`, `ring`, `strings`, `balloon`, `dsa`). **Use this for new content.** |
+| `shipstack-launch.yml` | manual | only if **publish** is ticked | One-time launch: carousel (logo animation + the three series) and Story from `reels/shipstack/launch/`, via `reels/shipstack/announce.py` (guard + live account check + journal). |
 | `reels.yml` | every 10 min + 23:17 IST + manual | no while `reels/config.json` is paused (it is) | Old 30-day campaign, **paused** (replaced by the calendar); still runs the daily insights snapshot + design report. |
 | `daily-post.yml` | 08:37 / 19:07 IST + manual | yes (carousels) | Legacy carousel slots from `schedule.json`. Skips while the reel campaign is active. |
 | `reels-check.yml` | pull requests | no | Unit tests + preview renders. |
@@ -86,7 +88,7 @@ number for Arena formats).
 - `reels/shipstack/calendar.json` holds 30 days × 6 slots (IST): 08:10 physics (Lab Nº 01/02
   alternating), 10:40 balloon, 13:10 country battle, 16:10 ring escape, 19:10 balloon,
   21:40 country battle. Every slot has its own episode, so every race/setup is different.
-- `shipstack-schedule.yml` runs every 30 minutes on the default branch and posts the due slot.
+- `shipstack-schedule.yml` runs every 5 minutes on the default branch and posts the due slot (slots missed by more than 2 h are skipped).
 - Regenerate for the next month: `python -m reels.shipstack.schedule make --start YYYY-MM-DD --days 30`.
 - Stop: set `"paused": true` in the calendar (or disable the workflow in the Actions tab).
 - Tech news (5/day) is posted by a separate agent; the guard leaves room for it.

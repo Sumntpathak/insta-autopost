@@ -11,6 +11,7 @@ FORMATS = {
     'ring': 'Arena · Ring Escape, pick a ball 1-6 (pymunk + skia, 60 fps)',
     'strings': 'Arena · Country String Battle (skia, 60 fps)',
     'balloon': 'Arena · Balloon Pop, pick a balloon 1-6 (skia, 60 fps, slow-motion finish)',
+    'dsa': 'Studio · DSA debugger: real code stepped line by line; episode N = problem #N (Pillow, 30 fps)',
 }
 
 
@@ -27,6 +28,9 @@ def render(fmt, out, episode=1, seed=None):
     if fmt == 'balloon':
         from .arena import balloon
         return balloon.render(out, episode=episode, seed=seed)
+    if fmt == 'dsa':
+        from .studio import dsa
+        return dsa.render(out, episode)
     raise SystemExit(f'Unknown format {fmt}; see --list')
 
 

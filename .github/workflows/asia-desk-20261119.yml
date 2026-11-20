@@ -1,8 +1,5 @@
 name: Publish Asia Desk 19 November
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/asia-desk-20261119.yml']
   workflow_dispatch:
 permissions:
   contents: write

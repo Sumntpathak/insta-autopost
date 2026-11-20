@@ -8,10 +8,10 @@ on:
       reel:
         description: Which format (python -m reels.shipstack --list)
         type: choice
-        options: [lab01, lab02, ring, strings, balloon]
+        options: [lab01, lab02, ring, strings, balloon, dsa]
         default: balloon
       episode:
-        description: Arena episode number (a new number gives a new race)
+        description: Episode number (Arena - a new race; dsa - problem number)
         type: number
         default: 1
       publish:

@@ -10,8 +10,8 @@ leaves room for the news agent's posts.
 import datetime as dt
 
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
-MIN_GAP_MINUTES = 30
-DAILY_CAP = 25
+MIN_GAP_MINUTES = 60
+DAILY_CAP = 12
 
 
 def _time(post):
@@ -21,7 +21,8 @@ def _time(post):
 
 def blocked(posts, now, min_gap=MIN_GAP_MINUTES, cap=DAILY_CAP):
     """Return a human-readable reason if posting now would break the plan, else None."""
-    times = [t for t in (_time(p) for p in posts.values()) if t]
+    # Stories never appear in the feed, so they don't compete with posts and don't count here.
+    times = [t for t in (_time(p) for p in posts.values() if p.get('kind') != 'story') if t]
     if times:
         last = max(times)
         gap = (now - last).total_seconds() / 60

@@ -1,0 +1,149 @@
+{
+ "L1a": {
+  "file": "vo/lines/L1a.wav",
+  "duration": 7.28,
+  "words": [
+   {
+    "text": "Three",
+    "start": 0.0,
+    "end": 0.418
+   },
+   {
+    "text": "hundred",
+    "start": 0.418,
+    "end": 0.955
+   },
+   {
+    "text": "and",
+    "start": 0.955,
+    "end": 1.253
+   },
+   {
+    "text": "fifty",
+    "start": 1.253,
+    "end": 1.671
+   },
+   {
+    "text": "crore.",
+    "start": 1.671,
+    "end": 2.149
+   },
+   {
+    "text": "Forty-seventh",
+    "start": 2.456,
+    "end": 3.109
+   },
+   {
+    "text": "floor.",
+    "start": 3.109,
+    "end": 3.457
+   },
+   {
+    "text": "And",
+    "start": 3.941,
+    "end": 4.224
+   },
+   {
+    "text": "every",
+    "start": 4.224,
+    "end": 4.62
+   },
+   {
+    "text": "morning...",
+    "start": 4.62,
+    "end": 5.299
+   },
+   {
+    "text": "I",
+    "start": 5.63,
+    "end": 5.785
+   },
+   {
+    "text": "look",
+    "start": 5.785,
+    "end": 6.094
+   },
+   {
+    "text": "down",
+    "start": 6.094,
+    "end": 6.404
+   },
+   {
+    "text": "at",
+    "start": 6.404,
+    "end": 6.61
+   },
+   {
+    "text": "my",
+    "start": 6.61,
+    "end": 6.816
+   },
+   {
+    "text": "people.",
+    "start": 6.816,
+    "end": 7.28
+   }
+  ]
+ },
+ "L2a": {
+  "file": "vo/lines/L2a.wav",
+  "duration": 5.84,
+  "words": [
+   {
+    "text": "Forty",
+    "start": 0.0,
+    "end": 0.443
+   },
+   {
+    "text": "tabs",
+    "start": 0.443,
+    "end": 0.822
+   },
+   {
+    "text": "per",
+    "start": 0.822,
+    "end": 1.138
+   },
+   {
+    "text": "household.",
+    "start": 1.138,
+    "end": 1.897
+   },
+   {
+    "text": "Every",
+    "start": 2.283,
+    "end": 2.643
+   },
+   {
+    "text": "tutorial",
+    "start": 2.643,
+    "end": 3.159
+   },
+   {
+    "text": "paused",
+    "start": 3.159,
+    "end": 3.571
+   },
+   {
+    "text": "at",
+    "start": 3.571,
+    "end": 3.778
+   },
+   {
+    "text": "minute",
+    "start": 3.778,
+    "end": 4.19
+   },
+   {
+    "text": "three.",
+    "start": 4.19,
+    "end": 4.602
+   },
+   {
+    "text": "Beautiful.",
+    "start": 4.877,
+    "end": 5.648
+   }
+  ]
+ }
+}
