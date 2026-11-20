@@ -28,6 +28,7 @@ CAPTIONS = {
               'Save this for the next time someone says the shortest path is the fastest.\n\n'
               f'ShipStack Lab Nº 01 · @shipstack_\n{TAGS} #brachistochrone'),
     'lab02': None,    # computed per episode by caption(): the result changes with the seed
+    'dsa': None,      # computed per episode by caption(): one problem per episode
     'ring': ('Which ball escapes first? Pick one before you watch.\n\n'
              'Six balls bounce inside a spinning ring with one tiny gap: just 4.1% of the rim. '
              'Real physics, no edits.\n\n'
@@ -44,11 +45,20 @@ CAPTIONS['balloon'] = ('Which balloon pops first? Pick one before you watch.\n\n
                        'Real simulation; the last second is in slow motion.\n\n'
                        'Comment your number. Follow for the next race.\n\n'
                        'ShipStack Arena · @shipstack_\n#satisfying #simulation #physics #pickone')
-COLLECTION = {'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
+COLLECTION = {'dsa': 'shipstack-dsa', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
               'strings': 'shipstack-arena', 'balloon': 'shipstack-arena'}
 
 
 def caption(reel, episode=1):
+    if reel == 'dsa':
+        sys.path.insert(0, str(ROOT))
+        from reels.shipstack.studio.problems import PROBLEMS
+        p = PROBLEMS[episode]
+        return (f"DSA #{episode:04d} · {p['title']}\n\n"
+                f"{p['prompt']} Watch the code run line by line, with every variable shown.\n\n"
+                f"Pattern: {p['pattern']} · {p['complexity']}\n\n"
+                'Save this for your next interview. Follow for the next problem.\n\n'
+                '#dsa #leetcode #coding #python #interviewprep #programming')
     if reel == 'lab02':
         sys.path.insert(0, str(ROOT))
         from reels.shipstack.lab import pi_math
