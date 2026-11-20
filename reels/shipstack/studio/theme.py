@@ -60,16 +60,46 @@ def wrap(draw, text, f, width):
     return lines
 
 
-def mark(size):
-    """Logo mark: '>_' on the accent, rounded square."""
-    s = size * 2
+def draw_s(d, s, color, x=0, y=0):
+    """The ShipStack mark: an S built from three stacked bars (ship + stack), on a 10x10 grid."""
+    u = s / 10
+    x0, x1, t = x + 2.6 * u, x + 7.4 * u, 1.15 * u
+    ys = [y + 2.6 * u, y + 5 * u - t / 2, y + 7.4 * u - t]
+    for yy in ys:
+        d.rounded_rectangle((x0, yy, x1, yy + t), radius=t / 2, fill=color)
+    d.rounded_rectangle((x0, ys[0], x0 + t, ys[1] + t), radius=t / 2, fill=color)     # top-left drop
+    d.rounded_rectangle((x1 - t, ys[1], x1, ys[2] + t), radius=t / 2, fill=color)     # bottom-right drop
+
+
+def mark(size, bg=ACCENT, fg=BG, tile=True):
+    """Logo mark. tile=True: rounded-square badge; tile=False: the S alone on transparent."""
+    s = size * 4
     im = Image.new('RGBA', (s, s), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=ACCENT)
-    f = mono(round(s * 0.44), 800)
-    l, t, r, b = d.textbbox((0, 0), '>_', font=f)
-    d.text(((s - (r - l)) / 2 - l, (s - (b - t)) / 2 - t), '>_', font=f, fill=BG)
+    if tile:
+        d.rounded_rectangle((0, 0, s - 1, s - 1), radius=round(s * 0.24), fill=bg)
+    draw_s(d, s, fg if tile else bg)
     return im.resize((size, size), Image.Resampling.LANCZOS)
+
+
+def lockup(height, dark=True):
+    """Mark + 'shipstack_' wordmark (the cyan underscore matches the handle)."""
+    bgc = BG if dark else (255, 255, 255)
+    ink = TEXT if dark else BG
+    f = sans(round(height * 0.5), 800)
+    probe = ImageDraw.Draw(Image.new('RGB', (1, 1)))
+    word_w = probe.textlength('shipstack', font=f)
+    w = round(height * 1.25 + word_w + height * 0.45)
+    im = Image.new('RGBA', (w, height), bgc + (255,))
+    im.alpha_composite(mark(round(height * 0.8)), (round(height * 0.1), round(height * 0.1)))
+    d = ImageDraw.Draw(im)
+    l, top, r, b = d.textbbox((0, 0), 'shipstack', font=f)
+    tx, ty = round(height * 1.05), round((height - (b - top)) / 2 - top)
+    d.text((tx, ty), 'shipstack', font=f, fill=ink)
+    asc, _ = f.getmetrics()
+    ux = tx + word_w + height * 0.04
+    d.rectangle((ux, ty + asc - height * 0.07, ux + height * 0.24, ty + asc), fill=ACCENT)
+    return im
 
 
 def header(im, series, crumb, top=72):

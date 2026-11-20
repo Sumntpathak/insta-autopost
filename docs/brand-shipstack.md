@@ -34,7 +34,10 @@ feed shows balloon and ball simulations. A visitor can't tell what the account i
 
 One design for all three series, so nothing is redesigned per post. Every post is a page in the same
 developer workspace:
-- **Header:** `>_` mark, then a file-path breadcrumb naming the series and episode
+- **Logo:** the Stack S, an S built from three stacked bars (ship + stack), dark on a cyan rounded square;
+  wordmark `shipstack_` in Inter ExtraBold with a cyan underscore that matches the handle. Code: `theme.mark()`,
+  `theme.lockup()`; files in `studio/samples/` (avatar, mark, lockups).
+- **Header:** the mark, then a file-path breadcrumb naming the series and episode
   (`shipstack / news / 19-nov`, `shipstack / automation / #0001`, `shipstack / dsa / #0001`), then the series tag.
 - **Surface:** editor dark `#0D1117`, panels `#161B22`, borders `#30363D`, text `#E6EDF3`, meta `#8B949E`.
 - **One accent:** cyan `#22D3EE` for the key phrase, highlights and the logo. Series tags: News red,

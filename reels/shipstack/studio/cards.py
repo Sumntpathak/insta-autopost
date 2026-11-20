@@ -117,6 +117,9 @@ def main():
     profile = Image.new('RGBA', (1080, 1080), T.ACCENT + (255,))   # profile picture: full square, IG crops it
     profile.alpha_composite(T.mark(1080))
     profile.convert('RGB').save(out / 'avatar-1080.png')
+    T.mark(1080, tile=False).save(out / 'logo-mark.png')
+    T.lockup(320).convert('RGB').save(out / 'logo-lockup-dark.png')
+    T.lockup(320, dark=False).convert('RGB').save(out / 'logo-lockup-light.png')
     print('Wrote', *sorted(p.name for p in out.glob('*.png')), sep='\n  ')
 
 
