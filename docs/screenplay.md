@@ -186,3 +186,51 @@ The last boat sails by. Paddling behind it on an inflatable flamingo, still in h
    An AI voice must be labelled as AI.
 2. **Language mix:** keep the light Hinglish (better for India), or make a pure-English version as well for the global audience?
 3. **First post:** the 60-second film or the 15-second cut?
+
+---
+
+## Voice casting (ElevenLabs)
+
+Voice names in ElevenLabs change over time, so check each one in the Voice Library before using it.
+If a listed voice isn't available, use **Voice Design** with the prompt given for that character.
+
+**Model:** Eleven v3, because it understands audio tags such as `[chuckles]`, `[sighs]`, `[whispers]`
+and `[shouting]`, which comedy timing needs. Use Multilingual v2 if v3 isn't on your plan
+(it handles Hinglish but ignores the tags).
+
+### THE GURU
+- **First choice:** an Indian-English male voice from the Voice Library (filter: language English,
+  accent Indian, age middle-aged, use case "characters" or "narrative"). Pick the smoothest, most
+  self-satisfied one.
+- **Stock fallbacks to audition:** *Brian* (deep, resonant), *George* (warm, storyteller), *Adam* (deep American).
+- **Voice Design prompt:** "Middle-aged Indian man in his 40s, smooth, deep and self-satisfied voice of a
+  motivational speaker and startup guru. Speaks slowly, savouring every word, slightly oily and
+  condescending, with an urban Indian English accent. Studio quality."
+- **Settings:** stability 35–45 % (more expressive), similarity 75 %, style 40–60 %, speaker boost on.
+
+### SHIPSTACK NARRATOR
+- **Stock voices to audition:** *Daniel* (calm, British, steady), *Chris* (casual, natural), *Will* (friendly, young).
+- **Voice Design prompt:** "Calm, warm male voice in his late 20s, neutral international English accent,
+  relaxed and slightly dry, like a senior developer explaining something to a friend. Not salesy, not
+  announcer-like. Studio quality."
+- **Settings:** stability 55–65 % (steady), similarity 75 %, style 10–20 %.
+
+### Lines with v3 audio tags (paste as-is)
+
+```
+GURU:     [proud] Three hundred and fifty crore. Forty-seventh floor. [pause] And every morning... I look down at my people.
+GURU:     Forty tabs per household. Every tutorial paused at minute three. [sighs happily] Beautiful.
+GURU:     People think I sell knowledge. [chuckles] Beta... I sell the fear of not having it. Every new AI tool is one more floor on this building.
+GURU:     [leaning in, conspiratorial] Confused people don't build. Confused people buy. [pause] Your confusion? That's my business model.
+GURU:     [suddenly flat] ...What is that.
+GURU:     [offended] They're... citing sources? Who cites sources?
+GURU:     [quiet horror] They automated the exact thing I sell a course on.
+GURU:     Twelve hundred coding problems, explained line by line... [voice cracks] for FREE?!
+GURU:     [shouting] Wait! Come back! I have a webinar!
+NARRATOR: [calm, slightly amused] No gurus. No fear. Just know, save, ship. [pause] This is ShipStack.
+GURU:     [tiny, embarrassed] ...Do you guys take interns?
+```
+
+**Tips:** generate each line separately and pick the best of 3–4 takes. Keep the pauses in the edit,
+not in the voice file. Label the post "Voices: AI-generated (ElevenLabs)", as Instagram's AI-content
+rules expect. Check that your ElevenLabs plan allows commercial use (the free plan requires attribution).
