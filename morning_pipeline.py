@@ -94,16 +94,17 @@ def build_morning_package(date_str=None):
     out_dir.mkdir(parents=True, exist_ok=True)
     
     # Interleave Lab & physics simulations
+    day_num = int(date_str.split("-")[2])
     physics_specs = [
-        ("strings", 101, "Physics String Dynamics · Country Battle"),
-        ("balloon", 201, "Elastic Collision & Stress Inflation"),
-        ("ring", 301, "Centrifugal Ring Escape Simulation"),
-        ("strings", 102, "Chaotic Boundary Cutting Dynamics"),
-        ("balloon", 202, "Multi-Particle Slow-Motion Pop Physics"),
+        ("strings", 100 + day_num, "Physics String Dynamics · Country Battle"),
+        ("balloon", 200 + day_num, "Elastic Collision & Stress Inflation"),
+        ("ring", 300 + day_num, "Centrifugal Ring Escape Simulation"),
+        ("strings", 150 + day_num, "Chaotic Boundary Cutting Dynamics"),
+        ("balloon", 250 + day_num, "Multi-Particle Slow-Motion Pop Physics"),
     ]
     
     for idx, (fmt, ep, title) in enumerate(physics_specs, 1):
-        reel_file = out_dir / f"physics-{idx:02d}-{fmt}-ep{ep}.mp4"
+        reel_file = out_dir / f"physics-{date_str}-{idx:02d}-{fmt}-ep{ep}.mp4"
         print(f"  Rendering Physics {idx}/5: {fmt} (ep {ep})...")
         render_reel(fmt, ep, reel_file)
         
@@ -125,15 +126,15 @@ def build_morning_package(date_str=None):
     print("\n[Agent 3: Ball Games & Arena Director (5 Ball Reels)]")
     ball_items = []
     ball_specs = [
-        ("ring", 401, "Pick A Ball: Who Escapes First?"),
-        ("balloon", 501, "Pick A Balloon: Who Pops First?"),
-        ("strings", 601, "Country Ball Battle: Who Survives?"),
-        ("ring", 402, "Ring Escape: Narrow 4.1% Rim Gap"),
-        ("balloon", 502, "Balloon Pop Finale (Slow-Mo)"),
+        ("ring", 400 + day_num, "Pick A Ball: Who Escapes First?"),
+        ("balloon", 500 + day_num, "Pick A Balloon: Who Pops First?"),
+        ("strings", 600 + day_num, "Country Ball Battle: Who Survives?"),
+        ("ring", 450 + day_num, "Ring Escape: Narrow 4.1% Rim Gap"),
+        ("balloon", 550 + day_num, "Balloon Pop Finale (Slow-Mo)"),
     ]
     
     for idx, (fmt, ep, title) in enumerate(ball_specs, 1):
-        reel_file = out_dir / f"ball-{idx:02d}-{fmt}-ep{ep}.mp4"
+        reel_file = out_dir / f"ball-{date_str}-{idx:02d}-{fmt}-ep{ep}.mp4"
         print(f"  Rendering Ball Game {idx}/5: {fmt} (ep {ep})...")
         render_reel(fmt, ep, reel_file)
         
@@ -219,6 +220,12 @@ def build_morning_package(date_str=None):
 
     queue_file = ROOT / "daily_schedule.json"
     queue_file.write_text(json.dumps(combined_posts, indent=2), encoding="utf-8")
+    
+    # Commit and push schedule
+    subprocess.run(["git", "add", "daily_schedule.json"], cwd=str(ROOT))
+    subprocess.run(["git", "commit", "-m", f"Schedule 25 posts for {date_str}"], cwd=str(ROOT), capture_output=True)
+    subprocess.run(["git", "pull", "--rebase", "-q"], cwd=str(ROOT), capture_output=True)
+    subprocess.run(["git", "push"], cwd=str(ROOT), capture_output=True)
     
     print("\n" + "=" * 65)
     print("SUCCESS: 25 DAILY POSTS GENERATED, HOSTED & QUEUED!")
