@@ -1,0 +1,62 @@
+name: ShipStack launch
+# Posts the launch carousel (logo animation + the three series) and the launch Story.
+# Manual only. Nothing is posted unless "publish" is ticked; the posting plan (reels/guard.py)
+# and the journal-before-publish rule apply. Each part is posted at most once (journal keys).
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Post to Instagram (leave off for a dry run)
+        type: boolean
+        default: false
+      story_only:
+        description: Only post the Story (e.g. if the carousel is already live)
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write        # release assets + reels/state.json journal
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Check the posting plan
+        env:
+          STORY_ONLY: ${{ inputs.story_only }}
+        run: python -m reels.shipstack.announce --base-url https://example.invalid/ --dry-run $([ "$STORY_ONLY" = true ] && echo --story-only)
+      - name: Host the launch files as public release assets
+        if: inputs.publish
+        id: host
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          TAG="shipstack-launch"
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$(git rev-parse HEAD)" \
+            --title "ShipStack launch" --notes "Launch assets for .github/workflows/shipstack-launch.yml" --latest=false
+          gh release upload "$TAG" reels/shipstack/launch/* --clobber
+          BASE="https://github.com/$GH_REPO/releases/download/$TAG/"
+          for f in reels/shipstack/launch/*; do curl --fail --location --range 0-1023 --output /dev/null "$BASE$(basename "$f")"; done
+          echo "base=$BASE" >> "$GITHUB_OUTPUT"
+      - name: Publish (journal is pushed before media_publish)
+        if: inputs.publish
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BASE: ${{ steps.host.outputs.base }}
+          STORY_ONLY: ${{ inputs.story_only }}
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python -m reels.shipstack.announce --base-url "$BASE" $([ "$STORY_ONLY" = true ] && echo --story-only)

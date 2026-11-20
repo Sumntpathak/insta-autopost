@@ -48,6 +48,7 @@ every change must keep.
 |---|---|---|---|
 | `shipstack-schedule.yml` | every 5 min | yes, when a calendar slot is due | **Unattended month plan**: render → verify → host → guarded publish of the due slot. |
 | `shipstack-reel.yml` | manual | only if **publish** is ticked | Render → verify → preview artifact → (optional) guarded publish of any format (`lab01`, `lab02`, `ring`, `strings`, `balloon`, `dsa`). **Use this for new content.** |
+| `shipstack-launch.yml` | manual | only if **publish** is ticked | One-time launch: carousel (logo animation + the three series) and Story from `reels/shipstack/launch/`, via `reels/shipstack/announce.py` (guard + live account check + journal). |
 | `reels.yml` | every 10 min + 23:17 IST + manual | no while `reels/config.json` is paused (it is) | Old 30-day campaign, **paused** (replaced by the calendar); still runs the daily insights snapshot + design report. |
 | `daily-post.yml` | 08:37 / 19:07 IST + manual | yes (carousels) | Legacy carousel slots from `schedule.json`. Skips while the reel campaign is active. |
 | `reels-check.yml` | pull requests | no | Unit tests + preview renders. |
