@@ -234,3 +234,14 @@ GURU:     [tiny, embarrassed] ...Do you guys take interns?
 **Tips:** generate each line separately and pick the best of 3–4 takes. Keep the pauses in the edit,
 not in the voice file. Label the post "Voices: AI-generated (ElevenLabs)", as Instagram's AI-content
 rules expect. Check that your ElevenLabs plan allows commercial use (the free plan requires attribution).
+
+### Recorded (20 Nov 2026), ElevenLabs, model eleven_v4
+
+| Part | Voice (Voice Library) | voice_id | File |
+|---|---|---|---|
+| The Guru | Dhananjay: Lively, Charming Salesperson (Indian English) | `0M0altqlpHgpgPz2yZTt` | `film/public/vo/guru-take1.mp3` (49.3 s), `guru-take2.mp3` (51.0 s) |
+| ShipStack narrator | Oliver: Warm British Narrator | `lo1O1Dz1Tu4FWVEPaxuT` | `film/public/vo/narrator.mp3` (7.9 s) |
+| Guru sting | Dhananjay | `0M0altqlpHgpgPz2yZTt` | `film/public/vo/guru-interns.mp3` (2.0 s) |
+
+Assembled voice-over (take 1 + 1.5 s black beat + narrator + 0.8 s + sting), loudness-normalised to about -16 LUFS:
+`film/public/vo/voiceover-full.mp3` (61.4 s). ElevenLabs flow: "ShipStack film: View From the Top (voice-over)".
