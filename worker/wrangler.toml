@@ -1,6 +1,8 @@
 name = "shipstack-scheduler"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
+# A deploy must never wipe the GH_TOKEN that was added in the dashboard (it did once: plain deploys clear dashboard-only variables).
+keep_vars = true
 
 [triggers]
 crons = ["*/5 * * * *"]

@@ -23,6 +23,11 @@ npx wrangler deploy
 ```
 Watch the 5-minute ticks (`idle`, `busy` or `dispatched`) with `npx wrangler tail`. Never paste tokens into chat or commit them.
 
+## Notes
+- `/status` shows `hasToken` and the GitHub status code for the token (200 = accepted). If `hasToken` is false, add `GH_TOKEN` as a **Secret**
+  (Cloudflare dashboard -> the Worker -> Settings -> Variables and Secrets, or the deploy workflow above).
+- `keep_vars = true` in `wrangler.toml` stops a deploy from clearing variables added in the dashboard.
+
 ## Stop
 Set `"paused": true` in `reels/shipstack/calendar.json`, or `npx wrangler delete`.
 

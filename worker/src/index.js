@@ -51,7 +51,10 @@ export default {
     try {
       const [calendar, state] = await Promise.all([raw(env, 'reels/shipstack/calendar.json'), raw(env, 'reels/state.json')]);
       const slot = dueSlot(calendar, state.posts ?? {}, Date.now());
-      return Response.json({paused: Boolean(calendar.paused), due: slot ? slot.id : null, now: new Date().toISOString()});
+      // Diagnostics (booleans and a status code only, never the token): does the Worker hold GH_TOKEN, and does GitHub accept it?
+      let github = 'no token';
+      if (env.GH_TOKEN) github = (await gh(env, `/repos/${env.REPO}/actions/workflows/${env.WORKFLOW}`)).status;
+      return Response.json({paused: Boolean(calendar.paused), due: slot ? slot.id : null, hasToken: Boolean(env.GH_TOKEN), github, now: new Date().toISOString()});
     } catch (e) {
       return Response.json({error: e.message}, {status: 502});
     }
