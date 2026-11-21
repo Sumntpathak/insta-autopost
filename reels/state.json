@@ -3450,6 +3450,20 @@
       "attempted_at": "2026-11-20T20:03:25.262655+05:30",
       "media_id": "17935576995167594",
       "published_at": "2026-11-20T20:03:33.409511+05:30"
+    },
+    "SS-2026-11-21-automation": {
+      "id": "SS-2026-11-21-automation",
+      "date": "2026-11-21",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 1,
+      "caption": "Your inbox now sorts itself. Free, built into Gmail.\n\n1. Search a sender or keyword, then open the filter options in the search box\n2. Click Create filter\n3. Tick: Skip the Inbox, Apply the label, Mark as read\n4. Save. Every matching email now files itself\n\nStart with newsletters and receipts.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #gmail #productivity #freetools #inbox",
+      "container_id": "17898246204522936",
+      "status": "published",
+      "attempted_at": "2026-11-21T10:59:23.499743+05:30",
+      "media_id": "18392469697231177",
+      "published_at": "2026-11-21T11:00:18.941506+05:30"
     }
   }
 }
