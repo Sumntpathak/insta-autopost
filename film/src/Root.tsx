@@ -16,7 +16,7 @@ export const Root: React.FC = () => (
     <Composition id="LogoSting" component={LogoSting} durationInFrames={120} fps={30} width={1080} height={1920} defaultProps={{square: false}} />
     <Composition id="LogoSting4x5" component={LogoSting} durationInFrames={120} fps={30} width={1080} height={1350} defaultProps={{square: true}} />
     <Composition id="LogoStingSquare" component={LogoSting} durationInFrames={120} fps={30} width={1080} height={1080} defaultProps={{square: true}} />
-    <Composition id="AutomationReel" component={AutomationReel} durationInFrames={450} fps={30} width={1080} height={1920} />
+    <Composition id="AutomationReel" component={AutomationReel} durationInFrames={450} fps={30} width={1080} height={1920} defaultProps={{episode: 1}} />
     <Composition id="ShipStackStory" component={Story} durationInFrames={450} fps={30} width={1080} height={1920} />
     <Composition id="Scene1Sample" component={Scene1} fps={30} width={1080} height={1920}
       durationInFrames={Math.ceil((l1.duration + GAP + l2.duration + TAIL) * 30)}

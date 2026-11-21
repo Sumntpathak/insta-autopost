@@ -6,7 +6,9 @@ import {loadFont} from '@remotion/fonts';
 import {Audio} from '@remotion/media';
 import React from 'react';
 import {AbsoluteFill, Easing, Sequence, continueRender, delayRender, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import defaults from './automation-data.json';
+import episodes from './automations.json';
+
+const defaults = episodes[0];
 
 const C = {bg: '#0D1117', panel: '#161B22', line: '#2A313C', text: '#E6EDF3', muted: '#8B949E', accent: '#22D3EE', ok: '#3FB950'};
 const SANS = 'Geist, sans-serif';
@@ -22,7 +24,7 @@ Promise.all([
   loadFont({family: 'Geist Mono', url: staticFile('fonts/GeistMono-Variable.ttf'), weight: '100 900'}),
 ]).then(() => continueRender(ready));
 
-export type AutomationProps = typeof defaults;
+export type AutomationProps = typeof defaults & {episode?: number};
 
 // How many characters of `text` are visible at `frame` when typing starts at `startSec` (cps = chars/second).
 const typedCount = (frame: number, startSec: number, text: string, cps = 22) =>
@@ -43,7 +45,7 @@ const Cursor: React.FC<{h: number; w?: number; active?: boolean}> = ({h, w = 0.5
 };
 
 export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
-  const d = {...defaults, ...p} as AutomationProps;
+  const d = {...(episodes[(p.episode ?? 1) - 1] ?? defaults), ...p} as AutomationProps;
   const frame = useCurrentFrame();
   const sec = frame / FPS;
 
@@ -164,11 +166,9 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
       {/* result */}
       <div style={{position: 'absolute', left: 80, right: 80, top: 1640, opacity: res, translate: `0px ${(1 - res) * 30}px`,
         display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', fontFamily: MONO, fontWeight: 700}}>
-        <span style={{fontSize: 40, color: C.muted, textDecoration: progress > 0.5 ? 'line-through' : 'none'}}>{d.resultNum} {d.resultUnit}</span>
+        <span style={{fontSize: 36, color: C.muted, textDecoration: progress > 0.5 ? 'line-through' : 'none'}}>{d.resultFrom}</span>
         <span style={{fontSize: 44, color: C.accent}}>→</span>
-        <span style={{fontSize: 96, color: C.ok, letterSpacing: -2, scale: `${interpolate(progress, [0.9, 1], [1, 1.18], {...clamp, easing: Easing.out(Easing.back(3))})}`}}>
-          {Math.round(d.resultNum * (1 - progress))}
-        </span>
+        <span style={{fontSize: 58, color: C.ok, letterSpacing: -2, scale: `${interpolate(progress, [0.9, 1], [1, 1.04], {...clamp, easing: Easing.out(Easing.back(3))})}`}}>{d.resultTo}</span>
       </div>
 
       {/* cta + handle */}

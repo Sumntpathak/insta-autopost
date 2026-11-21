@@ -41,6 +41,15 @@ jobs:
             pkg-config texlive-latex-base texlive-latex-extra texlive-fonts-recommended dvisvgm cm-super
       - if: steps.plan.outputs.due == 'true'
         run: pip install -r reels/shipstack/requirements.txt
+      - uses: actions/setup-node@v4
+        if: steps.plan.outputs.due == 'true'
+        with: {node-version: '22'}
+      - name: Remotion (automation reels)
+        if: steps.plan.outputs.format == 'automation'
+        run: |
+          sudo apt-get install -y -qq --no-install-recommends libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 \
+            libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+          cd film && npm ci --no-audit --no-fund
       - name: Render and verify
         if: steps.plan.outputs.due == 'true'
         env:

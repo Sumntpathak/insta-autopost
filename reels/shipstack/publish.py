@@ -28,6 +28,7 @@ CAPTIONS = {
               'Save this for the next time someone says the shortest path is the fastest.\n\n'
               f'ShipStack Lab Nº 01 · @shipstack_\n{TAGS} #brachistochrone'),
     'lab02': None,    # computed per episode by caption(): the result changes with the seed
+    'automation': None,   # computed per episode by caption(): film/src/automations.json
     'dsa': None,      # computed per episode by caption(): one problem per episode
     'ring': ('Which ball escapes first? Pick one before you watch.\n\n'
              'Six balls bounce inside a spinning ring with one tiny gap: just 4.1% of the rim. '
@@ -53,12 +54,15 @@ CAPTIONS['balloon'] = ('Which balloon pops first? Pick one before you watch.\n\n
                        'Comment your number. Follow for the next race.\n\n'
                        'ShipStack Arena · @shipstack_\n#satisfying #simulation #physics #pickone')
 # Cover frame (ms into the clip) shown on the grid: a moment that differs per episode and is never black.
-THUMB_MS = {'lab01': 2500, 'lab02': 2500, 'ring': 7000, 'strings': 7000, 'balloon': 7000, 'dsa': 1000, 'story': 3500}
-COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
+THUMB_MS = {'lab01': 2500, 'lab02': 2500, 'ring': 7000, 'strings': 7000, 'balloon': 7000, 'dsa': 1000, 'automation': 14000, 'story': 3500}
+COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'automation': 'shipstack-automation', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
               'strings': 'shipstack-arena', 'balloon': 'shipstack-arena'}
 
 
 def caption(reel, episode=1):
+    if reel == 'automation':
+        import json
+        return json.loads((ROOT / 'film' / 'src' / 'automations.json').read_text(encoding='utf-8'))[episode - 1]['caption']
     if reel == 'dsa':
         sys.path.insert(0, str(ROOT))
         from reels.shipstack.studio.problems import PROBLEMS

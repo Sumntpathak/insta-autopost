@@ -11,6 +11,7 @@ FORMATS = {
     'ring': 'Arena · Ring Escape, pick a ball 1-6 (pymunk + skia, 60 fps)',
     'strings': 'Arena · Country String Battle (skia, 60 fps)',
     'balloon': 'Arena · Balloon Pop, pick a balloon 1-6 (skia, 60 fps, slow-motion finish)',
+    'automation': 'Studio · AI Automation: text-only typed reel (Remotion, 30 fps); episode N = film/src/automations.json entry N',
     'dsa': 'Studio · DSA debugger: real code stepped line by line; episode N = problem #N (Pillow, 30 fps)',
 }
 
@@ -35,6 +36,16 @@ def render(fmt, out, episode=1, seed=None):
         from . import badge
         badge.apply(out, episode)          # big '#NN' so grid covers never look like re-uploads
         return result
+    if fmt == 'automation':
+        import os
+        import subprocess
+        from pathlib import Path
+        film = Path(__file__).resolve().parents[2] / 'film'
+        out_abs = Path(out).resolve()
+        out_abs.parent.mkdir(parents=True, exist_ok=True)
+        env = dict(os.environ, COMP='AutomationReel', EPISODE=str(episode), OUT=str(out_abs))
+        subprocess.run(['node', 'render.mjs'], cwd=film, env=env, check=True)
+        return out
     if fmt == 'dsa':
         from .studio import dsa
         return dsa.render(out, episode)

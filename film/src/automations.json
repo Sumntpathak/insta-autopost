@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "hook": "Your inbox now sorts itself.",
+    "accentWord": "sorts itself",
+    "sub": "Free. Built into Gmail. No app.",
+    "tool": "Gmail filters",
+    "trigger": "Any email arrives",
+    "steps": [
+      {
+        "app": "Filter",
+        "text": "Match sender or keywords"
+      },
+      {
+        "app": "Label",
+        "text": "Apply a label"
+      },
+      {
+        "app": "Archive",
+        "text": "Skip the inbox"
+      },
+      {
+        "app": "Read",
+        "text": "Mark it as read"
+      }
+    ],
+    "resultFrom": "Manual sorting",
+    "resultTo": "Automatic",
+    "cta": "Save this. Set it up today.",
+    "caption": "Your inbox now sorts itself. Free, built into Gmail.\n\n1. Search a sender or keyword, then open the filter options in the search box\n2. Click Create filter\n3. Tick: Skip the Inbox, Apply the label, Mark as read\n4. Save. Every matching email now files itself\n\nStart with newsletters and receipts.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #gmail #productivity #freetools #inbox"
+  },
+  {
+    "id": 2,
+    "hook": "Attachments file themselves.",
+    "accentWord": "file themselves",
+    "sub": "Free. Google Apps Script. No app to install.",
+    "tool": "Apps Script",
+    "trigger": "Every hour a script wakes up",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Find new attachments"
+      },
+      {
+        "app": "Script",
+        "text": "Pick the right Drive folder"
+      },
+      {
+        "app": "Drive",
+        "text": "Save the file"
+      },
+      {
+        "app": "Gmail",
+        "text": "Label it Saved"
+      }
+    ],
+    "resultFrom": "Manual filing",
+    "resultTo": "Automatic",
+    "cta": "Save this. Build it today.",
+    "caption": "Attachments file themselves. Free with Google Apps Script.\n\nA small script runs every hour, finds new emails with attachments, saves each file to a Drive folder and labels the email so it is never saved twice.\n\nWhere to start: script.google.com → New project → add a time-driven trigger.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #googledrive #gmail #appsscript #freetools"
+  },
+  {
+    "id": 3,
+    "hook": "Invoices now enter themselves.",
+    "accentWord": "enter themselves",
+    "sub": "Free. Gmail + Sheets + Apps Script.",
+    "tool": "Apps Script",
+    "trigger": "Hourly: check for invoices",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Find the invoice email"
+      },
+      {
+        "app": "Script",
+        "text": "Read vendor, date, amount"
+      },
+      {
+        "app": "Sheets",
+        "text": "Add a row, no typing"
+      },
+      {
+        "app": "Gmail",
+        "text": "Label it Logged"
+      }
+    ],
+    "resultFrom": "Manual entry",
+    "resultTo": "Automatic",
+    "cta": "Save this. Build it today.",
+    "caption": "Invoices now enter themselves. Free with Gmail, Sheets and Apps Script.\n\nA script checks Gmail every hour, finds new invoice emails, reads the vendor, date and amount, adds a row to your Sheet and labels the email as logged.\n\nWhere to start: create a Sheet → Extensions → Apps Script → add a time-driven trigger.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #googlesheets #gmail #invoices #freetools"
+  },
+  {
+    "id": 4,
+    "hook": "Out of office, set once.",
+    "accentWord": "set once",
+    "sub": "Free. Built into Gmail. No app.",
+    "tool": "Gmail",
+    "trigger": "Someone emails while away",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Settings → See all settings"
+      },
+      {
+        "app": "Gmail",
+        "text": "Scroll to Vacation responder"
+      },
+      {
+        "app": "Gmail",
+        "text": "Write your message"
+      },
+      {
+        "app": "Gmail",
+        "text": "Pick the dates, hit Save"
+      }
+    ],
+    "resultFrom": "Missed replies",
+    "resultTo": "Handled",
+    "cta": "Save this. Set it before you leave.",
+    "caption": "Out of office, set once. Free, built into Gmail.\n\n1. Settings → See all settings\n2. General → scroll to Vacation responder\n3. Turn it on, write your message, pick the dates\n4. Save Changes\n\nTip: tick the box to send replies only to your contacts.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #gmail #productivity #freetools #worklife"
+  }
+]
