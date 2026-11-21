@@ -3489,8 +3489,10 @@
       "episode": 2,
       "caption": "DSA #0002 \u00b7 Best Time to Buy and Sell Stock\n\nBuy on one day, sell on a later day. Maximise the profit. Watch the code run line by line, with every variable shown.\n\nPattern: One pass \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17898334743522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-21T19:37:17.391470+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-21T19:37:17.391470+05:30",
+      "media_id": "18078962849466412",
+      "published_at": "2026-11-21T19:38:40.576377+05:30"
     }
   }
 }
