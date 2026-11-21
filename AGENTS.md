@@ -12,7 +12,7 @@ every change must keep.
    state file and push it *before* calling `media_publish`. An ambiguous failure is never
    retried automatically; reconcile it by hand from the container id.
 3. **Respect the posting plan.** `reels/guard.py` allows at most 12 posts per IST day with at
-   least 60 minutes between them (calendar: 6/day; the rest is headroom for the news agent).
+   least 60 minutes between them (calendar: 12/day, so no separate news agent may post).
    Do not post in bursts.
 4. **Missing metrics stay missing.** Never write 0 for an unavailable insight.
 5. **Secrets stay in GitHub Actions.** `META_TOKEN`, `IG_USER_ID`, `FB_PAGE_ID` are never
@@ -30,8 +30,9 @@ every change must keep.
 | `reels/shipstack/arena/` | Arena: Balloon Pop, Ring Escape and Country String Battle (skia, 60 fps). See its README. |
 | `reels/shipstack/publish.py` | Guarded publisher for all formats (guard → container → journal → publish) and captions. |
 | `reels/guard.py` | Posting plan rules (60 min gap, 12/day). |
-| `reels/shipstack/calendar.json` | **The month plan**: 180 slots (date, IST time, format, episode). Edit freely; `"paused": true` stops it. |
-| `reels/shipstack/schedule.py` | Calendar generator (`make`) and due-slot finder (`plan`). |
+| `reels/shipstack/calendar.json` | **The calendar**: 12 slots/day (date, IST time, format, episode `next`). Edit freely; `"paused": true` stops it. |
+| `reels/shipstack/schedule.py` | Calendar generator (`make`), due-slot finder (`plan`) and episode resolver (`resolve`). |
+| `worker/` | Cloudflare Worker: the scheduler. Cron every 5 min, dispatches the calendar workflow when a slot is due. See its README. |
 | `reels/insights_report.py` | Joins the insights export with how each reel was made; ranks designs by shares+saves per reach and watch ratio. |
 | `reels/campaign.py` | 30-day reel campaign planner/publisher, insights export (`insights` mode). |
 | `reels/verify.py` | Hard gate: H.264/AAC, 1080×1920, 15 s, 30 or 60 fps (450/900 frames), audible audio. |
@@ -46,7 +47,7 @@ every change must keep.
 
 | Workflow | Trigger | Posts? | Purpose |
 |---|---|---|---|
-| `shipstack-schedule.yml` | every 5 min | yes, when a calendar slot is due | **Unattended month plan**: render → verify → host → guarded publish of the due slot. |
+| `shipstack-calendar.yml` | dispatched by the Cloudflare Worker (`worker/`) every 5 min, only when a slot is due | yes | **Unattended calendar**: render → verify → host → guarded publish of the due slot. |
 | `shipstack-reel.yml` | manual | only if **publish** is ticked | Render → verify → preview artifact → (optional) guarded publish of any format (`lab01`, `lab02`, `ring`, `strings`, `balloon`, `dsa`). **Use this for new content.** |
 | `shipstack-launch.yml` | manual | only if **publish** is ticked | One-time launch: carousel (logo animation + the three series) and Story from `reels/shipstack/launch/`, via `reels/shipstack/announce.py` (guard + live account check + journal). |
 | `reels.yml` | every 10 min + 23:17 IST + manual | no while `reels/config.json` is paused (it is) | Old 30-day campaign, **paused** (replaced by the calendar); still runs the daily insights snapshot + design report. |
@@ -93,7 +94,8 @@ number for Arena formats).
   news exists the slot is skipped, never padded with filler. A slot missed by more than 3 h is skipped.
 - Music: `reels/shipstack/music.py` (tracks in `film/public/bgm/`, see its README): Luminary under automation + DSA, the other track under news.
   Typing clicks sit at 35% under the music.
-- `shipstack-schedule.yml` runs every 5 minutes on the default branch and posts the due slot (guard: 60 min gap, 12/day, journal first).
+- Timing: a Cloudflare Worker (`worker/`, cron every 5 min) reads the calendar + journal, and dispatches `shipstack-calendar.yml` only when a slot is due
+  (GitHub's own cron was throttled to a few runs a day). The workflow posts the due slot (guard: 60 min gap, 12/day, journal first).
 - Regenerate: `python -m reels.shipstack.schedule make --start YYYY-MM-DD --days 30 [--not-before ISO]`. Stop: `"paused": true` or disable the workflow.
 - Content runway: add DSA problems (`studio/problems_more.py`) and automations (`film/src/automations.json`) before they run out (about 5 days
   of each at 4/day); the calendar keeps going on news meanwhile. The old Arena/Lab formats still render but are no longer scheduled.
