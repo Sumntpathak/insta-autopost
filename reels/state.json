@@ -3533,6 +3533,18 @@
       "news_url": "https://arstechnica.com/science/2026/11/race-realism-isnt-realistic-and-it-isnt-good-science/",
       "media_id": "18151258039605687",
       "published_at": "2026-11-21T21:48:52.040901+05:30"
+    },
+    "CAL-2026-11-21-2130-dsa": {
+      "id": "CAL-2026-11-21-2130-dsa",
+      "date": "2026-11-21",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 3,
+      "caption": "DSA #0003 \u00b7 Binary Search\n\nFind the target in a sorted array, halving the search each step. Watch the code run line by line, with every variable shown.\n\nPattern: Two pointers \u00b7 O(log n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17898374958522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-21T22:52:33.292675+05:30"
     }
   }
 }
