@@ -6,18 +6,22 @@ slot is due and no calendar run is already queued or running** it dispatches `.g
 Rendering and posting stay in GitHub Actions (they need ffmpeg and Remotion). The workflow re-checks the slot and enforces the
 posting guard (60 min gap, 12/day, journal first), so a duplicate dispatch can never double-post.
 
-## Deploy (once, about 5 minutes; free Cloudflare plan is enough)
-1. GitHub → Settings → Developer settings → Fine-grained tokens → new token: **only this repository**, permission **Actions: Read and write**
-   (Metadata: read is added automatically). Copy it once; do not paste it into chat or commit it.
-2. In a terminal:
-   ```bash
-   cd worker && npm install
-   npx wrangler login
-   npx wrangler secret put GITHUB_TOKEN     # paste the token when prompted
-   npx wrangler deploy
-   ```
-3. Check: open `https://shipstack-scheduler.<your-subdomain>.workers.dev/status` (shows `due` and `paused`, dispatches nothing) and
-   `npx wrangler tail` to watch the 5-minute ticks (`idle`, `busy` or `dispatched`).
+## Deploy from GitHub (recommended: tokens stay in GitHub's encrypted secrets)
+1. Add three repository secrets (Settings -> Secrets and variables -> Actions -> New repository secret):
+   - `CLOUDFLARE_API_TOKEN`: Cloudflare -> My Profile -> API Tokens -> Create Token -> template **Edit Cloudflare Workers**.
+   - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare dashboard -> Workers & Pages -> right-hand side.
+   - `SCHEDULER_GITHUB_TOKEN`: GitHub -> Settings -> Developer settings -> Fine-grained tokens: **only this repository**, **Actions: Read and write**.
+2. Actions -> **Deploy scheduler (Cloudflare)** -> Run workflow. It checks the secrets, runs the Worker tests, deploys, and sets the Worker's `GH_TOKEN`.
+3. Check: open `https://shipstack-scheduler.<your-subdomain>.workers.dev/status` (shows `due` and `paused`, dispatches nothing).
+
+## Deploy by hand instead (once, about 5 minutes; free Cloudflare plan is enough)
+```bash
+cd worker && npm install
+npx wrangler login
+npx wrangler secret put GH_TOKEN     # paste the GitHub token when prompted
+npx wrangler deploy
+```
+Watch the 5-minute ticks (`idle`, `busy` or `dispatched`) with `npx wrangler tail`. Never paste tokens into chat or commit them.
 
 ## Stop
 Set `"paused": true` in `reels/shipstack/calendar.json`, or `npx wrangler delete`.

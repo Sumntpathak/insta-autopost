@@ -1,0 +1,42 @@
+name: Deploy scheduler (Cloudflare)
+# Deploys worker/ to Cloudflare from GitHub, so no token ever leaves GitHub's encrypted secrets. Manual only; never posts.
+# Repository secrets needed (Settings -> Secrets and variables -> Actions):
+#   CLOUDFLARE_API_TOKEN       Cloudflare API token (template "Edit Cloudflare Workers")
+#   CLOUDFLARE_ACCOUNT_ID      your Cloudflare account id (Workers & Pages overview page, right side)
+#   SCHEDULER_GITHUB_TOKEN     fine-grained GitHub token, this repo only, Actions: Read and write (the Worker uses it to dispatch the calendar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Check the three secrets exist (values are never printed)
+        env:
+          A: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          B: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          C: ${{ secrets.SCHEDULER_GITHUB_TOKEN }}
+        run: |
+          missing=""
+          [ -n "$A" ] || missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -n "$B" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          [ -n "$C" ] || missing="$missing SCHEDULER_GITHUB_TOKEN"
+          if [ -n "$missing" ]; then echo "::error::Missing repository secrets:$missing"; exit 1; fi
+      - name: Worker tests
+        run: cd worker && node --test test/plan.test.mjs
+      - name: Deploy the Worker and set its GitHub token
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          command: deploy
+          secrets: |
+            GH_TOKEN
+        env:
+          GH_TOKEN: ${{ secrets.SCHEDULER_GITHUB_TOKEN }}
