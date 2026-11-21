@@ -3518,6 +3518,19 @@
       "attempted_at": "2026-11-21T20:43:08.884611+05:30",
       "media_id": "18120508535044091",
       "published_at": "2026-11-21T20:43:41.620627+05:30"
+    },
+    "CAL-2026-11-21-2000-news": {
+      "id": "CAL-2026-11-21-2000-news",
+      "date": "2026-11-21",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 2,
+      "caption": "\u201cRace realism\u201d isn\u2019t realistic\u2014and it isn\u2019t good science\n\nModern genetics does not support claims of innate racial differences in intelligence.\n\nSource: Ars Technica (arstechnica.com) \u00b7 21 Nov 2026\nRead the full story: https://arstechnica.com/science/2026/11/race-realism-isnt-realistic-and-it-isnt-good-science/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898360396522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-21T21:48:15.747944+05:30",
+      "news_url": "https://arstechnica.com/science/2026/11/race-realism-isnt-realistic-and-it-isnt-good-science/"
     }
   }
 }
