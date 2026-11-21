@@ -29,7 +29,7 @@ function fakeFetch({calendar, state, runs, dispatchStatus = 204}) {
   };
   return calls;
 }
-const env = {REPO: 'o/r', BRANCH: 'main', WORKFLOW: 'w.yml', GITHUB_TOKEN: 'secret-token'};
+const env = {REPO: 'o/r', BRANCH: 'main', WORKFLOW: 'w.yml', GH_TOKEN: 'secret-token'};
 
 test('tick dispatches when due and idle, token only in the Authorization header', async () => {
   const calls = fakeFetch({calendar: cal, state: {posts: {}}, runs: [{status: 'completed'}]});

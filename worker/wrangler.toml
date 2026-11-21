@@ -9,4 +9,4 @@ crons = ["*/5 * * * *"]
 REPO = "Sumntpathak/insta-autopost"
 BRANCH = "main"
 WORKFLOW = "shipstack-calendar.yml"
-# Secret (not here): npx wrangler secret put GITHUB_TOKEN
+# Secret (not here): npx wrangler secret put GH_TOKEN

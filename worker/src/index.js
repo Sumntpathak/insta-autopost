@@ -1,6 +1,6 @@
 // ShipStack scheduler (Cloudflare Worker). Cron every 5 minutes: if a calendar slot is due and no calendar run is already
 // queued or running, dispatch the GitHub workflow. Rendering and posting stay in GitHub Actions (they need ffmpeg + Remotion).
-// Secret: GITHUB_TOKEN (fine-grained token, this repo only, Actions: read and write). Never put it in this file.
+// Secret: GH_TOKEN (fine-grained token, this repo only, Actions: read and write). Never put it in this file.
 import {dueSlot} from './plan.js';
 
 const API = 'https://api.github.com';
@@ -9,7 +9,7 @@ async function gh(env, path, init = {}) {
   return fetch(`${API}${path}`, {
     ...init,
     headers: {
-      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${env.GH_TOKEN}`,
       Accept: 'application/vnd.github+json',
       'X-GitHub-Api-Version': '2022-11-28',
       'User-Agent': 'shipstack-scheduler',
