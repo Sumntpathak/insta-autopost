@@ -1,0 +1,15 @@
+{
+  "hook": "Stop copy-pasting invoices.",
+  "accentWord": "copy-pasting",
+  "tool": "n8n + Claude",
+  "trigger": "New invoice lands in Gmail",
+  "steps": [
+    {"app": "Gmail", "text": "Catch the invoice email"},
+    {"app": "Claude", "text": "Read vendor, date, amount"},
+    {"app": "Sheets", "text": "Add a row, no typing"},
+    {"app": "Slack", "text": "Ping #finance to approve"}
+  ],
+  "resultFrom": "5 hrs/week",
+  "resultTo": "0",
+  "cta": "Save this. Build it today."
+}
