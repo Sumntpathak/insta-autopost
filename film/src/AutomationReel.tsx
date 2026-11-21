@@ -24,7 +24,7 @@ Promise.all([
   loadFont({family: 'Geist Mono', url: staticFile('fonts/GeistMono-Variable.ttf'), weight: '100 900'}),
 ]).then(() => continueRender(ready));
 
-export type AutomationProps = typeof defaults & {episode?: number};
+export type AutomationProps = typeof defaults & {episode?: number; music?: string; musicVolume?: number; keyGain?: number};
 
 // How many characters of `text` are visible at `frame` when typing starts at `startSec` (cps = chars/second).
 const typedCount = (frame: number, startSec: number, text: string, cps = 22) =>
@@ -177,9 +177,13 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
         <span>{d.cta.slice(0, ctaN)}</span><span style={{color: C.accent, opacity: sec > T.cta ? 1 : 0}}>@shipstack_</span>
       </div>
 
+      {d.music ? (
+        <Audio src={staticFile(`bgm/${d.music}`)} loop
+          volume={(f) => (d.musicVolume ?? 0.5) * interpolate(f, [0, 15, 420, 450], [0, 1, 1, 0], clamp)} />
+      ) : null}
       {keys.map((k, i) => (
         <Sequence key={i} from={k} durationInFrames={6} layout="none">
-          <Audio src={staticFile(`sfx/key${i % 3}.wav`)} volume={0.55 + (i % 5) * 0.06} />
+          <Audio src={staticFile(`sfx/key${i % 3}.wav`)} volume={(0.55 + (i % 5) * 0.06) * (d.keyGain ?? 1)} />
         </Sequence>
       ))}
       {d.steps.map((_, i) => {

@@ -8,7 +8,7 @@ import {existsSync} from 'node:fs';
 // Local sandbox ships a headless shell; on CI leave undefined so Remotion downloads its own.
 const local = process.env.REMOTION_BROWSER || '/opt/pw-browsers/chromium_headless_shell';
 const browserExecutable = existsSync(local) ? local : undefined;
-const inputProps = {episode: Number(process.env.EPISODE || 1)};
+const inputProps = {episode: Number(process.env.EPISODE || 1), ...(process.env.MUSIC ? {music: process.env.MUSIC, keyGain: Number(process.env.KEY_GAIN || 0.35), musicVolume: Number(process.env.MUSIC_VOL || 0.5)} : {})};
 const id = process.env.COMP || 'ShipStackStory';
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const composition = await selectComposition({serveUrl, id, browserExecutable, inputProps});
