@@ -8,8 +8,8 @@ on:
       reel:
         description: Which format (python -m reels.shipstack --list)
         type: choice
-        options: [lab01, lab02, ring, strings, balloon, dsa]
-        default: balloon
+        options: [automation, dsa, lab01, lab02, ring, strings, balloon]
+        default: automation
       episode:
         description: Episode number (Arena - a new race; dsa - problem number)
         type: number
@@ -37,6 +37,14 @@ jobs:
           sudo apt-get install -y -qq --no-install-recommends ffmpeg libegl1 libpango1.0-dev libcairo2-dev \
             pkg-config texlive-latex-base texlive-latex-extra texlive-fonts-recommended dvisvgm cm-super
       - run: pip install -r reels/shipstack/requirements.txt
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Remotion (automation reels)
+        if: inputs.reel == 'automation'
+        run: |
+          sudo apt-get install -y -qq --no-install-recommends libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 \
+            libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+          cd film && npm ci --no-audit --no-fund
       - name: Render
         env:
           REEL: ${{ inputs.reel }}
