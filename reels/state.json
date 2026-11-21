@@ -3547,6 +3547,18 @@
       "attempted_at": "2026-11-21T22:52:33.292675+05:30",
       "media_id": "18156897991527753",
       "published_at": "2026-11-21T22:53:07.553132+05:30"
+    },
+    "CAL-2026-11-21-2300-automation": {
+      "id": "CAL-2026-11-21-2300-automation",
+      "date": "2026-11-21",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 3,
+      "caption": "Invoices now enter themselves. Free with Gmail, Sheets and Apps Script.\n\nA script checks Gmail every hour, finds new invoice emails, reads the vendor, date and amount, adds a row to your Sheet and labels the email as logged.\n\nWhere to start: create a Sheet \u2192 Extensions \u2192 Apps Script \u2192 add a time-driven trigger.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #googlesheets #gmail #invoices #freetools",
+      "container_id": "17898384906522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-21T23:57:39.762933+05:30"
     }
   }
 }
