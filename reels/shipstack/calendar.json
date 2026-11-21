@@ -97,32 +97,32 @@
    "episode": 2
   },
   {
-   "id": "CAL-2026-11-21-1230-automation",
+   "id": "CAL-2026-11-21-1300-automation",
    "date": "2026-11-21",
-   "time": "12:30",
-   "format": "automation",
-   "episode": 1
-  },
-  {
-   "id": "CAL-2026-11-21-1500-automation",
-   "date": "2026-11-21",
-   "time": "15:00",
+   "time": "13:00",
    "format": "automation",
    "episode": 2
   },
   {
-   "id": "CAL-2026-11-21-1730-automation",
+   "id": "CAL-2026-11-21-1530-dsa",
    "date": "2026-11-21",
-   "time": "17:30",
+   "time": "15:30",
+   "format": "dsa",
+   "episode": 2
+  },
+  {
+   "id": "CAL-2026-11-21-1800-automation",
+   "date": "2026-11-21",
+   "time": "18:00",
    "format": "automation",
    "episode": 3
   },
   {
-   "id": "CAL-2026-11-21-2130-automation",
+   "id": "CAL-2026-11-21-2130-dsa",
    "date": "2026-11-21",
    "time": "21:30",
-   "format": "automation",
-   "episode": 4
+   "format": "dsa",
+   "episode": 3
   },
   {
    "id": "CAL-2026-11-22-0810-lab02",

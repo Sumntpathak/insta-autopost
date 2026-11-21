@@ -44,3 +44,13 @@ class AutomationTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class MusicTests(unittest.TestCase):
+    def test_tracks_exist_and_news_differs(self):
+        from reels.shipstack import music
+        for fmt, (name, vol) in music.MUSIC.items():
+            self.assertTrue((music.BGM / name).exists(), name)
+            self.assertTrue(0 < vol <= 1)
+        self.assertNotEqual(music.MUSIC['news'][0], music.MUSIC['dsa'][0])
+        self.assertEqual(music.MUSIC['dsa'][0], 'luminary.mp3')

@@ -43,12 +43,17 @@ def render(fmt, out, episode=1, seed=None):
         film = Path(__file__).resolve().parents[2] / 'film'
         out_abs = Path(out).resolve()
         out_abs.parent.mkdir(parents=True, exist_ok=True)
-        env = dict(os.environ, COMP='AutomationReel', EPISODE=str(episode), OUT=str(out_abs))
+        from . import music
+        env = dict(os.environ, COMP='AutomationReel', EPISODE=str(episode), OUT=str(out_abs),
+                   MUSIC=music.MUSIC['automation'][0], MUSIC_VOL=str(music.MUSIC['automation'][1]), KEY_GAIN=str(music.TYPING_GAIN))
         subprocess.run(['node', 'render.mjs'], cwd=film, env=env, check=True)
         return out
     if fmt == 'dsa':
+        from . import music
         from .studio import dsa
-        return dsa.render(out, episode)
+        result = dsa.render(out, episode)
+        music.mix(out, 'dsa')
+        return result
     raise SystemExit(f'Unknown format {fmt}; see --list')
 
 
