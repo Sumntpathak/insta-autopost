@@ -87,6 +87,9 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
       <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line}33 1px, transparent 1px), linear-gradient(90deg, ${C.line}33 1px, transparent 1px)`,
         backgroundSize: '90px 90px', opacity: 0.5}} />
 
+      <AbsoluteFill style={{background: `radial-gradient(900px 700px at ${70 + Math.sin(sec * 0.6) * 8}% ${22 + Math.cos(sec * 0.5) * 4}%, ${C.accent}26, transparent 70%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(800px 600px at 15% 92%, ${C.ok}14, transparent 70%)`}} />
+
       {/* header: category + tool */}
       <div style={{position: 'absolute', left: 80, right: 80, top: 100, display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         fontFamily: MONO, fontSize: 28, letterSpacing: 3, color: C.muted, opacity: interpolate(sec, [0, 0.4], [0, 1], clamp)}}>
@@ -96,12 +99,18 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
       {/* hook */}
       <div style={{position: 'absolute', left: 80, right: 80, top: interpolate(lift, [0, 1], [640, 190]),
         fontWeight: 800, letterSpacing: -3, lineHeight: 1.04,
-        fontSize: interpolate(lift, [0, 1], [128, 84])}}>
-        {renderHook()}{hookN < d.hook.length || lift < 1 ? <Cursor h={interpolate(lift, [0, 1], [128, 84])} /> : null}
+        fontSize: interpolate(lift, [0, 1], [118, 84])}}>
+        {renderHook()}{hookN < d.hook.length || lift < 1 ? <Cursor h={interpolate(lift, [0, 1], [118, 84])} /> : null}
+      </div>
+
+      {/* sub line */}
+      <div style={{position: 'absolute', left: 80, right: 80, top: 398, fontFamily: MONO, fontSize: 32, color: C.muted,
+        opacity: interpolate(sec, [3.3, 3.7], [0, 1], clamp)}}>
+        {d.sub.slice(0, typedCount(frame, 3.3, d.sub, 34))}
       </div>
 
       {/* trigger */}
-      <div style={{position: 'absolute', left: 80, right: 80, top: 470, opacity: interpolate(sec, [T.trig - 0.1, T.trig + 0.2], [0, 1], clamp),
+      <div style={{position: 'absolute', left: 80, right: 80, top: 480, opacity: interpolate(sec, [T.trig - 0.1, T.trig + 0.2], [0, 1], clamp),
         fontFamily: MONO, fontSize: 40, color: C.text, background: C.panel, border: `2px solid ${C.line}`, borderRadius: 20,
         padding: '30px 36px', translate: `0px ${interpolate(sec, [T.trig - 0.1, T.trig + 0.4], [24, 0], {...clamp, easing: ease})}px`}}>
         <span style={{color: C.accent}}>when </span>{trigText.slice(0, trigN)}
@@ -117,15 +126,22 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
         const pop = interpolate(sec, [done, done + 0.35], [0, 1], {...clamp, easing: Easing.out(Easing.back(2.2))});
         const ring = interpolate(sec, [done, done + 0.6], [0, 1], clamp);
         const y = stepsGeom.top + i * stepsGeom.gap;
-        const lineIn = interpolate(sec, [t0 - 0.45, t0], [0, 1], {...clamp, easing: Easing.bezier(0.65, 0, 0.35, 1)});
+        const lineIn = interpolate(sec, [t0 - 0.5, t0 - 0.02], [0, 1], {...clamp, easing: Easing.bezier(0.65, 0, 0.35, 1)});
         return (
           <React.Fragment key={i}>
-            {i > 0 || true ? (
-              <div style={{position: 'absolute', left: 150, top: y - 56 - (i === 0 ? 0 : 0), width: 6, height: 56 * (i === 0 ? 0 : lineIn),
-                background: C.accent, borderRadius: 3}} />
-            ) : null}
+            {(() => {
+              const startY = i === 0 ? 596 : y - stepsGeom.gap + stepsGeom.h;
+              const len = y - startY;
+              return <>
+                <div style={{position: 'absolute', left: 148, top: startY, width: 4, height: len, background: C.line, borderRadius: 2, opacity: lineIn > 0 ? 1 : 0}} />
+                <div style={{position: 'absolute', left: 148, top: startY, width: 4, height: len * lineIn, background: C.accent, borderRadius: 2}} />
+                {lineIn > 0 && lineIn < 1 ? <div style={{position: 'absolute', left: 150 - 11, top: startY + len * lineIn - 11, width: 22, height: 22,
+                  borderRadius: 11, background: '#fff', boxShadow: `0 0 28px 10px ${C.accent}`}} /> : null}
+              </>;
+            })()}
             <div style={{position: 'absolute', left: stepsGeom.x, top: y, width: stepsGeom.w, height: stepsGeom.h, opacity: appear,
-              translate: `${interpolate(appear, [0, 1], [-60, 0])}px 0px`, background: C.panel, border: `2px solid ${pop > 0.5 ? C.ok + '99' : C.line}`,
+              translate: `${interpolate(appear, [0, 1], [-60, 0])}px 0px`, background: C.panel, border: `2px solid ${pop > 0.5 ? C.ok + '99' : appear > 0.6 ? C.accent : C.line}`,
+              boxShadow: pop > 0.5 ? 'none' : `0 0 ${appear * 46}px ${C.accent}40`,
               borderRadius: 28, display: 'flex', alignItems: 'center', padding: '0 36px', gap: 32}}>
               <div style={{width: 76, height: 76, borderRadius: 38, background: pop > 0.5 ? C.ok : C.bg, border: `3px solid ${pop > 0.5 ? C.ok : C.accent}`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: MONO, fontWeight: 800, fontSize: 36,
@@ -148,9 +164,11 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
       {/* result */}
       <div style={{position: 'absolute', left: 80, right: 80, top: 1640, opacity: res, translate: `0px ${(1 - res) * 30}px`,
         display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', fontFamily: MONO, fontWeight: 700}}>
-        <span style={{fontSize: 40, color: C.muted, textDecoration: progress > 0.5 ? 'line-through' : 'none'}}>{d.resultFrom}</span>
+        <span style={{fontSize: 40, color: C.muted, textDecoration: progress > 0.5 ? 'line-through' : 'none'}}>{d.resultNum} {d.resultUnit}</span>
         <span style={{fontSize: 44, color: C.accent}}>→</span>
-        <span style={{fontSize: 84, color: C.ok, letterSpacing: -2}}>{d.resultTo}</span>
+        <span style={{fontSize: 96, color: C.ok, letterSpacing: -2, scale: `${interpolate(progress, [0.9, 1], [1, 1.18], {...clamp, easing: Easing.out(Easing.back(3))})}`}}>
+          {Math.round(d.resultNum * (1 - progress))}
+        </span>
       </div>
 
       {/* cta + handle */}
@@ -168,6 +186,7 @@ export const AutomationReel: React.FC<Partial<AutomationProps>> = (p) => {
         const done = stepStart(i) + 0.25 + d.steps[i].text.length / 28 + 0.12;
         return <Sequence key={`d${i}`} from={Math.round(done * FPS)} durationInFrames={12} layout="none"><Audio src={staticFile('sfx/done.wav')} volume={0.5} /></Sequence>;
       })}
+      <Sequence from={Math.round(2.6 * FPS)} durationInFrames={50} layout="none"><Audio src={staticFile('sfx/whoosh.wav')} volume={0.22} /></Sequence>
       <Sequence from={Math.round(T.result * FPS)} durationInFrames={30} layout="none"><Audio src={staticFile('sfx/result.wav')} volume={0.7} /></Sequence>
     </AbsoluteFill>
   );
