@@ -3514,8 +3514,10 @@
       "episode": 2,
       "caption": "Attachments file themselves. Free with Google Apps Script.\n\nA small script runs every hour, finds new emails with attachments, saves each file to a Drive folder and labels the email so it is never saved twice.\n\nWhere to start: script.google.com \u2192 New project \u2192 add a time-driven trigger.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #googledrive #gmail #appsscript #freetools",
       "container_id": "17898349944522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-21T20:43:08.884611+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-21T20:43:08.884611+05:30",
+      "media_id": "18120508535044091",
+      "published_at": "2026-11-21T20:43:41.620627+05:30"
     }
   }
 }
