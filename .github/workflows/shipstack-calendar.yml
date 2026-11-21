@@ -1,10 +1,9 @@
-name: ShipStack month calendar
-# Unattended posting from reels/shipstack/calendar.json. Every 5 minutes it checks for the
-# due slot; slots missed by more than 3 h are skipped. Posts go through the 60-minute gap and 12/day cap guards.
-# Stop everything: set "paused": true in reels/shipstack/calendar.json (or disable this workflow).
+name: ShipStack calendar
+# Unattended posting from reels/shipstack/calendar.json. Triggered by the Cloudflare Worker in worker/ (reliable cron),
+# which dispatches this workflow only when a slot is due. GitHub's own cron is not used: it was throttled to a few runs a day.
+# Running it by hand is safe too: it posts only a slot that is due, through the 60-minute gap and 12/day cap guards.
+# Slots missed by more than 3 h are skipped. Stop everything: "paused": true in reels/shipstack/calendar.json, or stop the Worker.
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
@@ -68,7 +67,7 @@ jobs:
         run: |
           TAG="shipstack-$(date -u +%Y-%m)"
           gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target "$(git rev-parse HEAD)" \
-            --title "ShipStack reels $TAG" --notes "Rendered by .github/workflows/shipstack-schedule.yml" --latest=false
+            --title "ShipStack reels $TAG" --notes "Rendered by .github/workflows/shipstack-calendar.yml" --latest=false
           cp reels/out/slot.mp4 "reels/out/$SLOT.mp4"
           gh release upload "$TAG" "reels/out/$SLOT.mp4" --clobber
           URL="https://github.com/$GH_REPO/releases/download/$TAG/$SLOT.mp4"

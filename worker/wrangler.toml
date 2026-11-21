@@ -1,0 +1,12 @@
+name = "shipstack-scheduler"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+REPO = "Sumntpathak/insta-autopost"
+BRANCH = "main"
+WORKFLOW = "shipstack-calendar.yml"
+# Secret (not here): npx wrangler secret put GITHUB_TOKEN
