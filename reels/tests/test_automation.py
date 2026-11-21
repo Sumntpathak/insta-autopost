@@ -31,13 +31,15 @@ class AutomationTests(unittest.TestCase):
             self.assertEqual(publish.caption('automation', i), a['caption'])
 
     def test_calendar_slots_use_known_episodes(self):
+        from reels.shipstack.studio.problems import PROBLEMS
         cal = json.loads((ROOT / 'reels' / 'shipstack' / 'calendar.json').read_text())
-        slots = [s for s in cal['slots'] if s['format'] == 'automation']
-        self.assertGreaterEqual(len(slots), 4)
-        for s in slots:
-            self.assertLessEqual(s['episode'], len(DATA))
-            self.assertIn(s['id'], {f"CAL-{s['date']}-{s['time'].replace(':', '')}-automation"})
-        times = sorted(s['time'] for s in slots if s['date'] == '2026-11-21')
+        mine = [s for s in cal['slots'] if s['format'] in ('automation', 'dsa')]
+        self.assertGreaterEqual(len(mine), 4)
+        for s in mine:
+            limit = len(DATA) if s['format'] == 'automation' else len(PROBLEMS)
+            self.assertLessEqual(s['episode'], limit, s['id'])
+            self.assertEqual(s['id'], f"CAL-{s['date']}-{s['time'].replace(':', '')}-{s['format']}")
+        times = sorted(s['time'] for s in cal['slots'] if s['date'] == '2026-11-21')
         mins = [int(t[:2]) * 60 + int(t[3:]) for t in times]
         self.assertTrue(all(b - a >= 60 for a, b in zip(mins, mins[1:])))
 
