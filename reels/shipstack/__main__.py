@@ -12,6 +12,7 @@ FORMATS = {
     'strings': 'Arena · Country String Battle (skia, 60 fps)',
     'balloon': 'Arena · Balloon Pop, pick a balloon 1-6 (skia, 60 fps, slow-motion finish)',
     'automation': 'Studio · AI Automation: text-only typed reel (Remotion, 30 fps); episode N = film/src/automations.json entry N',
+    'news': 'Studio · Tech news: outlet headline typed out, source credited (Remotion, 30 fps); picked automatically from RSS feeds',
     'dsa': 'Studio · DSA debugger: real code stepped line by line; episode N = problem #N (Pillow, 30 fps)',
 }
 
@@ -47,6 +48,23 @@ def render(fmt, out, episode=1, seed=None):
         env = dict(os.environ, COMP='AutomationReel', EPISODE=str(episode), OUT=str(out_abs),
                    MUSIC=music.MUSIC['automation'][0], MUSIC_VOL=str(music.MUSIC['automation'][1]), KEY_GAIN=str(music.TYPING_GAIN))
         subprocess.run(['node', 'render.mjs'], cwd=film, env=env, check=True)
+        return out
+    if fmt == 'news':
+        import json
+        import os
+        import subprocess
+        from pathlib import Path
+        from . import music, news_feed
+        film = Path(__file__).resolve().parents[2] / 'film'
+        out_abs = Path(out).resolve()
+        out_abs.parent.mkdir(parents=True, exist_ok=True)
+        item = news_feed.choose(episode)
+        props = out_abs.parent / 'news.json'
+        props.write_text(json.dumps(item, indent=1, ensure_ascii=False), encoding='utf-8')
+        env = dict(os.environ, COMP='NewsReel', OUT=str(out_abs), PROPS_FILE=str(props),
+                   MUSIC=music.MUSIC['news'][0], MUSIC_VOL=str(music.MUSIC['news'][1]), KEY_GAIN=str(music.TYPING_GAIN))
+        subprocess.run(['node', 'render.mjs'], cwd=film, env=env, check=True)
+        print(f"News: {item['source']} | {item['headline']}")
         return out
     if fmt == 'dsa':
         from . import music

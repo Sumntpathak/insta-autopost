@@ -30,22 +30,18 @@ class AutomationTests(unittest.TestCase):
         for i, a in enumerate(DATA, 1):
             self.assertEqual(publish.caption('automation', i), a['caption'])
 
-    def test_calendar_slots_use_known_episodes(self):
-        from reels.shipstack.studio.problems import PROBLEMS
+    def test_calendar_is_twelve_a_day_and_guard_safe(self):
         cal = json.loads((ROOT / 'reels' / 'shipstack' / 'calendar.json').read_text())
-        mine = [s for s in cal['slots'] if s['format'] in ('automation', 'dsa')]
-        self.assertGreaterEqual(len(mine), 4)
-        for s in mine:
-            limit = len(DATA) if s['format'] == 'automation' else len(PROBLEMS)
-            self.assertLessEqual(s['episode'], limit, s['id'])
+        by_day = {}
+        for s in cal['slots']:
+            by_day.setdefault(s['date'], []).append(s)
             self.assertEqual(s['id'], f"CAL-{s['date']}-{s['time'].replace(':', '')}-{s['format']}")
-        times = sorted(s['time'] for s in cal['slots'] if s['date'] == '2026-11-21')
-        mins = [int(t[:2]) * 60 + int(t[3:]) for t in times]
-        self.assertTrue(all(b - a >= 60 for a, b in zip(mins, mins[1:])))
-
-
-if __name__ == '__main__':
-    unittest.main()
+            self.assertIn(s['format'], ('news', 'dsa', 'automation'))
+        for day, slots in list(by_day.items())[1:]:                     # first day may start mid-day
+            self.assertEqual(len(slots), 12, day)
+            mins = sorted(int(x['time'][:2]) * 60 + int(x['time'][3:]) for x in slots)
+            self.assertTrue(all(b - a >= 60 for a, b in zip(mins, mins[1:])))
+        self.assertGreaterEqual(len(by_day), 28)
 
 
 class MusicTests(unittest.TestCase):

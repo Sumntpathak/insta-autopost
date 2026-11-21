@@ -28,6 +28,7 @@ CAPTIONS = {
               'Save this for the next time someone says the shortest path is the fastest.\n\n'
               f'ShipStack Lab Nº 01 · @shipstack_\n{TAGS} #brachistochrone'),
     'lab02': None,    # computed per episode by caption(): the result changes with the seed
+    'news': None,         # computed from reels/out/news.json written at render time (the picked item)
     'automation': None,   # computed per episode by caption(): film/src/automations.json
     'dsa': None,      # computed per episode by caption(): one problem per episode
     'ring': ('Which ball escapes first? Pick one before you watch.\n\n'
@@ -54,12 +55,24 @@ CAPTIONS['balloon'] = ('Which balloon pops first? Pick one before you watch.\n\n
                        'Comment your number. Follow for the next race.\n\n'
                        'ShipStack Arena · @shipstack_\n#satisfying #simulation #physics #pickone')
 # Cover frame (ms into the clip) shown on the grid: a moment that differs per episode and is never black.
-THUMB_MS = {'lab01': 2500, 'lab02': 2500, 'ring': 7000, 'strings': 7000, 'balloon': 7000, 'dsa': 1000, 'automation': 14000, 'story': 3500}
-COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'automation': 'shipstack-automation', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
+THUMB_MS = {'lab01': 2500, 'lab02': 2500, 'ring': 7000, 'strings': 7000, 'balloon': 7000, 'dsa': 1000, 'automation': 14000, 'news': 6500, 'story': 3500}
+COLLECTION = {'story': 'shipstack-brand', 'dsa': 'shipstack-dsa', 'automation': 'shipstack-automation', 'news': 'shipstack-news', 'lab01': 'shipstack-lab', 'lab02': 'shipstack-lab', 'ring': 'shipstack-arena',
               'strings': 'shipstack-arena', 'balloon': 'shipstack-arena'}
 
 
+NEWS_ITEM = ROOT / 'reels' / 'out' / 'news.json'
+
+
+def news_item():
+    import json
+    return json.loads(NEWS_ITEM.read_text(encoding='utf-8'))
+
+
 def caption(reel, episode=1):
+    if reel == 'news':
+        sys.path.insert(0, str(ROOT))
+        from reels.shipstack import news_feed
+        return news_feed.caption(news_item())
     if reel == 'automation':
         import json
         return json.loads((ROOT / 'film' / 'src' / 'automations.json').read_text(encoding='utf-8'))[episode - 1]['caption']
@@ -110,6 +123,8 @@ def publish(reel, url, now=None, meta=None, read_state=campaign.read_state, pers
     record = {'id': key, 'date': now.date().isoformat(), 'scene': reel, 'collection': COLLECTION[reel],
               'seconds': 15, 'episode': episode, 'caption': caption(reel, episode), 'container_id': container,
               'status': 'publishing', 'attempted_at': now.isoformat()}
+    if reel == 'news':
+        record['news_url'] = news_item()['url']
     state['posts'][key] = record
     persist(state)
     media = meta.call(f'{meta.ig_id}/media_publish', {'creation_id': container}, 'POST')['id']

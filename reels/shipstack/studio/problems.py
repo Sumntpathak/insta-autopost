@@ -84,3 +84,6 @@ PROBLEMS = {
                    'hi = mid - 1': 'Drop the right half.'},
             complexity='O(log n) time · O(1) space'),
 }
+
+from .problems_more import MORE  # noqa: E402
+PROBLEMS.update(MORE)

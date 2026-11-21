@@ -83,15 +83,20 @@ number for Arena formats).
 - Run again with **publish** on. The job checks the posting plan, uploads the MP4 as a
   release asset, journals to `reels/state.json`, then publishes.
 
-## The month calendar (hands-off posting)
+## The calendar (hands-off posting): 12 a day, three formats
 
-- `reels/shipstack/calendar.json` holds 30 days × 6 slots (IST): 08:10 physics (Lab Nº 01/02
-  alternating), 10:40 balloon, 13:10 country battle, 16:10 ring escape, 19:10 balloon,
-  21:40 country battle. Every slot has its own episode, so every race/setup is different.
-- `shipstack-schedule.yml` runs every 5 minutes on the default branch and posts the due slot (slots missed by more than 2 h are skipped).
-- Regenerate for the next month: `python -m reels.shipstack.schedule make --start YYYY-MM-DD --days 30`.
-- Stop: set `"paused": true` in the calendar (or disable the workflow in the Actions tab).
-- Tech news (5/day) is posted by a separate agent; the guard leaves room for it.
+- `reels/shipstack/calendar.json`: 12 slots/day (IST, 90 min apart): 06:30 news, 08:00 dsa, 09:30 automation, 11:00 news, 12:30 dsa,
+  14:00 automation, 15:30 news, 17:00 dsa, 18:30 automation, 20:00 news, 21:30 dsa, 23:00 automation. 4 of each.
+- Slots carry `"episode": "next"`. When a slot fires, `schedule.resolve()` picks the next unposted episode: DSA from `studio/problems*.py`
+  (#1 went out at launch), automation from `film/src/automations.json`, news from `reels/shipstack/news_feed.py` (outlets' own RSS headlines,
+  newest unused, source credited, URL journaled as `news_url`). If DSA/automation content runs out, that slot posts news instead; if no fresh
+  news exists the slot is skipped, never padded with filler. A slot missed by more than 3 h is skipped.
+- Music: `reels/shipstack/music.py` (tracks in `film/public/bgm/`, see its README): Luminary under automation + DSA, the other track under news.
+  Typing clicks sit at 35% under the music.
+- `shipstack-schedule.yml` runs every 5 minutes on the default branch and posts the due slot (guard: 60 min gap, 12/day, journal first).
+- Regenerate: `python -m reels.shipstack.schedule make --start YYYY-MM-DD --days 30 [--not-before ISO]`. Stop: `"paused": true` or disable the workflow.
+- Content runway: add DSA problems (`studio/problems_more.py`) and automations (`film/src/automations.json`) before they run out (about 5 days
+  of each at 4/day); the calendar keeps going on news meanwhile. The old Arena/Lab formats still render but are no longer scheduled.
 
 ## Measure
 
