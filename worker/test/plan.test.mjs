@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {dueSlot, slotTime, STALE_MS} from '../src/plan.js';
+import {dueSlot, guardBlock, slotTime, STALE_MS} from '../src/plan.js';
 import {tick} from '../src/index.js';
 
 const cal = {paused: false, slots: [
@@ -52,4 +52,24 @@ test('tick is idle when nothing is due and makes no GitHub API call', async () =
 test('a failed dispatch is reported, not swallowed', async () => {
   fakeFetch({calendar: cal, state: {posts: {}}, runs: [], dispatchStatus: 403});
   await assert.rejects(tick(env, at('15:40')), /dispatch: HTTP 403/);
+});
+
+test('guard: waits 60 minutes after any post, stories excluded', () => {
+  const now = at('19:41');
+  assert.match(guardBlock({a: {published_at: '2026-11-21T19:40:01+05:30'}}, now), /min ago/);
+  assert.equal(guardBlock({a: {published_at: '2026-11-21T18:40:00+05:30'}}, now), null);
+  assert.equal(guardBlock({a: {published_at: '2026-11-21T19:40:01+05:30', kind: 'story'}}, now), null);
+  assert.equal(guardBlock({a: {attempted_at: '2026-11-21T19:00:00+05:30'}}, now), 'last post 41 min ago');
+});
+test('guard: daily cap of 12 per IST day', () => {
+  const posts = {};
+  for (let i = 0; i < 12; i++) posts['p' + i] = {published_at: `2026-11-21T${String(6 + i).padStart(2, '0')}:00:00+05:30`};
+  assert.equal(guardBlock(posts, at('19:41', '2026-11-21')), '12 posts today');
+  assert.equal(guardBlock(posts, at('19:41', '2026-11-22')), null);
+});
+test('tick waits (no GitHub call) while the guard would block', async () => {
+  const calls = fakeFetch({calendar: cal, state: {posts: {x: {published_at: '2026-11-21T15:35:00+05:30'}}}, runs: []});
+  const r = await tick(env, at('15:50'));
+  assert.equal(r.action, 'waiting');
+  assert.ok(!calls.some((c) => c.url.startsWith('https://api.github.com')));
 });
