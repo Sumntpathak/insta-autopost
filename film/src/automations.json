@@ -118,5 +118,605 @@
     "resultTo": "Handled",
     "cta": "Save this. Set it before you leave.",
     "caption": "Out of office, set once. Free, built into Gmail.\n\n1. Settings → See all settings\n2. General → scroll to Vacation responder\n3. Turn it on, write your message, pick the dates\n4. Save Changes\n\nTip: tick the box to send replies only to your contacts.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #gmail #productivity #freetools #worklife"
+  },
+  {
+    "id": 5,
+    "hook": "Never pay a late fee again.",
+    "accentWord": "late fee",
+    "sub": "Free. Google Calendar. 2 minutes.",
+    "tool": "Google Calendar",
+    "trigger": "A bill due date nears",
+    "steps": [
+      {
+        "app": "Calendar",
+        "text": "Create the bill event"
+      },
+      {
+        "app": "Calendar",
+        "text": "Repeat it monthly"
+      },
+      {
+        "app": "Calendar",
+        "text": "Add a notification"
+      },
+      {
+        "app": "Calendar",
+        "text": "Set it a day before"
+      }
+    ],
+    "resultFrom": "Late fees",
+    "resultTo": "Never",
+    "cta": "Save this. Try it today.",
+    "caption": "Never pay a late fee again. Free, built into Google Calendar.\n\n1. Create the bill event\n2. Repeat it monthly\n3. Add a notification\n4. Set it a day before\n\nTip: add the amount in the title so the reminder says what to pay.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #calendar #money #bills"
+  },
+  {
+    "id": 6,
+    "hook": "Write now. Send at 9am.",
+    "accentWord": "Send at 9am",
+    "sub": "Free. Built into Gmail.",
+    "tool": "Gmail",
+    "trigger": "You write at midnight",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Write the email"
+      },
+      {
+        "app": "Gmail",
+        "text": "Click the arrow by Send"
+      },
+      {
+        "app": "Gmail",
+        "text": "Choose Schedule send"
+      },
+      {
+        "app": "Gmail",
+        "text": "Pick the date and time"
+      }
+    ],
+    "resultFrom": "Late-night send",
+    "resultTo": "Scheduled",
+    "cta": "Save this. Try it today.",
+    "caption": "Write now. Send at 9am. Free, built into Gmail.\n\n1. Write the email\n2. Click the arrow by Send\n3. Choose Schedule send\n4. Pick the date and time\n\nScheduled emails sit in the Scheduled folder until they send.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #gmail #email #worklife"
+  },
+  {
+    "id": 7,
+    "hook": "Every form answer lands in a Sheet.",
+    "accentWord": "lands in a Sheet",
+    "sub": "Free. Google Forms + Sheets.",
+    "tool": "Google Forms",
+    "trigger": "Someone submits the form",
+    "steps": [
+      {
+        "app": "Forms",
+        "text": "Create your form"
+      },
+      {
+        "app": "Forms",
+        "text": "Open the Responses tab"
+      },
+      {
+        "app": "Forms",
+        "text": "Link it to Sheets"
+      },
+      {
+        "app": "Sheets",
+        "text": "Answers arrive as rows"
+      }
+    ],
+    "resultFrom": "Copy-pasting",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Every form answer lands in a Sheet. Free, built into Google Forms.\n\n1. Create your form\n2. Open the Responses tab\n3. Link it to Sheets\n4. Answers arrive as rows\n\nOne Sheet can collect every response from every submission.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googleforms #googlesheets #nocode"
+  },
+  {
+    "id": 8,
+    "hook": "Get pinged for every form answer.",
+    "accentWord": "pinged",
+    "sub": "Free. Google Forms + Gmail.",
+    "tool": "Google Forms",
+    "trigger": "A new response arrives",
+    "steps": [
+      {
+        "app": "Forms",
+        "text": "Open the Responses tab"
+      },
+      {
+        "app": "Forms",
+        "text": "Click the three dots"
+      },
+      {
+        "app": "Forms",
+        "text": "Get email notifications"
+      },
+      {
+        "app": "Gmail",
+        "text": "Each answer pings you"
+      }
+    ],
+    "resultFrom": "Refreshing",
+    "resultTo": "Instant",
+    "cta": "Save this. Try it today.",
+    "caption": "Get pinged for every form answer. Free, built into Google Forms.\n\n1. Open the Responses tab\n2. Click the three dots\n3. Get email notifications\n4. Each answer pings you\n\nHandy for leads, RSVPs and sign-up sheets.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googleforms #gmail #leads"
+  },
+  {
+    "id": 9,
+    "hook": "Reply in one click.",
+    "accentWord": "one click",
+    "sub": "Free. Gmail Templates.",
+    "tool": "Gmail",
+    "trigger": "You type the same reply",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Enable Templates (Advanced)"
+      },
+      {
+        "app": "Gmail",
+        "text": "Write the reply once"
+      },
+      {
+        "app": "Gmail",
+        "text": "Save it as a template"
+      },
+      {
+        "app": "Gmail",
+        "text": "Insert it anytime"
+      }
+    ],
+    "resultFrom": "Retyping",
+    "resultTo": "One click",
+    "cta": "Save this. Try it today.",
+    "caption": "Reply in one click. Free, built into Gmail.\n\n1. Enable Templates (Advanced)\n2. Write the reply once\n3. Save it as a template\n4. Insert it anytime\n\nTemplates are switched on in Settings under Advanced.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #gmail #email #productivity"
+  },
+  {
+    "id": 10,
+    "hook": "Your Sheet emails you when it changes.",
+    "accentWord": "emails you",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "Someone edits the Sheet",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Open the Tools menu"
+      },
+      {
+        "app": "Sheets",
+        "text": "Choose Notification rules"
+      },
+      {
+        "app": "Sheets",
+        "text": "Pick: any changes made"
+      },
+      {
+        "app": "Gmail",
+        "text": "Get an email"
+      }
+    ],
+    "resultFrom": "Checking",
+    "resultTo": "Notified",
+    "cta": "Save this. Try it today.",
+    "caption": "Your Sheet emails you when it changes. Free, built into Google Sheets.\n\n1. Open the Tools menu\n2. Choose Notification rules\n3. Pick: any changes made\n4. Get an email\n\nYou can also choose a daily digest instead of instant emails.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #alerts #teamwork"
+  },
+  {
+    "id": 11,
+    "hook": "Overdue rows turn red.",
+    "accentWord": "turn red",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "A date passes",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Select the date column"
+      },
+      {
+        "app": "Sheets",
+        "text": "Format → Conditional"
+      },
+      {
+        "app": "Sheets",
+        "text": "Rule: date is before today"
+      },
+      {
+        "app": "Sheets",
+        "text": "Pick red, hit Done"
+      }
+    ],
+    "resultFrom": "Eyeballing",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Overdue rows turn red. Free, built into Google Sheets.\n\n1. Select the date column\n2. Format → Conditional\n3. Rule: date is before today\n4. Pick red, hit Done\n\nAdd a second rule for dates due this week in orange.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #spreadsheet #tracker"
+  },
+  {
+    "id": 12,
+    "hook": "Forward emails to your team for you.",
+    "accentWord": "for you",
+    "sub": "Free. Gmail filters.",
+    "tool": "Gmail",
+    "trigger": "An email matches the filter",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Add a forwarding address"
+      },
+      {
+        "app": "Gmail",
+        "text": "Create a filter"
+      },
+      {
+        "app": "Gmail",
+        "text": "Choose Forward it to"
+      },
+      {
+        "app": "Gmail",
+        "text": "Save the filter"
+      }
+    ],
+    "resultFrom": "Forwarding",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Forward emails to your team for you. Free, built into Gmail.\n\n1. Add a forwarding address\n2. Create a filter\n3. Choose Forward it to\n4. Save the filter\n\nThe forwarding address must confirm before the filter works.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #gmail #email #teamwork"
+  },
+  {
+    "id": 13,
+    "hook": "Turn emails into tasks.",
+    "accentWord": "into tasks",
+    "sub": "Free. Gmail + Google Tasks.",
+    "tool": "Google Tasks",
+    "trigger": "An email needs action",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Open the email"
+      },
+      {
+        "app": "Gmail",
+        "text": "Click Add to Tasks"
+      },
+      {
+        "app": "Tasks",
+        "text": "The task appears"
+      },
+      {
+        "app": "Tasks",
+        "text": "Set the due date"
+      }
+    ],
+    "resultFrom": "Inbox clutter",
+    "resultTo": "To-do list",
+    "cta": "Save this. Try it today.",
+    "caption": "Turn emails into tasks. Free, built into Google Tasks.\n\n1. Open the email\n2. Click Add to Tasks\n3. The task appears\n4. Set the due date\n\nThe task keeps a link back to the original email.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #gmail #todo #productivity"
+  },
+  {
+    "id": 14,
+    "hook": "Flights add themselves to Calendar.",
+    "accentWord": "add themselves",
+    "sub": "Free. Gmail + Calendar.",
+    "tool": "Google Calendar",
+    "trigger": "A booking email arrives",
+    "steps": [
+      {
+        "app": "Gmail",
+        "text": "Confirmation email arrives"
+      },
+      {
+        "app": "Calendar",
+        "text": "Event is created for you"
+      },
+      {
+        "app": "Calendar",
+        "text": "Times and places filled in"
+      },
+      {
+        "app": "Calendar",
+        "text": "Reminders come with it"
+      }
+    ],
+    "resultFrom": "Typing trips",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Flights add themselves to Calendar. Free, built into Google Calendar.\n\n1. Confirmation email arrives\n2. Event is created for you\n3. Times and places filled in\n4. Reminders come with it\n\nCheck Calendar settings for Events from Gmail if nothing appears.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #calendar #travel #gmail"
+  },
+  {
+    "id": 15,
+    "hook": "Live prices update themselves.",
+    "accentWord": "update themselves",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "The market moves",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =GOOGLEFINANCE"
+      },
+      {
+        "app": "Sheets",
+        "text": "Add a ticker like GOOG"
+      },
+      {
+        "app": "Sheets",
+        "text": "Press Enter"
+      },
+      {
+        "app": "Sheets",
+        "text": "The price refreshes"
+      }
+    ],
+    "resultFrom": "Copy-pasting",
+    "resultTo": "Live",
+    "cta": "Save this. Try it today.",
+    "caption": "Live prices update themselves. Free, built into Google Sheets.\n\n1. Type =GOOGLEFINANCE\n2. Add a ticker like GOOG\n3. Press Enter\n4. The price refreshes\n\nQuotes can be delayed, so use it for tracking, not trading.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #stocks #finance"
+  },
+  {
+    "id": 16,
+    "hook": "Translate a column in one formula.",
+    "accentWord": "one formula",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "A column needs translating",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =GOOGLETRANSLATE"
+      },
+      {
+        "app": "Sheets",
+        "text": "Pick the cell and language"
+      },
+      {
+        "app": "Sheets",
+        "text": "Drag it down"
+      },
+      {
+        "app": "Sheets",
+        "text": "Everything translates"
+      }
+    ],
+    "resultFrom": "Copy-translate",
+    "resultTo": "One formula",
+    "cta": "Save this. Try it today.",
+    "caption": "Translate a column in one formula. Free, built into Google Sheets.\n\n1. Type =GOOGLETRANSLATE\n2. Pick the cell and language\n3. Drag it down\n4. Everything translates\n\nUse the language code, like es for Spanish or hi for Hindi.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #translate #languages"
+  },
+  {
+    "id": 17,
+    "hook": "Pull web tables into a Sheet.",
+    "accentWord": "web tables",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "A web page has a table",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =IMPORTHTML"
+      },
+      {
+        "app": "Sheets",
+        "text": "Paste the page link"
+      },
+      {
+        "app": "Sheets",
+        "text": "Choose table and number"
+      },
+      {
+        "app": "Sheets",
+        "text": "It refreshes itself"
+      }
+    ],
+    "resultFrom": "Copy-pasting",
+    "resultTo": "Live table",
+    "cta": "Save this. Try it today.",
+    "caption": "Pull web tables into a Sheet. Free, built into Google Sheets.\n\n1. Type =IMPORTHTML\n2. Paste the page link\n3. Choose table and number\n4. It refreshes itself\n\nWorks on public pages that show their data as an HTML table.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #data #nocode"
+  },
+  {
+    "id": 18,
+    "hook": "Quizzes grade themselves.",
+    "accentWord": "grade themselves",
+    "sub": "Free. Google Forms.",
+    "tool": "Google Forms",
+    "trigger": "Someone submits the quiz",
+    "steps": [
+      {
+        "app": "Forms",
+        "text": "Open Settings"
+      },
+      {
+        "app": "Forms",
+        "text": "Turn on Make this a quiz"
+      },
+      {
+        "app": "Forms",
+        "text": "Mark the correct answers"
+      },
+      {
+        "app": "Forms",
+        "text": "Scores appear instantly"
+      }
+    ],
+    "resultFrom": "Marking by hand",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Quizzes grade themselves. Free, built into Google Forms.\n\n1. Open Settings\n2. Turn on Make this a quiz\n3. Mark the correct answers\n4. Scores appear instantly\n\nYou can also add feedback for each wrong answer.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googleforms #teachers #quiz"
+  },
+  {
+    "id": 19,
+    "hook": "Birthdays remind themselves.",
+    "accentWord": "remind themselves",
+    "sub": "Free. Contacts + Calendar.",
+    "tool": "Google Calendar",
+    "trigger": "A birthday is coming",
+    "steps": [
+      {
+        "app": "Contacts",
+        "text": "Add a birthday"
+      },
+      {
+        "app": "Calendar",
+        "text": "Open the Birthdays calendar"
+      },
+      {
+        "app": "Calendar",
+        "text": "Turn it on"
+      },
+      {
+        "app": "Calendar",
+        "text": "Get the reminder"
+      }
+    ],
+    "resultFrom": "Forgetting",
+    "resultTo": "Reminded",
+    "cta": "Save this. Try it today.",
+    "caption": "Birthdays remind themselves. Free, built into Google Calendar.\n\n1. Add a birthday\n2. Open the Birthdays calendar\n3. Turn it on\n4. Get the reminder\n\nBirthdays come from your Google Contacts.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #calendar #contacts #productivity"
+  },
+  {
+    "id": 20,
+    "hook": "Scan paper to PDF in seconds.",
+    "accentWord": "to PDF",
+    "sub": "Free. Google Drive app.",
+    "tool": "Google Drive",
+    "trigger": "You hold a paper document",
+    "steps": [
+      {
+        "app": "Drive",
+        "text": "Open the Drive app"
+      },
+      {
+        "app": "Drive",
+        "text": "Tap + then Scan"
+      },
+      {
+        "app": "Drive",
+        "text": "Point at the paper"
+      },
+      {
+        "app": "Drive",
+        "text": "Save it as a PDF"
+      }
+    ],
+    "resultFrom": "Flatbed scanner",
+    "resultTo": "Phone scan",
+    "cta": "Save this. Try it today.",
+    "caption": "Scan paper to PDF in seconds. Free, built into Google Drive.\n\n1. Open the Drive app\n2. Tap + then Scan\n3. Point at the paper\n4. Save it as a PDF\n\nScans save straight to your Drive and are searchable.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googledrive #scanner #pdf"
+  },
+  {
+    "id": 21,
+    "hook": "Split a column with one formula.",
+    "accentWord": "one formula",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "Full names in one column",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =SPLIT(A2, \" \")"
+      },
+      {
+        "app": "Sheets",
+        "text": "Press Enter"
+      },
+      {
+        "app": "Sheets",
+        "text": "Drag it down"
+      },
+      {
+        "app": "Sheets",
+        "text": "Every name splits"
+      }
+    ],
+    "resultFrom": "Cut and paste",
+    "resultTo": "One formula",
+    "cta": "Save this. Try it today.",
+    "caption": "Split a column with one formula. Free, built into Google Sheets.\n\n1. Type =SPLIT(A2, \" \")\n2. Press Enter\n3. Drag it down\n4. Every name splits\n\nChange the space to a comma to split lists.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #excel"
+  },
+  {
+    "id": 22,
+    "hook": "Remove duplicates with a formula.",
+    "accentWord": "a formula",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "A list has repeats",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =UNIQUE(A:A)"
+      },
+      {
+        "app": "Sheets",
+        "text": "Press Enter"
+      },
+      {
+        "app": "Sheets",
+        "text": "A clean list appears"
+      },
+      {
+        "app": "Sheets",
+        "text": "It updates with the data"
+      }
+    ],
+    "resultFrom": "Manual cleanup",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Remove duplicates with a formula. Free, built into Google Sheets.\n\n1. Type =UNIQUE(A:A)\n2. Press Enter\n3. A clean list appears\n4. It updates with the data\n\nThe original list stays untouched.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #data"
+  },
+  {
+    "id": 23,
+    "hook": "Sort and filter with one formula.",
+    "accentWord": "one formula",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "Your data is a mess",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =SORT(A2:B, 2, TRUE)"
+      },
+      {
+        "app": "Sheets",
+        "text": "Press Enter"
+      },
+      {
+        "app": "Sheets",
+        "text": "Sorted data appears"
+      },
+      {
+        "app": "Sheets",
+        "text": "It updates itself"
+      }
+    ],
+    "resultFrom": "Re-sorting",
+    "resultTo": "Automatic",
+    "cta": "Save this. Try it today.",
+    "caption": "Sort and filter with one formula. Free, built into Google Sheets.\n\n1. Type =SORT(A2:B, 2, TRUE)\n2. Press Enter\n3. Sorted data appears\n4. It updates itself\n\nWrap it in FILTER to show only rows that match.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #excel"
+  },
+  {
+    "id": 24,
+    "hook": "Link two Sheets together.",
+    "accentWord": "two Sheets",
+    "sub": "Free. Google Sheets.",
+    "tool": "Google Sheets",
+    "trigger": "Data lives in another Sheet",
+    "steps": [
+      {
+        "app": "Sheets",
+        "text": "Type =IMPORTRANGE"
+      },
+      {
+        "app": "Sheets",
+        "text": "Paste the other Sheet link"
+      },
+      {
+        "app": "Sheets",
+        "text": "Type the range"
+      },
+      {
+        "app": "Sheets",
+        "text": "Click Allow access"
+      }
+    ],
+    "resultFrom": "Copy-pasting",
+    "resultTo": "Linked",
+    "cta": "Save this. Try it today.",
+    "caption": "Link two Sheets together. Free, built into Google Sheets.\n\n1. Type =IMPORTRANGE\n2. Paste the other Sheet link\n3. Type the range\n4. Click Allow access\n\nEdits in the source Sheet flow through automatically.\n\nSave this for later.\n\nShipStack AI Automation · @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #teamwork"
   }
 ]

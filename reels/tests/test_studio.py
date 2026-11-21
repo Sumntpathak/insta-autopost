@@ -54,3 +54,13 @@ class CoverTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class AllEpisodesRender(unittest.TestCase):
+    def test_every_episode_draws_frames(self):
+        for ep in PROBLEMS:
+            reel = dsa.Reel(ep)
+            sched, per = reel.schedule()
+            for f in (dsa.INTRO + 5, dsa.FRAMES // 2, dsa.FRAMES - 5):
+                self.assertEqual(reel.frame(f, sched, per).size, (1080, 1920), f'#{ep} frame {f}')
+            self.assertIn(PROBLEMS[ep]['title'], publish.caption('dsa', ep))
