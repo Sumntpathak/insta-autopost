@@ -107,3 +107,15 @@ group separately.
 - Any new publisher must use `reels/guard.py`, journal before publish, and the `autopost`
   concurrency group, and must default to not posting.
 - Run the tests before committing; add a test for every safety rule you touch.
+
+## Handoff (21 Nov 2026)
+
+State of play for whoever picks this up next. Details are in the git log and the PRs.
+
+- **Branch:** `claude/epic-johnson-swuv6r` is merged into `main` (PRs #5–#8). Work on a new branch and open a PR for each change.
+- **Launch:** logo Reel + Story (17:19 IST, 20 Nov) and DSA #0001 (18:27 IST, 20 Nov) are live. Their journal keys are `LAUNCH-2026-11-*` in `reels/state.json`. The third launch post, news, is **on hold**: `launch/posts.json` marks it `ready: false`, because no fresh story has been verified against its source yet. The Anthropic IPO card was already posted on 19 Nov, so do not reuse it.
+- **Launch override:** `--override-daily-cap` was approved for the launch posts only. It is recorded in the journal. Do not use it for other posts.
+- **Open decision:** the owner has not yet decided on posting volume. The profile audit recommends 1–2 posts/day. The calendar currently runs 6/day, and the external news agent (`daily_publisher.py`, run from the owner's laptop) runs about 20/day outside the guard and journal. Do not change the volume without asking.
+- **Still to do in the Instagram app (the API cannot):** set the category to Digital creator, update the name and bio, pin three posts, create the highlights, and fix the cover on the "We ship" Reel.
+- **Renders:** Arena reels get a `#NN` badge (`reels/shipstack/badge.py`). Every reel sets `thumb_offset` (`THUMB_MS` in `publish.py`), enforced by a test. News cards are drawn by `news_renderer.render_pubity_card`, which now uses the dark Studio card.
+- **Tools:** the Studio, Arena and film renders need `libegl1` and `signalflow` (see Run locally).
