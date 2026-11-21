@@ -3499,9 +3499,11 @@
       "date": "2026-11-21",
       "scene": "technology-brief",
       "caption": "Asia in Seven Headlines | 21 November 2026\n\nTechnology, civic life and diplomacy across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/business/2026/11/21/markets/anthropic-ai-stocks/\nhttps://www.koreaherald.com/article/10944726\nhttps://www.scmp.com/news/hong-kong/politics/article/3375285/tycoons-campaign-streets-hong-kong-election-committee-vote-nears\nhttps://www.straitstimes.com/asia/east-asia/amid-us-china-tech-rivalry-spore-wants-to-be-open-to-both-pm-wong\nhttps://indianexpress.com/article/explained/explained-politics/gta-6-meme-bjp-congress-political-row-india-10972904/\nhttps://www.thejakartapost.com/world/2026/11/21/indonesia-china-finds-common-ground-on-south-china-sea-development\nhttps://www.dawn.com/news/2046109/at-sco-moot-in-india-musadik-malik-declares-climate-change-enemy-of-civilisations",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17898335685522936",
-      "attempted_at": "2026-11-21T19:39:54.296354+05:30"
+      "attempted_at": "2026-11-21T19:39:54.296354+05:30",
+      "media_id": "18121242344019469",
+      "published_at": "2026-11-21T19:40:01.018369+05:30"
     }
   }
 }
