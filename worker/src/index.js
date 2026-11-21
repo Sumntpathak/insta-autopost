@@ -1,7 +1,7 @@
 // ShipStack scheduler (Cloudflare Worker). Cron every 5 minutes: if a calendar slot is due and no calendar run is already
 // queued or running, dispatch the GitHub workflow. Rendering and posting stay in GitHub Actions (they need ffmpeg + Remotion).
 // Secret: GH_TOKEN (fine-grained token, this repo only, Actions: read and write). Never put it in this file.
-import {dueSlot} from './plan.js';
+import {dueSlot, guardBlock} from './plan.js';
 
 const API = 'https://api.github.com';
 
@@ -29,6 +29,8 @@ export async function tick(env, nowMs = Date.now()) {
   const [calendar, state] = await Promise.all([raw(env, 'reels/shipstack/calendar.json'), raw(env, 'reels/state.json')]);
   const slot = dueSlot(calendar, state.posts ?? {}, nowMs);
   if (!slot) return {action: 'idle'};
+  const blocked = guardBlock(state.posts ?? {}, nowMs);
+  if (blocked) return {action: 'waiting', slot: slot.id, reason: blocked};   // the posting guard would refuse this run anyway
 
   const runs = await gh(env, `/repos/${env.REPO}/actions/workflows/${env.WORKFLOW}/runs?per_page=10`);
   if (!runs.ok) throw new Error(`list runs: HTTP ${runs.status}`);
