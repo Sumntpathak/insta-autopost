@@ -3590,6 +3590,18 @@
       "attempted_at": "2026-11-22T08:01:54.554152+05:30",
       "media_id": "18451581262132772",
       "published_at": "2026-11-22T08:03:08.299303+05:30"
+    },
+    "CAL-2026-11-22-0930-automation": {
+      "id": "CAL-2026-11-22-0930-automation",
+      "date": "2026-11-22",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 4,
+      "caption": "Out of office, set once. Free, built into Gmail.\n\n1. Settings \u2192 See all settings\n2. General \u2192 scroll to Vacation responder\n3. Turn it on, write your message, pick the dates\n4. Save Changes\n\nTip: tick the box to send replies only to your contacts.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #gmail #productivity #freetools #worklife",
+      "container_id": "17898466476522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-22T09:33:13.865497+05:30"
     }
   }
 }
