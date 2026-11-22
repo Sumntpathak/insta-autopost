@@ -3701,6 +3701,19 @@
       "attempted_at": "2026-11-22T19:29:21.734921+05:30",
       "media_id": "18110673440200301",
       "published_at": "2026-11-22T19:29:28.705464+05:30"
+    },
+    "CAL-2026-11-22-2000-news": {
+      "id": "CAL-2026-11-22-2000-news",
+      "date": "2026-11-22",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 6,
+      "caption": "GLP-1 drugs could have a surprisingly large environmental payoff\n\nGLP-1 drugs could cut food demand enough to free farmland larger than Italy.\n\nSource: Ars Technica (arstechnica.com) \u00b7 22 Nov 2026\nRead the full story: https://arstechnica.com/health/2026/11/glp-1-drugs-could-have-a-surprisingly-large-environmental-payoff/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898594114522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-22T20:33:06.112571+05:30",
+      "news_url": "https://arstechnica.com/health/2026/11/glp-1-drugs-could-have-a-surprisingly-large-environmental-payoff/"
     }
   }
 }
