@@ -3561,6 +3561,19 @@
       "attempted_at": "2026-11-21T23:57:39.762933+05:30",
       "media_id": "18057993821804514",
       "published_at": "2026-11-21T23:58:16.984899+05:30"
+    },
+    "CAL-2026-11-22-0630-news": {
+      "id": "CAL-2026-11-22-0630-news",
+      "date": "2026-11-22",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 3,
+      "caption": "Curiosity Spots Drifting Twilight Clouds\n\nNASA\u2019s Curiosity Mars rover captured these drifting clouds on Oct. 31, 2026, the 5,061st Martian day, or sol, of the mission.\n\nSource: NASA (science.nasa.gov) \u00b7 21 Nov 2026\nRead the full story: https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898434790522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-22T06:32:25.187292+05:30",
+      "news_url": "https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/"
     }
   }
 }
