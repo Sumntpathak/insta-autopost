@@ -3604,6 +3604,19 @@
       "attempted_at": "2026-11-22T09:33:13.865497+05:30",
       "media_id": "18133987378702522",
       "published_at": "2026-11-22T09:33:50.054653+05:30"
+    },
+    "CAL-2026-11-22-1100-news": {
+      "id": "CAL-2026-11-22-1100-news",
+      "date": "2026-11-22",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 4,
+      "caption": "Amazon is complaining about NYC Council on shipping labels, too\n\nAmazon is leaving no venue unexplored in its fight against the New York City Council and the Delivery Protection Act.\n\nSource: The Verge (theverge.com) \u00b7 22 Nov 2026\nRead the full story: https://www.theverge.com/tech/1039564/amazon-nyc-council-packages-shipping-label\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898485571522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-22T11:08:10.432508+05:30",
+      "news_url": "https://www.theverge.com/tech/1039564/amazon-nyc-council-packages-shipping-label"
     }
   }
 }
