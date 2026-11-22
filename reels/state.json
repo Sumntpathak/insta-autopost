@@ -3686,8 +3686,10 @@
       "episode": 6,
       "caption": "Write now. Send at 9am. Free, built into Gmail.\n\n1. Write the email\n2. Click the arrow by Send\n3. Choose Schedule send\n4. Pick the date and time\n\nScheduled emails sit in the Scheduled folder until they send.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #gmail #email #worklife",
       "container_id": "17898565542522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-22T18:33:24.929548+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-22T18:33:24.929548+05:30",
+      "media_id": "18123023725976733",
+      "published_at": "2026-11-22T18:34:06.628932+05:30"
     }
   }
 }
