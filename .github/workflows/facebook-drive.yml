@@ -1,0 +1,41 @@
+name: Facebook Drive clips
+# Posts the purchased Skillscart clips (facebook-drive/queue.json) to the ShipStack Facebook Page, ONE clip per run,
+# through the posting guard (60 min gap, 12/day, journal pushed before publish).
+# Manual runs are a dry run unless "publish" is ticked. The hourly schedule posts only while queue.json has "enabled": true
+# (GitHub runs schedules from the default branch only). Stop: "enabled": false in the queue, or disable this workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Tick to post the next clip (off = dry run, posts nothing)'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '7 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write          # facebook-drive/state.json journal
+    env:
+      FB_PAGE_ID: '1390488964137653'
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      ARGS: ${{ github.event_name == 'schedule' && '--scheduled --publish' || (inputs.publish && '--publish' || '') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Post the next clip (if the guard allows)
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python facebook-drive/publish.py $ARGS

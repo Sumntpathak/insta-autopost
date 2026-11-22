@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "note": "Purchased Skillscart stickman clips, fetched from Google Drive at run time (never committed). One clip per run, oldest first. Set enabled=false to stop the scheduled drip. Items with skip_reason are never posted.",
+  "items": [
+    {"id": "SC-06", "drive_id": "1866WoUeYAGh8uAq06VPiaMAPEzAtv1ce", "sha256": "90e3405f24f7686ee7068374766640b9d50cf728773d5237ca1099302f8c2b3e", "caption": "Pov: Doctor versus Google be like 🤣\n\n#funnyanimation #stickman #relatable"},
+    {"id": "SC-04", "drive_id": "1zEOBWJ0zh9L3Djst25z-hRUiznwTAKKr", "sha256": "370c4906e5f53e298b8b83094f488dc0bedb70ea5c0d76b0bd763111d85daa41", "caption": "Pov: If only one hour is left 🤣\n\n#funnyanimation #stickman #relatable"},
+    {"id": "SC-01", "drive_id": "1X1WeuAGsSJLp-SZaQ1jthmfTrhJomMue", "sha256": "326b590b1b93280d7a5a3ecd86a0738bb9a1192cf3e6ccbb71b587d2f67a0c06", "caption": "Pov: Bro saw Heaven for a second 🤣\n\n#funnyanimation #stickman #relatable"},
+    {"id": "SC-02", "drive_id": "17tTRLderycGM1Dcy4QqlkCqEZuCoLq_1", "sha256": "c7ba51567fd012701f471a668554c156cc063b686ec5bcc55efd1ea9c2bdf22d", "caption": "Pov: If Jesus had an office 🤣\n\n#funnyanimation #stickman", "review": "religious joke; Meta may limit reach"},
+    {"id": "SC-05", "drive_id": "1cl3ImTeGZaBxVND1mJjxaRoEZyIneXBr", "sha256": "74c64b8b62b569a228fb9eb1e0ac5102131cf8f4b2783226308ca74c48cfa845", "caption": "Pov moment 😂\n\n#funnyanimation #stickman", "review": "adult innuendo in on-screen text; Meta may limit reach"},
+    {"id": "SC-07", "drive_id": "1l8ODX3JHc3iusmVpZlqvM4pYkYJvPoy1", "sha256": "5d36a1a9f1db4d7d2f1b1719a1d3fa90559aff2498a43c6076c8e5b10d87ba7c", "caption": "Pov moment 😂\n\n#funnyanimation #stickman", "review": "adult innuendo in on-screen text; Meta may limit reach"},
+    {"id": "SC-03", "drive_id": "1ODF7A8KvWxXCBL_olLGhCxLvSG_7kG9R", "sha256": "33187c143a94bfb7940358185412ed8c25262d3416be9565b42e88c54135f690", "caption": "", "skip_reason": "90.7 s is over Facebook's 90 s Reel limit; trim or post as a normal video"}
+  ]
+}
