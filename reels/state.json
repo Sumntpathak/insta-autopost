@@ -3657,9 +3657,11 @@
       "episode": 5,
       "caption": "In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest\n\nA mathematician at Anthropic says he used an AI to prove the famed Riemann hypothesis, though verification will take some time.\n\nSource: BBC News (bbc.co.uk) \u00b7 21 Nov 2026\nRead the full story: https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17898527493522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-22T15:33:05.220063+05:30",
-      "news_url": "https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss"
+      "news_url": "https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss",
+      "media_id": "18138592105802539",
+      "published_at": "2026-11-22T15:33:39.454262+05:30"
     }
   }
 }
