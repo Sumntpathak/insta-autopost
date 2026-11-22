@@ -71,8 +71,8 @@ const Sting = () => {
 const LowerThird = () => {
   const o = useWin(3.4, 9.5);
   const sp = useSp();
-  if (o < 0.01) return null;
   const line = tw(useCurrentFrame(), sec(3.4), sec(4.2));
+  if (o < 0.01) return null;
   return (
     <div style={{position: 'absolute', left: 70, bottom: 80, opacity: o, transform: `translateX(${(1 - sp(3.4)) * -140}px)`}}>
       <div style={{...glass(C.gold), padding: '20px 40px 20px 30px', display: 'flex', alignItems: 'center', gap: 22}}>
