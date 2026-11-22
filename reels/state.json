@@ -3690,6 +3690,15 @@
       "attempted_at": "2026-11-22T18:33:24.929548+05:30",
       "media_id": "18123023725976733",
       "published_at": "2026-11-22T18:34:06.628932+05:30"
+    },
+    "ASIA-20261122": {
+      "id": "ASIA-20261122",
+      "date": "2026-11-22",
+      "scene": "technology-brief",
+      "caption": "Asia in Seven Headlines | 22 November 2026\n\nEducation, diplomacy and the environment across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/news/2026/11/22/japan/futenma-base-issue-council/\nhttps://www.koreaherald.com/article/10945089\nhttps://www.scmp.com/news/hong-kong/society/article/3375357/hong-kong-chile-working-holiday-scheme-expected-launch-first-half-2027\nhttps://www.straitstimes.com/singapore/pm-wong-to-visit-australia-for-leaders-meeting-arrive-on-inaugural-sia-flight-to-new-sydney-airport\nhttps://indianexpress.com/article/political-pulse/congress-samajwadi-party-seat-sharing-181-seats-up-assembly-elections-2027-10973836/\nhttps://www.thejakartapost.com/indonesia/2026/11/22/jakarta-to-rebuild-historic-menteng-restaurant-after-fire\nhttps://www.dawn.com/news/2046327/cop31-climate-talks-set-to-collapse-without-political-deal",
+      "status": "publishing",
+      "container_id": "17898581397522936",
+      "attempted_at": "2026-11-22T19:29:21.734921+05:30"
     }
   }
 }
