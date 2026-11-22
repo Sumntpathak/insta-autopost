@@ -3633,6 +3633,18 @@
       "attempted_at": "2026-11-22T12:32:40.027962+05:30",
       "media_id": "18115560098132827",
       "published_at": "2026-11-22T12:33:15.157970+05:30"
+    },
+    "CAL-2026-11-22-1400-automation": {
+      "id": "CAL-2026-11-22-1400-automation",
+      "date": "2026-11-22",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 5,
+      "caption": "Never pay a late fee again. Free, built into Google Calendar.\n\n1. Create the bill event\n2. Repeat it monthly\n3. Add a notification\n4. Set it a day before\n\nTip: add the amount in the title so the reminder says what to pay.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #calendar #money #bills",
+      "container_id": "17898513660522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-22T14:03:27.156242+05:30"
     }
   }
 }
