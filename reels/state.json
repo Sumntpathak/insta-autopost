@@ -3740,8 +3740,10 @@
       "episode": 7,
       "caption": "Every form answer lands in a Sheet. Free, built into Google Forms.\n\n1. Create your form\n2. Open the Responses tab\n3. Link it to Sheets\n4. Answers arrive as rows\n\nOne Sheet can collect every response from every submission.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googleforms #googlesheets #nocode",
       "container_id": "17898643506522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-23T00:03:14.014173+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-23T00:03:14.014173+05:30",
+      "media_id": "17892551337688487",
+      "published_at": "2026-11-23T00:03:51.033607+05:30"
     }
   }
 }
