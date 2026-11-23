@@ -3899,6 +3899,18 @@
       "attempted_at": "2026-11-23T20:46:27.461328+05:30",
       "media_id": "17911485402570436",
       "published_at": "2026-11-23T20:46:33.703118+05:30"
+    },
+    "CAL-2026-11-23-2130-dsa": {
+      "id": "CAL-2026-11-23-2130-dsa",
+      "date": "2026-11-24",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 11,
+      "caption": "DSA #0011 \u00b7 Find Peak Element\n\nFind an index bigger than both neighbours. Watch the code run line by line, with every variable shown.\n\nPattern: Binary search \u00b7 O(log n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17898868320522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T00:03:39.432596+05:30"
     }
   }
 }
