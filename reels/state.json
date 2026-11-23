@@ -3769,8 +3769,10 @@
       "episode": 8,
       "caption": "DSA #0008 \u00b7 Majority Element\n\nFind the value that appears more than half the time. Watch the code run line by line, with every variable shown.\n\nPattern: Boyer-Moore vote \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17898712011522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-23T08:02:41.903710+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-23T08:02:41.903710+05:30",
+      "media_id": "18158273422528704",
+      "published_at": "2026-11-23T08:04:04.640923+05:30"
     }
   }
 }
