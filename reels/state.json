@@ -3845,6 +3845,18 @@
       "news_url": "https://www.bbc.co.uk/news/articles/cqe9k09j9jv4o?at_medium=RSS&at_campaign=rss",
       "media_id": "18106939394527860",
       "published_at": "2026-11-23T15:33:48.728795+05:30"
+    },
+    "CAL-2026-11-23-1700-dsa": {
+      "id": "CAL-2026-11-23-1700-dsa",
+      "date": "2026-11-23",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 10,
+      "caption": "DSA #0010 \u00b7 Search Insert Position\n\nWhere would the target go in a sorted array? Watch the code run line by line, with every variable shown.\n\nPattern: Binary search \u00b7 O(log n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17898788394522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-23T17:02:07.458645+05:30"
     }
   }
 }
