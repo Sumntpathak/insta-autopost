@@ -3913,6 +3913,18 @@
       "attempted_at": "2026-11-24T00:03:39.432596+05:30",
       "media_id": "18124022882072285",
       "published_at": "2026-11-24T00:04:15.196656+05:30"
+    },
+    "CAL-2026-11-23-2300-automation": {
+      "id": "CAL-2026-11-23-2300-automation",
+      "date": "2026-11-24",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 11,
+      "caption": "Overdue rows turn red. Free, built into Google Sheets.\n\n1. Select the date column\n2. Format \u2192 Conditional\n3. Rule: date is before today\n4. Pick red, hit Done\n\nAdd a second rule for dates due this week in orange.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #spreadsheet #tracker",
+      "container_id": "17898876378522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T01:07:54.360632+05:30"
     }
   }
 }
