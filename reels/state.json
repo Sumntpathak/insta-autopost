@@ -3859,6 +3859,18 @@
       "attempted_at": "2026-11-23T17:02:07.458645+05:30",
       "media_id": "18040258664667773",
       "published_at": "2026-11-23T17:03:37.215032+05:30"
+    },
+    "CAL-2026-11-23-1830-automation": {
+      "id": "CAL-2026-11-23-1830-automation",
+      "date": "2026-11-23",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 10,
+      "caption": "Your Sheet emails you when it changes. Free, built into Google Sheets.\n\n1. Open the Tools menu\n2. Choose Notification rules\n3. Pick: any changes made\n4. Get an email\n\nYou can also choose a daily digest instead of instant emails.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #alerts #teamwork",
+      "container_id": "17898803187522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-23T18:33:33.725488+05:30"
     }
   }
 }
