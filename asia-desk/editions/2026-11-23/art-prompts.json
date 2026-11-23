@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image generation",
+  "shared_prompt": "Original newspaper editorial illustration for Asia Desk. Landscape 3:2. Sophisticated engraved linocut, charcoal crosshatching and muted burgundy on warm cream paper. Wordless conceptual illustration; no text, labels, watermarks, portraits or photographic claims.",
+  "subjects": [
+    "Cover: a sculptural globe suggesting Asia, seven folded newspapers and a fountain pen on an editor's desk.",
+    "Japan intelligence contacts reported: two unoccupied chairs on opposite sides of a table, subtle Japanese and Korean architectural silhouettes, a closed diplomatic folder. Conceptual, no flags or people.",
+    "South Korea leadership nominations: empty parliamentary lectern and five unmarked appointment folders, Seoul skyline, no people.",
+    "Hong Kong flight restrictions for conference: a grounded small drone and kite beside the stylized Victoria Harbour convention centre, empty sky. No police logos.",
+    "Singapore Australia aviation: passenger jet approaching a stylized modern Sydney airport with a water arch, conceptual scene, no airline logos.",
+    "Nvidia leadership return: an empty executive chair beside a silicon wafer and circuit patterns, curved return arrow motif as graphic sculpture, no logos or portraits.",
+    "Indonesia vice presidential nominations: two sealed nomination envelopes before a stylized Indonesian parliamentary roof, no people or logos.",
+    "Peshawar cricket opening: a cricket bat and ball in front of a stylized stadium with Peshawar architectural arches, no teams or logos."
+  ]
+}
