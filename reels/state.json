@@ -3888,6 +3888,15 @@
       "news_url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/",
       "media_id": "18105417209665738",
       "published_at": "2026-11-23T20:17:19.944187+05:30"
+    },
+    "ASIA-20261123": {
+      "id": "ASIA-20261123",
+      "date": "2026-11-23",
+      "scene": "technology-brief",
+      "caption": "Asia in Seven Headlines | 23 November 2026\n\nDiplomacy, technology and public life across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/news/2026/11/23/japan/japan-nk-intel-asian-games/\nhttps://www.koreaherald.com/article/10946349\nhttps://www.scmp.com/news/hong-kong/transport/article/3375443/hong-kong-ban-drones-kites-balloons-across-city-interpol-general-assembly\nhttps://www.straitstimes.com/singapore/newest-chapter-of-our-friendship-pm-wong-arrives-at-new-sydney-airport-on-inaugural-sia-flight\nhttps://indianexpress.com/article/explained/explained-ai/why-trump-wants-jensen-huang-back-at-nvidia-and-why-its-board-is-resisting-10974781/\nhttps://www.thejakartapost.com/indonesia/2026/11/23/breaking-prabowo-submits-ministers-amran-and-sugiono-as-vp-nominees\nhttps://www.dawn.com/news/2046559/peshawar-to-host-opening-ceremony-inaugural-match-for-12th-edition-of-psl-pcb-chief",
+      "status": "publishing",
+      "container_id": "17898831084522936",
+      "attempted_at": "2026-11-23T20:46:27.461328+05:30"
     }
   }
 }
