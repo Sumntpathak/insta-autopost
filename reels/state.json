@@ -3873,6 +3873,19 @@
       "attempted_at": "2026-11-23T18:33:33.725488+05:30",
       "media_id": "18119707001039335",
       "published_at": "2026-11-23T18:34:35.951088+05:30"
+    },
+    "CAL-2026-11-23-2000-news": {
+      "id": "CAL-2026-11-23-2000-news",
+      "date": "2026-11-23",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 10,
+      "caption": "Jensen Huang reinstated as Nvidia CEO, board chair\n\nBoard says senior government officials confirmed Huang is \"no national security risk.\"\n\nSource: Ars Technica (arstechnica.com) \u00b7 23 Nov 2026\nRead the full story: https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898825399522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-23T20:16:41.247109+05:30",
+      "news_url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/"
     }
   }
 }
