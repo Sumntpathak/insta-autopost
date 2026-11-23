@@ -3816,6 +3816,18 @@
       "attempted_at": "2026-11-23T12:32:33.767474+05:30",
       "media_id": "18132716725879248",
       "published_at": "2026-11-23T12:33:59.424471+05:30"
+    },
+    "CAL-2026-11-23-1400-automation": {
+      "id": "CAL-2026-11-23-1400-automation",
+      "date": "2026-11-23",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 9,
+      "caption": "Reply in one click. Free, built into Gmail.\n\n1. Enable Templates (Advanced)\n2. Write the reply once\n3. Save it as a template\n4. Insert it anytime\n\nTemplates are switched on in Settings under Advanced.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #gmail #email #productivity",
+      "container_id": "17898764376522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-23T14:03:35.379944+05:30"
     }
   }
 }
