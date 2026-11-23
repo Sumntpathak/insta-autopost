@@ -3812,8 +3812,10 @@
       "episode": 9,
       "caption": "DSA #0009 \u00b7 House Robber\n\nRob houses for the most money, never two neighbours. Watch the code run line by line, with every variable shown.\n\nPattern: Dynamic programming \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17898751389522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-23T12:32:33.767474+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-23T12:32:33.767474+05:30",
+      "media_id": "18132716725879248",
+      "published_at": "2026-11-23T12:33:59.424471+05:30"
     }
   }
 }
