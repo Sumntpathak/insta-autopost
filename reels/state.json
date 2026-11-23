@@ -3787,6 +3787,19 @@
       "attempted_at": "2026-11-23T09:33:37.507144+05:30",
       "media_id": "17996801876848874",
       "published_at": "2026-11-23T09:34:16.314766+05:30"
+    },
+    "CAL-2026-11-23-1100-news": {
+      "id": "CAL-2026-11-23-1100-news",
+      "date": "2026-11-23",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 8,
+      "caption": "Kodak\u2019s next collectible is a tiny digital photo frame that doubles as a tracker\n\nAfter expanding its Charmera collection with a Millennium Edition featuring Y2K-inspired designs earlier this year, Reto's follow-up to its tiny Kodak camera is an\u2026\n\nSource: The Verge (theverge.com) \u00b7 23 Nov 2026\nRead the full story: https://www.theverge.com/tech/1038650/kodak-slidetag-keychain-photo-display-tracker-find-my-hub-google-apple-e-ink\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898740724522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-23T11:02:59.719877+05:30",
+      "news_url": "https://www.theverge.com/tech/1038650/kodak-slidetag-keychain-photo-display-tracker-find-my-hub-google-apple-e-ink"
     }
   }
 }
