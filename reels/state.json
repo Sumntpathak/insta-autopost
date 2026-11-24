@@ -3956,6 +3956,18 @@
       "attempted_at": "2026-11-24T08:47:29.165272+05:30",
       "media_id": "18037356608675191",
       "published_at": "2026-11-24T08:48:06.399297+05:30"
+    },
+    "CAL-2026-11-24-0930-automation": {
+      "id": "CAL-2026-11-24-0930-automation",
+      "date": "2026-11-24",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 12,
+      "caption": "Forward emails to your team for you. Free, built into Gmail.\n\n1. Add a forwarding address\n2. Create a filter\n3. Choose Forward it to\n4. Save the filter\n\nThe forwarding address must confirm before the filter works.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #gmail #email #teamwork",
+      "container_id": "17898951021522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T09:53:19.550791+05:30"
     }
   }
 }
