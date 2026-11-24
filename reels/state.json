@@ -4052,8 +4052,10 @@
       "episode": 14,
       "caption": "Flights add themselves to Calendar. Free, built into Google Calendar.\n\n1. Confirmation email arrives\n2. Event is created for you\n3. Times and places filled in\n4. Reminders come with it\n\nCheck Calendar settings for Events from Gmail if nothing appears.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #calendar #travel #gmail",
       "container_id": "17899020939522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-24T18:33:34.994715+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-24T18:33:34.994715+05:30",
+      "media_id": "18133242085765786",
+      "published_at": "2026-11-24T18:34:10.123107+05:30"
     }
   }
 }
