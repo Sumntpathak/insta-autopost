@@ -3942,6 +3942,18 @@
       "news_url": "https://www.nasa.gov/news-release/nasa-awards-contract-for-noaas-near-earth-orbit-network-program/",
       "media_id": "17989376046095489",
       "published_at": "2026-11-24T06:33:32.540483+05:30"
+    },
+    "CAL-2026-11-24-0800-dsa": {
+      "id": "CAL-2026-11-24-0800-dsa",
+      "date": "2026-11-24",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 12,
+      "caption": "DSA #0012 \u00b7 Two Sum II (Sorted)\n\nIn a sorted array, find the pair that hits the target. Watch the code run line by line, with every variable shown.\n\nPattern: Two pointers \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17898939888522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T08:47:29.165272+05:30"
     }
   }
 }
