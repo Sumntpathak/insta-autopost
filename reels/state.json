@@ -3937,9 +3937,11 @@
       "episode": 11,
       "caption": "NASA Awards Contract for NOAA\u2019s Near Earth Orbit Network Program\n\nNASA, on behalf of the National Oceanic and Atmospheric Administration (NOAA), has awarded a contract to Northrop Grumman Systems Corporation for the Sounder for\u2026\n\nSource: NASA (nasa.gov) \u00b7 24 Nov 2026\nRead the full story: https://www.nasa.gov/news-release/nasa-awards-contract-for-noaas-near-earth-orbit-network-program/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17898922050522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-24T06:32:57.965329+05:30",
-      "news_url": "https://www.nasa.gov/news-release/nasa-awards-contract-for-noaas-near-earth-orbit-network-program/"
+      "news_url": "https://www.nasa.gov/news-release/nasa-awards-contract-for-noaas-near-earth-orbit-network-program/",
+      "media_id": "17989376046095489",
+      "published_at": "2026-11-24T06:33:32.540483+05:30"
     }
   }
 }
