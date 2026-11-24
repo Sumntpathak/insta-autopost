@@ -4091,8 +4091,10 @@
       "episode": 15,
       "caption": "Live prices update themselves. Free, built into Google Sheets.\n\n1. Type =GOOGLEFINANCE\n2. Add a ticker like GOOG\n3. Press Enter\n4. The price refreshes\n\nQuotes can be delayed, so use it for tracking, not trading.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #stocks #finance",
       "container_id": "17899088988522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-25T01:07:50.324463+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-25T01:07:50.324463+05:30",
+      "media_id": "18137858363503588",
+      "published_at": "2026-11-25T01:09:16.832025+05:30"
     }
   }
 }
