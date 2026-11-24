@@ -3999,6 +3999,18 @@
       "attempted_at": "2026-11-24T14:01:58.839898+05:30",
       "media_id": "18103986980545794",
       "published_at": "2026-11-24T14:02:39.244606+05:30"
+    },
+    "CAL-2026-11-24-1400-automation": {
+      "id": "CAL-2026-11-24-1400-automation",
+      "date": "2026-11-24",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 13,
+      "caption": "Turn emails into tasks. Free, built into Google Tasks.\n\n1. Open the email\n2. Click Add to Tasks\n3. The task appears\n4. Set the due date\n\nThe task keeps a link back to the original email.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #gmail #todo #productivity",
+      "container_id": "17898989595522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T15:07:26.889740+05:30"
     }
   }
 }
