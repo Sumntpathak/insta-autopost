@@ -4013,6 +4013,19 @@
       "attempted_at": "2026-11-24T15:07:26.889740+05:30",
       "media_id": "18000073653053018",
       "published_at": "2026-11-24T15:08:03.950769+05:30"
+    },
+    "CAL-2026-11-24-1530-news": {
+      "id": "CAL-2026-11-24-1530-news",
+      "date": "2026-11-24",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 13,
+      "caption": "Helpful but awkward: My week with Meta's Muse ahead of its UK launch\n\nMeta wants Muse to do for AI what WhatsApp did for messaging - here's what the BBC's technology editor found when she used it.\n\nSource: BBC News (bbc.co.uk) \u00b7 24 Nov 2026\nRead the full story: https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&at_campaign=rss\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17898997851522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T16:13:11.240343+05:30",
+      "news_url": "https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&at_campaign=rss"
     }
   }
 }
