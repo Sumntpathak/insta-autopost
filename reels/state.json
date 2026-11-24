@@ -3966,8 +3966,10 @@
       "episode": 12,
       "caption": "Forward emails to your team for you. Free, built into Gmail.\n\n1. Add a forwarding address\n2. Create a filter\n3. Choose Forward it to\n4. Save the filter\n\nThe forwarding address must confirm before the filter works.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #gmail #email #teamwork",
       "container_id": "17898951021522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-24T09:53:19.550791+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-24T09:53:19.550791+05:30",
+      "media_id": "18001595709022484",
+      "published_at": "2026-11-24T09:53:55.856318+05:30"
     }
   }
 }
