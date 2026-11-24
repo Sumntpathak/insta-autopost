@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image generation",
+  "shared_prompt": "Original newspaper editorial illustration for Asia Desk. Landscape 3:2. Sophisticated engraved linocut in charcoal crosshatching and muted burgundy on warm cream paper, strong central composition and wide margins. Wordless conceptual illustration, no text, labels, watermarks, logos, portraits or photographic claims.",
+  "subjects": [
+    "Cover: an editor's desk with seven folded newspapers, fountain pen, and a sculptural globe showing Asia; a fresh composition with the globe on left.",
+    "Japan advances financial contribution to international criminal court: conceptual courthouse columns, a closed funding ledger and a simple coin stack, a subtle Japanese architectural silhouette. No flags or people.",
+    "South Korea proposed response to AI exam cheating: classroom exam desk with a closed paper test, smart glasses set aside and a handheld metal detector. Empty classroom, no people.",
+    "Hong Kong tourism arrivals: stylized Victoria Harbour, a ferry, travel suitcase and welcoming open gateway. No numerical chart.",
+    "Singapore US chip export enforcement cooperation: a silicon wafer beside an open shipping crate, cargo container silhouettes and Singapore skyline. Conceptual trade illustration.",
+    "Madurai court order dispute over lighting a lamp on a hill: conceptual rocky hill with a plain unlit stone pillar and distant small lit oil lamp at a separate shrine. No people, slogans, flags or identifiable deity, contemplative neutral illustration.",
+    "Indonesia Ujung Kulon conservation and mining designation: a Javan rhinoceros in a lush coastal forest, sea beyond and a closed planning map in foreground. No mining equipment actively destroying habitat; conceptual conservation illustration.",
+    "Pakistan interior minister's remarks on speech and online enforcement: empty lectern, microphone, a smartphone and abstract speech bubbles with an open notebook. No text or censorship slogans, neutral conceptual illustration."
+  ]
+}
