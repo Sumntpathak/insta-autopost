@@ -3980,9 +3980,11 @@
       "episode": 12,
       "caption": "Google alternative Kagi launches an email service\n\nKagi, which already offers a paid alternative to Google Search and its own Orion browser as a rival to Chrome, is taking on another Google service: Gmail.\n\nSource: The Verge (theverge.com) \u00b7 24 Nov 2026\nRead the full story: https://www.theverge.com/tech/1041000/kagi-mail-email-google-gmail-alternative\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17898959427522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-24T11:03:19.528918+05:30",
-      "news_url": "https://www.theverge.com/tech/1041000/kagi-mail-email-google-gmail-alternative"
+      "news_url": "https://www.theverge.com/tech/1041000/kagi-mail-email-google-gmail-alternative",
+      "media_id": "18134676826751573",
+      "published_at": "2026-11-24T11:04:32.729109+05:30"
     }
   }
 }
