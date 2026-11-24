@@ -4042,6 +4042,18 @@
       "attempted_at": "2026-11-24T17:17:20.134484+05:30",
       "media_id": "17969744895229905",
       "published_at": "2026-11-24T17:17:55.579566+05:30"
+    },
+    "CAL-2026-11-24-1830-automation": {
+      "id": "CAL-2026-11-24-1830-automation",
+      "date": "2026-11-24",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 14,
+      "caption": "Flights add themselves to Calendar. Free, built into Google Calendar.\n\n1. Confirmation email arrives\n2. Event is created for you\n3. Times and places filled in\n4. Reminders come with it\n\nCheck Calendar settings for Events from Gmail if nothing appears.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #calendar #travel #gmail",
+      "container_id": "17899020939522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-24T18:33:34.994715+05:30"
     }
   }
 }
