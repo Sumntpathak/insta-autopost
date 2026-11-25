@@ -4167,6 +4167,18 @@
       "attempted_at": "2026-11-25T12:32:32.586750+05:30",
       "media_id": "18119610005115595",
       "published_at": "2026-11-25T12:33:06.748502+05:30"
+    },
+    "CAL-2026-11-25-1400-automation": {
+      "id": "CAL-2026-11-25-1400-automation",
+      "date": "2026-11-25",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 17,
+      "caption": "Pull web tables into a Sheet. Free, built into Google Sheets.\n\n1. Type =IMPORTHTML\n2. Paste the page link\n3. Choose table and number\n4. It refreshes itself\n\nWorks on public pages that show their data as an HTML table.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #data #nocode",
+      "container_id": "17899185174522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T14:02:50.661237+05:30"
     }
   }
 }
