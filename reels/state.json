@@ -4124,6 +4124,18 @@
       "attempted_at": "2026-11-25T08:02:06.012661+05:30",
       "media_id": "18160671574576828",
       "published_at": "2026-11-25T08:02:48.642705+05:30"
+    },
+    "CAL-2026-11-25-0930-automation": {
+      "id": "CAL-2026-11-25-0930-automation",
+      "date": "2026-11-25",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 16,
+      "caption": "Translate a column in one formula. Free, built into Google Sheets.\n\n1. Type =GOOGLETRANSLATE\n2. Pick the cell and language\n3. Drag it down\n4. Everything translates\n\nUse the language code, like es for Spanish or hi for Hindi.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #translate #languages",
+      "container_id": "17899151892522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T09:33:01.241049+05:30"
     }
   }
 }
