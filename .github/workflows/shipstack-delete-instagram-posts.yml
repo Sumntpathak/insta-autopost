@@ -1,0 +1,81 @@
+name: ShipStack delete all Instagram posts
+# Manual only. Mode "list" changes nothing and only prints the posts.
+# Mode "delete" removes every post on the account, and only when confirm is DELETE.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "list = show posts only (default). delete = remove every post."
+        required: true
+        default: list
+        type: choice
+        options: [list, delete]
+      confirm:
+        description: "For mode delete only: type DELETE to confirm."
+        required: false
+        default: ""
+permissions:
+  contents: read
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      MODE: ${{ inputs.mode }}
+      CONFIRM: ${{ inputs.confirm }}
+    steps:
+      - name: Refuse unconfirmed delete
+        run: |
+          if [ "$MODE" = "delete" ] && [ "$CONFIRM" != "DELETE" ]; then
+            echo "Mode is delete but confirm is not DELETE. Nothing was changed."
+            exit 1
+          fi
+      - name: List and (optionally) delete Instagram posts
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, urllib.error
+
+          token = os.environ["META_TOKEN"].strip()
+          uid = os.environ["IG_USER_ID"].strip()
+          mode = os.environ["MODE"]
+          if not token or not uid:
+              sys.exit("META_TOKEN or IG_USER_ID is not configured in Actions secrets")
+
+          def call(method, url):
+              # Token goes in the Authorization header only, never in the URL.
+              req = urllib.request.Request(url, method=method,
+                                           headers={"Authorization": "Bearer " + token})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  return json.loads(r.read().decode() or "{}")
+
+          base = "https://graph.facebook.com/v23.0/"
+          url = base + uid + "/media?fields=id,timestamp,media_type,permalink&limit=50"
+          posts = []
+          while url:
+              page = call("GET", url)
+              posts.extend(page.get("data", []))
+              url = page.get("paging", {}).get("next")
+
+          print(f"Found {len(posts)} Instagram posts on the account.")
+          for p in posts:
+              print(f"{p.get('timestamp','?')}  {p['id']}  {p.get('media_type','?')}  {p.get('permalink','')}")
+
+          if mode != "delete":
+              print("Mode is list: nothing was deleted.")
+              sys.exit(0)
+
+          failed = []
+          for p in posts:
+              try:
+                  call("DELETE", base + p["id"])
+                  print("CONFIRMED deleted:", p["id"])
+              except urllib.error.HTTPError as e:
+                  failed.append(p["id"])
+                  print("FAILED:", p["id"], "HTTP", e.code)
+          print(f"Deleted {len(posts) - len(failed)} of {len(posts)}. Failed: {len(failed)}.")
+          sys.exit(1 if failed else 0)
+          PY
