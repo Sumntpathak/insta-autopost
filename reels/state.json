@@ -4210,6 +4210,18 @@
       "attempted_at": "2026-11-25T17:02:29.074472+05:30",
       "media_id": "18045223049639285",
       "published_at": "2026-11-25T17:03:05.396755+05:30"
+    },
+    "CAL-2026-11-25-1830-automation": {
+      "id": "CAL-2026-11-25-1830-automation",
+      "date": "2026-11-25",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 18,
+      "caption": "Quizzes grade themselves. Free, built into Google Forms.\n\n1. Open Settings\n2. Turn on Make this a quiz\n3. Mark the correct answers\n4. Scores appear instantly\n\nYou can also add feedback for each wrong answer.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googleforms #teachers #quiz",
+      "container_id": "17899226085522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T18:33:11.057199+05:30"
     }
   }
 }
