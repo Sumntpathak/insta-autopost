@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image generation",
+  "shared_prompt": "Original newspaper editorial illustration for Asia Desk. Landscape 3:2. Sophisticated engraved linocut in charcoal crosshatching and muted burgundy on warm cream paper, strong central composition, wide margins. Wordless conceptual illustration, no text, watermarks, logos or photographic claims.",
+  "subjects": [
+    "Cover: a globe centered on Asia, seven folded newspapers and a fountain pen on an editor's desk, fresh composition with globe at right and papers at left.",
+    "Japan underlying inflation report: a sober Bank of Japan inspired stone facade, a coin stack, and a closed statistical ledger. No numerical chart, no arrows implying certain future rate changes.",
+    "Korea stock market volatility: abstract stock exchange display with wordless zigzag line motif, a silicon wafer and Seoul skyline. No numbers, logos or trading advice.",
+    "Hong Kong consumer watchdog audit: an open audit ledger, magnifying glass and everyday retail package with Hong Kong skyline. No official seals or accusing people.",
+    "Singapore telecom merger news analysis: two generic antenna towers connected by fiber-like strands, a smartphone on a desk, Singapore skyline. No brand logos, no price chart.",
+    "India TVS family asset partition court filing: a closed legal folder and balanced scales on a desk, a small generic motorcycle silhouette in distance. No portraits, no company logos, no implication a court has ruled.",
+    "Indonesia police general dismissal under treason investigation: an empty police uniform jacket on a hanger beside a closed ethics-hearing folder and blank nameplate. No real insignia, no people, no handcuffs or depiction of proven crime.",
+    "Pakistan astronaut boards Chinese space station: conceptual orbital station and small capsule above blue-gray Earth, simple star field, no people, flags, insignia or logos. Clearly illustrative rather than technical diagram."
+  ]
+}
