@@ -4224,6 +4224,15 @@
       "attempted_at": "2026-11-25T18:33:11.057199+05:30",
       "media_id": "18032858018857989",
       "published_at": "2026-11-25T18:33:41.734308+05:30"
+    },
+    "ASIA-20261125": {
+      "id": "ASIA-20261125",
+      "date": "2026-11-25",
+      "scene": "technology-brief",
+      "caption": "Asia in Seven Headlines | 25 November 2026\n\nMarkets, public policy and space across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/business/2026/11/25/economy/boj-inflation-indicator-hike/\nhttps://www.koreaherald.com/article/10949157\nhttps://www.scmp.com/news/hong-kong/society/article/3375770/consumer-council-missed-targets-handling-complaints-product-tests-audit\nhttps://www.straitstimes.com/tech/tech-news/starhub-m1-merger-cheap-plans-are-on-borrowed-time-and-history-risks-repeating\nhttps://indianexpress.com/article/business/lakshmi-venu-moves-madras-high-court-partition-tvs-family-assets-venu-srinivasan-10978103/\nhttps://www.thejakartapost.com/indonesia/2026/11/25/police-general-suspected-of-treason-sacked\nhttps://www.dawn.com/news/2046753/a-new-era-begins-pakistans-zeeshan-ali-becomes-first-foreigner-to-board-chinas-tiangong-space-station",
+      "status": "publishing",
+      "container_id": "17899233183522936",
+      "attempted_at": "2026-11-25T19:17:04.743474+05:30"
     }
   }
 }
