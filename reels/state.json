@@ -4095,6 +4095,19 @@
       "attempted_at": "2026-11-25T01:07:50.324463+05:30",
       "media_id": "18137858363503588",
       "published_at": "2026-11-25T01:09:16.832025+05:30"
+    },
+    "CAL-2026-11-25-0630-news": {
+      "id": "CAL-2026-11-25-0630-news",
+      "date": "2026-11-25",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 14,
+      "caption": "Half of NASA's aging Mars fleet knocked offline by technical issues\n\nPerseverance is having trouble transmitting to Earth.\n\nSource: Ars Technica (arstechnica.com) \u00b7 25 Nov 2026\nRead the full story: https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899131141522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T06:33:13.309203+05:30",
+      "news_url": "https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/"
     }
   }
 }
