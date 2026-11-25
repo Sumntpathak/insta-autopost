@@ -4196,6 +4196,18 @@
       "news_url": "https://www.theverge.com/policy/1041957/fincen-treasury-cybersecurity-incident",
       "media_id": "18159009112596075",
       "published_at": "2026-11-25T15:33:49.813698+05:30"
+    },
+    "CAL-2026-11-25-1700-dsa": {
+      "id": "CAL-2026-11-25-1700-dsa",
+      "date": "2026-11-25",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 18,
+      "caption": "DSA #0018 \u00b7 Jump Game\n\nEach value is your max jump. Can you reach the end? Watch the code run line by line, with every variable shown.\n\nPattern: Greedy \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17899212462522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T17:02:29.074472+05:30"
     }
   }
 }
