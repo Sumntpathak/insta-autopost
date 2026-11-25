@@ -4138,6 +4138,19 @@
       "attempted_at": "2026-11-25T09:33:01.241049+05:30",
       "media_id": "18117398017860920",
       "published_at": "2026-11-25T09:33:39.429598+05:30"
+    },
+    "CAL-2026-11-25-1100-news": {
+      "id": "CAL-2026-11-25-1100-news",
+      "date": "2026-11-25",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 15,
+      "caption": "NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema\n\nNASA announced Monday that NASA+ content has found its first theatrical home at The Greenbelt Cinema in Greenbelt, Maryland, expanding the agency\u2019s reach across major\u2026\n\nSource: NASA (nasa.gov) \u00b7 25 Nov 2026\nRead the full story: https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899163253522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-25T11:03:10.863798+05:30",
+      "news_url": "https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/"
     }
   }
 }
