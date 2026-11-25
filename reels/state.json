@@ -4206,8 +4206,10 @@
       "episode": 18,
       "caption": "DSA #0018 \u00b7 Jump Game\n\nEach value is your max jump. Can you reach the end? Watch the code run line by line, with every variable shown.\n\nPattern: Greedy \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17899212462522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-25T17:02:29.074472+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-25T17:02:29.074472+05:30",
+      "media_id": "18045223049639285",
+      "published_at": "2026-11-25T17:03:05.396755+05:30"
     }
   }
 }
