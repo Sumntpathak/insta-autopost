@@ -4364,6 +4364,18 @@
       "news_url": "https://science.nasa.gov/earth/earth-observatory/seeking-refuge-on-resolution-island/",
       "media_id": "18065762489562192",
       "published_at": "2026-11-26T15:33:31.387511+05:30"
+    },
+    "CAL-2026-11-26-1700-dsa": {
+      "id": "CAL-2026-11-26-1700-dsa",
+      "date": "2026-11-26",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 22,
+      "caption": "DSA #0022 \u00b7 Second Largest Value\n\nFind the second biggest distinct value. Watch the code run line by line, with every variable shown.\n\nPattern: One pass \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17899382799522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-26T17:02:48.773400+05:30"
     }
   }
 }
