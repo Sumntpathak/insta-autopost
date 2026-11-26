@@ -4442,8 +4442,10 @@
       "episode": 23,
       "caption": "Sort and filter with one formula. Free, built into Google Sheets.\n\n1. Type =SORT(A2:B, 2, TRUE)\n2. Press Enter\n3. Sorted data appears\n4. It updates itself\n\nWrap it in FILTER to show only rows that match.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #excel",
       "container_id": "17899465422522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-27T01:08:09.615821+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-27T01:08:09.615821+05:30",
+      "media_id": "17979406251151885",
+      "published_at": "2026-11-27T01:08:45.301200+05:30"
     }
   }
 }
