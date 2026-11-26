@@ -4402,9 +4402,11 @@
       "episode": 20,
       "caption": "Waymo conquered city streets \u2014 why does it keep stumbling on freeways?\n\nMost people know not to try to pass highway patrol cars while performing a traffic break on a freeway.\n\nSource: The Verge (theverge.com) \u00b7 26 Nov 2026\nRead the full story: https://www.theverge.com/transportation/1042151/waymo-highway-ban-ai-safety-recalls\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17899412709522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-26T20:02:39.788842+05:30",
-      "news_url": "https://www.theverge.com/transportation/1042151/waymo-highway-ban-ai-safety-recalls"
+      "news_url": "https://www.theverge.com/transportation/1042151/waymo-highway-ban-ai-safety-recalls",
+      "media_id": "18028841237938268",
+      "published_at": "2026-11-26T20:03:15.220377+05:30"
     }
   }
 }
