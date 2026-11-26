@@ -4378,6 +4378,18 @@
       "attempted_at": "2026-11-26T17:02:48.773400+05:30",
       "media_id": "18446059252178196",
       "published_at": "2026-11-26T17:04:14.726661+05:30"
+    },
+    "CAL-2026-11-26-1830-automation": {
+      "id": "CAL-2026-11-26-1830-automation",
+      "date": "2026-11-26",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 22,
+      "caption": "Remove duplicates with a formula. Free, built into Google Sheets.\n\n1. Type =UNIQUE(A:A)\n2. Press Enter\n3. A clean list appears\n4. It updates with the data\n\nThe original list stays untouched.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #data",
+      "container_id": "17899396866522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-26T18:32:48.674947+05:30"
     }
   }
 }
