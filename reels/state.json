@@ -4418,6 +4418,18 @@
       "attempted_at": "2026-11-26T20:04:34.608584+05:30",
       "media_id": "18192075166416234",
       "published_at": "2026-11-26T20:04:42.149871+05:30"
+    },
+    "CAL-2026-11-26-2130-dsa": {
+      "id": "CAL-2026-11-26-2130-dsa",
+      "date": "2026-11-27",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 23,
+      "caption": "DSA #0023 \u00b7 Find Pivot Index\n\nFind the index where left sum equals right sum. Watch the code run line by line, with every variable shown.\n\nPattern: Prefix sums \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17899455672522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-27T00:02:27.875632+05:30"
     }
   }
 }
