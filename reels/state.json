@@ -4321,6 +4321,18 @@
       "news_url": "https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/",
       "media_id": "17940831552128442",
       "published_at": "2026-11-26T11:03:59.087787+05:30"
+    },
+    "CAL-2026-11-26-1230-dsa": {
+      "id": "CAL-2026-11-26-1230-dsa",
+      "date": "2026-11-26",
+      "scene": "dsa",
+      "collection": "shipstack-dsa",
+      "seconds": 15,
+      "episode": 21,
+      "caption": "DSA #0021 \u00b7 Subarray Sum Equals K\n\nCount the slices whose sum is exactly k. Watch the code run line by line, with every variable shown.\n\nPattern: Prefix sums + hash map \u00b7 O(n) time \u00b7 O(n) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
+      "container_id": "17899350570522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-26T12:33:20.323704+05:30"
     }
   }
 }
