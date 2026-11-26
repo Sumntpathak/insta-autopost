@@ -4428,8 +4428,10 @@
       "episode": 23,
       "caption": "DSA #0023 \u00b7 Find Pivot Index\n\nFind the index where left sum equals right sum. Watch the code run line by line, with every variable shown.\n\nPattern: Prefix sums \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17899455672522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-27T00:02:27.875632+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-27T00:02:27.875632+05:30",
+      "media_id": "18119504495040284",
+      "published_at": "2026-11-27T00:03:04.228580+05:30"
     }
   }
 }
