@@ -4407,6 +4407,15 @@
       "news_url": "https://www.theverge.com/transportation/1042151/waymo-highway-ban-ai-safety-recalls",
       "media_id": "18028841237938268",
       "published_at": "2026-11-26T20:03:15.220377+05:30"
+    },
+    "ASIA-20261126": {
+      "id": "ASIA-20261126",
+      "date": "2026-11-26",
+      "scene": "technology-brief",
+      "caption": "Asia in Seven Headlines | 26 November 2026\n\nTransport, public policy and diplomacy across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/business/2026/11/26/companies/ana-pilot-training-firm/\nhttps://www.koreaherald.com/article/10950686\nhttps://www.scmp.com/news/hong-kong/transport/article/3375943/hong-kong-clears-route-ride-hailing-licences-private-car-owners\nhttps://www.straitstimes.com/business/us-proposes-new-tariff-of-up-to-20-on-singapore-but-leaves-the-door-open-to-a-deal\nhttps://indianexpress.com/article/india/parliament-session-2026-lok-sabha-rajya-sabha-reconvene-10979976/\nhttps://www.thejakartapost.com/indonesia/2026/11/26/army-doctors-examine-vp-nominees\nhttps://www.dawn.com/news/2047228/makkah-pact-nations-to-discuss-conflict-between-saudi-arabia-and-yemen-in-islamabad-meeting-khawaja-asif-says",
+      "status": "publishing",
+      "container_id": "17899413432522936",
+      "attempted_at": "2026-11-26T20:04:34.608584+05:30"
     }
   }
 }
