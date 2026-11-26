@@ -4316,9 +4316,11 @@
       "episode": 18,
       "caption": "European spacecraft finds chaotic scene after asteroid deflection experiment\n\n\"DART made a really, really large mess.\n\nSource: Ars Technica (arstechnica.com) \u00b7 26 Nov 2026\nRead the full story: https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17899341285522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-26T11:03:18.960332+05:30",
-      "news_url": "https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/"
+      "news_url": "https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/",
+      "media_id": "17940831552128442",
+      "published_at": "2026-11-26T11:03:59.087787+05:30"
     }
   }
 }
