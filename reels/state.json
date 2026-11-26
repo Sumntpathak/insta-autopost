@@ -4335,6 +4335,18 @@
       "attempted_at": "2026-11-26T12:33:20.323704+05:30",
       "media_id": "17967961182218560",
       "published_at": "2026-11-26T12:33:55.328692+05:30"
+    },
+    "CAL-2026-11-26-1400-automation": {
+      "id": "CAL-2026-11-26-1400-automation",
+      "date": "2026-11-26",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 21,
+      "caption": "Split a column with one formula. Free, built into Google Sheets.\n\n1. Type =SPLIT(A2, \" \")\n2. Press Enter\n3. Drag it down\n4. Every name splits\n\nChange the space to a comma to split lists.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #excel",
+      "container_id": "17899363809522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-26T14:04:36.053499+05:30"
     }
   }
 }
