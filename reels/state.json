@@ -4349,6 +4349,19 @@
       "attempted_at": "2026-11-26T14:04:36.053499+05:30",
       "media_id": "17920328457261932",
       "published_at": "2026-11-26T14:05:11.057645+05:30"
+    },
+    "CAL-2026-11-26-1530-news": {
+      "id": "CAL-2026-11-26-1530-news",
+      "date": "2026-11-26",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 19,
+      "caption": "Seeking Refuge on Resolution Island\n\nNew Zealanders have long envisioned the island as a predator-free zone for native birds, but swimming stoats have shown a resolve of their own.\n\nSource: NASA (science.nasa.gov) \u00b7 26 Nov 2026\nRead the full story: https://science.nasa.gov/earth/earth-observatory/seeking-refuge-on-resolution-island/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899372539522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-26T15:32:57.126475+05:30",
+      "news_url": "https://science.nasa.gov/earth/earth-observatory/seeking-refuge-on-resolution-island/"
     }
   }
 }
