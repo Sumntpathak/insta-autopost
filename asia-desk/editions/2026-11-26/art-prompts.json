@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image generation",
+  "shared_prompt": "Original newspaper editorial illustration for Asia Desk, landscape 3:2. Sophisticated engraved linocut in charcoal crosshatching and muted burgundy on warm cream paper, strong central composition, wide margins. Wordless conceptual illustration, no text, watermarks, logos or photographic claims.",
+  "subjects": [
+    "Cover: a fresh still life of seven folded newspapers, fountain pen and an Asian globe on a wooden editor's desk; papers upright at left, globe in the center.",
+    "Japan aviation training company: small generic propeller training aircraft beside a cockpit training desk and a distant Japanese airfield, no airline logos or people.",
+    "Seoul Itaewon housing redevelopment: old hillside neighborhood at left and conceptual new apartment blocks at right, a small construction crane between, no exact architectural plan, no people.",
+    "Hong Kong ride-hailing permits: an ordinary private car, a blank permit document and a smartphone on a desk, Victoria Harbour skyline behind. No company logos.",
+    "Singapore US proposed tariffs and negotiations: two empty chairs around a negotiation table, shipping containers and Singapore skyline in background, no flags, numbers, charts or claims of a signed deal.",
+    "India request for Parliament sittings: a stylized circular Indian parliamentary facade, closed agenda folder and blank desk calendar. No people, logos or party insignia.",
+    "Indonesia vice presidential candidates medical checks: two empty chairs at a neutral hospital examination area, a stethoscope and closed medical folders, subtle Jakarta skyline through window. No portraits or private medical results.",
+    "Islamabad diplomatic meeting planned on Saudi Yemen conflict: three empty chairs around a round conference table, closed diplomatic folders, a distant Islamabad architectural silhouette. No weapons, flags, explosions or people."
+  ]
+}
