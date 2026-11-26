@@ -4288,8 +4288,10 @@
       "episode": 20,
       "caption": "DSA #0020 \u00b7 Monotonic Array\n\nIs the array only going up, or only going down? Watch the code run line by line, with every variable shown.\n\nPattern: One pass \u00b7 O(n) time \u00b7 O(1) space\n\nSave this for your next interview. Follow for the next problem.\n\n#dsa #leetcode #coding #python #interviewprep #programming",
       "container_id": "17899323615522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-26T08:02:25.894893+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-26T08:02:25.894893+05:30",
+      "media_id": "18171456559478956",
+      "published_at": "2026-11-26T08:03:52.575565+05:30"
     }
   }
 }
