@@ -4345,8 +4345,10 @@
       "episode": 21,
       "caption": "Split a column with one formula. Free, built into Google Sheets.\n\n1. Type =SPLIT(A2, \" \")\n2. Press Enter\n3. Drag it down\n4. Every name splits\n\nChange the space to a comma to split lists.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #excel",
       "container_id": "17899363809522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-26T14:04:36.053499+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-26T14:04:36.053499+05:30",
+      "media_id": "17920328457261932",
+      "published_at": "2026-11-26T14:05:11.057645+05:30"
     }
   }
 }
