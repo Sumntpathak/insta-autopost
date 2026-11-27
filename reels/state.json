@@ -4530,9 +4530,11 @@
       "episode": 25,
       "caption": "Asia made a big AI bet on Nvidia. What happens now?\n\nAsian stocks have been on a rollercoaster ride after Jensen Huang's shock return as Nvidia CEO.\n\nSource: BBC News (bbc.co.uk) \u00b7 27 Nov 2026\nRead the full story: https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
       "container_id": "17899561446522936",
-      "status": "publishing",
+      "status": "published",
       "attempted_at": "2026-11-27T14:03:03.709509+05:30",
-      "news_url": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss"
+      "news_url": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss",
+      "media_id": "18134070907873473",
+      "published_at": "2026-11-27T14:03:37.842914+05:30"
     }
   }
 }
