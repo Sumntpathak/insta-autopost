@@ -4550,6 +4550,19 @@
       "news_url": "https://arstechnica.com/cars/2026/11/volvos-big-batteries-we-drive-its-updated-2028-plug-in-hybrids/",
       "media_id": "17919164706551324",
       "published_at": "2026-11-27T15:34:35.479214+05:30"
+    },
+    "CAL-2026-11-27-1700-dsa": {
+      "id": "CAL-2026-11-27-1700-dsa",
+      "date": "2026-11-27",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 27,
+      "caption": "Shivelyuch Socked In\n\nA cloud layer encircled the flanks of the volcano on the Kamchatka Peninsula but left its restless summit caldera in view.\n\nSource: NASA (science.nasa.gov) \u00b7 27 Nov 2026\nRead the full story: https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899585941522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-27T17:02:39.282212+05:30",
+      "news_url": "https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/"
     }
   }
 }
