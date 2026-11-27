@@ -4476,6 +4476,18 @@
       "news_url": "https://arstechnica.com/cars/2026/11/ford-unveils-the-gt41-as-it-hopes-to-win-le-mans-again/",
       "media_id": "18100916324120653",
       "published_at": "2026-11-27T08:03:50.922799+05:30"
+    },
+    "CAL-2026-11-27-0930-automation": {
+      "id": "CAL-2026-11-27-0930-automation",
+      "date": "2026-11-27",
+      "scene": "automation",
+      "collection": "shipstack-automation",
+      "seconds": 15,
+      "episode": 24,
+      "caption": "Link two Sheets together. Free, built into Google Sheets.\n\n1. Type =IMPORTRANGE\n2. Paste the other Sheet link\n3. Type the range\n4. Click Allow access\n\nEdits in the source Sheet flow through automatically.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #teamwork",
+      "container_id": "17899526832522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-27T09:32:46.483314+05:30"
     }
   }
 }
