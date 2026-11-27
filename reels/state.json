@@ -4486,8 +4486,10 @@
       "episode": 24,
       "caption": "Link two Sheets together. Free, built into Google Sheets.\n\n1. Type =IMPORTRANGE\n2. Paste the other Sheet link\n3. Type the range\n4. Click Allow access\n\nEdits in the source Sheet flow through automatically.\n\nSave this for later.\n\nShipStack AI Automation \u00b7 @shipstack_\n#automation #productivity #freetools #googlesheets #formulas #teamwork",
       "container_id": "17899526832522936",
-      "status": "publishing",
-      "attempted_at": "2026-11-27T09:32:46.483314+05:30"
+      "status": "published",
+      "attempted_at": "2026-11-27T09:32:46.483314+05:30",
+      "media_id": "18014308697771065",
+      "published_at": "2026-11-27T09:34:09.138889+05:30"
     }
   }
 }
