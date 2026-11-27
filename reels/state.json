@@ -4591,6 +4591,19 @@
       "attempted_at": "2026-11-27T19:51:28.715248+05:30",
       "media_id": "17968546350209491",
       "published_at": "2026-11-27T19:51:35.171682+05:30"
+    },
+    "CAL-2026-11-27-2130-dsa": {
+      "id": "CAL-2026-11-27-2130-dsa",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 29,
+      "caption": "Musk's plan to send a million SpaceX data satellites into space approved\n\nThe Starmind constellation aims to be the most cost and energy-efficient way to meet the growing demand for AI computing power.\n\nSource: BBC News (bbc.co.uk) \u00b7 26 Nov 2026\nRead the full story: https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899655577522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T00:02:48.147229+05:30",
+      "news_url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss"
     }
   }
 }
