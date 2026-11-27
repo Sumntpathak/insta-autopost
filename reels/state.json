@@ -4586,9 +4586,11 @@
       "date": "2026-11-27",
       "scene": "technology-brief",
       "caption": "Asia in Seven Headlines | 27 November 2026\n\nJustice, public policy and diplomacy across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/news/2026/11/27/japan/politics/censure-motion-voted-down/\nhttps://www.koreaherald.com/article/10951950\nhttps://www.scmp.com/news/hong-kong/law-and-crime/article/3376017/hong-kongs-top-court-quashes-flag-desecration-conviction-autistic-man\nhttps://www.straitstimes.com/business/global-economy-risks-hangover-as-growth-over-reliant-on-ai-boom-india-chief-economic-adviser\nhttps://indianexpress.com/article/india/women-reservation-delimitation-gets-cabinet-approval-10980995/\nhttps://www.thejakartapost.com/indonesia/2026/11/27/teachers-to-get-pay-rise-when-the-time-comes-prabowo-says\nhttps://www.dawn.com/news/2047415/makkah-defence-alliance-meeting-in-islamabad-begins-with-yemen-conflict-also-on-agenda",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17899614057522936",
-      "attempted_at": "2026-11-27T19:51:28.715248+05:30"
+      "attempted_at": "2026-11-27T19:51:28.715248+05:30",
+      "media_id": "17968546350209491",
+      "published_at": "2026-11-27T19:51:35.171682+05:30"
     }
   }
 }
