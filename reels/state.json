@@ -4461,6 +4461,19 @@
       "news_url": "https://www.bbc.co.uk/news/articles/c52e8k19y94mo?at_medium=RSS&at_campaign=rss",
       "media_id": "18084071969758691",
       "published_at": "2026-11-27T06:33:53.732131+05:30"
+    },
+    "CAL-2026-11-27-0800-dsa": {
+      "id": "CAL-2026-11-27-0800-dsa",
+      "date": "2026-11-27",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 22,
+      "caption": "Ford unveils the GT41 as it hopes to win Le Mans again\n\nFord enters the World Endurance Championship in 2027 with the new prototype.\n\nSource: Ars Technica (arstechnica.com) \u00b7 26 Nov 2026\nRead the full story: https://arstechnica.com/cars/2026/11/ford-unveils-the-gt41-as-it-hopes-to-win-le-mans-again/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899513779522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-27T08:03:13.424424+05:30",
+      "news_url": "https://arstechnica.com/cars/2026/11/ford-unveils-the-gt41-as-it-hopes-to-win-le-mans-again/"
     }
   }
 }
