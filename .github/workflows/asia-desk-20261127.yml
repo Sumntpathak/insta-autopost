@@ -1,0 +1,33 @@
+name: Publish Asia Desk 27 November
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/asia-desk-20261127.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      META_TOKEN: ${{ secrets.META_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow
+      - name: Publish reviewed edition and verify
+        run: |
+          git config user.name autopost-bot
+          git config user.email bot@users.noreply.github.com
+          python asia-desk/editions/2026-11-27/publish.py
