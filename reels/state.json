@@ -4606,6 +4606,19 @@
       "news_url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
       "media_id": "17894890116456510",
       "published_at": "2026-11-28T00:03:33.864065+05:30"
+    },
+    "CAL-2026-11-27-2300-automation": {
+      "id": "CAL-2026-11-27-2300-automation",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 30,
+      "caption": "The best Black Friday deals Ars could find\n\nPerhaps some commerce, to help all the Turkey Day leftovers go down easier?\n\nSource: Ars Technica (arstechnica.com) \u00b7 27 Nov 2026\nRead the full story: https://arstechnica.com/shopping/2026/11/the-best-black-friday-deals-ars-could-find/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899661286522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T01:08:12.051613+05:30",
+      "news_url": "https://arstechnica.com/shopping/2026/11/the-best-black-friday-deals-ars-could-find/"
     }
   }
 }
