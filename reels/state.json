@@ -4565,6 +4565,19 @@
       "news_url": "https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/",
       "media_id": "18652565896016819",
       "published_at": "2026-11-27T17:03:46.226695+05:30"
+    },
+    "CAL-2026-11-27-1830-automation": {
+      "id": "CAL-2026-11-27-1830-automation",
+      "date": "2026-11-27",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 28,
+      "caption": "Grand Theft Auto VI is a different kind of GTA \u2014 so it needed a different kind of ending\n\nIn most Grand Theft Auto games, and most open-world games for that matter, the world is left open for you to explore once the credits roll.\n\nSource: The Verge (theverge.com) \u00b7 27 Nov 2026\nRead the full story: https://www.theverge.com/entertainment/1043362/grand-theft-auto-6-ending\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899602474522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-27T18:33:12.480809+05:30",
+      "news_url": "https://www.theverge.com/entertainment/1043362/grand-theft-auto-6-ending"
     }
   }
 }
