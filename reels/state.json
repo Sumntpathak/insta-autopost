@@ -4762,9 +4762,11 @@
       "date": "2026-11-28",
       "scene": "technology-brief",
       "caption": "Asia in Seven Headlines | 28 November 2026\n\nPublic policy, safety and science across seven newspapers.\n\nTimes are local to each publisher. AI editorial illustrations.\n\nSources\nhttps://www.japantimes.co.jp/news/2026/11/28/japan/japan-nuclear-submarines-security-documents/\nhttps://www.koreaherald.com/article/10952405\nhttps://www.scmp.com/news/hong-kong/society/article/3376121/about-200-evacuated-scaffolding-catches-fire-hong-kong-industrial-building\nhttps://www.straitstimes.com/asia/south-asia/mumbai-will-get-its-first-desalination-plant-but-fishermen-fear-their-catches-will-dry-up\nhttps://indianexpress.com/article/political-pulse/mallikarjun-kharge-delimitation-bill-injustice-sc-st-attack-democracy-10982398/\nhttps://www.thejakartapost.com/indonesia/2026/11/28/police-summon-jokowi-allies-for-questioning-in-treason-probe\nhttps://www.dawn.com/news/2047663/beacon-of-light-pm-shehbaz-cdf-munir-speak-with-astronaut-zeeshan-ali-aboard-chinas-space-station",
-      "status": "publishing",
+      "status": "published",
       "container_id": "17899799646522936",
-      "attempted_at": "2026-11-28T19:51:01.906864+05:30"
+      "attempted_at": "2026-11-28T19:51:01.906864+05:30",
+      "media_id": "18387100426237680",
+      "published_at": "2026-11-28T19:51:09.868989+05:30"
     }
   }
 }
