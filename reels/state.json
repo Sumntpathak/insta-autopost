@@ -4636,6 +4636,19 @@
       "news_url": "https://www.nasa.gov/image-article/artemis-iii-astronaut-andre-douglas-visits-vab/",
       "media_id": "18018266618995102",
       "published_at": "2026-11-28T06:33:47.041653+05:30"
+    },
+    "CAL-2026-11-28-0800-dsa": {
+      "id": "CAL-2026-11-28-0800-dsa",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 32,
+      "caption": "We found 60-odd Black Friday deals we love for $100 or less\n\nBetween holiday travel, gifts, and the rising cost of just about everything, expenses can quickly add up during this time of year.\n\nSource: The Verge (theverge.com) \u00b7 28 Nov 2026\nRead the full story: https://www.theverge.com/gadgets/1043445/black-friday-best-cheap-tech-deals-under-100-2026\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899710822522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T08:02:55.981587+05:30",
+      "news_url": "https://www.theverge.com/gadgets/1043445/black-friday-best-cheap-tech-deals-under-100-2026"
     }
   }
 }
