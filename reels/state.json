@@ -4741,6 +4741,19 @@
       "news_url": "https://arstechnica.com/shopping/2026/11/books-bikes-and-the-burbs-these-are-ars-staffs-holiday-gift-picks-for-2026/",
       "media_id": "18172580026465615",
       "published_at": "2026-11-28T17:03:17.721955+05:30"
+    },
+    "CAL-2026-11-28-1830-automation": {
+      "id": "CAL-2026-11-28-1830-automation",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 39,
+      "caption": "Here\u2019s how to make that new Black Friday TV look its best\n\nIt's the season of great deals on TVs.\n\nSource: The Verge (theverge.com) \u00b7 28 Nov 2026\nRead the full story: https://www.theverge.com/tech/1042700/change-these-tv-settings\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899785552522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T18:32:42.164539+05:30",
+      "news_url": "https://www.theverge.com/tech/1042700/change-these-tv-settings"
     }
   }
 }
