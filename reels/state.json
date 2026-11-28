@@ -4726,6 +4726,19 @@
       "news_url": "https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&at_campaign=rss",
       "media_id": "18155555635556253",
       "published_at": "2026-11-28T15:33:16.751581+05:30"
+    },
+    "CAL-2026-11-28-1700-dsa": {
+      "id": "CAL-2026-11-28-1700-dsa",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 38,
+      "caption": "Books, bikes, and The Burbs: These are Ars staff\u2019s holiday gift picks for 2026\n\nWe polled the Ars staff about their favorite pickups this year; here's the list.\n\nSource: Ars Technica (arstechnica.com) \u00b7 27 Nov 2026\nRead the full story: https://arstechnica.com/shopping/2026/11/books-bikes-and-the-burbs-these-are-ars-staffs-holiday-gift-picks-for-2026/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899772511522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T17:02:41.894990+05:30",
+      "news_url": "https://arstechnica.com/shopping/2026/11/books-bikes-and-the-burbs-these-are-ars-staffs-holiday-gift-picks-for-2026/"
     }
   }
 }
