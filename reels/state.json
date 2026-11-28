@@ -4681,6 +4681,19 @@
       "news_url": "https://arstechnica.com/tech-policy/2026/11/intel-faced-a-choice-give-trump-10-or-face-the-consequences/",
       "media_id": "18112311293355875",
       "published_at": "2026-11-28T11:03:54.194634+05:30"
+    },
+    "CAL-2026-11-28-1230-dsa": {
+      "id": "CAL-2026-11-28-1230-dsa",
+      "date": "2026-11-28",
+      "scene": "news",
+      "collection": "shipstack-news",
+      "seconds": 15,
+      "episode": 35,
+      "caption": "NASA\u2019s NG-25 Mission to Launch Pioneering Space Crops Research\n\nNASA experiments, including a first-of-its-kind space crop production system, will travel to the International Space Station aboard Northrop Grumman\u2019s 25th Commercial\u2026\n\nSource: NASA (science.nasa.gov) \u00b7 27 Nov 2026\nRead the full story: https://science.nasa.gov/science-research/biological-physical-sciences/nasas-ng-25-mission-to-launch-pioneering-space-crops-research/\n\nFollow for daily tech news.\n\nShipStack Tech News \u00b7 @shipstack_\n#technews #technology #news #science #ai",
+      "container_id": "17899744554522936",
+      "status": "publishing",
+      "attempted_at": "2026-11-28T12:32:46.459162+05:30",
+      "news_url": "https://science.nasa.gov/science-research/biological-physical-sciences/nasas-ng-25-mission-to-launch-pioneering-space-crops-research/"
     }
   }
 }
